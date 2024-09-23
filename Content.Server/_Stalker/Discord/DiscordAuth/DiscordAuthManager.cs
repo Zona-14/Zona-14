@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading;
@@ -13,7 +13,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Stalker.Discord.DiscordAuth;
 
-public sealed class DiscordAuthManager : IPostInjectInit
+public sealed class DiscordAuthManager : EntitySystem
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IPlayerManager _playerMgr = default!;
@@ -35,8 +35,9 @@ public sealed class DiscordAuthManager : IPostInjectInit
         IoCManager.InjectDependencies(this);
     }
 
-    public void Initialize()
+    public override void Initialize()
     {
+        base.Initialize();
         _sawmill = Logger.GetSawmill("discordAuth");
 
         _cfg.OnValueChanged(CCCCVars.DiscordAuthEnabled, v => _enabled = v, true);

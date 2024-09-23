@@ -12,8 +12,9 @@ public sealed class DiscordAuthManager : EntitySystem
     public string AuthLink = default!;
     public const string DiscordServerLink = "https://discord.gg/pBFv9pDuqK";
 
-    public void Initialize()
+    public override void Initialize()
     {
+        base.Initialize();
         _net.RegisterNetMessage<MsgDiscordAuthRequired>(OnDiscordAuthRequired);
     }
 

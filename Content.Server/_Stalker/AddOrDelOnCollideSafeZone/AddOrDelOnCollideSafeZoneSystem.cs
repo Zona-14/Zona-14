@@ -13,7 +13,7 @@ namespace Content.Server._Stalker.AddOrDelOnCollideSafeZone;
 public sealed class AddOrDelOnCollideSafeZoneSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly PrototypeManager _prototype = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
