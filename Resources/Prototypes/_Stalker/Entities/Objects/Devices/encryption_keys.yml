@@ -10,7 +10,7 @@
   - type: ConfigurableEncryptionKey
   - type: UserInterface
     interfaces:
-      - key: enum.ConfigurableEncryptionKeyUiKey.Key
+      enum.ConfigurableEncryptionKeyUiKey.Key:
         type: ConfigurableEncryptionKeyBoundUserInterface
   - type: ActivatableUI
     key: enum.ConfigurableEncryptionKeyUiKey.Key

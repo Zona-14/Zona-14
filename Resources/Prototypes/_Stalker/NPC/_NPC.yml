@@ -55,8 +55,8 @@
     key: enum.CargoPalletConsoleUiKey.Sale
   - type: UserInterface
     interfaces:
-    - key: enum.CargoPalletConsoleUiKey.Sale
-      type: CargoPalletConsoleBoundUserInterface
+      enum.CargoPalletConsoleUiKey.Sale:
+        type: CargoPalletConsoleBoundUserInterface
   - type: Physics
     bodyType: Static
 #NPC Train Station - End
@@ -82,8 +82,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcSidor
@@ -122,8 +122,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: STNPCBarmenPreset
@@ -162,8 +162,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcBuyer
@@ -202,8 +202,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcTourist
@@ -242,8 +242,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     permitId: hunterLicense
@@ -283,8 +283,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     permitId: militaryLicense
@@ -324,8 +324,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcResearchInstitut
@@ -364,8 +364,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Dollar
     shopPresetId: DollarTrader
@@ -404,8 +404,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcGrocer
@@ -444,8 +444,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcClothingSalesMan
@@ -485,8 +485,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcPharmacist
@@ -525,8 +525,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcRadioPlayer
@@ -625,8 +625,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcPetrAlkash
@@ -676,8 +676,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcCeremoniemeester
@@ -716,8 +716,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcVadikNarik
@@ -756,8 +756,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcPovarGena
@@ -796,8 +796,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: TechnickVitya
@@ -836,8 +836,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: SalesmanViktor
@@ -876,8 +876,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcBotanikMaks
@@ -916,8 +916,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcFarmerSerega
@@ -975,8 +975,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Advertise
     pack: NPCStalkerCatPet
   - type: TypingIndicator
@@ -1019,8 +1019,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcCustomRadioPlayer
@@ -1090,8 +1090,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 # Скупщики дракоценностей
 
@@ -1115,8 +1115,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 - type: entity
   parent: NPCDoll
@@ -1138,8 +1138,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 - type: entity
   parent: NPCDoll
@@ -1161,8 +1161,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 # Клерки
 
@@ -1185,8 +1185,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 # Fun
 
@@ -1209,5 +1209,5 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface

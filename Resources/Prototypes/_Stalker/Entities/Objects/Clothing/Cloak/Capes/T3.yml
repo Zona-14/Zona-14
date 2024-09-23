@@ -65,8 +65,8 @@
     damageCoefficient: 0.85
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoatlight
     requiredSlot:
@@ -134,8 +134,8 @@
     damageCoefficient: 0.85
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoat
     requiredSlot:
@@ -196,8 +196,8 @@
     damageCoefficient: 0.85
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetGrehCoat
     requiredSlot:
@@ -256,8 +256,8 @@
     damageCoefficient: 0.85
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetGrehCoat
     requiredSlot:

@@ -29,7 +29,6 @@
     FoodEgg: 2
     ReagentContainerFlour: 15
     FoodCondimentBottleEnzyme: 2
-    FoodMeatSausageCooked: 6
     FoodMealPigblanket: 20
     FoodCondensedMilkTrash: 30
     BookCookingStalker: 25
@@ -50,7 +49,6 @@
         FoodBakedCookie: 27
         FoodSnackChocolateBar: 25
         FoodPotatoCooked: 20
-        FoodMeatSausageCooked: 7
         FoodMealPigblanket: 27
         FoodCondensedMilk: 80
 

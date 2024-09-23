@@ -1417,8 +1417,8 @@
         ents: []
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: Armor
     armorClass: 3
     modifiers:
@@ -1644,8 +1644,8 @@
     damageCoefficient: 0.85
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     slot: head
     requiredSlot: NECK
@@ -1692,8 +1692,8 @@
     damageCoefficient: 0.80
   - type: UserInterface
     interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ToggleableClothing
     slot: head
     requiredSlot: NECK

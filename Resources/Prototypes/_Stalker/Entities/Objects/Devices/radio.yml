@@ -50,5 +50,5 @@
     closeOnHandDeselect: false # When you change your hand, you can still use its UI(it wont close)
   - type: UserInterface
     interfaces:
-      - key: enum.RadioStalkerUiKey.Key
+      enum.RadioStalkerUiKey.Key:
         type: RadioStalkerBoundUserInterface

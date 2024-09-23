@@ -34,7 +34,7 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-      - key: enum.ShopUiKey.Key
+      enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles

@@ -12,8 +12,8 @@
     - state: grinder
   - type: UserInterface
     interfaces:
-    - key: enum.ReagentGrinderUiKey.Key
-      type: ReagentGrinderBoundUserInterface
+      enum.ReagentGrinderUiKey.Key:
+        type: ReagentGrinderBoundUserInterface
   - type: ActivatableUI
     key: enum.ReagentGrinderUiKey.Key
   - type: ItemSlots

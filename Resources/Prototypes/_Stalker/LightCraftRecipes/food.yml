@@ -66,17 +66,6 @@
     exactSecond: false
     time: 5
 
-- type: lightCraftingRecipe
-  id: SausageCraftCooked
-  results:
-    - FoodMeatSausageCooked
-  steps:
-    firstIngredient: FoodMeatSausageRaw
-    secondIngredient: Bonfire
-    keepSecond: true
-    exactSecond: false
-    time: 5
-
 # Плохое (Костёр)
 
 - type: lightCraftingRecipe
@@ -118,17 +107,6 @@
     - Ash
   steps:
     firstIngredient: FoodMeatCutletCooked
-    secondIngredient: Bonfire
-    keepSecond: true
-    exactSecond: false
-    time: 2
-
-- type: lightCraftingRecipe
-  id: SausageCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatSausageCooked
     secondIngredient: Bonfire
     keepSecond: true
     exactSecond: false

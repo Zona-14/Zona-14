@@ -89,3 +89,6 @@
   id: JobMagistrate
 - type: playTimeTracker
   id: JobPriest
+
+- type: playTimeTracker
+  id: JobStalkerBartender

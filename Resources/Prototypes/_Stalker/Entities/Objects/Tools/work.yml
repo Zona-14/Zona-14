@@ -16,7 +16,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: InteractionOutline
     - type: Clickable
@@ -43,7 +43,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: InteractionOutline
     - type: Clickable
@@ -100,7 +100,7 @@
       singleUser: true
     - type: UserInterface
       interfaces:
-        - key: enum.ShopUiKey.Key
+        enum.ShopUiKey.Key:
           type: ShopBoundUserInterface
     - type: Shop
       moneyId: Roubles

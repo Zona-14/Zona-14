@@ -11,7 +11,7 @@
 - type: lightCraftingRecipe
   id: LightCraftSheetIron
   results:
-    - STCraftSheetIron
+    - STCraftSheetIronT2
   steps:
     firstIngredient: StalkerWorktable1
     secondIngredient: CraftScrap

@@ -204,6 +204,7 @@
           Quantity: 200
   - type: Hypospray
     solutionName: pen
+    onlyAffectsMobs: false
     transferAmount: 200
 
 ####################################
@@ -681,6 +682,7 @@
   - type: ExaminableSolution
     solution: pen
   - type: Hypospray
+    onlyAffectsMobs: false
     solutionName: pen
     transferAmount: 10
   - type: Appearance
@@ -715,6 +717,7 @@
         - ReagentId: SelfSteampackReagent
           Quantity: 5
   - type: Hypospray
+    onlyAffectsMobs: false
     solutionName: pen
     transferAmount: 5
 
@@ -774,6 +777,7 @@
         - ReagentId: MilitarySteampackReagent
           Quantity: 5
   - type: Hypospray
+    onlyAffectsMobs: false
     solutionName: pen
     transferAmount: 5
 
@@ -833,6 +837,7 @@
         - ReagentId: SciSteampackReagent
           Quantity: 5
   - type: Hypospray
+    onlyAffectsMobs: false
     solutionName: pen
     transferAmount: 5
 

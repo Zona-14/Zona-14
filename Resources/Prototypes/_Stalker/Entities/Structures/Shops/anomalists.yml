@@ -28,8 +28,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: Anomalists
@@ -64,8 +64,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Dollar
     shopPresetId: DollarAnomalists

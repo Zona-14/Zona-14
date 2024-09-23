@@ -20,8 +20,8 @@
     singleUser: true
   - type: UserInterface
     interfaces:
-    - key: enum.ShopUiKey.Key
-      type: ShopBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
 
 - type: shopPreset
   id: DebugShopPreset

@@ -244,7 +244,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: Clickable
     - type: StorageFill
@@ -602,7 +602,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: Clickable
     - type: StorageFill
@@ -775,7 +775,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: Clickable
     - type: StorageFill
@@ -1223,7 +1223,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: Clickable
     - type: StorageFill
@@ -1492,7 +1492,7 @@
         storagebase: !type:Container
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: Clickable
     - type: StorageFill

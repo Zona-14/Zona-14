@@ -10,8 +10,8 @@
     state: base
   - type: UserInterface
     interfaces:
-      - key: enum.StorageUiKey.Key
-        type: StorageBoundUserInterface
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
   - type: Clickable
   - type: Physics
     bodyType: Dynamic

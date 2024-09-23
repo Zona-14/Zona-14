@@ -1926,7 +1926,7 @@
           ents: []
     - type: UserInterface
       interfaces:
-        - key: enum.StorageUiKey.Key
+        enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
     - type: STWeight
       self: 0.05

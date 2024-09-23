@@ -167,8 +167,8 @@
     requireHands: true
   - type: UserInterface
     interfaces:
-    - key: enum.PaperUiKey.Key
-      type: PaperBoundUserInterface
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
   - type: Trash
     time: 240
 
@@ -189,8 +189,8 @@
     requireHands: true
   - type: UserInterface
     interfaces:
-    - key: enum.PaperUiKey.Key
-      type: PaperBoundUserInterface
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
 
 - type: entity
   parent: BookBase
@@ -208,5 +208,5 @@
     requireHands: true
   - type: UserInterface
     interfaces:
-    - key: enum.PaperUiKey.Key
-      type: PaperBoundUserInterface
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface

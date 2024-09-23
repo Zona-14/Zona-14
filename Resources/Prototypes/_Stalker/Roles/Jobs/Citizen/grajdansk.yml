@@ -123,10 +123,10 @@
   name: Бармен
   icon: grajdansksprite
   description: Работайте в баре, удовлетворяя алкогольные нужды посетителей.
-  playTimeTracker: JobBartender
+  playTimeTracker: JobStalkerBartender
   requirements:
     - !type:RoleTimeRequirement
-      role: JobBartender
+      role: JobStalkerBartender
       time: 1
   startingGear: StalkerBartenderGear
   supervisors: Вы подчиняетесь мэру города "Чернобыль - 4".
