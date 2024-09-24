@@ -10,7 +10,7 @@
   suffix: Stalker, т4
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -56,7 +56,7 @@
   suffix: Stalker, т3
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -102,7 +102,7 @@
   description: Набор базовой АКСУ ПСЗ-7 первой версии.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -155,7 +155,7 @@
   description: Набор для тех, кто совсем на мели.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -191,7 +191,7 @@
   description: Набор базовой АКСУ ПСЗ-7 второй версии.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -244,7 +244,7 @@
   description: Набор базовой АКС ПСЗ-7 первой версии.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -297,7 +297,7 @@
   description: Набор базовой АКС ПСЗ-7 второй версии.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -350,7 +350,7 @@
   description: Офицерский набор ПСЗ-7.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -403,7 +403,7 @@
   description: Набор базовой поставки экипировки ОКСОП
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -447,7 +447,7 @@
   description: Набор улучшенной поставки экипировки ОКСОП
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -495,7 +495,7 @@
   description: Набор поставки экипировки ОКСОП для командиров отделения. Эквивалентно 4 классу.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -543,7 +543,7 @@
   description: Набор поставки экипировки ОКСОП для командиров. Эквивалентно 5 классу.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -593,7 +593,7 @@
   description: Набор поставки экипировки ОКСОП, включает в себя только сайгу и боеприпасы с магазинами к ней.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,4,4
     - type: Sprite
@@ -633,7 +633,7 @@
   description: Набор поставки экипировки учёных.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -676,7 +676,7 @@
   description: "Антирадиационный набор с рекламной наклейкой: «Ваш надёжный защитник от вредного воздействия радиации»"
   components:
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,3,3
     - type: Sprite
@@ -705,7 +705,7 @@
   description: Набор предназначен для предоставления медицинской помощи.
   components:
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,4,4
     - type: Sprite
@@ -739,7 +739,7 @@
   description: Расширенная версия медицинского набора.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -776,7 +776,7 @@
   description: Набор для поиска аномальных образований зоны.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -802,7 +802,7 @@
   description: Последний вариант медицинского набора.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -843,7 +843,7 @@
     - type: STWeight
       self: 20
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -881,7 +881,7 @@
   description: Набор базовой АКСУ для полиции
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -939,7 +939,7 @@
   description: Набор ПМ для полиции
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -992,7 +992,7 @@
   description: Набор на случай военного положения.
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -1094,7 +1094,7 @@
   suffix: Stalker, т3
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -1140,7 +1140,7 @@
   description: Набор поставки экипировки ОКСОП
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite
@@ -1201,7 +1201,7 @@
   description: Набор поставки экипировки ОКСОП
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,6,6
     - type: Sprite

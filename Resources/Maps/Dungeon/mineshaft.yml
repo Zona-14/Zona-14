@@ -2827,7 +2827,7 @@ entities:
     - type: Transform
       pos: 17.526375,29.71021
       parent: 2
-- proto: FoodMeatRatdoubleKebab
+- proto: FoodKebabSkewer
   entities:
   - uid: 1051
     components:

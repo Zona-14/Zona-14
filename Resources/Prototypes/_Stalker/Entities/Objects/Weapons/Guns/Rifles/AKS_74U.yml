@@ -75,7 +75,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74ut.rsi
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74ut.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,4,1
     - type: Sprite
@@ -93,7 +93,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74utwo.rsi
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74utwo.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,4,1
     - type: Sprite

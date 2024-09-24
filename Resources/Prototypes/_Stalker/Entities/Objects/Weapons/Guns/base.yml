@@ -17,7 +17,7 @@
       quickEquip: false
     - type: AmmoCounter
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,5,1
     - type: Sprite

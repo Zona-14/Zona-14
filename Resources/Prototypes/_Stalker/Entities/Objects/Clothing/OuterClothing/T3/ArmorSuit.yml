@@ -15,7 +15,7 @@
     tags:
       - BlockBelt
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 0,2,0,3
       - 0,-2,0,0
@@ -91,7 +91,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
 # bonus
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 0,2,0,3
       - 0,-2,0,0
@@ -156,7 +156,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
 # bonus
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - -3,2,-2,3
       - 0,2,0,3

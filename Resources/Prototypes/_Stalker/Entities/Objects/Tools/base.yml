@@ -13,7 +13,7 @@
   components:
   - type: Craftable
   - type: Item
-    size: Medium
+    size: Normal
     state: icon
     shape:
     - 0,0,1,1

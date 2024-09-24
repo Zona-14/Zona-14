@@ -116,7 +116,7 @@
   - type: Physics
     bodyType: Static
   - type: Advertise
-    pack: NPCStalkerBarmenAds
+    pack: STNPCStalkerBarmenAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true

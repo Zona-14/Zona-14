@@ -306,7 +306,7 @@
         prob: 0.1
       - id: DrinkWaterBottleFull
         prob: 0.1
-      - id: FoodMeatRatdoubleKebab
+      - id: FoodKebabSkewer
         prob: 0.1
       - id: FoodCondimentPacketKetchup
         prob: 0.1
@@ -314,7 +314,7 @@
         prob: 0.1
       - id: FoodTinBeans
         prob: 0.1
-      - id: FoodMeatRatKebab
+      - id: FoodKebabSkewer
         prob: 0.1
       - id: FoodTofuSlice
         prob: 0.1

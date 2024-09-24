@@ -131,7 +131,7 @@
       environment: -1
 # bonus
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 1,0,1,0
       - 3,0,3,0
@@ -250,7 +250,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
 # bonus
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 0,0,0,0
       - 2,0,2,0

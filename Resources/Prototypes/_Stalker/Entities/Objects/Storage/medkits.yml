@@ -8,7 +8,7 @@
       sprite: _Stalker/Objects/Clothing/backpacks/Medical/medkit_cms.rsi
     - type: Dumpable
     - type: Item
-      size: Medium
+      size: Normal
       shape:
       - 0,0,2,2
     - type: Storage

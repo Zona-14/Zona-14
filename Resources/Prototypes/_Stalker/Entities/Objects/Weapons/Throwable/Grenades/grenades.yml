@@ -208,7 +208,7 @@
     - type: STWeight
       self: 3.6
     - type: Item
-      size: Big
+      size: Large
     - type: Explosive
       explosionType: Default
       maxIntensity: 50

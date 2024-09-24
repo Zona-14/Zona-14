@@ -12,7 +12,7 @@
       timeToEquip: 3
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,6,1
     - type: Sprite

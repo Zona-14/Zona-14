@@ -1912,7 +1912,7 @@
   suffix: Stalker, Contributors
   components:
     - type: Storage
-      maxItemSize: Big
+      maxItemsize: Large
       areaInsert: true
       quickInsert: true
       whitelist:

@@ -407,7 +407,7 @@ FoodTacoRat: FoodTacoShell
 
 FoodMeatHumanKebab: FoodKebabSkewer
 FoodMeatLizardtailKebab: FoodKebabSkewer
-FoodMeatRatKebab: FoodKebabSkewer
+FoodKebabSkewer: FoodKebabSkewer
 FoodMeatRatdoubleKebab: FoodKebabSkewer
 FoodMeatSnakeKebab: FoodKebabSkewer
 FoodMeatHawaiianKebab: FoodKebabSkewer

@@ -12,7 +12,7 @@
       timeToEquip: 2
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,5,1
     - type: Sprite

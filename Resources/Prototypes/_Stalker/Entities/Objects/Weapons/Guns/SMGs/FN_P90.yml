@@ -9,7 +9,7 @@
       self: 2.9
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/p90.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,5,1
     - type: Sprite

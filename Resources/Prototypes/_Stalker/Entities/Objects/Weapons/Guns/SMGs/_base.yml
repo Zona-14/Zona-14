@@ -14,7 +14,7 @@
     - Back
     - suitStorage
   - type: Item
-    size: Big
+    size: Large
     shape:
       - 0,0,4,1
   - type: Sprite

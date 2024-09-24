@@ -8,7 +8,7 @@
     - type: STWeight
       self: 1
     - type: Item
-      size: Medium
+      size: Normal
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/glock.rsi

@@ -33,7 +33,7 @@
     damageCoefficient: 0.90
   # bonus
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 0,0,0,0
       - 2,0,2,0

@@ -29,7 +29,7 @@
     sound:
       path: /Audio/Items/toolbox_drop.ogg
   - type: Storage
-    maxItemSize: Medium
+    maxItemsize: Normal
     grid:
     - 0,0,5,3
   - type: UserInterface
@@ -53,7 +53,7 @@
   - type: STWeight
     self: 2.5
   - type: Item
-    size: Medium
+    size: Normal
     shape:
     - 0,0,3,3
   - type: Sprite
@@ -212,7 +212,7 @@
     scale: 0.7,0.7
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
     state: tools_1
-    size: Medium
+    size: Normal
   - type: Sprite
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
     state: tools_1
@@ -254,7 +254,7 @@
     shape:
       - 0,0,5,1
     scale: 0.7,0.7
-    size: Big
+    size: Large
   - type: Sprite
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
     scale: 0.7,0.7
@@ -350,7 +350,7 @@
     - type: Item
       sprite: Objects/Tools/screwdriver.rsi
       storedRotation: -90
-      size: Medium
+      size: Normal
       shape:
         - 0,0,1,0
     - type: MeleeWeapon

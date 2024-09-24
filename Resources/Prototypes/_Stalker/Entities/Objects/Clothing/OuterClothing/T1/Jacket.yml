@@ -198,7 +198,7 @@
     clothingPrototype: ClothingHeadHatHoodJacketCN
     slot: head
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     whitelist:
       components:
       - SuppressArtifactContainer

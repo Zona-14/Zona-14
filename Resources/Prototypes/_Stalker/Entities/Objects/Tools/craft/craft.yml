@@ -10,7 +10,7 @@
     - type: STWeight
       self: 0.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,1,1
     - type: Sprite
@@ -31,7 +31,7 @@
     - type: STWeight
       self: 0.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,1,1
     - type: Sprite
@@ -52,7 +52,7 @@
     - type: STWeight
       self: 1
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,3,2
     - type: Sprite
@@ -73,7 +73,7 @@
   - type: STWeight
     self: 1
   - type: Item
-    size: Medium
+    size: Normal
     shape:
       - 0,0,1,1
   - type: Sprite
@@ -179,7 +179,7 @@
     - type: STWeight
       self: 3.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Sprite
@@ -200,7 +200,7 @@
     - type: STWeight
       self: 3
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Sprite
@@ -441,7 +441,7 @@
     - type: STWeight
       self: 1.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Sprite
@@ -462,7 +462,7 @@
     - type: STWeight
       self: 1.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Sprite
@@ -582,7 +582,7 @@
     - type: STWeight
       self: 1.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Trash
@@ -605,7 +605,7 @@
     - type: STWeight
       self: 1.5
     - type: Item
-      size: Medium
+      size: Normal
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Craft/32.rsi
       state: lcd_display
@@ -644,7 +644,7 @@
     - type: STWeight
       self: 0.2
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,1,1
     - type: Sprite
@@ -684,7 +684,7 @@
     - type: STWeight
       self: 0.5
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,1,1
     - type: Sprite
@@ -705,7 +705,7 @@
     - type: STWeight
       self: 0.5
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,1,1
     - type: Sprite
@@ -852,7 +852,7 @@
     - type: STWeight
       self: 2
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,1
     - type: Sprite
@@ -957,7 +957,7 @@
   - type: STWeight
     self: 1
   - type: Item
-    size: Medium
+    size: Normal
     shape:
       - 0,0,2,2
   - type: Sprite
@@ -1000,7 +1000,7 @@
   - type: STWeight
     self: 8
   - type: Item
-    size: Medium
+    size: Normal
     shape:
       - 0,0,2,2
   - type: Sprite
@@ -1113,7 +1113,7 @@
     - type: STWeight
       self: 5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
     - type: Sprite

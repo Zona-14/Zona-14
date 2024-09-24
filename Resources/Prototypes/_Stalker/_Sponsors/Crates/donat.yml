@@ -7,7 +7,7 @@
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,8,8
     - type: Sprite
@@ -62,7 +62,7 @@
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,8,8
     - type: Sprite
@@ -101,7 +101,7 @@
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,8,8
     - type: Sprite
@@ -139,7 +139,7 @@
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
-      size: Big
+      size: Large
       shape:
         - 0,0,8,8
     - type: Sprite

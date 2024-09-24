@@ -9,7 +9,7 @@
       self: 2.2
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,5,2
     - type: Sprite

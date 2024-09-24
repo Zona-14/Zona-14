@@ -1,7 +1,7 @@
 ﻿- type: gameMap
   id: Stalker
   mapName: 'StalkerMap'
-  mapPath: "/Maps/_StalkerMaps/KordonV64.yml"
+  mapPath: "/Maps/_StalkerMaps/KordonV65.yml"
   minPlayers: 0
   stations:
     Stalker:

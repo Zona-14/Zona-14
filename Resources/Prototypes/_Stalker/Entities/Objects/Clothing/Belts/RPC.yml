@@ -129,7 +129,7 @@
     - type: STWeight
       self: 1
     - type: Storage
-      maxItemSize: Big
+      maxItemsize: Large
       grid:
         - 0,2,0,3
         - 0,-1,0,0
@@ -185,7 +185,7 @@
       tags:
         - Folder
     - type: Storage
-      maxItemSize: Big
+      maxItemsize: Large
       grid:
         - 2,0,7,3
         - 0,4,0,2
@@ -210,7 +210,7 @@
       tags:
         - Folder
     - type: Storage
-      maxItemSize: Big
+      maxItemsize: Large
       grid:
         - 4,0,9,3
         - 0,1,0,1

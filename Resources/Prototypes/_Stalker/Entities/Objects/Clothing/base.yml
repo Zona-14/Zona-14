@@ -210,7 +210,7 @@
   name: база РПС
   components:
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
     - 0,0,7,1
     quickInsert: true
@@ -254,6 +254,6 @@
     slots:
     - CLOAK
   - type: Item
-    size: Big
+    size: Large
     shape:
       - 0,0,3,2

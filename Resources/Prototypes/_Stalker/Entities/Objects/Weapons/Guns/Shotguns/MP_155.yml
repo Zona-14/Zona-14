@@ -14,7 +14,7 @@
       self: 3.3
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,6,1
     - type: BallisticAmmoProvider

@@ -16,7 +16,7 @@
     tags:
       - BlockBelt
   - type: Storage
-    maxItemSize: Big
+    maxItemsize: Large
     grid:
       - 0,2,0,3
       - 0,-2,0,0

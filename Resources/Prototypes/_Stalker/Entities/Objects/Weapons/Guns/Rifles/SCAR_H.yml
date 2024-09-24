@@ -71,7 +71,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi
-      size: Big
+      size: Large
       shape:
         - 0,0,4,1
     - type: Sprite

@@ -55,11 +55,11 @@
       - FoodTinMRE
       - FoodSnackEnergy
       - DrinkWaterBottleFull
-      - FoodMeatRatdoubleKebab
+      - FoodKebabSkewer
       - FoodCondimentPacketKetchup
       - FoodTinPeaches
       - FoodTinBeans
-      - FoodMeatRatKebab
+      - FoodKebabSkewer
       - FoodTofuSlice
       - FoodPelmeniBowl
       - FoodSnackChocolate
@@ -68,4 +68,4 @@
       - FoodBreadPlain
       - FoodSnackChips
     chance: 0.40
-    offset: 0.0 
+    offset: 0.0

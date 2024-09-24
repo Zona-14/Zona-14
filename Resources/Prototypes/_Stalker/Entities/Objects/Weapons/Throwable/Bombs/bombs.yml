@@ -154,7 +154,7 @@
     - type: STWeight
       self: 4.5
     - type: Item
-      size: Medium
+      size: Normal
       shape:
         - 0,0,2,2
       quickEquip: false
@@ -281,7 +281,7 @@
   suffix: Stalker, Бомба
   components:
   - type: Item
-    size: Medium
+    size: Normal
     shape:
       - 0,0,2,2
   - type: Sprite
@@ -317,7 +317,7 @@
   suffix: Stalker, Бомба, Ивент
   components:
   - type: Item
-    size: Medium
+    size: Normal
     shape:
       - 0,0,1,1
   - type: Sprite
