@@ -524,8 +524,8 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     }
     private void RefreshUI(EntityUid uid,VendingMachineComponent vendingComponent)
     {
-        var state = new VendingMachineInterfaceState(_vendingMachineSystem.GetAllInventory(uid,vendingComponent));
-        _userInterfaceSystem.SetUiState(uid, VendingMachineUiKey.Key, state);
+        //var state = new VendingMachineInterfaceState(_vendingMachineSystem.GetAllInventory(uid,vendingComponent)); // ST-TODO
+        //_userInterfaceSystem.SetUiState(uid, VendingMachineUiKey.Key, state); // ST-TODO
     }
 
     private void OnInteractUsing(EntityUid uid, StalkerStorageComponent component, InteractUsingEvent args)

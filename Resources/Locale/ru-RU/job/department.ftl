@@ -16,4 +16,3 @@ department-StalkerAnomalists = Аномалисты
 department-StalkerReligius = Религиозные объединения
 department-StalkerBrigands = бандитские формирования
 department-StalkerOfficials = Государственные организации
-department-StalkerAdvanced = Другие группировки
