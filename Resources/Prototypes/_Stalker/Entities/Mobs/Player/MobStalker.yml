@@ -1,16 +1,17 @@
-# Stalker
 - type: entity
-  save: false
-  name: Меченый
-  parent: BaseMobHuman
-  id: STMobStalker
+  name: Меченый T4 Spawner
+  id: STSpawnMobStalkerT4
+  parent: MarkerBase
+  suffix: DEBUG
   components:
-    - type: STWeight
-      self: 70
-    - type: Psyonics
-      psy: 300
-    - type: PsyonicsActionShield
-    - type: PsyonicsActionDizzy
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Species/Human/parts.rsi
+      state: full
+  - type: ConditionalSpawner
+    prototypes:
+    - STMobStalkerT4
 
 - type: entity
   name: Меченый Spawner
@@ -40,4 +41,3 @@
     layers:
       - state: green
       - state: miner
-# end stalker

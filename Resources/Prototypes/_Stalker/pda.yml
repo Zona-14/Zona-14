@@ -63,7 +63,6 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
-      - MessangerCartridge
     cartridgeSlot:
       priority: -1
       name: Cartridge

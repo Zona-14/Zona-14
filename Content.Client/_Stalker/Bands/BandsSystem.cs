@@ -34,6 +34,6 @@ public sealed class BandsSystem : EntitySystem
             return;
 
         // Apply status icon
-        args.StatusIcons.Add(_proto.Index<StatusIconPrototype>(component.BandStatusIcon));
+        args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
     }
 }

@@ -36,7 +36,7 @@
     - type: InteractionOutline
     - type: Pullable
     - type: Sprite
-      sprite: Objects/Misc/books.rsi
+      sprite: _Stalker/Objects/Misc/books.rsi
       scale: 0.8, 0.8
       layers:
       - state: docs4
@@ -67,7 +67,7 @@
     - type: InteractionOutline
     - type: Pullable
     - type: Sprite
-      sprite: Objects/Misc/books.rsi
+      sprite: _Stalker/Objects/Misc/books.rsi
       scale: 0.8, 0.8
       layers:
       - state: docs3
@@ -152,7 +152,7 @@
   suffix: Stalker, книга
   components:
   - type: Sprite
-    sprite: Objects/Misc/books.rsi
+    sprite: _Stalker/Objects/Misc/books.rsi
     layers:
     - state: stalker_book
   - type: Paper

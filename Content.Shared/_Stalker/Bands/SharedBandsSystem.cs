@@ -28,7 +28,7 @@ public sealed class SharedBandsSystem : EntitySystem
     {
         EnsureComp<StatusIconComponent>(uid);
 
-        var proto = _proto.Index<StatusIconPrototype>(component.BandStatusIcon);
+        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
         if (proto.HideOnStealth)
             return;
         if (component is { AltBand: not null, CanChange: true })
@@ -52,7 +52,7 @@ public sealed class SharedBandsSystem : EntitySystem
     {
         RemComp<StatusIconComponent>(uid);
 
-        var proto = _proto.Index<StatusIconPrototype>(component.BandStatusIcon);
+        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
         if (proto.HideOnStealth)
             return;
 
@@ -65,7 +65,7 @@ public sealed class SharedBandsSystem : EntitySystem
         if (!_mobState.IsAlive(uid))
             return;
 
-        var proto = _proto.Index<StatusIconPrototype>(component.BandStatusIcon);
+        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
         if (proto.HideOnStealth)
             return;
 

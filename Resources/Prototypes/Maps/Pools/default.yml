@@ -1,15 +1,18 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Bagel
-  - Box
-  - Cog
-  - Core
-  - Fland
-  - Marathon
-  - Meta
-  - Oasis
-  - Omega
-  - Packed
-  - Reach
+  #stalker-changes
+    - Stalker
+  # - Bagel
+  # - Box
+  # - Cog
+  # - Core
+  # - Fland
+  # - Marathon
+  # - Meta
+  # - Oasis
+  # - Omega
+  # - Packed
+  # - Reach
   #- Train
+  #stalker-changes-end

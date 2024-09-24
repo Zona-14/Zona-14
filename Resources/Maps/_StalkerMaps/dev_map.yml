@@ -3198,16 +3198,16 @@ entities:
           Heat: 3
           Caustic: 1
           Radiation: 3
-          Shock: 39.05
-          Psy: 39.05
+          Shock: 97.62
+          Psy: 97.62
         coefficients:
           Blunt: 0.9
           Slash: 0.9
           Piercing: 0.9
           Heat: 0.6
           Caustic: 0.7
-          Shock: 0.3
-          Psy: 0.5
+          Shock: 0.22
+          Psy: 0.42
           Radiation: 0.8
           Compression: 0.8
     - type: ContainerContainer
@@ -3261,7 +3261,7 @@ entities:
           Blunt: 0.95
           Slash: 0.95
           Piercing: 0.95
-          Heat: 0.75
+          Heat: 0.7
     - type: ContainerContainer
       containers:
         toggleable-clothing: !type:ContainerSlot
@@ -4693,6 +4693,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCBarmen
   entities:
   - uid: 431
@@ -4744,6 +4746,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCBlueprintComputer
   entities:
@@ -4797,6 +4801,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCBotanikMaks
   entities:
   - uid: 183
@@ -4848,6 +4854,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCBuyer
   entities:
@@ -4901,6 +4909,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCCeremoniemeester
   entities:
   - uid: 416
@@ -4952,6 +4962,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCClerkAlexeySmirnov
   entities:
@@ -5005,6 +5017,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCClothingSalesMan
   entities:
   - uid: 705
@@ -5056,6 +5070,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCCustomRadioPlayer
   entities:
@@ -5109,57 +5125,7 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
-- proto: NPCDollarTrader
-  entities:
-  - uid: 950
-    components:
-    - type: Transform
-      pos: -6.5,9.5
-      parent: 179
-    - type: ContainerContainer
-      containers:
-        body_root_part: !type:ContainerSlot {}
-        pocket1: !type:ContainerSlot
-          occludes: False
-        pocket2: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        id: !type:ContainerSlot
-          occludes: False
-        belt: !type:ContainerSlot
-          occludes: False
-        back: !type:ContainerSlot
-          occludes: False
-        artifact1: !type:ContainerSlot
-          occludes: False
-        artifact2: !type:ContainerSlot
-          occludes: False
-        artifact3: !type:ContainerSlot
-          occludes: False
-        artifact4: !type:ContainerSlot
-          occludes: False
-        legs: !type:ContainerSlot
-          occludes: False
-        torso: !type:ContainerSlot
-          occludes: False
-        neck: !type:ContainerSlot
-          occludes: False
-        eyes: !type:ContainerSlot
-          occludes: False
-        gloves: !type:ContainerSlot
-          occludes: False
-        shoes: !type:ContainerSlot
-          occludes: False
-        outerClothing: !type:ContainerSlot
-          occludes: False
-        mask: !type:ContainerSlot
-          occludes: False
-        head: !type:ContainerSlot
-          occludes: False
-        ears: !type:ContainerSlot
-          occludes: False
-        dopweapon: !type:ContainerSlot
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCErjanAlimov
   entities:
@@ -5213,6 +5179,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCFarmerSerega
   entities:
   - uid: 770
@@ -5264,6 +5232,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCGunmith
   entities:
@@ -5317,6 +5287,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCGunmithAdvanced
   entities:
   - uid: 184
@@ -5368,6 +5340,62 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
+- proto: NPCIgorIvanovich
+  entities:
+  - uid: 950
+    components:
+    - type: Transform
+      pos: -6.5,9.5
+      parent: 179
+    - type: ContainerContainer
+      containers:
+        body_root_part: !type:ContainerSlot {}
+        pocket1: !type:ContainerSlot
+          occludes: False
+        pocket2: !type:ContainerSlot
+          occludes: False
+        suitstorage: !type:ContainerSlot
+          occludes: False
+        id: !type:ContainerSlot
+          occludes: False
+        belt: !type:ContainerSlot
+          occludes: False
+        back: !type:ContainerSlot
+          occludes: False
+        artifact1: !type:ContainerSlot
+          occludes: False
+        artifact2: !type:ContainerSlot
+          occludes: False
+        artifact3: !type:ContainerSlot
+          occludes: False
+        artifact4: !type:ContainerSlot
+          occludes: False
+        legs: !type:ContainerSlot
+          occludes: False
+        torso: !type:ContainerSlot
+          occludes: False
+        neck: !type:ContainerSlot
+          occludes: False
+        eyes: !type:ContainerSlot
+          occludes: False
+        gloves: !type:ContainerSlot
+          occludes: False
+        shoes: !type:ContainerSlot
+          occludes: False
+        outerClothing: !type:ContainerSlot
+          occludes: False
+        mask: !type:ContainerSlot
+          occludes: False
+        head: !type:ContainerSlot
+          occludes: False
+        ears: !type:ContainerSlot
+          occludes: False
+        dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCJuryIzvorotin
   entities:
@@ -5421,6 +5449,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCMaksimka
   entities:
   - uid: 768
@@ -5472,6 +5502,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCNikitaAlkash
   entities:
@@ -5525,6 +5557,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCPetrAlkash
   entities:
   - uid: 920
@@ -5576,6 +5610,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCPharmacist
   entities:
@@ -5629,6 +5665,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCPovarGena
   entities:
   - uid: 278
@@ -5680,6 +5718,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCRadioPlayer
   entities:
@@ -5733,6 +5773,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCResearchInstitutes
   entities:
   - uid: 276
@@ -5784,6 +5826,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCResearchInstitutesRechnov
   entities:
@@ -5837,6 +5881,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCSalesmanViktor
   entities:
   - uid: 275
@@ -5888,6 +5934,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCSidorovich
   entities:
@@ -5941,6 +5989,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCTechnickVitya
   entities:
   - uid: 841
@@ -5992,6 +6042,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: NPCTourist
   entities:
@@ -6045,6 +6097,8 @@ entities:
           occludes: False
         dopweapon: !type:ContainerSlot
           occludes: False
+        cloak: !type:ContainerSlot
+          occludes: False
 - proto: NPCTrainStation
   entities:
   - uid: 147
@@ -6096,6 +6150,8 @@ entities:
         ears: !type:ContainerSlot
           occludes: False
         dopweapon: !type:ContainerSlot
+          occludes: False
+        cloak: !type:ContainerSlot
           occludes: False
 - proto: Ointment
   entities:
@@ -7214,22 +7270,12 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 179
+- proto: STSpawnMobStalkerT4
+  entities:
   - uid: 427
     components:
     - type: Transform
       pos: -6.5,-0.5
-      parent: 179
-- proto: STSpawnPointStalker
-  entities:
-  - uid: 1246
-    components:
-    - type: Transform
-      pos: -5.5,0.5
-      parent: 179
-  - uid: 1247
-    components:
-    - type: Transform
-      pos: -5.5,-0.5
       parent: 179
 - proto: STThrowingknifeBlue
   entities:

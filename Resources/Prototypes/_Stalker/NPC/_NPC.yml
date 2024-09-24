@@ -347,9 +347,9 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCDollarTrader
+  id: NPCIgorIvanovich
   noSpawn: false
-  name: Обменщик [→   ←]
+  name: Игорь Иванович [→   ←]
   description:
   components:
   - type: Sprite
@@ -368,7 +368,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Dollar
-    shopPresetId: DollarTrader
+    shopPresetId: IgorIvanovichShopPreset
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
