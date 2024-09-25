@@ -7,6 +7,8 @@ using Content.Shared.Damage;
 using Robust.Server.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using Robust.Server.Player;
+using Robust.Shared.Console;
 
 namespace Content.Server.Atmos.Rotting;
 
@@ -16,6 +18,8 @@ public sealed class RottingSystem : SharedRottingSystem
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly IPlayerManager _players = default!; // Stalker-Changes
+    [Dependency] private readonly IConsoleHost _console = default!; // Stalker-Changes
 
     public override void Initialize()
     {
@@ -120,6 +124,13 @@ public sealed class RottingSystem : SharedRottingSystem
                 }
             }
 
+            if (RotStage(uid, rotting, perishable) >= 1) // Stalker-Changes-Start
+            {
+                Respawn(uid);
+                QueueDel(uid);
+                continue;
+            } // Stalker-Changes-End
+
             if (!TryComp<PhysicsComponent>(uid, out var physics))
                 continue;
             // We need a way to get the mass of the mob alone without armor etc in the future
@@ -129,4 +140,10 @@ public sealed class RottingSystem : SharedRottingSystem
             tileMix?.AdjustMoles(Gas.Ammonia, molRate * physics.FixturesMass);
         }
     }
+    private void Respawn(EntityUid uid) // Stalker-Changes-Start
+    {
+        if (!_players.TryGetSessionByEntity(uid, out var session))
+            return;
+        _console.ExecuteCommand(session, "respawnnow");
+    } // Stalker-Changes-End
 }

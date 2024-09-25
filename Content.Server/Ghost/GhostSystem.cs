@@ -162,7 +162,7 @@ namespace Content.Server.Ghost
             if (component.MustBeDead && (_mobState.IsAlive(uid) || _mobState.IsCritical(uid)))
                 return;
 
-            OnGhostAttempt(mindId, component.CanReturn, mind: mind);
+            //OnGhostAttempt(mindId, component.CanReturn, mind: mind);  Stalker-Changes forbid going ghost
         }
 
         private void OnGhostStartup(EntityUid uid, GhostComponent component, ComponentStartup args)

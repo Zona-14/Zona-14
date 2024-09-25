@@ -43,7 +43,7 @@ public sealed class BodySystem : SharedBodySystem
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {
             mind.TimeOfDeath ??= _gameTiming.RealTime;
-            _ghostSystem.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
+            //_ghostSystem.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind); Stalker-Changes forbid going ghost
         }
     }
 
