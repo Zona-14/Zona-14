@@ -176,7 +176,10 @@ public sealed class ShopSystem : SharedShopSystem
         if (!Resolve(shop, ref component))
             return;
 
-        if (!_ui.TryGetOpenUi(shop, ShopUiKey.Key, out var ui))
+        if (user is null)
+            return;
+
+        if (!_ui.TryOpenUi(shop, ShopUiKey.Key, user.Value))
             return;
 
         if (user == null)

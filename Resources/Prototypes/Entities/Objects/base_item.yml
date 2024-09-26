@@ -42,6 +42,9 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
+  - type: Currency
+    price:
+      Roubles: 1
 
 - type: entity
   name: "storage item"

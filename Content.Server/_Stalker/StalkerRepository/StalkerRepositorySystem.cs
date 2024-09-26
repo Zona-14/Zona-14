@@ -209,10 +209,12 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
         var userItems = new List<RepositoryItemInfo>();
 
-        if (user != null)
-            userItems = GenerateItemsInfo(GetRecursiveContainerElements(user.Value), true);
+        if (user == null)
+            return;
 
-        if (!_ui.TryGetOpenUi(repository, StalkerRepositoryUiKey.Key, out var ui))
+        userItems = GenerateItemsInfo(GetRecursiveContainerElements(user.Value), true);
+
+        if (!_ui.TryOpenUi(repository, StalkerRepositoryUiKey.Key, user.Value))
             return;
 
         var items = component.ContainedItems;
