@@ -9,7 +9,7 @@
       self: 2.7
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
-      timeToEquip: 2
+      equipDelay: 2
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
       size: Large

@@ -250,7 +250,7 @@
     containers:
       toggleable-clothing: !type:ContainerSlot {}
   - type: Clothing
-    timeToEquip: 2
+    equipDelay: 2
     slots:
     - CLOAK
   - type: Item

@@ -16,7 +16,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
-      timeToEquip: 1
+      equipDelay: 1
     - type: Gun
       projectileSpeed: 20
       minAngle: 51

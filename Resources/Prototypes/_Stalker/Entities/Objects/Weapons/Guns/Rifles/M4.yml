@@ -13,7 +13,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
-      timeToEquip: 2
+      equipDelay: 2
     - type: Gun
       fireRate: 8
       soundGunshot:

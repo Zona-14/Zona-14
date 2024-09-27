@@ -423,7 +423,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp19.rsi
-      timeToEquip: 1
+      equipDelay: 1
     - type: Wieldable
     - type: GunWieldBonus
       minAngle: -40
@@ -530,7 +530,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
-      timeToEquip: 1
+      equipDelay: 1
     - type: Gun
       projectileSpeed: 18
       minAngle: 65
@@ -679,7 +679,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
-      timeToEquip: 2
+      equipDelay: 2
     - type: Gun
       fireRate: 8
       soundGunshot:
@@ -731,7 +731,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galil.rsi
-    timeToEquip: 3
+    equipDelay: 3
   - type: Gun
     fireRate: 8
     soundGunshot:
@@ -791,7 +791,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
-    timeToEquip: 2
+    equipDelay: 2
   - type: Gun
     fireRate: 6
     soundGunshot:
@@ -893,7 +893,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
-      timeToEquip: 3
+      equipDelay: 3
     - type: Gun
       fireRate: 3
       soundGunshot:
@@ -948,7 +948,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
-      timeToEquip: 3
+      equipDelay: 3
     - type: Gun
       fireRate: 6
       soundGunshot:
@@ -1620,7 +1620,7 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
-    timeToEquip: 3
+    equipDelay: 3
     slots:
     - neck
   - type: Armor
@@ -1668,7 +1668,7 @@
     sprite: _Stalker/Objects/Clothing/Cloak/coat_pahan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Cloak/coat_pahan.rsi
-    timeToEquip: 4
+    equipDelay: 4
     slots:
     - neck
   - type: Armor

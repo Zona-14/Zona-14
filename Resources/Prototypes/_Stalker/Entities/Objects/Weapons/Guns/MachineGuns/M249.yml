@@ -21,7 +21,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
-      timeToEquip: 3
+      equipDelay: 3
     - type: Gun
       fireRate: 10
       soundGunshot:

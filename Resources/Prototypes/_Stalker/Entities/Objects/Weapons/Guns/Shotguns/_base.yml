@@ -14,7 +14,7 @@
     shape:
       - 0,0,5,1
   - type: Clothing
-    timeToEquip: 1
+    equipDelay: 1
     quickEquip: false
     slots:
     - Back

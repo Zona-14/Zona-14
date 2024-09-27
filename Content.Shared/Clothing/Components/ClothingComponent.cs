@@ -65,10 +65,10 @@ public sealed partial class ClothingComponent : Component
     public string? InSlot;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan EquipDelay = TimeSpan.Zero;
+    public TimeSpan EquipDelay = TimeSpan.FromSeconds(0.1f); // Stalker-Changes
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan UnequipDelay = TimeSpan.Zero;
+    public TimeSpan UnequipDelay = TimeSpan.FromSeconds(0.1f); // Stalker-Changes
 
     /// <summary>
     /// Offset for the strip time for an entity with this component.

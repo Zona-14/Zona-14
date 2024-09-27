@@ -11,7 +11,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
-      timeToEquip: 4
+      equipDelay: 4
     - type: Gun
       fireRate: 12
       minAngle: 100

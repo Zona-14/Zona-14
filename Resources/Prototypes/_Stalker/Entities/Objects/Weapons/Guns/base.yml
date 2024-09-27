@@ -10,7 +10,7 @@
     - type: STWeight
       self: 2.7
     - type: Clothing
-      timeToEquip: 1
+      equipDelay: 1
       slots:
         - Back
         - SuitStorage

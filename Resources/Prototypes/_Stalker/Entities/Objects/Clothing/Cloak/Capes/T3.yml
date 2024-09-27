@@ -170,7 +170,7 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_greh.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_greh.rsi
-    timeToEquip: 8
+    equipDelay: 8
     slots:
     - outerClothing
   - type: Armor
@@ -225,7 +225,7 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_greh.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_greh.rsi
-    timeToEquip: 8
+    equipDelay: 8
     slots:
     - outerClothing
   - type: Armor

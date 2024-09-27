@@ -10,7 +10,7 @@
     self: 3.6
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga.rsi
-    timeToEquip: 2
+    equipDelay: 2
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga.rsi
     size: Large

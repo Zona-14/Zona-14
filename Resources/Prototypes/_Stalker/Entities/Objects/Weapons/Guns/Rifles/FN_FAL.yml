@@ -15,7 +15,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
-      timeToEquip: 3
+      equipDelay: 3
     - type: Gun
       fireRate: 3
       soundGunshot:

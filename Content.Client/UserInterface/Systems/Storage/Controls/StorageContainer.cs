@@ -428,7 +428,7 @@ public sealed class StorageContainer : BaseWindow
 
         foreach (var child in _backgroundGrid.Children)
         {
-            child.ModulateSelfOverride = Color.FromHex("#222222");
+            child.ModulateSelfOverride = Color.FromHex("#FFFFFF"); // Stalker-Changes | White because default #222222 makes it black, IDK why.
         }
 
         if (UserInterfaceManager.CurrentlyHovered is StorageContainer con && con != this)

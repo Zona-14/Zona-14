@@ -9,7 +9,7 @@
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
-      timeToEquip: 3
+      equipDelay: 3
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
       size: Large

@@ -45,7 +45,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
-      timeToEquip: 2
+      equipDelay: 2
     - type: BallisticAmmoProvider
       capacity: 4
     - type: Gun

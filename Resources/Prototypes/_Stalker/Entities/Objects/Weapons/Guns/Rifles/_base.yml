@@ -8,7 +8,7 @@
     - type: RepositoryItem
       categoryName: Оружие
     - type: Clothing
-      timeToEquip: 2
+      equipDelay: 2
       quickEquip: false
       slots:
       - Back

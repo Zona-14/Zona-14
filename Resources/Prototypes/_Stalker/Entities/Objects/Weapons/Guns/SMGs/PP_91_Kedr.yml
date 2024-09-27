@@ -13,7 +13,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp-91.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp-91.rsi
-      timeToEquip: 1
+      equipDelay: 1
     - type: Gun
       projectileSpeed: 17
       minAngle: 55
@@ -69,7 +69,7 @@
     - 0,0,1,1
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp-91.rsi
-    timeToEquip: 0.2
+    equipDelay: 0.2
   - type: Gun
     projectileSpeed: 20
     minAngle: 2
