@@ -5,6 +5,7 @@
   description: A platform capable of performing analysis on various types of artifacts.
   components:
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/artifact_analyzer.rsi
     drawdepth: FloorObjects
     layers:
@@ -99,6 +100,7 @@
   - type: Sprite
     sprite: Structures/Machines/artifact_crusher.rsi
     offset: 0,0.5
+    noRot: true
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]

@@ -1,0 +1,51 @@
+[game]
+hostname = "☢️ S.T.A.L.K.E.R. Release."
+desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
+map = "STWorld" # st-changes-dev-map
+map_pool = "STDefaultMapPool"  # st-changes-map-pool
+
+maxplayers = 80
+soft_max_players = 60
+
+map_rotation = false
+role_timers = true
+peaceful_end = false
+
+[rules]
+time = 10.0
+
+[whitelist]
+enabled = false
+
+[shuttle]
+auto_call_time = 0
+emergency = false
+arrivals = false
+
+[ic]
+flavor_text = true
+punctuation = false
+
+[queue]
+enabled = true
+
+[tts]
+enabled = false
+
+[discord_auth]
+enabled = false
+
+[infolinks]
+discord = "https://discord.gg/pu6DEPGjsN"
+patreon = "https://boosty.to/stalkerss14"
+
+[net]
+sendbuffersize = 393213
+receivebuffersize = 393213
+
+[physics]
+maxlinvelocity = 60.0
+
+[hub]
+advertise = false
+tags = "lang:ru,lang:en,rp:medium,region:eu_e"

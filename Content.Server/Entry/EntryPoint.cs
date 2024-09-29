@@ -38,7 +38,7 @@ namespace Content.Server.Entry
 {
     public sealed class EntryPoint : GameServer
     {
-        internal const string ConfigPresetsDir = "/ConfigPresets/";
+        internal const string ConfigPresetsDir = "/ConfigPresets/Stalker"; // stalker-changes. Taking configs from ours
         private const string ConfigPresetsDirBuild = $"{ConfigPresetsDir}Build/";
 
         private EuiManager _euiManager = default!;
@@ -201,13 +201,18 @@ namespace Content.Server.Entry
 
         private static void LoadBuildConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)
         {
+
+            // stalker-changes. Taking configs from Stalker folder
 #if TOOLS
-            Load(CCVars.ConfigPresetDevelopment, "development");
+            Load(CCVars.ConfigPresetDevelopment, "sttools");
 #endif
 #if DEBUG
-            Load(CCVars.ConfigPresetDebug, "debug");
+            Load(CCVars.ConfigPresetDebug, "stdebug");
 #endif
-
+#if RELEASE
+            Load(CCVars.ConfigPresetDebug, "strelease");
+#endif
+            // stalker-changes-ends
             void Load(CVarDef<bool> cVar, string name)
             {
                 var path = $"{ConfigPresetsDirBuild}{name}.toml";

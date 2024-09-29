@@ -1,8 +1,9 @@
-[game]
-hostname = "☢️ S.T.A.L.K.E.R."
+﻿[game]
+hostname = "☢️ S.T.A.L.K.E.R. Tools."
+lobbyenabled = false
 desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
-
-map_pool = "STDefaultMapPool"
+map = "STDev" # st-changes-dev-map
+map_pool = "STDefaultMapPool"  # st-changes-map-pool
 
 maxplayers = 80
 soft_max_players = 60
@@ -49,3 +50,7 @@ maxlinvelocity = 60.0
 [hub]
 advertise = false
 tags = "lang:ru,lang:en,rp:medium,region:eu_e"
+
+[events]
+# Annoying
+enabled = false
