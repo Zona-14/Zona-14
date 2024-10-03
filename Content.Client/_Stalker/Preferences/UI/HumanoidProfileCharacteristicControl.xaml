@@ -1,6 +1,5 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         x:Class="Content.Client._Stalker.Preferences.UI.HumanoidProfileCharacteristicControl"
          HorizontalExpand="True">
     <PanelContainer HorizontalExpand="True">
         <GridContainer Columns="2">
