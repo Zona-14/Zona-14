@@ -239,7 +239,19 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _savePanel.SaveButton.OnPressed += _ =>
         {
+            // stalker-changes-start
+            if (EditedProfile is null)
+                return;
+            if (!EditedProfile.Changeable)
+            {
+                _savePanel.Close();
+                return;
+            }
+
+            EditedProfile.Changeable = false;
+            // stalker-changes-end
             SaveProfile();
+
 
             _savePanel.Close();
 

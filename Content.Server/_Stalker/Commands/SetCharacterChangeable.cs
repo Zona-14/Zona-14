@@ -11,7 +11,7 @@ namespace Content.Server._Stalker.Commands;
 [AdminCommand(AdminFlags.Admin)]
 public sealed class SetCharacterChangeable : IConsoleCommand
 {
-    public string Command => "set_character_changeable";
+    public string Command => "st_set_character_changeable";
     public string Description => "";
     public string Help => "set_character_changeable <username> <changeable> <slot>";
 

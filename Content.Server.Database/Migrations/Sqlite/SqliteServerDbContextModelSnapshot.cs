@@ -746,6 +746,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
 
+                    b.Property<bool>("Changeable")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("changeable");
+
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")

@@ -155,6 +155,8 @@ namespace Content.Client.Lobby.UI
 
             SaveButton.OnPressed += args =>
             {
+                if (Profile != null && !Profile.Changeable)
+                    return;
                 SetChangeable(false); // stalker-changes
                 Save?.Invoke();
             };
@@ -1519,6 +1521,19 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateSaveButton()
         {
+            // stalker-changes-start
+            if (Profile is null)
+            {
+                SaveButton.Disabled = true;
+                return;
+            }
+
+            if (!Profile.Changeable)
+            {
+                SaveButton.Disabled = true;
+                return;
+            }
+            // stalker-changes-ends
             SaveButton.Disabled = Profile is null || !IsDirty;
             ResetButton.Disabled = Profile is null || !IsDirty;
         }
