@@ -9,7 +9,6 @@ map_rotation = false
 role_timers = true
 peaceful_end = false
 lobbyduration = 1
-
 [rules]
 time = 10.0
 
@@ -21,6 +20,7 @@ auto_call_time = 0
 emergency = false
 arrivals = false
 preload_grids = false
+camera_rotation_locked = true
 
 [ic]
 flavor_text = true

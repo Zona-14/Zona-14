@@ -4,11 +4,11 @@ lobbyenabled = false
 desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
 map = "STDev" # st-changes-dev-map
 map_pool = "STDefaultMapPool"  # st-changes-map-pool
+map_rotation = false
 
 maxplayers = 80
 soft_max_players = 60
 
-map_rotation = false
 role_timers = true
 peaceful_end = false
 
@@ -23,7 +23,7 @@ auto_call_time = 0
 emergency = false
 arrivals = false
 preload_grids = false
-
+camera_rotation_locked = true
 [ic]
 flavor_text = true
 punctuation = false

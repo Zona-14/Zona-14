@@ -106,6 +106,7 @@
     - Shock
     - Cold
     - Caustic
+    - Compression # stalker-changes
   - type: DamageOnHighSpeedImpact
     damage:
       types:

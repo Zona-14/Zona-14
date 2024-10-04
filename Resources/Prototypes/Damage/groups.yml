@@ -5,6 +5,7 @@
     - Blunt
     - Slash
     - Piercing
+    - Compression # stalker-changes
 
 - type: damageGroup
   id: Burn
