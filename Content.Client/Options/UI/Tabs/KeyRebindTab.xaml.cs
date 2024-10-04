@@ -190,6 +190,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.SmartEquipBelt);
             AddButton(ContentKeyFunctions.OpenBackpack);
             AddButton(ContentKeyFunctions.SmartEquipOuterClothing); // Stalker-Changes-UI
+            AddButton(ContentKeyFunctions.Lay); // Stalker-Changes-UI
             AddButton(ContentKeyFunctions.OpenBelt);
             AddButton(ContentKeyFunctions.ThrowItemInHand);
             AddButton(ContentKeyFunctions.TryPullObject);

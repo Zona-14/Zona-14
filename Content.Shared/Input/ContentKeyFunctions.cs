@@ -30,7 +30,8 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction OpenGuidebook = "OpenGuidebook";
         public static readonly BoundKeyFunction OpenInventoryMenu = "OpenInventoryMenu";
         public static readonly BoundKeyFunction SmartEquipBackpack = "SmartEquipBackpack";
-        public static readonly BoundKeyFunction SmartEquipOuterClothing = "SmartEquipOuterClothing"; //Stalker-Changes-UI
+        public static readonly BoundKeyFunction SmartEquipOuterClothing = "SmartEquipOuterClothing"; // Stalker-Changes-UI
+        public static readonly BoundKeyFunction Lay = "Lay"; // Stalker-Changes-UI
         public static readonly BoundKeyFunction SmartEquipBelt = "SmartEquipBelt";
         public static readonly BoundKeyFunction OpenBackpack = "OpenBackpack";
         public static readonly BoundKeyFunction OpenBelt = "OpenBelt";
@@ -117,6 +118,5 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction MappingRemoveDecal = "MappingRemoveDecal";
         public static readonly BoundKeyFunction MappingCancelEraseDecal = "MappingCancelEraseDecal";
         public static readonly BoundKeyFunction MappingOpenContextMenu = "MappingOpenContextMenu";
-        public static readonly BoundKeyFunction Lay = "Lay"; // stalker-changes
     }
 }

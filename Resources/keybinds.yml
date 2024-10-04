@@ -584,3 +584,12 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
+  # stalker-changes
+- function: Lay
+  type: State
+  key: F
+- function: SmartEquipOuterClothing
+  type: State
+  key: R
+  mod1: Shift
+  # stalker-changes-ends

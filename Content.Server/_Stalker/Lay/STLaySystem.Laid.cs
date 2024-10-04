@@ -1,4 +1,4 @@
-﻿using Content.Shared.Movement.Events;
+using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
 
@@ -29,6 +29,7 @@ public sealed partial class STLaySystem
     {
         laid.Comp.Standing = true;
         _standingState.Stand(laid);
+        laid.Comp.Standing = true;
         _movementSpeedModifier.RefreshMovementSpeedModifiers(laid);
     }
 
