@@ -58,3 +58,6 @@ enabled = false
 enabled = false
 [procgen]
 preload = false
+
+[crewmanifest]
+no_entity = false
