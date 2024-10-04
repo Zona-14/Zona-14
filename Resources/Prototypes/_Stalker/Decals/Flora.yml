@@ -1,6 +1,6 @@
 - type: decal
   id: Florabranch1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -8,7 +8,7 @@
 
 - type: decal
   id: Florabranch2
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -16,7 +16,7 @@
 
 - type: decal
   id: Florabranch3
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -24,7 +24,7 @@
 
 - type: decal
   id: Florabranch4
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -32,7 +32,7 @@
 
 - type: decal
   id: Florabranch5
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -40,7 +40,7 @@
 
 - type: decal
   id: Florabranch6
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -48,7 +48,7 @@
 
 - type: decal
   id: Florabush1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -56,7 +56,7 @@
 
 - type: decal
   id: Floraflower1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -64,7 +64,7 @@
 
 - type: decal
   id: Floragrass1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -72,7 +72,7 @@
 
 - type: decal
   id: Floragrass2
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -80,7 +80,7 @@
 
 - type: decal
   id: Floragrass3
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -88,7 +88,7 @@
 
 - type: decal
   id: Floragrass4
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -96,7 +96,7 @@
 
 - type: decal
   id: Florashroom1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -104,7 +104,7 @@
 
 - type: decal
   id: Floratallgrass1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -112,7 +112,7 @@
 
 - type: decal
   id: Floratallgrass2
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -120,7 +120,7 @@
 
 - type: decal
   id: Floratallgrass3
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -128,7 +128,7 @@
 
 - type: decal
   id: Floratallgrass4
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -136,7 +136,7 @@
 
 - type: decal
   id: Floravtallgrass
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -144,7 +144,7 @@
 
 - type: decal
   id: Floravtallgrass2
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -152,7 +152,7 @@
 
 - type: decal
   id: Grassa_big1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -163,7 +163,7 @@
 # Трава о которой мечтал Илюша
 - type: decal
   id: GreenGrass1
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -171,7 +171,7 @@
 
 - type: decal
   id: GreenGrass2
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -179,7 +179,7 @@
 
 - type: decal
   id: GreenGrass3
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -187,7 +187,7 @@
 
 - type: decal
   id: GreenGrass4
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -195,7 +195,7 @@
 
 - type: decal
   id: GreenGrass5
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -203,7 +203,7 @@
 
 - type: decal
   id: GreenGrass6
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -211,7 +211,7 @@
 
 - type: decal
   id: GreenGrass7
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -219,7 +219,7 @@
 
 - type: decal
   id: GreenGrass8
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -227,7 +227,7 @@
 
 - type: decal
   id: GreenGrass9
-  tags: ["stalker", "Flora"]
+  tags: ["ST", "Flora"]
   defaultCleanable: true
   sprite:
     sprite: _Stalker/Decals/flor.rsi
@@ -236,8 +236,9 @@
 # moved to _Stalker
 
 - type: decal
-  id: Grassa1
-  tags: ["flora"]
+  id: STGrassa1
+  tags: ["ST", "Flora"]
+  parent: Grassa1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -245,8 +246,9 @@
     state: grassa1
 
 - type: decal
-  id: Grassa2
-  tags: ["flora"]
+  id: STGrassa2
+  tags: ["ST", "Flora"]
+  parent: Grassa2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -254,8 +256,9 @@
     state: grassa2
 
 - type: decal
-  id: Grassa3
-  tags: ["flora"]
+  id: STGrassa3
+  tags: ["ST", "Flora"]
+  parent: Grassa3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -263,8 +266,9 @@
     state: grassa3
 
 - type: decal
-  id: Grassa4
-  tags: ["flora"]
+  id: STGrassa4
+  tags: ["ST", "Flora"]
+  parent: Grassa4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -272,8 +276,9 @@
     state: grassa4
 
 - type: decal
-  id: Grassa5
-  tags: ["flora"]
+  id: STGrassa5
+  tags: ["ST", "Flora"]
+  parent: Grassa5
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -281,8 +286,9 @@
     state: grassa5
 
 - type: decal
-  id: Grassb1
-  tags: ["flora"]
+  id: STGrassb1
+  tags: ["ST", "Flora"]
+  parent: Grassb1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -290,8 +296,9 @@
     state: grassb1
 
 - type: decal
-  id: Grassb2
-  tags: ["flora"]
+  id: STGrassb2
+  tags: ["ST", "Flora"]
+  parent: Grassb2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -299,8 +306,9 @@
     state: grassb2
 
 - type: decal
-  id: Grassb3
-  tags: ["flora"]
+  id: STGrassb3
+  tags: ["ST", "Flora"]
+  parent: Grassb3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -308,8 +316,9 @@
     state: grassb3
 
 - type: decal
-  id: Grassb4
-  tags: ["flora"]
+  id: STGrassb4
+  tags: ["ST", "Flora"]
+  parent: Grassb4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -317,8 +326,9 @@
     state: grassb4
 
 - type: decal
-  id: Grassb5
-  tags: ["flora"]
+  id: STGrassb5
+  tags: ["ST", "Flora"]
+  parent: Grassb5
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -326,8 +336,9 @@
     state: grassb5
 
 - type: decal
-  id: Grassc1
-  tags: ["flora"]
+  id: STGrassc1
+  tags: ["ST", "Flora"]
+  parent: Grassc1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -335,8 +346,9 @@
     state: grassc1
 
 - type: decal
-  id: Grassc2
-  tags: ["flora"]
+  id: STGrassc2
+  tags: ["ST", "Flora"]
+  parent: Grassc2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -344,8 +356,9 @@
     state: grassc2
 
 - type: decal
-  id: Grassc3
-  tags: ["flora"]
+  id: STGrassc3
+  tags: ["ST", "Flora"]
+  parent: Grassc3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -353,8 +366,9 @@
     state: grassc3
 
 - type: decal
-  id: Grassc4
-  tags: ["flora"]
+  id: STGrassc4
+  tags: ["ST", "Flora"]
+  parent: Grassc4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -362,8 +376,9 @@
     state: grassc4
 
 - type: decal
-  id: Grassd1
-  tags: ["flora"]
+  id: STGrassd1
+  tags: ["ST", "Flora"]
+  parent: Grassd1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -371,8 +386,9 @@
     state: grassd1
 
 - type: decal
-  id: Grassd2
-  tags: ["flora"]
+  id: STGrassd2
+  tags: ["ST", "Flora"]
+  parent: Grassd2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -380,8 +396,9 @@
     state: grassd2
 
 - type: decal
-  id: Grassd3
-  tags: ["flora"]
+  id: STGrassd3
+  tags: ["ST", "Flora"]
+  parent: Grassd3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -389,8 +406,9 @@
     state: grassd3
 
 - type: decal
-  id: Grasse1
-  tags: ["flora"]
+  id: STGrasse1
+  tags: ["ST", "Flora"]
+  parent: Grasse1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -398,8 +416,9 @@
     state: grasse1
 
 - type: decal
-  id: Grasse2
-  tags: ["flora"]
+  id: STGrasse2
+  tags: ["ST", "Flora"]
+  parent: Grasse2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -407,8 +426,9 @@
     state: grasse2
 
 - type: decal
-  id: Grasse3
-  tags: ["flora"]
+  id: STGrasse3
+  tags: ["ST", "Flora"]
+  parent: Grasse3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -416,8 +436,9 @@
     state: grasse3
 
 - type: decal
-  id: grasssnow
-  tags: ["flora"]
+  id: STgrasssnow
+  tags: ["ST", "Flora"]
+  parent: grasssnow
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -425,8 +446,9 @@
     state: grasssnow
 
 - type: decal
-  id: grasssnow01
-  tags: ["flora"]
+  id: STgrasssnow01
+  tags: ["ST", "Flora"]
+  parent: grasssnow01
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -434,8 +456,9 @@
     state: grasssnow01
 
 - type: decal
-  id: grasssnow02
-  tags: ["flora"]
+  id: STgrasssnow02
+  tags: ["ST", "Flora"]
+  parent: grasssnow02
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -443,8 +466,9 @@
     state: grasssnow02
 
 - type: decal
-  id: grasssnow03
-  tags: ["flora"]
+  id: STgrasssnow03
+  tags: ["ST", "Flora"]
+  parent: grasssnow03
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -452,8 +476,9 @@
     state: grasssnow03
 
 - type: decal
-  id: grasssnow04
-  tags: ["flora"]
+  id: STgrasssnow04
+  tags: ["ST", "Flora"]
+  parent: grasssnow04
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -461,8 +486,9 @@
     state: grasssnow04
 
 - type: decal
-  id: grasssnow05
-  tags: ["flora"]
+  id: STgrasssnow05
+  tags: ["ST", "Flora"]
+  parent: grasssnow05
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -470,8 +496,9 @@
     state: grasssnow05
 
 - type: decal
-  id: grasssnow06
-  tags: ["flora"]
+  id: STgrasssnow06
+  tags: ["ST", "Flora"]
+  parent: grasssnow06
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -479,8 +506,9 @@
     state: grasssnow06
 
 - type: decal
-  id: grasssnow07
-  tags: ["flora"]
+  id: STgrasssnow07
+  tags: ["ST", "Flora"]
+  parent: grasssnow07
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -488,8 +516,9 @@
     state: grasssnow07
 
 - type: decal
-  id: grasssnow08
-  tags: ["flora"]
+  id: STgrasssnow08
+  tags: ["ST", "Flora"]
+  parent: grasssnow08
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -497,8 +526,9 @@
     state: grasssnow08
 
 - type: decal
-  id: grasssnow09
-  tags: ["flora"]
+  id: STgrasssnow09
+  tags: ["ST", "Flora"]
+  parent: grasssnow09
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -506,8 +536,9 @@
     state: grasssnow09
 
 - type: decal
-  id: grasssnow10
-  tags: ["flora"]
+  id: STgrasssnow10
+  tags: ["ST", "Flora"]
+  parent: grasssnow10
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -515,8 +546,9 @@
     state: grasssnow10
 
 - type: decal
-  id: grasssnow11
-  tags: ["flora"]
+  id: STgrasssnow11
+  tags: ["ST", "Flora"]
+  parent: grasssnow11
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -524,8 +556,9 @@
     state: grasssnow11
 
 - type: decal
-  id: grasssnow12
-  tags: ["flora"]
+  id: STgrasssnow12
+  tags: ["ST", "Flora"]
+  parent: grasssnow12
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -533,8 +566,9 @@
     state: grasssnow12
 
 - type: decal
-  id: grasssnow13
-  tags: ["flora"]
+  id: STgrasssnow13
+  tags: ["ST", "Flora"]
+  parent: grasssnow13
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -542,8 +576,9 @@
     state: grasssnow13
 
 - type: decal
-  id: grasssnowa1
-  tags: ["flora"]
+  id: STgrasssnowa1
+  tags: ["ST", "Flora"]
+  parent: grasssnowa1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -551,8 +586,9 @@
     state: grasssnowa1
 
 - type: decal
-  id: grasssnowa2
-  tags: ["flora"]
+  id: STgrasssnowa2
+  tags: ["ST", "Flora"]
+  parent: grasssnowa2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -560,8 +596,9 @@
     state: grasssnowa2
 
 - type: decal
-  id: grasssnowa3
-  tags: ["flora"]
+  id: STgrasssnowa3
+  tags: ["ST", "Flora"]
+  parent: grasssnowa3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -569,8 +606,9 @@
     state: grasssnowa3
 
 - type: decal
-  id: grasssnowb1
-  tags: ["flora"]
+  id: STgrasssnowb1
+  tags: ["ST", "Flora"]
+  parent: grasssnowb1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -578,8 +616,9 @@
     state: grasssnowb1
 
 - type: decal
-  id: grasssnowb2
-  tags: ["flora"]
+  id: STgrasssnowb2
+  tags: ["ST", "Flora"]
+  parent: grasssnowb2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -587,8 +626,9 @@
     state: grasssnowb2
 
 - type: decal
-  id: grasssnowb3
-  tags: ["flora"]
+  id: STgrasssnowb3
+  tags: ["ST", "Flora"]
+  parent: grasssnowb3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -596,8 +636,9 @@
     state: grasssnowb3
 
 - type: decal
-  id: grasssnowc1
-  tags: ["flora"]
+  id: STgrasssnowc1
+  tags: ["ST", "Flora"]
+  parent: grasssnowc1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -605,8 +646,9 @@
     state: grasssnowc1
 
 - type: decal
-  id: grasssnowc2
-  tags: ["flora"]
+  id: STgrasssnowc2
+  tags: ["ST", "Flora"]
+  parent: grasssnowc2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -614,8 +656,9 @@
     state: grasssnowc2
 
 - type: decal
-  id: grasssnowc3
-  tags: ["flora"]
+  id: STgrasssnowc3
+  tags: ["ST", "Flora"]
+  parent: grasssnowc3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -623,8 +666,9 @@
     state: grasssnowc3
 
 - type: decal
-  id: Busha1
-  tags: ["flora"]
+  id: STBusha1
+  tags: ["ST", "Flora"]
+  parent: Busha1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -632,8 +676,9 @@
     state: busha1
 
 - type: decal
-  id: Busha2
-  tags: ["flora"]
+  id: STBusha2
+  tags: ["ST", "Flora"]
+  parent: Busha2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -641,8 +686,9 @@
     state: busha2
 
 - type: decal
-  id: Busha3
-  tags: ["flora"]
+  id: STBusha3
+  tags: ["ST", "Flora"]
+  parent: Busha3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -650,8 +696,9 @@
     state: busha3
 
 - type: decal
-  id: Bushb1
-  tags: ["flora"]
+  id: STBushb1
+  tags: ["ST", "Flora"]
+  parent: Bushb1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -659,8 +706,9 @@
     state: bushb1
 
 - type: decal
-  id: Bushb2
-  tags: ["flora"]
+  id: STBushb2
+  tags: ["ST", "Flora"]
+  parent: Bushb2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -668,8 +716,9 @@
     state: bushb2
 
 - type: decal
-  id: Bushb3
-  tags: ["flora"]
+  id: STBushb3
+  tags: ["ST", "Flora"]
+  parent: Bushb3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -677,8 +726,9 @@
     state: bushb3
 
 - type: decal
-  id: Bushc1
-  tags: ["flora"]
+  id: STBushc1
+  tags: ["ST", "Flora"]
+  parent: Bushc1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -686,8 +736,9 @@
     state: bushc1
 
 - type: decal
-  id: Bushc2
-  tags: ["flora"]
+  id: STBushc2
+  tags: ["ST", "Flora"]
+  parent: Bushc2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -695,8 +746,9 @@
     state: bushc2
 
 - type: decal
-  id: Bushc3
-  tags: ["flora"]
+  id: STBushc3
+  tags: ["ST", "Flora"]
+  parent: Bushc3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -704,8 +756,9 @@
     state: bushc3
 
 - type: decal
-  id: Bushd1
-  tags: ["flora"]
+  id: STBushd1
+  tags: ["ST", "Flora"]
+  parent: Bushd1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -713,8 +766,9 @@
     state: bushd1
 
 - type: decal
-  id: Bushd2
-  tags: ["flora"]
+  id: STBushd2
+  tags: ["ST", "Flora"]
+  parent: Bushd2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -722,8 +776,9 @@
     state: bushd2
 
 - type: decal
-  id: Bushd3
-  tags: ["flora"]
+  id: STBushd3
+  tags: ["ST", "Flora"]
+  parent: Bushd3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -731,8 +786,9 @@
     state: bushd3
 
 - type: decal
-  id: Bushd4
-  tags: ["flora"]
+  id: STBushd4
+  tags: ["ST", "Flora"]
+  parent: Bushd4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -740,8 +796,9 @@
     state: bushd4
 
 - type: decal
-  id: Bushe1
-  tags: ["flora"]
+  id: STBushe1
+  tags: ["ST", "Flora"]
+  parent: Bushe1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -749,8 +806,9 @@
     state: bushe1
 
 - type: decal
-  id: Bushe2
-  tags: ["flora"]
+  id: STBushe2
+  tags: ["ST", "Flora"]
+  parent: Bushe2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -758,8 +816,9 @@
     state: bushe2
 
 - type: decal
-  id: Bushe3
-  tags: ["flora"]
+  id: STBushe3
+  tags: ["ST", "Flora"]
+  parent: Bushe3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -767,8 +826,9 @@
     state: bushe3
 
 - type: decal
-  id: Bushe4
-  tags: ["flora"]
+  id: STBushe4
+  tags: ["ST", "Flora"]
+  parent: Bushe4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -776,8 +836,9 @@
     state: bushe4
 
 - type: decal
-  id: Bushf1
-  tags: ["flora"]
+  id: STBushf1
+  tags: ["ST", "Flora"]
+  parent: Bushf1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -785,8 +846,9 @@
     state: bushf1
 
 - type: decal
-  id: Bushf2
-  tags: ["flora"]
+  id: STBushf2
+  tags: ["ST", "Flora"]
+  parent: Bushf2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -794,8 +856,9 @@
     state: bushf2
 
 - type: decal
-  id: Bushf3
-  tags: ["flora"]
+  id: STBushf3
+  tags: ["ST", "Flora"]
+  parent: Bushf3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -803,8 +866,9 @@
     state: bushf3
 
 - type: decal
-  id: Bushg1
-  tags: ["flora"]
+  id: STBushg1
+  tags: ["ST", "Flora"]
+  parent: Bushg1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -812,8 +876,9 @@
     state: bushg1
 
 - type: decal
-  id: Bushg2
-  tags: ["flora"]
+  id: STBushg2
+  tags: ["ST", "Flora"]
+  parent: Bushg2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -821,8 +886,9 @@
     state: bushg2
 
 - type: decal
-  id: Bushg3
-  tags: ["flora"]
+  id: STBushg3
+  tags: ["ST", "Flora"]
+  parent: Bushg3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -830,8 +896,9 @@
     state: bushg3
 
 - type: decal
-  id: Bushg4
-  tags: ["flora"]
+  id: STBushg4
+  tags: ["ST", "Flora"]
+  parent: Bushg4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -839,8 +906,9 @@
     state: bushg4
 
 - type: decal
-  id: Bushh1
-  tags: ["flora"]
+  id: STBushh1
+  tags: ["ST", "Flora"]
+  parent: Bushh1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -848,8 +916,9 @@
     state: bushh1
 
 - type: decal
-  id: Bushh2
-  tags: ["flora"]
+  id: STBushh2
+  tags: ["ST", "Flora"]
+  parent: Bushh2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -857,8 +926,9 @@
     state: bushh2
 
 - type: decal
-  id: Bushh3
-  tags: ["flora"]
+  id: STBushh3
+  tags: ["ST", "Flora"]
+  parent: Bushh3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -866,8 +936,9 @@
     state: bushh3
 
 - type: decal
-  id: Bushi1
-  tags: ["flora"]
+  id: STBushi1
+  tags: ["ST", "Flora"]
+  parent: Bushi1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -875,8 +946,9 @@
     state: bushi1
 
 - type: decal
-  id: Bushi2
-  tags: ["flora"]
+  id: STBushi2
+  tags: ["ST", "Flora"]
+  parent: Bushi2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -884,8 +956,9 @@
     state: bushi2
 
 - type: decal
-  id: Bushi3
-  tags: ["flora"]
+  id: STBushi3
+  tags: ["ST", "Flora"]
+  parent: Bushi3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -893,8 +966,9 @@
     state: bushi3
 
 - type: decal
-  id: Bushi4
-  tags: ["flora"]
+  id: STBushi4
+  tags: ["ST", "Flora"]
+  parent: Bushi4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -902,8 +976,9 @@
     state: bushi4
 
 - type: decal
-  id: Bushj1
-  tags: ["flora"]
+  id: STBushj1
+  tags: ["ST", "Flora"]
+  parent: Bushj1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -911,8 +986,9 @@
     state: bushj1
 
 - type: decal
-  id: Bushj2
-  tags: ["flora"]
+  id: STBushj2
+  tags: ["ST", "Flora"]
+  parent: Bushj2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -920,8 +996,9 @@
     state: bushj2
 
 - type: decal
-  id: Bushj3
-  tags: ["flora"]
+  id: STBushj3
+  tags: ["ST", "Flora"]
+  parent: Bushj3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -929,8 +1006,9 @@
     state: bushj3
 
 - type: decal
-  id: Bushk1
-  tags: ["flora"]
+  id: STBushk1
+  tags: ["ST", "Flora"]
+  parent: Bushk1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -938,8 +1016,9 @@
     state: bushk1
 
 - type: decal
-  id: Bushk2
-  tags: ["flora"]
+  id: STBushk2
+  tags: ["ST", "Flora"]
+  parent: Bushk2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -947,8 +1026,9 @@
     state: bushk2
 
 - type: decal
-  id: Bushk3
-  tags: ["flora"]
+  id: STBushk3
+  tags: ["ST", "Flora"]
+  parent: Bushk3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -956,8 +1036,9 @@
     state: bushk3
 
 - type: decal
-  id: Bushl1
-  tags: ["flora"]
+  id: STBushl1
+  tags: ["ST", "Flora"]
+  parent: Bushl1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -965,8 +1046,9 @@
     state: bushl1
 
 - type: decal
-  id: Bushl2
-  tags: ["flora"]
+  id: STBushl2
+  tags: ["ST", "Flora"]
+  parent: Bushl2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -974,8 +1056,9 @@
     state: bushl2
 
 - type: decal
-  id: Bushl3
-  tags: ["flora"]
+  id: STBushl3
+  tags: ["ST", "Flora"]
+  parent: Bushl3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -983,8 +1066,9 @@
     state: bushl3
 
 - type: decal
-  id: Bushl4
-  tags: ["flora"]
+  id: STBushl4
+  tags: ["ST", "Flora"]
+  parent: Bushl4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -992,8 +1076,9 @@
     state: bushl4
 
 - type: decal
-  id: Bushm1
-  tags: ["flora"]
+  id: STBushm1
+  tags: ["ST", "Flora"]
+  parent: Bushm1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1001,8 +1086,9 @@
     state: bushm1
 
 - type: decal
-  id: Bushm2
-  tags: ["flora"]
+  id: STBushm2
+  tags: ["ST", "Flora"]
+  parent: Bushm2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1010,8 +1096,9 @@
     state: bushm2
 
 - type: decal
-  id: Bushm3
-  tags: ["flora"]
+  id: STBushm3
+  tags: ["ST", "Flora"]
+  parent: Bushm3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1019,8 +1106,9 @@
     state: bushm3
 
 - type: decal
-  id: Bushm4
-  tags: ["flora"]
+  id: STBushm4
+  tags: ["ST", "Flora"]
+  parent: Bushm4
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1028,8 +1116,9 @@
     state: bushm4
 
 - type: decal
-  id: Bushn1
-  tags: ["flora"]
+  id: STBushn1
+  tags: ["ST", "Flora"]
+  parent: Bushn1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1037,8 +1126,9 @@
     state: bushn1
 
 - type: decal
-  id: bushsnowa1
-  tags: ["flora"]
+  id: STbushsnowa1
+  tags: ["ST", "Flora"]
+  parent: bushsnowa1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1046,8 +1136,9 @@
     state: bushsnowa1
 
 - type: decal
-  id: bushsnowa2
-  tags: ["flora"]
+  id: STbushsnowa2
+  tags: ["ST", "Flora"]
+  parent: bushsnowa2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1055,8 +1146,9 @@
     state: bushsnowa2
 
 - type: decal
-  id: bushsnowa3
-  tags: ["flora"]
+  id: STbushsnowa3
+  tags: ["ST", "Flora"]
+  parent: bushsnowa3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1064,8 +1156,9 @@
     state: bushsnowa3
 
 - type: decal
-  id: bushsnowb1
-  tags: ["flora"]
+  id: STbushsnowb1
+  tags: ["ST", "Flora"]
+  parent: bushsnowb1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1073,8 +1166,9 @@
     state: bushsnowb1
 
 - type: decal
-  id: bushsnowb2
-  tags: ["flora"]
+  id: STbushsnowb2
+  tags: ["ST", "Flora"]
+  parent: bushsnowb2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1082,8 +1176,9 @@
     state: bushsnowb2
 
 - type: decal
-  id: bushsnowb3
-  tags: ["flora"]
+  id: STbushsnowb3
+  tags: ["ST", "Flora"]
+  parent: bushsnowb3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1091,8 +1186,9 @@
     state: bushsnowb3
 
 - type: decal
-  id: Rock01
-  tags: ["flora"]
+  id: STRock01
+  tags: ["ST", "Flora"]
+  parent: Rock01
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1100,8 +1196,9 @@
     state: rock01
 
 - type: decal
-  id: Rock02
-  tags: ["flora"]
+  id: STRock02
+  tags: ["ST", "Flora"]
+  parent: Rock02
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1109,8 +1206,9 @@
     state: rock02
 
 - type: decal
-  id: Rock03
-  tags: ["flora"]
+  id: STRock03
+  tags: ["ST", "Flora"]
+  parent: Rock03
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1118,8 +1216,9 @@
     state: rock03
 
 - type: decal
-  id: Rock04
-  tags: ["flora"]
+  id: STRock04
+  tags: ["ST", "Flora"]
+  parent: Rock04
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1127,8 +1226,9 @@
     state: rock04
 
 - type: decal
-  id: Rock05
-  tags: ["flora"]
+  id: STRock05
+  tags: ["ST", "Flora"]
+  parent: Rock05
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1136,8 +1236,9 @@
     state: rock05
 
 - type: decal
-  id: Rock06
-  tags: ["flora"]
+  id: STRock06
+  tags: ["ST", "Flora"]
+  parent: Rock06
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1145,8 +1246,9 @@
     state: rock06
 
 - type: decal
-  id: Rock07
-  tags: ["flora"]
+  id: STRock07
+  tags: ["ST", "Flora"]
+  parent: Rock07
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1154,8 +1256,9 @@
     state: rock07
 
 - type: decal
-  id: Flowersbr1
-  tags: ["flora"]
+  id: STFlowersbr1
+  tags: ["ST", "Flora"]
+  parent: Flowersbr1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1163,8 +1266,9 @@
     state: flowersbr1
 
 - type: decal
-  id: Flowersbr2
-  tags: ["flora"]
+  id: STFlowersbr2
+  tags: ["ST", "Flora"]
+  parent: Flowersbr2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1172,8 +1276,9 @@
     state: flowersbr2
 
 - type: decal
-  id: Flowersbr3
-  tags: ["flora"]
+  id: STFlowersbr3
+  tags: ["ST", "Flora"]
+  parent: Flowersbr3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1181,8 +1286,9 @@
     state: flowersbr3
 
 - type: decal
-  id: Flowerspv1
-  tags: ["flora"]
+  id: STFlowerspv1
+  tags: ["ST", "Flora"]
+  parent: Flowerspv1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1190,8 +1296,9 @@
     state: flowerspv1
 
 - type: decal
-  id: Flowerspv2
-  tags: ["flora"]
+  id: STFlowerspv2
+  tags: ["ST", "Flora"]
+  parent: Flowerspv2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1199,8 +1306,9 @@
     state: flowerspv2
 
 - type: decal
-  id: Flowerspv3
-  tags: ["flora"]
+  id: STFlowerspv3
+  tags: ["ST", "Flora"]
+  parent: Flowerspv3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1208,8 +1316,9 @@
     state: flowerspv3
 
 - type: decal
-  id: Flowersy1
-  tags: ["flora"]
+  id: STFlowersy1
+  tags: ["ST", "Flora"]
+  parent: Flowersy1
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1217,8 +1326,9 @@
     state: flowersy1
 
 - type: decal
-  id: Flowersy2
-  tags: ["flora"]
+  id: STFlowersy2
+  tags: ["ST", "Flora"]
+  parent: Flowersy2
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1226,8 +1336,9 @@
     state: flowersy2
 
 - type: decal
-  id: Flowersy3
-  tags: ["flora"]
+  id: STFlowersy3
+  tags: ["ST", "Flora"]
+  parent: Flowersy3
   snapCardinals: true
   defaultSnap: false
   sprite:
@@ -1235,8 +1346,9 @@
     state: flowersy3
 
 - type: decal
-  id: Flowersy4
-  tags: ["flora"]
+  id: STFlowersy4
+  tags: ["ST", "Flora"]
+  parent: Flowersy4
   snapCardinals: true
   defaultSnap: false
   sprite:
