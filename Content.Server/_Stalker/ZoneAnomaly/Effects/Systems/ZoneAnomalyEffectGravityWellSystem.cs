@@ -1,13 +1,12 @@
-using System.Numerics;
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
-using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using System.Numerics;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
 
@@ -19,12 +18,23 @@ public sealed class ZoneAnomalyEffectGravityWellSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
+    private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<TransformComponent> _transformQuery;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
+        _transformQuery = GetEntityQuery<TransformComponent>();
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<ZoneAnomalyEffectGravityWellComponent, ZoneAnomalyComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var effect, out var anomaly, out var transform))
+        while (query.MoveNext(out var uid, out var effect, out var anomaly, out _))
         {
             if (anomaly.State != ZoneAnomalyState.Activated)
                 continue;
@@ -79,6 +89,7 @@ public sealed class ZoneAnomalyEffectGravityWellSystem : EntitySystem
             _physics.ApplyLinearImpulse(entity, totalForce, body: physics);
         }
     }
+
 
 
 

@@ -17,8 +17,6 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
@@ -40,7 +38,6 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
                 continue;
 
             TryRecharge(effect, entity);
-            TryChangeState(effect, entity);
 
             _lightning.ShootLightning(effect, entity, effect.Comp.Lighting);
         }
@@ -52,22 +49,6 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
             return;
 
         _battery.SetCharge(target, battery.CurrentCharge + battery.MaxCharge * effect.Comp.ChargePercent, battery);
-    }
-
-    private void TryChangeState(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid target)
-    {
-        if (!TryComp<DamageableComponent>(target, out var damageable))
-            return;
-        if (!TryComp<MobThresholdsComponent>(target, out var mobThresholds))
-            return;
-
-        if (!_mobThreshold.TryGetThresholdForState(target, MobState.Dead, out var threshold))
-            return;
-
-        if (damageable.TotalDamage >= threshold)
-            return;
-
-        _mobState.ChangeMobState(target, MobState.Critical);
     }
 
     private bool IsValidRecursively(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid uid)

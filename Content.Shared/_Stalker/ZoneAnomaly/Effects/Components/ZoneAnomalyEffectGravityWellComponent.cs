@@ -1,4 +1,4 @@
-﻿using Content.Shared.Whitelist;
+using Content.Shared.Whitelist;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
@@ -16,9 +16,6 @@ public sealed partial class ZoneAnomalyEffectGravityWellComponent : Component
     public float Radial = 10f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Tangential = 0.001f;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ZoneAnomalyEffectGravityWellGradient Gradient = ZoneAnomalyEffectGravityWellGradient.Default;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
@@ -26,6 +23,9 @@ public sealed partial class ZoneAnomalyEffectGravityWellComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan Period = TimeSpan.FromSeconds(0.5);
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float Tangential = 0.001f;
 }
 
 [Serializable, NetSerializable]
