@@ -6,7 +6,7 @@ tilemap:
   3: FloorArcadeBlue2
   5: FloorAsphalt
   17: FloorBlue
-  22: FloorBrokenWood
+  22: STFloorBrokenWood
   37: FloorDarkMono
   41: FloorDarkPlastic
   55: FloorGrayConcrete
@@ -18,7 +18,7 @@ tilemap:
   74: FloorOldConcrete
   75: FloorOldConcreteMono
   76: FloorOldConcreteSmooth
-  77: FloorPlanetDirt
+  77: STFloorPlanetDirt
   79: FloorPlanetGreenGrass
   82: FloorPlastic
   86: FloorRoad
@@ -29,7 +29,7 @@ tilemap:
   132: FloorWhiteMono
   135: FloorWhitePavementVertical
   136: FloorWhitePlastic
-  137: FloorWood
+  137: STFloorWood
   139: FloorWoodTile
 entities:
 - proto: ""

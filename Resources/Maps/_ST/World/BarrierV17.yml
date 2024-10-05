@@ -4,9 +4,9 @@ meta:
 tilemap:
   0: Space
   13: FloorAstroGrass
-  26: FloorCaveDrought
+  26: STFloorCaveDrought
   57: FloorGrayConcreteSmooth
-  77: FloorPlanetDirt
+  77: STFloorPlanetDirt
   78: FloorPlanetGrass
   79: FloorPlanetGreenGrass
   81: FloorPlanetYellowGrass
@@ -32684,7 +32684,7 @@ entities:
         threshold: -1
         noise:
           seed: 0
-        tile: FloorPlanetDirt
+        tile: STFloorPlanetDirt
       - !type:BiomeTileLayer
         threshold: -0.9
         noise:

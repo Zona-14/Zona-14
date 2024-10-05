@@ -5,16 +5,16 @@ tilemap:
   0: Space
   13: FloorAstroGrass
   17: FloorBasalt
-  23: FloorBrokenWood
-  27: FloorCaveDrought
+  23: STFloorBrokenWood
+  27: STFloorCaveDrought
   43: FloorDarkScheben
-  45: FloorDirt
+  45: STFloorDirt
   56: FloorGrayConcrete
   57: FloorGrayConcreteMono
   58: FloorGrayConcreteSmooth
   63: FloorHydro
   79: FloorOldConcreteSmooth
-  80: FloorPlanetDirt
+  80: STFloorPlanetDirt
   81: FloorPlanetGrass
   82: FloorPlanetGreenGrass
   85: FloorPlanetYellowGrass
@@ -26,7 +26,7 @@ tilemap:
   109: FloorStalker5
   110: FloorStalker6
   111: FloorStalker7
-  141: FloorWood
+  141: STFloorWood
 entities:
 - proto: ""
   entities:
@@ -43515,7 +43515,7 @@ entities:
         threshold: -1
         noise:
           seed: 0
-        tile: FloorPlanetDirt
+        tile: STFloorPlanetDirt
       - !type:BiomeTileLayer
         threshold: -0.9
         noise:

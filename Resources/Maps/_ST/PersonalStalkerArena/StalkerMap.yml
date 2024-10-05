@@ -3,10 +3,10 @@ meta:
   postmapinit: false
 tilemap:
   0: Space
-  22: FloorBrokenWood
+  22: STFloorBrokenWood
   30: FloorConcreteMono
   132: FloorWhiteMono
-  137: FloorWood
+  137: STFloorWood
   141: Plating
 entities:
 - proto: ""

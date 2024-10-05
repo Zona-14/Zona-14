@@ -3,16 +3,16 @@ meta:
   postmapinit: false
 tilemap:
   0: Space
-  22: FloorBrokenWood
+  22: STFloorBrokenWood
   56: FloorGrayConcreteMono
   57: FloorGrayConcreteSmooth
   76: FloorOldConcreteSmooth
-  77: FloorPlanetDirt
+  77: STFloorPlanetDirt
   78: FloorPlanetGrass
   81: FloorPlanetYellowGrass
   87: FloorRockVault
   88: FloorScheben
-  137: FloorWood
+  137: STFloorWood
 entities:
 - proto: ""
   entities:
@@ -1524,7 +1524,7 @@ entities:
         threshold: -1
         noise:
           seed: 0
-        tile: FloorPlanetDirt
+        tile: STFloorPlanetDirt
       - !type:BiomeTileLayer
         threshold: -0.9
         noise:

@@ -5,7 +5,7 @@ tilemap:
   0: Space
   56: FloorGrayConcrete
   57: FloorGrayConcreteMono
-  80: FloorPlanetDirt
+  80: STFloorPlanetDirt
   81: FloorPlanetGrass
   104: FloorStalker
   145: Plating
@@ -4626,7 +4626,7 @@ entities:
         threshold: -1
         noise:
           seed: 0
-        tile: FloorPlanetDirt
+        tile: STFloorPlanetDirt
       - !type:BiomeTileLayer
         threshold: -0.9
         noise:

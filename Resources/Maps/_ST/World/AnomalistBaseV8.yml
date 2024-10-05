@@ -11,7 +11,7 @@ tilemap:
   74: FloorOldConcrete
   75: FloorOldConcreteMono
   76: FloorOldConcreteSmooth
-  77: FloorPlanetDirt
+  77: STFloorPlanetDirt
   78: FloorPlanetGrass
   88: FloorScheben
   147: StalkerFloorRoad
@@ -4579,7 +4579,7 @@ entities:
         threshold: -1
         noise:
           seed: 0
-        tile: FloorPlanetDirt
+        tile: STFloorPlanetDirt
       - !type:BiomeTileLayer
         threshold: -0.9
         noise:
