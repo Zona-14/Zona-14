@@ -221,7 +221,7 @@ entities:
             32: 2.4113498,7.4123187
         - node:
             color: '#F9800FB2'
-            id: Grassc1
+            id: STGrassc1
           decals:
             53: 3.0860846,25.414259
             54: 2.8592327,24.77537

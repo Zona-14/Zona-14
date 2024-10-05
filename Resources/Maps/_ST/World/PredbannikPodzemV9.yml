@@ -4342,7 +4342,7 @@ entities:
             3087: 176,-60
         - node:
             color: '#FFFFFFFF'
-            id: Grassb4
+            id: STGrassb4
           decals:
             823: 83.60662,19.320997
             824: 82.28571,19.944757
@@ -4362,7 +4362,7 @@ entities:
             838: 83.001205,18.036783
         - node:
             color: '#FFFFFFFF'
-            id: Grassb5
+            id: STGrassb5
           decals:
             333: 28.968353,-0.03416717
             334: 29.995724,-0.08920485

@@ -1366,7 +1366,7 @@
           prob: 0.03
         - id: ClothingMaskPlague
           prob: 0.01
-        - id: ClothingOuterCoatInspector
+        - id: ClothingOuterCoatJensen
           prob: 0.04
         - id: ClothingHeadHatPwig
           prob: 0.03
