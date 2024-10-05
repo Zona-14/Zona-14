@@ -192,3 +192,17 @@
   heatCapacity: 10000
   weather: true
   indestructible: true
+
+# moved to _Stalker
+- type: tile
+  id: STFloorPlanetDirt
+  parent: FloorPlanetDirt
+  suffix: ST
+  name: tiles-dirt-floor
+  sprite: /Textures/_Stalker/Tiles/Planet/dirt.rsi/dirt.png
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true

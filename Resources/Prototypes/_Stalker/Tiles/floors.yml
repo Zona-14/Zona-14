@@ -114,3 +114,62 @@
   heatCapacity: 1000
   weather: false
   indestructible: true
+
+  # moved to _Stalker
+- type: tile
+  id: STFloorCaveDrought
+  name: tiles-cave-drought
+  suffix: ST
+  parent: FloorCaveDrought
+  sprite: /Textures/_Stalker/Tiles/cavedrought.png
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  baseTurf: STFloorPlanetDirt
+
+
+- type: tile
+  id: STFloorDirt
+  parent: FloorDirt
+  name: tiles-dirt-floor
+  suffix: STs
+  sprite: /Textures/_Stalker/Tiles/dirt.png
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  baseTurf: STFloorPlanetDirt
+
+- type: tile
+  id: STFloorBrokenWood
+  parent: FloorBrokenWood
+  name: tiles-wood3
+  suffix: ST
+  sprite: /Textures/_Stalker/Tiles/wood_broken.png
+  baseTurf: STFloorPlanetDirt
+  isSubfloor: true
+  weather: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  heatCapacity: 10000
+
+- type: tile
+  id: STFloorWood
+  panrent: FloorWood
+  suffix: ST
+  name: tiles-wood
+  sprite: /Textures/_Stalker/Tiles/wood.png
+  baseTurf: STFloorPlanetDirt
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemWood
+  heatCapacity: 10000
+  weather: false
