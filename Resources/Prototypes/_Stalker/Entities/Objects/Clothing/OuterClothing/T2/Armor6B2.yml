@@ -25,7 +25,7 @@
         Piercing: 0.7
         Heat: 0.95
   - type: ExplosionResistance
-    damageCoefficient: 0.0
+    damageCoefficient: 0.7
   - type: Craftable
 
 - type: entity
