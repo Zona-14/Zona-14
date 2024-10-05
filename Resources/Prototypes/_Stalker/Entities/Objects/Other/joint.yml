@@ -3,6 +3,7 @@
 - type: construction
   name: косяк
   id: Joint
+  hide: false # stalker-changes
   graph: JointStage
   startNode: start
   targetNode: JointStageEnd
