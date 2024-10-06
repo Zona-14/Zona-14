@@ -79,8 +79,8 @@ public sealed class GeigerSystem : SharedGeigerSystem
         var query = EntityQueryEnumerator<GeigerComponent, RadiationReceiverComponent>();
         while (query.MoveNext(out var uid, out var geiger, out var receiver))
         {
-            var rads = receiver.CurrentRadiation;
-            SetCurrentRadiation(uid, geiger, rads);
+            if (receiver?.CurrentDamage != null && receiver.CurrentDamage.TryGetValue("Radiation", out var rads)) // stalker-changes
+                SetCurrentRadiation(uid, geiger, rads); // stalker-changes
         }
     }
 

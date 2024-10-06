@@ -14,6 +14,6 @@ department-StalkerAdvanced = Огранизованные группировки
 
 department-StalkerAnomalists = Аномалисты
 department-StalkerReligius = Религиозные объединения
-department-StalkerBrigands = бандитские формирования
+department-StalkerBrigands = Бандитские формирования
 department-StalkerOfficials = Государственные организации
 department-Evolver = Эволверы - Разумные мутанты

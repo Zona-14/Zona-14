@@ -1,4 +1,4 @@
-﻿namespace Content.Shared.Radiation.Events;
+namespace Content.Shared.Radiation.Events;
 
 /// <summary>
 ///     Raised on entity when it was irradiated
@@ -8,13 +8,11 @@ public sealed class OnIrradiatedEvent : EntityEventArgs
 {
     public readonly float FrameTime;
 
-    public readonly float RadsPerSecond;
+    public readonly Dictionary<string, float> DamageTypes; // stalker-changes
 
-    public float TotalRads => RadsPerSecond * FrameTime;
-
-    public OnIrradiatedEvent(float frameTime, float radsPerSecond)
+    public OnIrradiatedEvent(float frameTime, Dictionary<string, float> damageTypes) // stalker-changes
     {
         FrameTime = frameTime;
-        RadsPerSecond = radsPerSecond;
+        DamageTypes = damageTypes; // stalker-changes
     }
 }

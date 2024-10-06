@@ -107,6 +107,7 @@
     - Cold
     - Caustic
     - Compression # stalker-changes
+    - Psy # stalker-changes
   - type: DamageOnHighSpeedImpact
     damage:
       types:

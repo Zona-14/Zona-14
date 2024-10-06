@@ -54,11 +54,12 @@ public partial class RadiationSystem
 
         // trace all rays from rad source to rad receivers
         var rays = new List<RadiationRay>();
-        var receiversTotalRads = new ValueList<(Entity<RadiationReceiverComponent>, float)>();
+        var receiversTotalRads = new ValueList<(Entity<RadiationReceiverComponent>, Dictionary<string, float>, float)>(); // stalker-changes
+
         while (destinations.MoveNext(out var destUid, out var dest, out var destTrs))
         {
             var destWorld = _transform.GetWorldPosition(destTrs, transformQuery);
-
+            var damageTypes = new Dictionary<string, float>(); // stalker-changes
             var rads = 0f;
             foreach (var (uid, source, sourceTrs, sourceWorld) in sourcesData)
             {
@@ -77,13 +78,20 @@ public partial class RadiationSystem
 
                 // add rads to total rad exposure
                 if (ray.ReachedDestination)
-                    rads += ray.Rads;
+                {
+                    // stalker-changes-start
+                    if (!damageTypes.TryAdd(source.DamageType, ray.Rads))
+                    {
+                        damageTypes[source.DamageType] += ray.Rads;
+                    }
+                    // stalker-changes-end
+                }
             }
 
             // Apply modifier if the destination entity is hidden within a radiation blocking container
             rads = GetAdjustedRadiationIntensity(destUid, rads);
 
-            receiversTotalRads.Add(((destUid, dest), rads));
+            receiversTotalRads.Add(((destUid, dest), damageTypes, rads)); // stalker-changes
         }
 
         // update information for debug overlay
@@ -93,15 +101,15 @@ public partial class RadiationSystem
         UpdateGridcastDebugOverlay(elapsedTime, totalSources, totalReceivers, rays);
 
         // send rads to each entity
-        foreach (var (receiver, rads) in receiversTotalRads)
+        foreach (var (receiver, damageTypes, rads) in receiversTotalRads) // stalker-changes
         {
             // update radiation value of receiver
             // if no radiation rays reached target, that will set it to 0
-            receiver.Comp.CurrentRadiation = rads;
+            receiver.Comp.CurrentDamage = damageTypes; // stalker-changes
 
             // also send an event with combination of total rad
-            if (rads > 0)
-                IrradiateEntity(receiver, rads, GridcastUpdateRate);
+            if (damageTypes.Count != 0) // stalker-changes
+                IrradiateEntity(receiver, damageTypes, GridcastUpdateRate); // stalker-changes
         }
 
         // raise broadcast event that radiation system has updated

@@ -26,4 +26,8 @@ public sealed partial class RadiationSourceComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("damageType")]
+    public string DamageType = "Radiation"; // stalker-changes
 }

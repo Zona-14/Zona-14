@@ -7,7 +7,7 @@ namespace Content.Server.Radiation.Components;
 ///     Marks component that receive radiation from <see cref="RadiationSourceComponent"/>.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(RadiationSystem))]
+[Access([typeof(RadiationSystem), typeof(GeigerSystem)])] // stalker-changes
 public sealed partial class RadiationReceiverComponent : Component
 {
     /// <summary>
@@ -15,6 +15,6 @@ public sealed partial class RadiationReceiverComponent : Component
     ///     Periodically updated by radiation system.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
-    public float CurrentRadiation;
+    public Dictionary<string, float> CurrentDamage = new(); // stalker-changes
 }
 

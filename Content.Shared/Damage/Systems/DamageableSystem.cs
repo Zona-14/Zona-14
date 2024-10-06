@@ -240,16 +240,16 @@ namespace Content.Shared.Damage
 
         private void OnIrradiated(EntityUid uid, DamageableComponent component, OnIrradiatedEvent args)
         {
-            var damageValue = FixedPoint2.New(args.TotalRads);
-
-            // Radiation should really just be a damage group instead of a list of types.
-            DamageSpecifier damage = new();
-            foreach (var typeId in component.RadiationDamageTypeIDs)
+            // stalker-changes-start
+            var damage = new DamageSpecifier();
+            foreach (var type in args.DamageTypes)
             {
-                damage.DamageDict.Add(typeId, damageValue);
+                var perSecond = type.Value * args.FrameTime;
+                damage.DamageDict.Add(type.Key, perSecond);
             }
 
             TryChangeDamage(uid, damage, interruptsDoAfters: false);
+            // stalker-changes-end
         }
 
         private void OnRejuvenate(EntityUid uid, DamageableComponent component, RejuvenateEvent args)

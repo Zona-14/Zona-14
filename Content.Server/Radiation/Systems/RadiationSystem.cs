@@ -1,4 +1,4 @@
-﻿using Content.Server.Radiation.Components;
+using Content.Server.Radiation.Components;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Radiation.Events;
 using Robust.Shared.Configuration;
@@ -34,9 +34,9 @@ public sealed partial class RadiationSystem : EntitySystem
         _accumulator = 0f;
     }
 
-    public void IrradiateEntity(EntityUid uid, float radsPerSecond, float time)
+    public void IrradiateEntity(EntityUid uid, Dictionary<string, float> damageTypes, float time) // stalker-changes
     {
-        var msg = new OnIrradiatedEvent(time, radsPerSecond);
+        var msg = new OnIrradiatedEvent(time, damageTypes); // stalker-changes
         RaiseLocalEvent(uid, msg);
     }
 
