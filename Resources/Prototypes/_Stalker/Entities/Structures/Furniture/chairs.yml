@@ -1,7 +1,7 @@
 - type: entity
   name: старый деревянный стул
   id: OldWoodChairStalker
-  parent: SeatBase
+  parent: STSeatBase
   suffix: Stalker
   description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
   components:
@@ -57,7 +57,6 @@
   name: chair
   id: STSeatBase
   suffix: ST
-  parent: SeatBase
   abstract: true
   description: You sit in this. Either by will or force.
   placement:

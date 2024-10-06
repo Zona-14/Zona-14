@@ -11,6 +11,8 @@
 # Stalker Upstream 23/9/2024
 
 #06.01.2024 - Stalker14
+Window: STWindow
+ReinforcedWindow: STReinforcedWindow 
 ComfyChair: STComfyChair
 ChairWood: STChairWood
 WoodenBench: STWoodenBench
