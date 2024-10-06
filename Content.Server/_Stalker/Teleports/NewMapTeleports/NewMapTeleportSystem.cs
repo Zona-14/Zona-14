@@ -112,6 +112,10 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         {
             _mapSystem.InitializeMap(mapId);
         }
+        if (_mapSystem.IsPaused(mapId))
+        {
+            _mapSystem.SetPaused(mapId, false);
+        }
         if (!_mapSystem.IsInitialized(mapId))
             _sawmill.Error($"Map with id {mapId} from {path} load failed.");
     }

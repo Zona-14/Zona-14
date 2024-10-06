@@ -51,6 +51,8 @@
   components:
     - type: AccessReader
       access: [["MilitaryBarraks"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportSci
@@ -61,6 +63,8 @@
   components:
     - type: AccessReader
       access: [["SciBase"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportBandit
@@ -71,6 +75,8 @@
   components:
     - type: AccessReader
       access: [["Bandit"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportSeraphims
@@ -81,6 +87,8 @@
   components:
     - type: AccessReader
       access: [["Seraphims"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportDolg
@@ -91,6 +99,8 @@
   components:
     - type: AccessReader
       access: [["Dolg"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportFreedom
@@ -101,6 +111,8 @@
   components:
     - type: AccessReader
       access: [["Freedom"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportRenegats
@@ -111,6 +123,8 @@
   components:
     - type: AccessReader
       access: [["Renegat"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportDeserters
@@ -121,6 +135,8 @@
   components:
     - type: AccessReader
       access: [["Deserter"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportCovenant
@@ -131,6 +147,8 @@
   components:
     - type: AccessReader
       access: [["Covenant"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportAnomalists
@@ -141,6 +159,8 @@
   components:
     - type: AccessReader
       access: [["Anomalist"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportMerc
@@ -151,6 +171,8 @@
   components:
     - type: AccessReader
       access: [["Merc"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportGreh
@@ -161,6 +183,8 @@
   components:
     - type: AccessReader
       access: [["Greh"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
 - type: entity
   id: StalkerTeleportClearSky
@@ -171,6 +195,8 @@
   components:
     - type: AccessReader
       access: [["CN"]]
+    - type: DuplicateTeleport
+      mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
 
   ###########################################################
 - type: entity

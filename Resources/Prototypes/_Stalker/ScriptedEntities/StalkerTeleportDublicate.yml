@@ -136,6 +136,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Military
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["MilitaryBarraks"]]
@@ -149,6 +150,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Sci
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["SciBase"]]
@@ -162,6 +164,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Bandit
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Bandit"]]
@@ -175,6 +178,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Seraphims
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
   - type: AccessReader
     access: [["Seraphims"]]
 
@@ -187,6 +191,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Dolg
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Dolg"]]
@@ -200,6 +205,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Freedom
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Freedom"]]
@@ -213,6 +219,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Renegat
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Renegat"]]
@@ -226,6 +233,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Covenant
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Covenant"]]
@@ -239,6 +247,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Anomalist
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Anomalist"]]
@@ -252,6 +261,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Kordon
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Merc"]]
@@ -265,6 +275,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Greh
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Greh"]]
@@ -278,6 +289,7 @@
   components:
   - type: DuplicateTeleport
     prefix: CN
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["CN"]]
@@ -291,6 +303,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Project
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Project"]]
@@ -304,6 +317,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Poisk
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Poisk"]]
@@ -317,6 +331,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Neutral
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
     maxWeight: 150
   - type: AccessReader
     access: [["Neutral"]]

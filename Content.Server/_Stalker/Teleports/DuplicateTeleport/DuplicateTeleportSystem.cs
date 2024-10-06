@@ -20,6 +20,7 @@ namespace Content.Server._Stalker.Teleports.DuplicateTeleport;
 
 public sealed class DuplicateTeleportSystem : SharedTeleportSystem
 {
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
@@ -80,13 +81,21 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
 
             _stalkerPortals.SetReturnPortal(stalkerTeleportData.GridId, concatenated, returnTeleportEntityUid);
 
-            return (stalkerTeleportData.MapId,stalkerTeleportData.GridId);
+            return (stalkerTeleportData.MapId, stalkerTeleportData.GridId);
         }
 
-        ArenaMap[concatenated] = _mapManager.GetMapEntityId(_mapManager.CreateMap());
+        _mapSystem.CreateMap(out var mapId, true);
+        ArenaMap[concatenated] = _mapManager.GetMapEntityId(mapId);
         _metaDataSystem.SetEntityName(ArenaMap[concatenated], $"STALKER_MAP-{concatenated}");
-        // TODO: Remove obsolete methods
-        var grids = _map.LoadMap(Comp<MapComponent>(ArenaMap[concatenated]).MapId, component.ArenaMapPath);
+        var map = Comp<MapComponent>(ArenaMap[concatenated]);
+        var isLoaded = _map.TryLoad(map.MapId, component.ArenaMapPath, out var grids);
+        _mapSystem.SetPaused(map.MapId, false);
+        if (grids is null || !isLoaded)
+        {
+            _sawmill.Error($"Couldn't load a map {component.ArenaMapPath} for {concatenated}");
+            return (ArenaMap[concatenated], null);
+        }
+
         if (grids.Count != 0)
         {
             _metaDataSystem.SetEntityName(grids[0], $"STALKER_GRID-{concatenated}");
