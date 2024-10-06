@@ -10,6 +10,16 @@
 
 # Stalker Upstream 23/9/2024
 
+#06.01.2024 - Stalker14
+ComfyChair: STComfyChair
+ChairWood: STChairWood
+WoodenBench: STWoodenBench
+
+#05.01.2024 - Stalker14
+Bed: STOldBed
+MedicalBed: STOldMedicalBed
+Mattress: STOldMattress
+
 # 04.10.2024 - Stalker 14
 FloraRockSolid01: STFloraRockSolid01
 FloraRockSolid02: STFloraRockSolid02
@@ -26,11 +36,6 @@ FloraTreeLarge03: STFloraTreeLarge03
 FloraTreeLarge04: STFloraTreeLarge04
 FloraTreeLarge05: STFloraTreeLarge05
 FloraTreeLarge06: STFloraTreeLarge06
-
-#05.01.2024 - Stalker14
-Bed: STOldBed
-MedicalBed: STOldMedicalBed
-Mattress: STOldMattress
 
 # 22.09.2024 - Stalker 14
 NPCDollarTrader: null

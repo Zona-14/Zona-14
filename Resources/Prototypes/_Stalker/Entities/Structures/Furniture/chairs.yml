@@ -49,22 +49,100 @@
     anchored: true
   - type: Damageable
     damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MaterialWoodPlank:
-            min: 1
-            max: 1
   - type: Tag
     tags:
     - Wooden
+
+- type: entity
+  name: chair
+  id: STSeatBase
+  suffix: ST
+  parent: SeatBase
+  abstract: true
+  description: You sit in this. Either by will or force.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/Chairs/chairs.rsi
+    noRot: true
+  - type: Strap
+    position: Stand
+    buckleOffset: "0,-0.05"
+  - type: Pullable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+
+- type: entity
+  name: chair
+  id: STUnanchoredChairBase
+  parent: STSeatBase
+  suffix: ST
+  abstract: true
+  components:
+  - type: Anchorable
+  - type: Rotatable
+
+- type: entity
+  name: chair
+  id: STChairBase
+  suffix: ST
+  abstract: true
+  parent: STUnanchoredChairBase
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+
+- type: entity
+  name: comfy chair
+  id: STComfyChair
+  parent: STChairBase
+  suffix: ST
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    state: comfy
+
+- type: entity
+  name: wooden chair
+  id: STChairWood
+  parent: STUnanchoredChairBase
+  suffix: ST
+  components:
+  - type: Sprite
+    state: wooden
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Tag
+    tags:
+    - Wooden
+
+- type: entity
+  name: wooden bench
+  id: STWoodenBench
+  parent: STChairBase
+  description: Did you get a splinter? Well, at least it’s eco friendly.
+  components:
+  - type: Sprite
+    state: wooden-bench
+  - type: Construction
+    graph: Seat
+    node: chairWoodBench
