@@ -276,7 +276,7 @@
   - type: DuplicateTeleport
     prefix: Greh
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 150
+    maxWeight: 350
   - type: AccessReader
     access: [["Greh"]]
 
