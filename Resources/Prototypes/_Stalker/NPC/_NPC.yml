@@ -39,7 +39,7 @@
 #NPC Train Station - Start
 - type: entity
   parent: NPCDoll
-  id: NPCTrainStation
+  id: NPCAlexBaron
   noSpawn: false
   name: Лёшка Барон [→   ←]
   description: Данный персонаж занимается очень важным делом - перепродажей ящиков. Стоит ли ему доверять?
@@ -47,16 +47,26 @@
   - type: Sprite
     sprite: _Stalker/NPC/BoxBuyer.rsi
     state: sergey
-  - type: CargoPalletConsole
-    cashType: Roubles
+  # - type: CargoPalletConsole
+  #   cashType: Roubles
+  # - type: ActivatableUI
+  #   allowSpectator: false
+  #   singleUser: true
+  #   key: enum.CargoPalletConsoleUiKey.Sale
+  # - type: UserInterface
+  #   interfaces:
+  #     enum.CargoPalletConsoleUiKey.Sale:
+  #       type: CargoPalletConsoleBoundUserInterface
   - type: ActivatableUI
-    allowSpectator: false
+    key: enum.ShopUiKey.Key
     singleUser: true
-    key: enum.CargoPalletConsoleUiKey.Sale
   - type: UserInterface
     interfaces:
-      enum.CargoPalletConsoleUiKey.Sale:
-        type: CargoPalletConsoleBoundUserInterface
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcAlexBaronShopPreset
   - type: Physics
     bodyType: Static
 #NPC Train Station - End

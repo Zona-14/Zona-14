@@ -6200,7 +6200,7 @@ entities:
           occludes: False
         jumpsuit: !type:ContainerSlot
           occludes: False
-- proto: NPCTrainStation
+- proto: NPCAlexBaron
   entities:
   - uid: 147
     components:

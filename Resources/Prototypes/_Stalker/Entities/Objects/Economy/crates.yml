@@ -856,6 +856,29 @@
 
 - type: entity
   parent: BaseItem
+  id: STLoaderBox
+  name: Ящик для скупщика
+  description: Работа грузчика, сложный но нужный труд
+  suffix: Stalker, Economy
+  components:
+  - type: Item
+    size: Ginormous
+    shape:
+      - 0,0,10,10
+  - type: STWeight
+    self: 50
+  - type: Trash
+    time: 600
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb3
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb3
+  - type: MultiHandedItem
+
+- type: entity
+  parent: BaseItem
   id: STCannabisBox
   name: брикет отборной травы
   description: Тщательно замаскированный под блок сигарет

@@ -10,6 +10,6 @@ ent-BoxDrawer = Спавнер ящиков.
 ent-DrawerDispenser = Раздатчик ящиков...
     .desc = Нахера вы это вообще заспавнили?
     .suffix = Stalker, TrainStation
-ent-NPCTrainStation = Лёшка Барон [Скупщик]
+ent-NPCAlexBaron = Лёшка Барон [Скупщик]
     .desc = Данный персонаж занимается очень важным делом - перепродажей ящиков. Стоит ли ему доверять?
     .suffix = Stalker, TrainStation

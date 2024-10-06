@@ -277,3 +277,44 @@
           intervalSeconds: 10800
           minimumEntitiesSpawned: 1
           maximumEntitiesSpawned: 1
+
+### ООН
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineLaborer
+  name: раздатчик грузчиков
+  description: раздатчик грузчиков. Отнесите ящики Лёшке барону, чтобы немного заработать
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: LaborerInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: 1
+      normalState: 1
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/LotOfBoxes.rsi
+      state: 1
+
+- type: vendingMachineInventory
+  id: LaborerInventory
+  startingInventory:
+    STLoaderBox: 100
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockLaborer
+  name: Снабжение ящиков грузчиков
+  description: Ящик с ящиками для грузчиков
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - LaborerInventory
+    - type: Sprite
+      layers:
+        - state: base
+        - state: green_bit
+          shader: unshaded
