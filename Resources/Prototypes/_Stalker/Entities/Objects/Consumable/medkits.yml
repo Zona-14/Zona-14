@@ -31,25 +31,79 @@
 - type: entity
   parent: [STBaseHealingItem, Brutepack]
   id: STBrutepack
+  suffix: ST
   name: набор от ушибов
   description: помогает от физических повреждений
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: -15
+    bloodlossModifier: -5 # a suture should stop ongoing bleeding
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: STBrutepack
+    count: 10
+
+- type: stack
+  id: STBrutepack
+  name: набор от ушибов
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  spawn: STBrutepack
+  maxCount: 10
 
 - type: entity
   parent: [STBaseHealingItem, Ointment]
   id: STOintment
+  suffix: ST
   name: мазь
   description: помогает от ожогов и обморожения
+  components:
+  - type: Stack
+    stackType: STOintment
+    count: 10
+
+- type: stack
+  id: STOintment
+  name: мазь
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: ointment
+  spawn: STOintment
+  maxCount: 10
 
 - type: entity
   parent: [STBaseHealingItem, Gauze]
   id: STGauze
+  suffix: ST
   name: бинт
   description: останавливает кровотечение
+  components:
+  - type: Stack
+    stackType: STGauze
+    count: 10
+
+- type: stack
+  id: STGauze
+  name: бинт
+  icon:
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
+  spawn: STGauze
+  maxCount: 10
 
 - type: entity
   parent: BaseMedkit
   id: MedkitAI2
   name: аптечка АИ-2
+  suffix: ST
   description: Обычная универсальная аптечка военного назначения. При помощи неё можно справиться с такими травмами как порезы, ожоги, пулевые и осколочные ранения, отравления и другими. Включает в себя стандартный набор медикаментов. Проста в использовании.
   components:
   - type: Sprite
@@ -57,16 +111,16 @@
   - type: Healing
     damage:
       groups:
-        Brute: -90
-        Burn: -100
-        Airloss: -30
+        Brute: -60
+        Burn: -70
+        Airloss: -25
       types:
         Compression: -10
-    ModifyBloodLevel: 3
-    bloodlossModifier: -1
+    ModifyBloodLevel: 15
+    bloodlossModifier: -3
   - type: Stack
     stackType: MedkitAI2
-    count: 2
+    count: 4
 
 - type: stack
   id: MedkitAI2
@@ -75,11 +129,12 @@
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
   spawn: MedkitAI2
-  maxCount: 2
+  maxCount: 4
 
 - type: entity
   parent: BaseMedkit
   id: MedkitMilitary
+  suffix: ST
   name: армейская аптечка
   description: Медицинский набор, разработанный специально для армейских подразделений. Более эффективный вариант по сравнению с аптечкой АИ-2.
   components:
@@ -90,16 +145,16 @@
   - type: Healing
     damage:
       groups:
-        Brute: -150
-        Burn: -150
-        Airloss: -60
+        Brute: -120
+        Burn: -120
+        Airloss: -30
       types:
-        Compression: -80
-    ModifyBloodLevel: 8
-    bloodlossModifier: -3
+        Compression: -55
+    ModifyBloodLevel: 25
+    bloodlossModifier: -4
   - type: Stack
     stackType: MedkitMilitary
-    count: 2
+    count: 4
 
 - type: stack
   id: MedkitMilitary
@@ -108,11 +163,12 @@
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
   spawn: MedkitMilitary
-  maxCount: 2
+  maxCount: 4
 
 - type: entity
   parent: BaseMedkit
   id: MedkitScience
+  suffix: ST
   name: научная аптечка
   description: Медицинский набор, разработанный специально для работы в условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
   components:
@@ -123,18 +179,18 @@
   - type: Healing
     damage:
       groups:
-        Brute: -200
-        Burn: -300
-        Airloss: -120
+        Brute: -150
+        Burn: -245
+        Airloss: -90
         Toxin: -300
       types:
-        Compression: -150
+        Compression: -100
         Psy: -80
-    ModifyBloodLevel: 15
-    bloodlossModifier: -7
+    ModifyBloodLevel: 35
+    bloodlossModifier: -8
   - type: Stack
     stackType: MedkitScience
-    count: 2
+    count: 4
 
 - type: stack
   id: MedkitScience
@@ -143,14 +199,14 @@
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-1
   spawn: MedkitScience
-  maxCount: 2
+  maxCount: 4
 
 - type: entity
   name: элитная аптечка
   description: Элитный медицинский набор, разработанный специально для работы в тяжёлых условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма и лечения сложных ожогов. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
   parent: BaseHealingItem
   id: MedkitElite
-  suffix: Stalker
+  suffix: ST
   components:
   - type: STWeight
     self: 1
@@ -180,7 +236,7 @@
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: MedkitElite
-    count: 2
+    count: 4
 
 - type: stack
   id: MedkitElite
@@ -189,14 +245,14 @@
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-4
   spawn: MedkitElite
-  maxCount: 2
+  maxCount: 4
 
 - type: entity
   name: аптечка «LAR»
   description: "Благодаря высокотехнологичным разработкам учёных, достигнут прогресс в создании медицинского комплекта «LAR». Этот набор представляет собой усовершенствованный научный продукт, который покорил мир. На данный момент состав набора составлен лишь из экспериментальных реагентов, которые ещё не прошли тестирование на людях."
   parent: BaseHealingItem
   id: MedkitLAR
-  suffix: Stalker, Events
+  suffix: ST, Events
   components:
   - type: STWeight
     self: 3
@@ -223,7 +279,7 @@
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: MedkitLAR
-    count: 2
+    count: 4
 
 - type: stack
   id: MedkitLAR
@@ -232,4 +288,4 @@
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-5
   spawn: MedkitLAR
-  maxCount: 2
+  maxCount: 4

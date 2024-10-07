@@ -48,13 +48,6 @@
         radioprotectpill: 90
         antiradpill: 160
 
-    - name: Стимуляторы
-      priority: 3
-      items:
-        STEnergyDrink: 125
-        SelfSteampack: 300
-        MilitarySteampack: 800
-
     - name: Разное
       priority: 5
       items:

@@ -156,9 +156,9 @@
         SaviorCrate: 1500
         PolevoyVrachCrate: 1740
         #Stimul
-        SelfSteampack: 30
-        MilitarySteampack: 200
-        SciSteampack: 500
+        #SelfSteampack: 30
+        #MilitarySteampack: 200
+        #SciSteampack: 500
 
     - name: Кастомизация
       priority: 8
