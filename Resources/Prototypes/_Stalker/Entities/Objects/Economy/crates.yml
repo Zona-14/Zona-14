@@ -1,4 +1,4 @@
-﻿################# ООН
+################# ООН
 
 ### Т4 СЕТ
 
@@ -1279,5 +1279,73 @@
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: ClothingHeadBeretMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+        # temp
+- type: entity
+  parent: BaseItem
+  id: STTempTestNabor
+  name: набор тестера
+  description: Поставленный Сидором совместно с ООН.
+  suffix: Stalker, т2
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STWeaponRifleStalkerL85
+        - id: STWeaponShotgunProtecta
+        - id: 556M856Box
+        - id: 556M856Box
+        - id: 556M856Box
+        - id: 556M856Box
+        - id: 556M856Box
+        - id: 556M856Box
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: ClothingHeadAssaultHelmetUN
+        - id: STClothingOuterArmorLightPlateVestBaseUN
+        - id: ClothingBackpackDuffelCommonStalker
+        - id: STBoltBagFilled
+        - id: DrinkLemonadehBottleFull
+        - id: FoodTinMRE
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: STGauze
+        - id: STGauze
+        - id: Bloodpack
+        - id: Bloodpack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STHeadLight
+        - id: PowerCellHigh
+        - id: ZoneAnomalyDetectorAD2
+        - id: ZoneArtifactDetectorSpruce
       sound:
         path: /Audio/Effects/unwrap.ogg
