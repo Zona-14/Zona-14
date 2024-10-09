@@ -17,39 +17,28 @@
             Stalker: [ -1, -1 ]
             StalkerNeutral: [ -1, -1 ]
             StalkerRene: [ -1, -1 ]
-            MilitaryStalker: [ -1, -1 ]
-            Military: [ -1, -1 ]
-            MilitaryOfficer: [ -1, -1 ]
-            Police: [ -1, -1 ]
-            MilitaryHead: [ -1, -1 ]
             Seraphim: [ -1, -1 ]
-            StalkerJournalist: [ -1, -1 ]
-            StalkerScientist: [ -1, -1 ]
-            StalkerUN: [ -1, -1 ]
-            StalkerSBU: [ -1, -1 ]
             StalkerGreh: [ -1, -1 ]
             StalkerMechanic: [ -1, -1 ]
             StalkerTrader: [ -1, -1 ]
-            StalkerZavet: [ -1, -1 ]
             StalkerClown: [ -1, -1 ]
             StalkerDeserter: [ -1, -1 ]
             StalkerClearSky: [ -1, -1 ]
             StalkerPoisk: [ -1, -1 ]
-            #Citizen
-            MayorCity: [ -1, -1 ]
-            Prokuror: [ -1, -1 ]
-            Magistrate: [ -1, -1 ]
-            Priest: [ -1, -1 ]
-            # Bartender: [ -1, -1 ]
-            Doctor: [ -1, -1 ]
-            HeadDoctor: [ -1, -1 ]
+            # Science
+            StalkerScientist: [ -1, -1 ]
+            StalkerHeadScientist: [ -1, -1 ]
+            # Military
+            Military: [ -1, -1 ]
+            MilitaryOfficer: [ -1, -1 ]
+            MilitaryHead: [ -1, -1 ]
             # Mercenary
             StalkerMercenary: [ -1, -1 ]
             StalkerHeadMercenary: [ -1, -1 ]
             # Anomalist
             StalkerAnomalist: [ -1, -1 ]
             StalkerAnomalistGuardian: [ -1, -1 ]
-            # Pilgrimvs
+            # Pilgrims
             StalkerPostulant: [ -1, -1 ]
             StalkerBishop: [ -1, -1 ]
             # Freedom
@@ -58,18 +47,17 @@
             # Dolg
             StalkerDolg: [ -1, -1 ]
             StalkerHeadDolg: [ -1, -1 ]
-            # Bandits
+            # Brigades
             StalkerBandit: [ -1, -1 ]
-            StalkerHeadScientist: [ -1, -1 ]
             StalkerJaba: [ -1, -1 ]
             # Project
             StalkerProjectOrchestrator: [ -1, -1 ]
             StalkerProjectPawn: [ -1, -1 ]
             # Evolvers
-            Evolver: [ -1, -1 ]
-            # The pack
-            EvolverPackFang: [ -1, -1 ]
-            EvolverPackAlpha: [ -1, -1 ]
-            # Symbiotes
-            EvolverSymbioteMedium: [ -1, -1 ]
-            EvolverSymbioteArchon: [ -1, -1 ]
+            # Evolver: [ -1, -1 ]
+            # # The pack
+            # EvolverPackFang: [ -1, -1 ]
+            # EvolverPackAlpha: [ -1, -1 ]
+            # # Symbiotes
+            # EvolverSymbioteMedium: [ -1, -1 ]
+            # EvolverSymbioteArchon: [ -1, -1 ]

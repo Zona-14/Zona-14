@@ -259,7 +259,7 @@ public sealed partial class StaminaSystem : EntitySystem
                 component.NextUpdate = nextUpdate;
         }
 
-        var slowdownThreshold = component.CritThreshold / 2f;
+        var slowdownThreshold = component.SlodownThreshold; // stalker-changes
 
         // If we go above n% then apply slowdown
         if (oldDamage < slowdownThreshold &&

@@ -25,6 +25,7 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: ["jumpsuit"]
     - map: [ "torso" ] # stalker-changes
+    - map: [ "legs" ] # stalker-changes
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
@@ -302,6 +303,7 @@
     decay: 14
     cooldown: 5
     critThreshold: 200
+    slodownThreshold: 190
   - type: STWeight
     self: 70
   - type: StaminaActive

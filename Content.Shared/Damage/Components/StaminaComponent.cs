@@ -60,4 +60,12 @@ public sealed partial class StaminaComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
+
+    // stalker-changes-start
+    /// <summary>
+    /// How much stamina damage is required to entire stam crit.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+    public float SlodownThreshold = 50f; // CritThreshold / 2
+    // stalker-changes-end
 }
