@@ -38,7 +38,7 @@
     energy: 1
     netsync: false
   - type: DuplicateTeleport
-    prefix: WipeSafe_
+    prefix: WipeSafe
     maxWeight: 0.5
     mapPath: /Maps/_ST/PersonalStalkerArena/WipeSafe.yml
 
@@ -351,6 +351,8 @@
   id: DublicateSymbols
   symbols:
     - Kordon
+    - PB
+    - WipeSafe
     - CN
     - Greh
     - Merc
