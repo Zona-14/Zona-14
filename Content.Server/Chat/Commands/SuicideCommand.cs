@@ -1,14 +1,14 @@
+using Content.Server.Administration;
 using Content.Server.GameTicking;
 using Content.Server.Popups;
 using Content.Shared.Administration;
-using Content.Shared.Chat;
 using Content.Shared.Mind;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
 
 namespace Content.Server.Chat.Commands
 {
-    [AnyCommand]
+    [AdminCommand(AdminFlags.Admin)]  // Stalker14 Changes
     internal sealed class SuicideCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _e = default!;
