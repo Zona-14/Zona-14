@@ -66,6 +66,6 @@ public sealed partial class StaminaComponent : Component
     /// How much stamina damage is required to entire stam crit.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float SlodownThreshold = 50f; // CritThreshold / 2
+    public float SlowdownThreshold = 50f; // CritThreshold / 2
     // stalker-changes-end
 }

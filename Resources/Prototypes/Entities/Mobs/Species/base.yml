@@ -304,7 +304,7 @@
     decay: 14
     cooldown: 5
     critThreshold: 200
-    slodownThreshold: 190
+    slowdownThreshold: 190
   - type: STWeight
     self: 70
   - type: StaminaActive
