@@ -17,7 +17,6 @@
             Stalker: [ -1, -1 ]
             StalkerNeutral: [ -1, -1 ]
             StalkerRene: [ -1, -1 ]
-            Seraphim: [ -1, -1 ]
             StalkerGreh: [ -1, -1 ]
             StalkerMechanic: [ -1, -1 ]
             StalkerTrader: [ -1, -1 ]
@@ -25,6 +24,9 @@
             StalkerDeserter: [ -1, -1 ]
             StalkerClearSky: [ -1, -1 ]
             StalkerPoisk: [ -1, -1 ]
+            # Seraphim
+            Seraphim: [ -1, -1 ]
+            SeraphimHead: [-1, -1]
             # Science
             StalkerScientist: [ -1, -1 ]
             StalkerHeadScientist: [ -1, -1 ]
