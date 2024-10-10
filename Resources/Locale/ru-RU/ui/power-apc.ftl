@@ -1,4 +1,4 @@
-apc-menu-title = Электрощиток
+apc-menu-title = ЛКП
 apc-menu-breaker-label = Главный рубильник
 apc-menu-breaker-button = Переключить
 apc-menu-power-label = Нагрузка
@@ -10,5 +10,5 @@ apc-menu-charge-label = Заряд { $percent }
 apc-menu-power-state-good = Хорошее
 apc-menu-power-state-low = Слабое
 apc-menu-power-state-none = Отсутствует
-apc-menu-flavor-left = Обратитесь к электрику за помощью.
+apc-menu-flavor-left = Обратитесь к инженеру за помощью.
 apc-menu-flavor-right = v1.2

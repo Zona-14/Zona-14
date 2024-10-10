@@ -17,7 +17,3 @@ armor-damage-type-cold = Низкотемпературный
 armor-damage-type-poison = Ядовитый
 armor-damage-type-shock = Электрический
 armor-damage-type-structural = Структурный
-armor-damage-type-psy = Пси
-armor-damage-type-compression = Компрессионный
-# Stalker-Changes
-armor-class-value = Класс брони: [color=lightblue]{ $value }[/color].

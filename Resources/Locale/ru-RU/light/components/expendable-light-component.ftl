@@ -9,5 +9,3 @@ expendable-light-spent-purple-glowstick-name = погасший фиолетов
 expendable-light-spent-yellow-glowstick-name = погасший жёлтый химсвет
 expendable-light-spent-blue-glowstick-name = погасший синий химсвет
 expendable-light-spent-glowstick-desc = Похоже, этот химсвет погас. Как трагично.
-expendable-light-spent-gl-name = погасшая граната GL-1
-expendable-light-spent-gl-desc = Похоже, этот граната GL-1 погасла. Как трагично.

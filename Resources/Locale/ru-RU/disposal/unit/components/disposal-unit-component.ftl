@@ -8,14 +8,10 @@ ui-disposal-unit-button-flush = Смыть
 ui-disposal-unit-button-eject = Извлечь всё
 ui-disposal-unit-button-power = Питание
 
-## FlushVerb
-
-disposal-flush-verb-get-data-text = Смыть
-
 ## No hands
 
 disposal-unit-no-hands = У вас нет рук!
-disposal-unit-thrown-missed = Промах!
+disposal-flush-verb-get-data-text = Смыть
 # state
 disposal-unit-state-Ready = Готов
 # Yes I want it to always say Pressurizing
