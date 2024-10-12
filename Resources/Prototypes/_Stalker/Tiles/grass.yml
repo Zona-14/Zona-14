@@ -1,6 +1,6 @@
 - type: entity
   id: StalkerMapGrass1
-  suffix: Stalker, Mapping, Маппинг
+  suffix: Stalker, Mapping
   name: Трава
   components:
     - type: Clickable
