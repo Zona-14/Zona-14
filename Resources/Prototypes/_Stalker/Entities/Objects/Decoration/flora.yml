@@ -14,13 +14,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 750
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 700
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -142,13 +142,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 750
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 700
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -391,13 +391,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 20
+        damage: 250
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 200
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -407,11 +407,6 @@
             variation: 0.05
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          Log:
-            min: 0
-            max: 2
 
 - type: entity
   parent: Bush01
@@ -532,13 +527,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 750
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 700
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -693,13 +688,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 750
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 700
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -764,6 +759,32 @@
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
     drawdepth: Overdoors
     offset: 0,0.9
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 750
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          STLogStalkerT1:
+            min: 1
+            max: 2
+  - type: Craftable
 
 - type: entity
   parent: STBaseTree
@@ -832,6 +853,32 @@
         density: 2000
         layer:
         - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 750
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          STLogStalkerT1:
+            min: 1
+            max: 2
+  - type: Craftable
 
 - type: entity
   parent: STBaseTreeLarge
