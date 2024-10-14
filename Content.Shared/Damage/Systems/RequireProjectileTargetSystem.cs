@@ -55,6 +55,6 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
 
     private void LayingBulletPass(Entity<RequireProjectileTargetComponent> ent, ref DownedEvent args)
     {
-        SetActive(ent, true);
+        SetActive(ent, args.IgnoreLayingBulletPass ? true : false); // stalker-changes
     }
 }
