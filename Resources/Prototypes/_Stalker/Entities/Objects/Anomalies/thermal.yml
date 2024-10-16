@@ -163,6 +163,7 @@
   id: ZoneAnomalySteam
   suffix: Stalker, Steam, Anomaly
   components:
+    - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
       fireStacks: 0.5
       damageUpdate: true
@@ -171,8 +172,8 @@
           Heat: 8
     - type: ZoneAnomaly
       detectedLevel: 0
-      preparingDelay: 2
-      activationDelay: 0
+      preparingDelay: 0
+      activationDelay: 4
       chargingDelay: 0
     - type: Stealth
     - type: Sprite
