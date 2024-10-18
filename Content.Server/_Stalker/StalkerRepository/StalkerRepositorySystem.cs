@@ -698,7 +698,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 // another large blacklist
                 if (HasComp<SolutionComponent>(item) || // Do not insert solutions
                     HasComp<InstantActionComponent>(item) || // Do not insert actions
-                    _tags.HasTag(item, "Dogtag") || // Do not insert DogTags
+                    (HasComp<CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag")) ||
                     (HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge"))) // Do not insert program cartridges
                     continue;
 
