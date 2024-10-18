@@ -21,6 +21,7 @@
   - type: Craftable
   - type: Reflect
     reflectProb: 0.05
+    spread: 360
     reflects:
       - NonEnergy
 

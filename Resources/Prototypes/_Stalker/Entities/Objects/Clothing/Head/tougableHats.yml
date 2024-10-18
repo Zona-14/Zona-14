@@ -81,6 +81,7 @@
       damageCoefficient: 0.90
     - type: Reflect
       reflectProb: 0.02
+      spread: 360
       reflects:
         - NonEnergy
 
@@ -149,6 +150,7 @@
           Piercing: 0.75
     - type: Reflect
       reflectProb: 0.07
+      spread: 360
       reflects:
         - NonEnergy
 

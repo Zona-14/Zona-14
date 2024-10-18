@@ -24,6 +24,7 @@
     damageCoefficient: 0.70
   - type: Reflect
     reflectProb: 0.15
+    spread: 360
     reflects:
       - NonEnergy
 
