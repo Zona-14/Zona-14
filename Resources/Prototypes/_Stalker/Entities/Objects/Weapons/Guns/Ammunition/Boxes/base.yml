@@ -30,6 +30,8 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: Trash
+    time: 300
 
 - type: entity
   parent: BaseItem
