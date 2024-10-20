@@ -47,3 +47,21 @@
       damage:
         types:
           Radiation: -0.1
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetSpark
+  name: капюшон «Искры»
+  description: Плотный кусок резины на вашей голове.
+  noSpawn: true
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/spark.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/spark.rsi
+    - type: Armor
+      armorClass: 1
+      modifiers:
+        flatReductions:
+          Radiation: 1
+          Caustic: 1

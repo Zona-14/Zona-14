@@ -222,6 +222,19 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmCovenant
 
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmCovenant
+  name: шлем севы Завета
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  suffix: Stalker, Завет
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Seva/covenant.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Seva/covenant.rsi
+
 # Seraphim
 
 - type: entity

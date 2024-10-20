@@ -33,3 +33,33 @@
           Compression: 0.25
     - type: ExplosionResistance
       damageCoefficient: 0.95
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHazmat
+  name: шлем ХАЗМАТа
+  description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
+  noSpawn: true
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
+    - type: BreathMask
+    - type: IngestionBlocker
+    - type: IdentityBlocker
+    - type: Tag
+      tags:
+        - BlockMask
+        - HidesNose
+    - type: Armor
+      armorClass: 2
+      modifiers:
+        flatReductions:
+          Heat: 5
+          Radiation: 10
+        coefficients:
+          Heat: 0.3
+          Shock: 0.3
+          Radiation: 0.45
+          Psy: 0.5

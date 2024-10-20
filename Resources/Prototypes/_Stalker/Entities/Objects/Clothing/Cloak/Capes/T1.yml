@@ -168,7 +168,20 @@
       requiredSlot: CLOAK
       clothingPrototype: ClothingHeadCassock
 
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadCassock
+  name: капюшон рясы
+  description: капюшон из грубой ткани от монашеской рясы
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
+
 # СКИНЫ
+
 - type: entity
   parent: STClothingCapeBase
   id: ClothingTorsoTurtlenecksCamouflage
@@ -184,6 +197,18 @@
     requiredSlot:
     - neck
     slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetSeraRuined
+  name: капюшон
+  suffix: ST, PodpivAss_Lex
+  description: Драный капюшон странного цвета.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/sh68_camouflage.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/sh68_camouflage.rsi
 
 - type: entity
   parent: STClothingCapeBase

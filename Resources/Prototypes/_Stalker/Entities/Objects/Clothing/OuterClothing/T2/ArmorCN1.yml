@@ -1,4 +1,4 @@
-﻿
+
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorCN1
@@ -42,3 +42,31 @@
       - 2,2,2,3
       - 4,2,4,3
       - 6,2,7,3
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetCN1
+  name: капюшон «СН-1»
+  noSpawn: true
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+    - type: Armor
+      armorClass: 1
+      modifiers:
+        flatReductions:
+          Piercing: 8
+        coefficients:
+          Piercing: 0.85
+          Heat: 0.98
+          Shock: 0.98
+          Radiation: 0.98
+    - type: ExplosionResistance
+      damageCoefficient: 0.90
+    - type: Reflect
+      reflectProb: 0.02
+      spread: 360
+      reflects:
+        - NonEnergy

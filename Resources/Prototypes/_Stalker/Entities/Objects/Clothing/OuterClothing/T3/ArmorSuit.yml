@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorBase
   suffix: ST, T3, PvE
@@ -142,6 +142,18 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetFreedomDefender
+  name: капюшон «Страж свободы»
+  noSpawn: true
+  description: Не очень свободный, покуда сидит на вашей голове.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
 
 
 - type: entity
