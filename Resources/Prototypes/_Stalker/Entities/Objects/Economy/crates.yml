@@ -787,11 +787,17 @@
       state: kb2
     - type: SpawnItemsOnUse
       items:
-        - id: ClothingOuterArmorSSP99
+        - id: ClothingOuterArmorSpark
         - id: ClothingMaskGP7
         - id: ZoneArtifactDetectorResponse
         - id: antiradpill
         - id: GeigerCounter
+        - id: GlockMag17
+        - id: GlockMag17
+        - id: 919RIPBox
+        - id: 919RIPBox
+        - id: WeaponPistolStalkerGlock
+
       sound:
         path: /Audio/Effects/unwrap.ogg
 
