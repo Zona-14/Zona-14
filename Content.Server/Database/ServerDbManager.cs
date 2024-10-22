@@ -11,6 +11,7 @@ using Content.Shared._Stalker.WarZone;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Microsoft.Data.Sqlite;
@@ -341,6 +342,9 @@ namespace Content.Server.Database
         Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints);
 
         Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band);
+        Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints);
+
+        Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction);
         Task SetStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone, ProtoId<STBandPrototype> owner);
 
         Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone);
@@ -1041,10 +1045,25 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetStalkerBandAsync(band));
         }
-        public Task SetStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone, ProtoId<STBandPrototype> owner)
+        public Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints)
         {
             DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SetStalkerZoneOwnershipAsync(warZone, owner));
+            return RunDbCommand(() => _db.SetStalkerFactionAsync(faction, rewardPoints));
+        }
+
+        public Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetStalkerFactionAsync(faction));
+        }
+
+        public Task SetStalkerZoneOwnershipAsync(
+            ProtoId<STWarZonePrototype> warZone,
+            ProtoId<STBandPrototype>? capturingBand = null,
+            ProtoId<NpcFactionPrototype>? capturingFaction = null)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetStalkerZoneOwnershipAsync(warZone, capturingBand, capturingFaction));
         }
 
         public Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)

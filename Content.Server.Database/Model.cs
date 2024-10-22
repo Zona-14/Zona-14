@@ -47,6 +47,7 @@ namespace Content.Server.Database
         public DbSet<Stalker> Stalkers { get; set; } = null!; // stalker-changes
         public DbSet<StalkerStats> StalkerStats { get; set; } = null!; // stalker-changes
         public DbSet<StalkerBand> StalkerBands { get; set; } = null!; // stalker-changes
+        public DbSet<StalkerFaction> StalkerFactions { get; set; } = null!; // stalker-changes
         public DbSet<StalkerZoneOwnership> StalkerZoneOwnerships { get; set; } = null!; // stalker-changes
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

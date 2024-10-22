@@ -15,6 +15,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -1708,6 +1709,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             return record;
         }
+
         public async Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
         {
             await using var db = await GetDb();
@@ -1739,36 +1741,100 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             return record;
         }
-        public async Task SetStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone, ProtoId<STBandPrototype> owner)
+
+        public async Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints)
         {
             await using var db = await GetDb();
-            var ownerRecord = await db.DbContext.StalkerBands.FirstOrDefaultAsync(s => s.BandProtoId == owner.Id);
 
-            if (ownerRecord == null)
-            {
-                await SetStalkerBandAsync(owner, 0);
-                ownerRecord = await db.DbContext.StalkerBands.FirstOrDefaultAsync(s => s.BandProtoId == owner.Id);
-            }
-
-            var record = await db.DbContext.StalkerZoneOwnerships.FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+            var record = await db.DbContext.StalkerFactions.FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
             if (record is null)
             {
-                var newZone = new StalkerZoneOwnership()
+                var newBand = new StalkerFaction()
+                {
+                    FactionProtoId = faction.Id,
+                    RewardPoints = rewardPoints
+                };
+                db.DbContext.StalkerFactions.Add(newBand);
+            }
+            else
+            {
+                record.RewardPoints = rewardPoints;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerFactions
+                .Include(b => b.ZoneOwnerships)
+                .FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
+
+            return record;
+        }
+
+        public async Task SetStalkerZoneOwnershipAsync(
+            ProtoId<STWarZonePrototype> warZone,
+            ProtoId<STBandPrototype>? capturingBand = null,
+            ProtoId<NpcFactionPrototype>? capturingFaction = null)
+        {
+            if (capturingBand is null && capturingFaction is null)
+                throw new ArgumentNullException("No band or faction was provided for zone capture");
+
+            if (capturingBand is not null && capturingFaction is not null)
+                throw new ArgumentException("A zone can't be simultaneously captured by both band and faction");
+
+            await using var db = await GetDb();
+
+            int? bandId = null;
+            int? factionId = null;
+
+            if (capturingBand is not null)
+            {
+                var bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                if (bandRecord == null)
+                {
+                    await SetStalkerBandAsync(capturingBand.Value, 0);
+                    bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                }
+                bandId = bandRecord!.Id;
+            }
+            else if (capturingFaction is not null)
+            {
+                var factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                if (factionRecord == null)
+                {
+                    await SetStalkerFactionAsync(capturingFaction.Value, 0);
+                    factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                }
+                factionId = factionRecord!.Id;
+            }
+
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            if (record is null)
+            {
+                var newZone = new StalkerZoneOwnership
                 {
                     ZoneProtoId = warZone.Id,
-                    BandId = ownerRecord!.Id,
+                    BandId = bandId,
+                    FactionId = factionId,
                     LastCapturedByCurrentOwnerAt = DateTime.UtcNow
                 };
                 db.DbContext.StalkerZoneOwnerships.Add(newZone);
             }
             else
             {
-                record.BandId = ownerRecord!.Id;
+                record.BandId = bandId;
+                record.FactionId = factionId;
                 record.LastCapturedByCurrentOwnerAt = DateTime.UtcNow;
             }
 
             await db.DbContext.SaveChangesAsync();
         }
+
 
         public async Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
         {
