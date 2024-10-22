@@ -27,6 +27,8 @@ public sealed class DiscordAuthManager : IPostInjectInit
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
 
+    public const string AuthErrorLink = "Service Unavailable"; // TODO: Create a web-page for this
+
     private readonly Dictionary<NetUserId, DiscordUserData> _cachedDiscordUsers = new();
     public event EventHandler<ICommonSession>? PlayerVerified;
 
@@ -107,8 +109,14 @@ public sealed class DiscordAuthManager : IPostInjectInit
             var discordData = await response.Content.ReadFromJsonAsync<DiscordUserData>(cancel);
             return discordData;
         }
-        catch (Exception)
+        catch (HttpRequestException)
         {
+            _sawmill.Error("Remote auth service is unreachable. Check if its online!");
+            return null;
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
             return null;
         }
     }
@@ -123,14 +131,20 @@ public sealed class DiscordAuthManager : IPostInjectInit
         {
             var response = await _httpClient.GetAsync(requestUrl, cancel);
             if (!response.IsSuccessStatusCode)
-                return "Service Unavailable"; // TODO: Add web page to redirect in such cases
+                return AuthErrorLink; // TODO: Add web page to redirect in such cases
 
             var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
             return link!.Link;
         }
-        catch (Exception)
+        catch (HttpRequestException)
         {
-            return "Service Unavailable";
+            _sawmill.Error("Remote auth service is unreachable. Check if its online!");
+            return AuthErrorLink;
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
+            return AuthErrorLink;
         }
     }
 }
