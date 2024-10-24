@@ -27,7 +27,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
 
-    public const string AuthErrorLink = "Service Unavailable"; // TODO: Create a web-page for this
+    public const string AuthErrorLink = "https://stalkers14.xyz/auth_unavailable.html";
 
     private readonly Dictionary<NetUserId, DiscordUserData> _cachedDiscordUsers = new();
     public event EventHandler<ICommonSession>? PlayerVerified;
@@ -88,7 +88,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
             return;
         }
 
-        var link = await GenerateLink(args.Session.UserId);
+        var link = await GenerateLink(args.Session.UserId) ?? AuthErrorLink;
         var message = new MsgDiscordAuthRequired() {Link = link};
         args.Session.Channel.SendMessage(message);
     }
@@ -121,7 +121,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
         }
     }
 
-    public async Task<string> GenerateLink(NetUserId userId, CancellationToken cancel = default)
+    public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
     {
         _sawmill.Debug($"Generating link for {userId}");
         var requestUrl = $"{_apiUrl}/link?userid={userId}&api_token={_apiKey}";
@@ -131,7 +131,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
         {
             var response = await _httpClient.GetAsync(requestUrl, cancel);
             if (!response.IsSuccessStatusCode)
-                return AuthErrorLink;
+                return null;
 
             var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
             return link!.Link;
@@ -139,12 +139,12 @@ public sealed class DiscordAuthManager : IPostInjectInit
         catch (HttpRequestException)
         {
             _sawmill.Error("Remote auth service is unreachable. Check if its online!");
-            return AuthErrorLink;
+            return null;
         }
         catch (Exception e)
         {
             _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
-            return AuthErrorLink;
+            return null;
         }
     }
 }
