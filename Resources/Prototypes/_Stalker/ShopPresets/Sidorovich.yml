@@ -223,7 +223,3 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
-    - name: Набор тестера
-      priority: 12
-      items:
-        STTempTestNabor: 1
