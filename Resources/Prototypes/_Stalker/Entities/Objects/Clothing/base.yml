@@ -41,7 +41,7 @@
   id: STClothingOuterArmorStorageBasic
   name: база бронекостюмов с подсумками
   suffix: ST
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   # abstract: true
   components:
   - type: Tag
@@ -73,7 +73,7 @@
   id: ClothingOuterArmorStorageToggleableBasic
   name: база бронекостюмов с подсумками
   suffix: ST
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Storage
@@ -110,7 +110,7 @@
   name: база встроенных голов
   suffix: ST
   description: Капюшоны, шлема и т.п. тема
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: icon
@@ -148,7 +148,7 @@
   id: ClothingHeadStalkerLightBase
   name: база шлемов с фонариком
   suffix: ST
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:

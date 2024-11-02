@@ -50,7 +50,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBolotniyCoat
   name: капюшон плаща "болотника"
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: STWeight
@@ -87,7 +87,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBlackCoat
   name: черный капюшон
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: Sprite
@@ -115,7 +115,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHatHoodCoatStalker
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -145,7 +145,7 @@
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetNovember
   name: осенний капюшон
-  categories: [ HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ] HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: Sprite

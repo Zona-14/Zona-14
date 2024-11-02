@@ -86,7 +86,6 @@
   parent: BandRepositoryBase
   id: PortalBandDebtRepository
   suffix: 1000
-  noSpawn: false
   name: Band-Debt-Repository
   description: Band-Debt-Repository-desc
   components:
@@ -581,7 +580,6 @@
   parent: BandRepositoryBase
   id: PortalBandPoiskRepository
   suffix: 2500
-  noSpawn: false
   name: Band-Poisk-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -597,7 +595,6 @@
   parent: BandRepositoryBase
   id: PortalBandProjectRepository
   suffix: 2000
-  noSpawn: false
   name: Band-Project-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
