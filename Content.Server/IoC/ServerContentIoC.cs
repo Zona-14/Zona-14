@@ -79,6 +79,7 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordAuthManager>(); // Stalker-Changes-Auth
             IoCManager.Register<JoinQueueManager>(); // Stalker-Changes - Corvax Queue Adaptation
             IoCManager.Register<SponsorsManager>(); // Stalker-Changes-Sponsors
+            IoCManager.Register<_Stalker.ServerAdministration.ServerApi>(); // Stalker-Changes - Stalker Server API
         }
     }
 }
