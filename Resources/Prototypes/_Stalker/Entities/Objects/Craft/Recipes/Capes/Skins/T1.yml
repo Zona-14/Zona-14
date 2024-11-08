@@ -1,0 +1,10 @@
+# light helmet
+- type: lightCraftingRecipe
+  id: STCraftSkinSTCraftSkinClothingHeadHelmetDolg
+  results:
+    - ClothingCapeSerafim
+  steps:
+    firstIngredient: STSkinsKitSeraphim
+    secondIngredient: ClothingOuterCoatDoshdevik
+    keepFirst: true
+    time: 5

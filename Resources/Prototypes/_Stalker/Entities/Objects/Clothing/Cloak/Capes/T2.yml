@@ -152,3 +152,18 @@
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: ClothingCapeSerafimPrestige
+  name: престижный плащ Серафимов
+  description: Выполнен в тёмно-зелёной цветовой гамме с металлическими вставками
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetSerafim

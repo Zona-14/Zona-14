@@ -1,0 +1,83 @@
+- type: Tag
+  id: Fangs
+- type: entity
+  parent: BaseItem
+  id: Fangs
+  name: Клыки
+  description: Вырванные клыки из передних челюстей разных мутантов... Да только фанатик бы стал таким заниматься!
+  suffix: Stalker
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Credit: 1
+  - type: Stack
+    stackType: Roubles
+    count: 1
+    baseLayer: base
+    layerStates:
+    - cash
+    - cash_100
+    - cash_1000
+  - type: Sprite
+    sprite: _Stalker/Objects/Economy/fangs.rsi
+    state: cash
+    layers:
+    - state: cash
+      map: ["base"]
+  - type: Item
+    sprite: _Stalker/Objects/Economy/fangs.rsi
+    size: Small
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Fangs
+  - type: RepositoryItem
+    categoryName: Деньги
+
+- type: currency
+  id: Fangs
+  displayName: рубли
+  cash:
+    1: Fangs
+  canWithdraw: true
+
+- type: stack
+  id: Fangs
+  name: клык
+  icon: { sprite: /Textures/_Stalker/Objects/Economy/fangs.rsi, state: cash }
+  spawn: Fangs
+  itemSize: 1
+  splitAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 10000, 50000, 100000]
+
+- type: entity
+  parent: Fangs
+  id: Fangs100
+  suffix: Stalker, 100
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/fangs.rsi
+    state: cash_100
+  - type: Stack
+    count: 100
+
+- type: entity
+  parent: Fangs
+  id: Fangs1000
+  suffix: Stalker, 1000
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/fangs.rsi
+    state: cash_1000
+  - type: Stack
+    count: 1000
