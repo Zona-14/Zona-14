@@ -2,7 +2,7 @@
 - type: gameMap # arena-changes-start
   id: STWorld
   mapName: 'StalkerMap'
-  mapPath: "/Maps/_Arena_/lobby.yml"
+  mapPath: "/Maps/_Arena/lobby.yml"
   minPlayers: 0
   stations:
     Stalker:

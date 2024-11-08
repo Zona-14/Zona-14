@@ -42,7 +42,7 @@
 - type: department
   id: ArenaDepartment
   name: Жители Арены
-  description: 
+  description: desc
   color: "#111111"
   weight: 1
   roles:
