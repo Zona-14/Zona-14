@@ -14,29 +14,6 @@
   id: ArenologGear
   equipment:
     id: MilitaryPDA
-    belt: ClothingBeltGreenWebbingStalker
-    shoes: ClothingShoesBootsCombatFilled
-    ears: STHeadLight
-    back: ArenaClothingBackpackDuffelHikingVSRFAnomaly
-
-- type: entity
-  parent: ClothingBackpackDuffelHikingVSRFAnomaly
-  id: ArenaClothingBackpackDuffelHikingVSRFAnomaly
-  components:
-  - type: StorageFill
-    contents:
-      - id: GL1Grenade
-      - id: GL1Grenade
-      - id: STBloodpack
-      - id: STBloodpack
-      - id: STBloodpack
-      - id: STBloodpack
-      - id: STTourniquet
-      - id: STTourniquet
-      - id: STTourniquet
-      - id: STTourniquet
-      - id: PowerCellHyper
-      - id: PowerCellHyper
 
 - type: department
   id: ArenaDepartment
