@@ -1,6 +1,6 @@
 - type: job
   id: MilitaryStalker
-  name: Военный сталкер
+  name: Военстал
   icon: voen
   description: Солдаты, прошедшие после опыта службы в Зоне специальную подготовку, или сталкеры, подписавшие контракт с армией.
   playTimeTracker: JobMilitaryStalker
