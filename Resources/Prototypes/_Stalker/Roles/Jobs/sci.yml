@@ -55,6 +55,8 @@
         groups:
           - ecologists
       - type: Bands
+        altBand: stalker
+        canChange: true
         band: Stalker
         bandIcon: sci
       - type: BlockTackingHolyItems
