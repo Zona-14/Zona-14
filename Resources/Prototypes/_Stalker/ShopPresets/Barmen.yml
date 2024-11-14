@@ -65,7 +65,7 @@
     - name: Магазины
       priority: 2
       items:
-        BaseMagazine762x39RPD: 1000
+        Magazine762x39RPD: 1000
         Vz61Mag: 100
         BaseMP5Mag: 245
         MP40Mag: 200
