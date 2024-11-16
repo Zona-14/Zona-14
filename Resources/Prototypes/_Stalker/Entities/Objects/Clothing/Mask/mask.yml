@@ -221,3 +221,19 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingMaskBase
+  id: STClothingMaskKufei
+  name: куфей
+  suffix: ST, Скин
+  description: Обмотки на лицо зелёного цвета.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/kufei_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/kufei_sera.rsi
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair

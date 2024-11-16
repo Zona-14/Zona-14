@@ -7,7 +7,13 @@
   description: АК-12 - Первый в своём роде представитель калибра 5,45х39, но с начинкой и характеристиками приближёнными к натовским автоматическим винтовкам.
   components:
   - type: STWeight
-    self: 6
+    self: 4.5
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
@@ -45,9 +51,3 @@
         whitelist:
           tags:
             - Cartridge545
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak12.rsi
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak12.rsi
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak12.rsi

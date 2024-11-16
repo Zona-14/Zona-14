@@ -40,9 +40,12 @@
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsSeraFilled
     legs: STClothingLegsSerafimPants
     torso: STClothingTorsoSerafimLittleChaos
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
+
 
 - type: job
   id: SeraphimHead
@@ -87,6 +90,8 @@
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsSeraFilled
     legs: STClothingLegsSerafimPants
     torso: STClothingTorsoSerafimFullReady
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
