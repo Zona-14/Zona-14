@@ -9,6 +9,12 @@
 # Table: null
 
 # Stalker Upstream 23/9/2024
+# 17-10-24 Stalker14 upstream
+BaseRailing : STBaseRailing
+Railing : STRailing
+RailingCorner : STRailingCorner
+RailingCornerSmall : STRailingCornerSmall
+RailingRound : STRailingRound
 
 #11.10.2024 - Stalker14
 Barricade: STBarricade
@@ -526,9 +532,3 @@ BlueprintFlare: null
 
 # 2024-10-04
 BaseAdvancedPen: Pen
-# день-месяц-год Stalker14 upstream
-BaseRailing : STBaseRailing
-Railing : STRailing
-RailingCorner : STRailingCorner
-RailingCornerSmall : STRailingCornerSmall
-RailingRound : STRailingRound
