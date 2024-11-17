@@ -189,7 +189,7 @@
       access: [["Seraphims"]]
 
 - type: entity
-  id: MetalAltDoorFalloutArmyClosed
+  id: MetalAltDoorFalloutSeraClosed
   name: стальная дверь Серафимов
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
