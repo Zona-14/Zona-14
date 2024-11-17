@@ -9,12 +9,6 @@
 # Table: null
 
 # Stalker Upstream 23/9/2024
-# 17-10-24 Stalker14 upstream
-BaseRailing : STBaseRailing
-Railing : STRailing
-RailingCorner : STRailingCorner
-RailingCornerSmall : STRailingCornerSmall
-RailingRound : STRailingRound
 #14.11.2024 - Stalker14
 Cordon-Sera : Base-Sera
 Cordon-SeraUncollide : Base-SeraUncollide
