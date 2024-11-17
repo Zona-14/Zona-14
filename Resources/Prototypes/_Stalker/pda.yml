@@ -6,6 +6,10 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  - type: Unremovable
+  - type: Geiger
+    showControl: true
+    showExamine: true
   - type: Trash
     time: 600
   - type: Appearance
