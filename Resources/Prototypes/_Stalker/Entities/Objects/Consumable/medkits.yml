@@ -70,17 +70,17 @@
     stackType: STBrutepackSera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Consumable/Medicine/brutepacksera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
   - type: Sprite
-    sprite: _Stalker/Objects/Consumable/Medicine/brutepacksera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
 
 - type: stack
   id: STBrutepackSera
   name: баночка с мазью
   icon:
-    sprite: _Stalker/Objects/Consumable/Medicine/brutepacksera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
   spawn: STBrutepackSera
   maxCount: 10
@@ -116,17 +116,17 @@
     stackType: STOintmentSera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Consumable/Medicine/ointmentsera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
   - type: Sprite
-    sprite: _Stalker/Objects/Consumable/Medicine/ointmentsera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
 
 - type: stack
   id: STOintmentSera
   name: горькая мазь
   icon:
-    sprite: _Stalker/Objects/Consumable/Medicine/ointmentsera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
   spawn: STOintmentSera
   maxCount: 10
@@ -162,17 +162,17 @@
     stackType: STGauzeSera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Consumable/Medicine/gausesera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
     state: icon
   - type: Sprite
-    sprite: _Stalker/Objects/Consumable/Medicine/gausesera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
     state: icon
 
 - type: stack
   id: STGauzeSera
   name: кусок тряпки
   icon:
-    sprite: _Stalker/Objects/Consumable/Medicine/ointmentsera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
   spawn: STGauzeSera
   maxCount: 10
@@ -220,17 +220,17 @@
     stackType: MedkitAI2Sera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Consumable/Medicine/ai2sera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
   - type: Sprite
-    sprite: _Stalker/Objects/Consumable/Medicine/ai2sera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
 
 - type: stack
   id: MedkitAI2Sera
   name: набор лечебных трав
   icon:
-    sprite: _Stalker/Objects/Consumable/Medicine/ai2sera.rsi
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
   spawn: MedkitAI2Sera
   maxCount: 10
