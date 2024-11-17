@@ -6,7 +6,7 @@
   name: PDA
   description: Personal Data Assistant.
   components:
-  - type: Unremovable
+  - type: Unremoveable
   - type: Geiger
     showControl: true
     showExamine: true
