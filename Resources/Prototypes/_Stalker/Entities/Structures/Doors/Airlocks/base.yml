@@ -179,26 +179,6 @@
       access: [["CN"]]
 
 - type: entity
-  id: HermoDverTypeOneSeraClosed
-  name: гермодверь
-  parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
-  suffix: ST, mapping, Серафимы
-  components:
-    - type: AccessReader
-      access: [["Seraphims"]]
-
-- type: entity
-  id: MetalAltDoorFalloutSeraClosed
-  name: стальная дверь Серафимов
-  parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
-  suffix: ST, mapping, Серафимы
-  components:
-    - type: AccessReader
-      access: [["Seraphims"]]
-
-- type: entity
   id: MetalAltDoorFalloutReneClosed
   name: стальная дверь
   parent: MetalAltDoorFallout

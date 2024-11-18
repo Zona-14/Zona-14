@@ -57,20 +57,6 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1T.rsi
 
 - type: entity
-  parent: ClothingHeadHelmetVityaz1C
-  id: STClothingHeadHelmetSeraphimAltin
-  name: шлем "Алтын"
-  description: Противоударный шлем "Алтын", модифицированный Серафимами
-  components:
-  - type: Sprite
-    sprite: _Stalker/Clothing/Head/Sera_/seraphim_altin.rsi
-  - type: Clothing
-    sprite: _Stalker/Clothing/Head/Sera_/seraphim_altin.rsi
-  - type: Armor
-    armorLevels:
-      radiation: 1
-
-- type: entity
   parent: STClothingHeadHelmetTacticalT2Base
   id: ClothingHeadHelmetVityaz1L
   name: шлем "Витязь 1L"
