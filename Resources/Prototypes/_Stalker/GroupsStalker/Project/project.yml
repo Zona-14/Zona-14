@@ -158,9 +158,6 @@
     sprite: Corvax/Clothing/Shoes/Boots/jackboots_project.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Shoes/Boots/jackboots_project.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepBoots
 
 - type: entity
   parent: ClothingBeltStorageBase
