@@ -12,41 +12,40 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak104.rsi
   - type: Gun
-    fireRate: 2.5
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/fal.ogg
-    minAngle: 50
-    maxAngle: 150
-    angleIncrease: 4.5
-    angleDecay: 20.5
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak104.rsi
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    projectileSpeed: 30
+    minAngle: 55
+    maxAngle: 95
+    angleIncrease: 6
+    angleDecay: 25
+    fireRate: 4
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Base556Mag10
+        startingItem: Base739Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-            - Magazine556
+            - Magazine739
       gun_module_muzzle:
         name: Muzzle
         priority: 3
         whitelist:
           tags:
-            - STWeaponModuleRifleSilencerNato
+            - STWeaponModuleRifleSilencerRu
       gun_module_scope:
         name: Scope
         priority: 2
         whitelist:
           tags:
-            - STWeaponModuleRifleScopeNato
+            - STWeaponModuleRifleScopeRu
       gun_chamber:
         name: Chamber
         priority: 1
         whitelist:
           tags:
-            - Cartridge556
+            - Cartridge739

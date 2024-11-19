@@ -81,17 +81,17 @@
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
-    FoodMeatSpiderLeg: 17
-    MutantPartBlindDogTail: 25
-    # MutantPartZombieHand: 140
-    MutantPartFleshEye: 35
-    MutantPartBoarHoof: 12
-    MutantPartPseudodogTail: 36
-    MutantPartSnorkFoot: 280
-    MutantPartLeshiyRoot: 167
-    MutantPartBloodsuckerTentacles: 430
+    FoodMeatSpiderLeg: 16
+    MutantPartBlindDogTail: 30
+    MutantPartZombieHand: 140
+    MutantPartFleshEye: 80
+    MutantPartBoarHoof: 80
+    MutantPartPseudodogTail: 100
+    MutantPartSnorkFoot: 120
+    MutantPartLeshiyRoot: 166
+    MutantPartBloodsuckerTentacles: 200
     MutantPartPseudogiantHeart: 833
-    MutantPartOraculeEye: 650
+    MutantPartOraculeEye: 1000
   categories:
     - name: Оружие
       priority: 1
@@ -103,9 +103,9 @@
       priority: 2
       items:
         ClothingMaskGasSera: 45
-        STClothingCapeT2SerafimPrestige: 200
-        STClothingOuterCoatHimera: 200
-        STSkinsKitSeraphim: 350
+        STClothingCapeT2SerafimPrestige: 350
+        STClothingOuterCoatHimera: 350
+        STSkinsKitSeraphim: 250
         ClothingBackpackTacticBlackStalker: 250
         ClothingBackpackDuffelBlackStalker: 20
         STClothingOuterArmorRassvetSera: 600
@@ -141,8 +141,8 @@
     - name: Боеприпасы
       priority: 6
       items:
-        7mmBuckshotBox: 13
-        545FMJBox: 350
+        7mmBuckshotBox: 16
+        545FMJBox: 83
     - name: Провизия
       priority: 7
       items:
@@ -181,24 +181,23 @@
 - type: shopPreset
   id: SerafimShopPresetHeavy
   itemsForSale:
-    # Блокировка некоторых видов частей мутантов к продаже и разблокировка. -20% к продаже частей мутантов в баре, а не на базе.
-    # FoodMeatSpiderLeg: 17
-    MutantPartBlindDogTail: 5
-    MutantPartZombieHand: 112
-    MutantPartFleshEye: 64
-    MutantPartBoarHoof: 64
-    MutantPartPseudodogTail: 100
-    MutantPartSnorkFoot: 96
-    MutantPartLeshiyRoot: 133
-    # MutantPartBloodsuckerTentacles: 200
-    # MutantPartPseudogiantHeart: 833
-    # MutantPartOraculeEye: 1000
+    FoodMeatSpiderLeg: 6
+    MutantPartBlindDogTail: 12
+    MutantPartZombieHand: 56
+    MutantPartFleshEye: 32
+    MutantPartBoarHoof: 32
+    MutantPartPseudodogTail: 40
+    MutantPartSnorkFoot: 48
+    MutantPartLeshiyRoot: 66
+    MutantPartBloodsuckerTentacles: 80
+    MutantPartPseudogiantHeart: 333
+    MutantPartOraculeEye: 400
   categories:
     - name: Оружие
       priority: 1
       items:
         STWeaponRifleStalkerAK12: 1450
-        STWeaponRifleStalkerAK12Sera: 1900
+        STWeaponRifleStalkerAK104: 1900
         STWeaponRifleStalkerVeprSerafim: 2500
         STWeaponShotgunSaiga12Sera: 1200
         STWeaponShotgunToz34: 300
@@ -210,9 +209,9 @@
         STClothingOuterArmorRassvetSera: 700
         STClothingOuterArmorSeraphimStrash: 1400
         STClothingCapeT1Serafim: 150
-        STClothingCapeT2SerafimPrestige: 180
-        STClothingOuterCoatHimera: 180
-        ClothingOuterCoatSeraphim: 250
+        STClothingCapeT2SerafimPrestige: 480
+        STClothingOuterCoatHimera: 480
+        ClothingOuterCoatSeraphim: 1150
         ClothingOuterArmorSevasera: 850
         STSkinsKitSeraphim: 200
         STClothingHeadHelmetSeraphimAltin: 900
@@ -264,25 +263,25 @@
     - name: Обвесы
       priority: 7
       items:
-        STModuleScopeRiflesT2Ru: 1200
+        STModuleScopeRiflesT2Ru: 1100
     - name: Магазины
       priority: 8
       items:
         Base1270Mag: 80
         Base751Mag10: 100
         545Mag30: 150
-        556Mag30: 150
         739Mag30: 180
-        751Mag30: 200
-        GlockMag24: 100
-        GlockMag33: 190
-        PP91Mag: 230
+        Base754Mag5: 150
+        754Mag10: 380
     - name: Боеприпасы
       priority: 9
       items:
-        7mmBuckshotBox: 50
-        6mmBuckshotBox: 150
-        8mmBuckshotBox: 600
-        545PCBox: 290
-        754FMJBox: 540
-        739FMJBox: 410
+        7mmBuckshotBox: 33
+        6mmBuckshotBox: 83
+        8mmBuckshotBox: 366
+        545HPBox: 133
+        545PCBox: 216
+        751M80Box: 266
+        739FMJBox: 250
+        754FMJBox: 300
+        545FMJBox: 133
