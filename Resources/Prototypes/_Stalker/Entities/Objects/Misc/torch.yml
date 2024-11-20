@@ -1,0 +1,37 @@
+- type: entity
+  name: факел
+  parent: BaseItem
+  suffix: ST, Скин
+  id: STTorchSera
+  components:
+    - type: ExpendableLight
+      glowDuration: 600
+      fadeOutDuration: 4
+      iconStateSpent: torch_spent
+      turnOnBehaviourID: turn_on
+      fadeOutBehaviourID: fade_out
+      litSound:
+        path: /Audio/Items/Flare/flare_on.ogg
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/torch.rsi
+      layers:
+        - map: [ enum.ExpendableLightVisualLayers.Base ]
+          state: torch_unlit
+        - map: [ enum.ExpendableLightVisualLayers.Glow ]
+          state: lit_overlay
+          color: "#133201"
+          visible: false
+          shader: unshaded
+    - type: Icon
+      sprite: _Stalker/Objects/Misc/torch.rsi
+      state: icon
+    - type: Item
+      sprite: _Stalker/Objects/Misc/torch.rsi
+      heldPrefix: unlit
+    - type: Appearance
+    - type: PointLight
+      enabled: false
+      color: "#133201"
+      radius: 1.0
+      energy: 5.0
+      netsync: false

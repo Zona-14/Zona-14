@@ -34,8 +34,7 @@
         TrashBag: 100
         Matchbox: 60
         BaseRadio: 100
-        FlashlightSeclite: 150
-        PowerCellHyper: 100
+        STTorchSera: 150
         HandheldGPSBasic: 100
         ClothingGoPro: 356
         Paper: 10
@@ -124,7 +123,7 @@
         PowerCellHyper: 10
         Defibrillator: 70
         GeigerCounter: 25
-        BoxFlare: 20
+        STTorchSera: 25
     - name: Аномалии
       priority: 4
       items:
@@ -227,6 +226,7 @@
       items:
         ExtendedEmergencyOxygenTankFilledStalker: 300
         DoubleEmergencyOxygenTankStalkerFilled: 200
+        STTorchSera: 50
     - name: Аномалии
       priority: 4
       items:
