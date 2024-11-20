@@ -140,11 +140,13 @@
         545Mag20: 100
         545Mag30: 150
         Base751Mag10: 100
+        VityazMag: 180
     - name: Боеприпасы
       priority: 6
       items:
         7mmBuckshotBox: 16
         545FMJBox: 83
+        919PSTBox: 83
     - name: Провизия
       priority: 7
       items:
@@ -278,6 +280,7 @@
         739Mag30: 180
         Base754Mag5: 150
         754Mag10: 380
+        VityazMag: 180
     - name: Боеприпасы
       priority: 9
       items:
@@ -286,7 +289,9 @@
         8mmBuckshotBox: 366
         545HPBox: 133
         545PCBox: 216
-        751M80Box: 266
         739FMJBox: 250
         754FMJBox: 300
         545FMJBox: 133
+        919RIPBox: 83
+        919PSTBox: 83
+        919PBMBox: 150
