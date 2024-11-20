@@ -1,7 +1,7 @@
-#_Stalker/Objects/Weapons/Guns/Rifles/ak12.rsi
+# Кастомка серафимов
 - type: entity
   name: АК-12
-  suffix: ST, Custom
+  suffix: ST, Скин
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK12
   description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы. 
@@ -9,11 +9,11 @@
   - type: STWeight
     self: 4.5
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
@@ -51,3 +51,15 @@
         whitelist:
           tags:
             - Cartridge545
+
+- type: entity
+  name: АК-12 серафимов
+  parent: STBaseWeaponRifle
+  id: STWeaponRifleStalkerAK12sera
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12sera.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12sera.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12sera.rsi
