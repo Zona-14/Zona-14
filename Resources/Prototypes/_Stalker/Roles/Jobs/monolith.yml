@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMonolith
-  name: Боец Монолита
+  name: Группа Пропащих
   icon: monolith
-  description: Группировка, сконцентрировавшая свои силы в Центре Зоны, не подпускающая к себе никого и яростно враждующая с представителями всех других группировок.
+  description: Символ тихого, но пугающего присутствия.
   playTimeTracker: JobMonolith
   whitelisted: true
   requirements:

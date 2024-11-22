@@ -1668,339 +1668,378 @@
       contents:
         # outer
         - id: ClothingOuterJacketMonolith
-          prob: 0.8
+          prob: 0.4
         - id: ClothingOuterJacketMonolith
-          prob: 0.8
+          prob: 0.4
         - id: ClothingOuterJacketMonolith
-          prob: 0.8
+          prob: 0.4
         - id: STClothingOuterArmorLightPlateVestBaseMonolith
-          prob: 0.3
+          prob: 0.1
         - id: STClothingOuterArmorLightPlateVestBaseMonolith
-          prob: 0.3
+          prob: 0.1
         - id: STClothingOuterArmorLightPlateVestBaseMonolith
-          prob: 0.3
+          prob: 0.1
         - id: ClothingOuterArmorSevaMonolith
-          prob: 0.05
+          prob: 0.025
         # backpack
         - id: ClothingBackpackTacticBlackStalker
           prob: 0.5
         - id: ClothingBackpackTacticBlackStalker
-          prob: 0.25
+          prob: 0.125
         - id: ClothingBackpackTacticBlackStalker
-          prob: 0.25
+          prob: 0.125
         # mask
         - id: ClothingMaskGasMono
-          prob: 0.5
-        - id: ClothingMaskGasMono
           prob: 0.25
         - id: ClothingMaskGasMono
-          prob: 0.25
+          prob: 0.125
         - id: ClothingMaskGasMono
-          prob: 0.25
+          prob: 0.125
+        - id: ClothingMaskGasMono
+          prob: 0.125
         # hat
         - id: ClothingHeadHelmetBerill5MMonolith
-          prob: 0.25
+          prob: 0.125
         - id: ClothingHeadHelmetBerill5MMonolith
-          prob: 0.25
+          prob: 0.125
         - id: ClothingHeadHelmetBerill5MMonolith
-          prob: 0.25
+          prob: 0.125
         # weapon
+        - id: STWeaponShotgunMP153
+          prob: 0.25
+        - id: STWeaponShotgunProtecta
+          prob: 0.05
         - id: WeaponPistolStalkerGlock
-          prob: 0.5
+          prob: 0.25
         - id: WeaponPistolStalkerGlock
-          prob: 0.5
+          prob: 0.25
         - id: WeaponPistolStalkerGlock
-          prob: 0.5
+          prob: 0.25
         - id: STWeaponSMGMp5
-          prob: 0.2
+          prob: 0.1
         - id: STWeaponSMGMp5
-          prob: 0.2
+          prob: 0.1
         - id: STWeaponRifleStalkerL85
-          prob: 0.2
+          prob: 0.1
         - id: STWeaponRifleStalkerL85
-          prob: 0.15
+          prob: 0.075
         - id: STWeaponRifleStalkerL85
-          prob: 0.15
+          prob: 0.075
         - id: STWeaponRifleSig550
-          prob: 0.2
+          prob: 0.1
         - id: STWeaponRifleSig550
-          prob: 0.2
+          prob: 0.05
         - id: STWeaponRifleSig550
-          prob: 0.2
+          prob: 0.05
         # modules STModuleSMGGripT1
         - id: STModuleScopeRiflesT2Nato
-          prob: 0.15
+          prob: 0.075
         - id: STModuleScopeRiflesT2Nato
-          prob: 0.15
+          prob: 0.075
         - id: STModuleScopeRiflesT2Nato
+          prob: 0.075
+        - id: STModuleScopeRiflesT1Nato
           prob: 0.15
         - id: STModuleScopeRiflesT1Nato
-          prob: 0.3
+          prob: 0.15
         - id: STModuleScopeRiflesT1Nato
-          prob: 0.3
-        - id: STModuleScopeRiflesT1Nato
-          prob: 0.3
-        - id: STModuleSMGGripT2
           prob: 0.15
         - id: STModuleSMGGripT2
+          prob: 0.075
+        - id: STModuleSMGGripT2
+          prob: 0.075
+        - id: STModuleSMGGripT1
           prob: 0.15
         - id: STModuleSMGGripT1
-          prob: 0.3
-        - id: STModuleSMGGripT1
-          prob: 0.3
+          prob: 0.15
         # mags
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: GlockMag24
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: 556Mag30
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
         - id: BaseMP5Mag
-          prob: 0.3
+          prob: 0.15
       # ammo
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15   
         - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 919PSTBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 556FMJBox
-          prob: 0.3
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 919PBMBox
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
-          prob: 0.15
-        - id: 556M855Box
           prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
         - id: 919PSTBox
-          prob: 0.3
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 556FMJBox
-          prob: 0.3
+          prob: 0.15
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 919PBMBox
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         - id: 556M855Box
-          prob: 0.15
+          prob: 0.075
         # meds
         - id: STGauze
-          prob: 0.6
+          prob: 0.3
         - id: STGauze
-          prob: 0.6
+          prob: 0.3
         - id: STGauze
-          prob: 0.6
+          prob: 0.3
         - id: STGauze
-          prob: 0.6
+          prob: 0.3
         - id: STGauze
-          prob: 0.6
+          prob: 0.3
         - id: STOintment
-          prob: 0.6
+          prob: 0.3
         - id: STOintment
-          prob: 0.6
-        - id: STOintment
-          prob: 0.6
-        - id: STOintment
-          prob: 0.6
+          prob: 0.3
+        - id: PillDexalin
+          prob: 0.3
+        - id: PillDexalin
+          prob: 0.3
         - id: Defibrillator
-          prob: 0.5
+          prob: 0.25
         - id: psyblock
-          prob: 0.6
+          prob: 0.3
         - id: psyblock
-          prob: 0.6
+          prob: 0.3
         - id: AntiRadMedipen
-          prob: 0.6
+          prob: 0.3
         - id: AntiRadMedipen
-          prob: 0.6
+          prob: 0.3
         - id: MedkitAI2
-          prob: 0.6
+          prob: 0.3
         - id: MedkitAI2
-          prob: 0.6
+          prob: 0.3
         - id: MedkitAI2
-          prob: 0.6
+          prob: 0.3
         - id: MedkitAI2
-          prob: 0.6
+          prob: 0.3
         - id: MedkitAI2
-          prob: 0.6
-        - id: MedkitMilitary
           prob: 0.3
         - id: MedkitMilitary
-          prob: 0.3
+          prob: 0.15
         - id: MedkitMilitary
-          prob: 0.3
+          prob: 0.15
+        - id: MedkitMilitary
+          prob: 0.15
       # rare
         - id: STWeaponRifleStalkerG36
-          prob: 0.03
+          prob: 0.015
         - id: 556M856Box
-          prob: 0.05
+          prob: 0.025
         - id: 556M856Box
-          prob: 0.05
+          prob: 0.025
         - id: 556M856Box
-          prob: 0.05
+          prob: 0.025
+      # misc
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: BoxZiptie
+          prob: 0.25
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15
