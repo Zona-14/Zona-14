@@ -52,6 +52,7 @@
 - type: stack
   id: Dollar
   name: доллар
+  maxCount: 100
   icon: { sprite: /Textures/_Stalker/Objects/Economy/dollar.rsi, state: cash }
   spawn: Dollar
 
