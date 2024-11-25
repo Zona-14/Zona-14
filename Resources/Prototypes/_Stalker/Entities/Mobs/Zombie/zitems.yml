@@ -1134,7 +1134,7 @@
   parent: ClothingHeadHelmetInfantry
   id: ClothingHeadHelmetInfantryBandZ
   name: изношенный бандитский пехотный шлем
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   description: Пехотный шлем с нанесенными на него полосками, как буд-то adidas, почитается бандитскими формированиями, класс брони - 3.
   components:
     - type: Unremoveable
@@ -1665,9 +1665,9 @@
   - type: STWeight
     self: 3.5
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/Cloak/coat_pahan.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/Cloak/coat_pahan.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
     equipDelay: 4
     slots:
     - neck
