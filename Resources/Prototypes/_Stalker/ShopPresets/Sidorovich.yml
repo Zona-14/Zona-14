@@ -60,7 +60,7 @@
         WeaponPistolStalkerAPS: 750
         STWeaponShotgunStalkerSPAS: 4000
         STWeaponRifleStalkerL85: 2500
-        STWeaponShotgunToz34: 500
+        STWeaponShotgunToz34: 300
 
     - name: Магазины
       priority: 2
@@ -76,7 +76,7 @@
       priority: 3
       items:
         6mmBuckshotBox: 400
-        7mmBuckshotBox: 100
+        7mmBuckshotBox: 75
         919RIPBox: 400
         919PSTBox: 300
         918SP7Box: 300
