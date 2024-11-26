@@ -1671,6 +1671,8 @@
           prob: 0.1
         - id: STClothingOuterArmorLightPlateVestBaseMonolith
           prob: 0.1
+        - id: ClothingOuterArmorMonolith
+          prob: 0.1
         - id: ClothingOuterArmorSevaMonolith
           prob: 0.05
         # backpack
@@ -2004,6 +2006,8 @@
         - id: MedkitMilitary
           prob: 0.15
       # rare
+        - id: ClothingOuterCoatKevlarMonolith
+          prob: 0.03
         - id: STClothingOuterCoatTihiy
           prob: 0.03
         - id: STWeaponRifleStalkerG36

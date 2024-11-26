@@ -95,6 +95,33 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
 
+- type: entity
+  parent: ClothingOuterCoatKolchyga
+  id: STClothingOuterCoatTihiy
+  name: камуфляжный плащ «Тихий»
+  suffix: ST
+  description: Добротный плащ с плотной подкладкой и маскировкой.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTihiy
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetTihiy
+  name: камуфляжный капюшон
+  noSpawn: true
+  description: Покрывает вашу голову.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
+
 # кожанный плащ
 - type: entity
   parent: STClothingCapeT2Base
@@ -198,32 +225,3 @@
     sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetSerafim
-
-- type: entity
-  parent: STClothingCapeT2Base
-  id: STClothingOuterCoatTihiy
-  name: камуфляжный плащ «Тихий»
-  suffix: ST
-  description: Добротный плащ с плотной подкладкой и маскировкой.
-  components:
-  - type: STWeight
-    self: 1.5
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
-  - type: ToggleableClothing
-    clothingPrototype: STClothingHeadHelmetTihiy
-  - type: Craftable
-
-- type: entity
-  parent: STClothingHeadHatBase
-  id: STClothingHeadHelmetTihiy
-  name: камуфляжный капюшон
-  noSpawn: true
-  description: Покрывает вашу голову.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi

@@ -170,7 +170,7 @@ public abstract partial class InventorySystem
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                TryComp<PullDoAfterComponent>(itemUid, out var pullDoAfterComponent) ? TimeSpan.FromSeconds((double)(new decimal(pullDoAfterComponent.PullTime))) : clothing.EquipDelay,
+                TryComp<PullDoAfterComponent>(itemUid, out var pullDoAfterComponent) ? TimeSpan.FromSeconds((double)pullDoAfterComponent.PullTime)) : clothing.EquipDelay,
                 new ClothingEquipDoAfterEvent(slot),
                 itemUid,
                 target,
@@ -467,7 +467,7 @@ public abstract partial class InventorySystem
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                TryComp<PullDoAfterComponent>(removedItem, out var pullDoAfterComponent) ? TimeSpan.FromSeconds((double)(new decimal(pullDoAfterComponent.PullTime))) : clothing.UnequipDelay,
+                TryComp<PullDoAfterComponent>(removedItem, out var pullDoAfterComponent) ? TimeSpan.FromSeconds((double)pullDoAfterComponent.PullTime)) : clothing.UnequipDelay,
                 new ClothingUnequipDoAfterEvent(slot),
                 removedItem.Value,
                 target,
