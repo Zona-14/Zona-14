@@ -1,0 +1,76 @@
+- type: shopPreset
+  id: NpcAlekseiFilipp
+  categories:
+    - name: Оружие
+      priority: 1
+      items:
+        STWeaponRifleStalkerSaiga545: 2000
+        STWeaponRifleStalkerFAL: 2500
+        WeaponPistolStalkerAPS: 750
+        STWeaponShotgunStalkerSPAS: 4000
+        STWeaponRifleStalkerL85: 2500
+        STWeaponShotgunToz34: 500
+        STWeaponSMGMP40: 375
+        STWeaponPPsh: 750
+        STWeaponRifleStalkerGalatz: 3750
+        STWeaponGunAKS74U: 3000
+        STWeaponSMGMp5: 1200
+        STWeaponRevolverChiappaRhino60DS: 1500
+    - name: Магазины
+      priority: 2
+      items:
+        MP40Mag: 313
+        BasePPSHMag: 375
+        Base556Mag10: 313
+        556Mag20: 313
+        Base1270Mag: 250
+        545Mag20: 188
+        545Mag30: 313
+        BaseMP5Mag: 500
+        Base545Mag10: 375
+        SpeedLoader45ACPEmpty: 750
+        Base751Mag10: 375
+        751Mag20: 563
+        BaseAPSMag: 375
+        GlockMag24: 375
+    - name: Плащи
+      priority: 3
+      items:
+        ClothingOuterCoatStalker: 349
+    - name: Рюкзаки
+      priority: 4
+      items:
+        ClothingBackpackDuffelGreenStalker: 30
+        ClothingBackpackDuffelBlackStalker: 30
+        ClothingBackpackDuffelMedicalStalker: 150
+        ClothingBackpackTacticBeigeStalker: 250
+        ClothingBackpackTacticOliveStalker: 250
+        ClothingBackpackMercStalker: 600
+    - name: Пояса
+      priority: 5
+      items:
+        ClothingBeltBandolierStalker: 20
+        ClothingBeltTarzanBlack: 200
+        ClothingBeltTarzanGreen: 200
+        ClothingBeltTarzanOrange: 200
+    - name: Аномалии
+      priority: 6
+      items:
+        STBoltBagFilled: 100
+        STBoltBagOliveGrayFilled: 100
+        BoxArtcont: 900
+        ZoneAnomalyDetectorAD1: 900
+        ZoneAnomalyDetectorAD2: 2100
+        ZoneArtifactDetectorPulse: 250
+        ZoneArtifactDetectorHunter: 1000
+    - name: Провизия
+      priority: 7
+      items:
+        STEnergyDrink: 200
+        DrinkVodkaBottleFull: 55
+        FoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        FoodMeatSalami: 350
