@@ -41,7 +41,9 @@
     MutantPartBlindDogTail: 135
     MutantPartZombieHand: 630
     MutantPartFleshEye: 360
-    MutantPartBoarHoof: 360
+    MutantPartBoarHoof: 250
+    MutantPartSeasonedBoarHoof: 450
+    MutantPartOldBoarHoof: 700
     MutantPartPseudodogTail: 450
     MutantPartSnorkFoot: 540
     MutantPartLeshiyRoot: 750
