@@ -36,7 +36,7 @@
     # Acidic group - 2
     ZoneArtifactPellicle: 525
     ZoneArtifactBaloon: 1837
-    #############################Части Мутантов
+    # Части Мутантов
     FoodMeatSpiderLeg: 52
     MutantPartBlindDogTail: 94
     MutantPartZombieHand: 441
@@ -63,10 +63,6 @@
         STWeaponShotgunStalkerSPAS: 2200
         STWeaponRifleStalkerL85: 2500
         STWeaponShotgunToz34: 350
-        STWeaponRifleStalkerAK74: 2800
-        STWeaponRifleSig550: 2500
-        STWeaponRifleSCARH: 4500
-
     - name: Магазины
       priority: 2
       items:
