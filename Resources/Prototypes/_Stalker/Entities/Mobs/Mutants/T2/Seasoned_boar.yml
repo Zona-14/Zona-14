@@ -1,0 +1,13 @@
+- type: entity
+  parent: MobMutantBoar
+  id: MobMutantSeasonedBoar
+  name: Матёрый кабан
+  suffix: ST, T2
+  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: boar
+          sprite: /Textures/_Stalker/Mobs/Mutants/Seasoned_boar.rsi
+          scale: 1.2, 1.2
