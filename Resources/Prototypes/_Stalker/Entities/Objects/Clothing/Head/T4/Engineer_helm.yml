@@ -1,0 +1,46 @@
+- type: entity
+  parent: STClothingHeadBase
+  id: STClothingHeadHelmetEngineer
+  name: Сапёрный шлем
+  suffix: ST, T4, Env
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/military_engineer_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/military_engineer_helm.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+      - BlockMask
+      - HidesNose
+  - type: STWeight
+    self: 5
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Slash: 0.4
+        Blunt: 0.4
+        Piercing: 0.3
+        Heat: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: Reflect
+    reflectProb: 0.10
+    spread: 360
+    reflects:
+      - NonEnergy
+
+
+- type: entity
+  parent: STClothingHeadHelmetEngineer
+  id: STClothingHeadHelmetEngineerDeserter
+  name: Сапёрный шлем отступников
+  description: Сапёрный шлем отступников
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/deserter_engineer_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/deserter_engineer_helm.rsi

@@ -1,0 +1,48 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterArmorKSZarya
+  name: КС Заря 
+  description: Сапёрный костюм четвёртого класса
+  suffix: ST, T4, Env
+  components:
+  - type: STWeight
+    self: 25
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/KS_Zarya.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/KS_Zarya.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.95
+        Radiation: 0.8
+        Compression: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Craftable
+
+# deserter
+
+- type: entity
+  parent: STClothingOuterArmorKSZarya
+  id: STClothingOuterArmorKSEquil
+  name: КС Эквит
+  description: Перекрашеный в чёрный КС Заря
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/KS_Equil.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/KS_Equil.rsi
+
+
+
+

@@ -1,0 +1,15 @@
+{"version":1,
+"license": "Stalker14 license",
+"copyright": "Make by axolol_ for Stalker",
+"size":{"x":32,"y":32},
+"states":
+[
+{
+	"name":"icon"
+},
+{
+	"name":"equipped-HELMET",
+	"directions":4
+}
+]
+}
