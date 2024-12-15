@@ -624,6 +624,9 @@
   id: FireHelmet
 
 - type: Tag
+  id: Toolbox
+
+- type: Tag
   id: Flare
 
 - type: Tag
