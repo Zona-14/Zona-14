@@ -1,6 +1,6 @@
 - type: job
   id: Stalker
-  name: Сталкер
+  name: Одиночка
   icon: stalker
   description: Это кочевая полуобъединенная группировка, которая просто живёт за счет Зоны, чтобы заработать немного монет на свою повседневную жизнь.
   playTimeTracker: JobStalker
