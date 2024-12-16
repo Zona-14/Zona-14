@@ -112,6 +112,32 @@
           prob: 0.005
         - id: ZoneArtifactEye
           prob: 0.005
+        - id: 45ACPMFMJBox
+          prob: 0.01
+        - id: 45ACPRIPBox
+          prob: 0.01
+        - id: 725PTBox
+          prob: 0.01
+        - id: 725LRNPCBox
+          prob: 0.01
+        - id: 919PSTBox
+          prob: 0.01
+        - id: 919RIPBox
+          prob: 0.01
+        - id: 918PSTBox
+          prob: 0.01
+        - id: 918SP7Box
+          prob: 0.01
+        - id: 545FMJBox
+          prob: 0.01
+        - id: 545HPBox
+          prob: 0.01
+        - id: 556FMJBox
+          prob: 0.01
+        - id: 556WarmagBox
+          prob: 0.01
+        - id: 939SP5Box
+          prob: 0.01
 
 - type: entity
   parent: [STBaseCache, STCacheStorageFillT2]

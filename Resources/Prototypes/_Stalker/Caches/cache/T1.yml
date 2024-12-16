@@ -74,6 +74,22 @@
           prob: 0.005
         - id: ZoneArtifactFireball
           prob: 0.005
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
 
 - type: entity
   parent: [STBaseCache, STCacheStorageFillT1]

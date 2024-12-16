@@ -85,6 +85,44 @@
           prob: 0.005
         - id: ZoneArtifactFireball
           prob: 0.005
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: ClothingOuterCoatPahanBlueprint
+          prob: 0.005
+        - id: ClothingOuterCoatPoiskBlueprint
+          prob: 0.005
+        - id: STClothingOuterJacketStalkerUpgradeBlueprint
+          prob: 0.005
+        - id: ClothingOuterAnomalyStalkerJacketBlueprint
+          prob: 0.005
+        - id: ST7mmBuckshotBoxCinkBluePrint
+          prob: 0.005
+        - id: ST918PGJBoxCinkBlueprint
+          prob: 0.005
+        - id: ST919PSOGJBoxCinkBlueprint
+          prob: 0.005
+        - id: ST725PBoxCinkBlueprint
+          prob: 0.005
+        - id: STZoneArtifactDetectorHunterBlueprint
+          prob: 0.005
+        - id: STZoneArtifactDetectorPulseBlueprint
+          prob: 0.005
+        - id: STDetectorAD1Blueprint
+          prob: 0.005
 
 - type: entity
   parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, BirchTreeNew02]
