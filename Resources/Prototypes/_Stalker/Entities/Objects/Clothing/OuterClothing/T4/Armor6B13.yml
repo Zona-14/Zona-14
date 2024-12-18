@@ -65,7 +65,7 @@
   parent: STClothingOuterArmor6B13Base
   id: STClothingOuterArmorVolchankaFreedom
   name: нагрудник «Волчанка»
-  description: Производимый ремесленниками группировки «Свобода» усиленный нагрудник с защитой больше от пуль, чем от всего остального. Переработанные 6б13
+  description: Производимый ремесленниками группировки «Воля» усиленный нагрудник с защитой больше от пуль, чем от всего остального. Является кустарной модификацией 6б13.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi

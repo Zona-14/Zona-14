@@ -47,8 +47,8 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseFreedom
-  name: легкий бронежилет свободы
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: легкий бронежилет группировки «Воля»
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_svoboda.rsi

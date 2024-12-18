@@ -95,7 +95,7 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasFreedom
-  name: стандартный противогаз Свободы
+  name: стандартный противогаз группировки «Воля»
   description: Увы, не в фектарне. Защищает от радиации.
   components:
   - type: Sprite

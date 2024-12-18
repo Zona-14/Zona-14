@@ -63,8 +63,8 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVFreedom
-  name: бронежилет IOTV Свободы
-  description: Стандартный бронежилет IV типа, адаптирован свободовцами под себя
+  name: бронежилет IOTV группировки «Воля»
+  description: Модифицированный бронежилет IV типа, адаптированный умельцами из группировки «Воля» в кустарных условиях. Является модификацией IOTV.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/IOTV/Svoboda.rsi
