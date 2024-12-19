@@ -112,6 +112,8 @@ public sealed partial class PuddleSystem
     private const string JuiceTomato = "JuiceTomato";
     [ValidatePrototypeId<ReagentPrototype>]
     private const string JuiceLemon = "JuiceLemon";
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string STNavoz = "STNavoz";
 
 
     private static string[] evaporationReagents = new[] {Absinthe, BlueCuracao, Champagne, Cognac, Cola,
@@ -121,7 +123,7 @@ public sealed partial class PuddleSystem
                                                         Water, SodaWater, TonicWater, Sake, JuiceLime, JuiceOrange, JuiceLemon,JuiceTomato,
                                                         Cream, Sugar, LemonLime, Mead, Ice, CoconutWater, Coffee,
                                                         Tea, GreenTea, IcedTea, DrGibb, RootBeer, JuiceWatermelon, EnergyDrink,
-                                                        STWater,Blood,Lemonade, STTaurine, Milk, SolDry};
+                                                        STWater,Blood,Lemonade, STTaurine, Milk, SolDry, STNavoz};
 
     public static global::System.String[] EvaporationReagents { get => evaporationReagents; set => evaporationReagents = value; }
 
