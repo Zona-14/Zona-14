@@ -61,7 +61,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        500: Dead
+        450: Dead
     - type: MeleeWeapon
       attackRate: 0.4
       heavyWindupModifier: 1
