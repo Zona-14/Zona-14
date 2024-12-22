@@ -1056,6 +1056,45 @@
 
 - type: entity
   parent: NPCDoll
+  id: NPCResearchInstitutesPB
+  name: Проф. Хайзенберг [→   ←]
+  description: Верит в магию дружбы, готов обменять ваш хабар на хороший кэш
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Scientist.rsi
+    state: scientist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcSciPB
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
   id: NPCBlueprintComputer
   name: Выйти в Интернет [→   ←]
   description: Позволяет выйти в Интернет для покупки базовых чертежей
