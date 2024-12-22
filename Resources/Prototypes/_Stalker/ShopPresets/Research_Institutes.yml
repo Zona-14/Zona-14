@@ -1,41 +1,41 @@
 - type: shopPreset
-  id: NpcResearchInstitut # 1,5x
+  id: NpcResearchInstitut # 0x
   itemsForSale:
-     # Thermal group - 1
+    # Thermal group - 1
     ZoneArtifactFireball: 472
     ZoneArtifactEye: 787
     ZoneArtifactFlame: 1575
     # Thermal group - 2
-    ZoneArtifactCristall: 4218
-    ZoneArtifactLithosphere: 6750
+    ZoneArtifactCristall: 1968
+    ZoneArtifactLithosphere: 3150
     # Electrical group - 1
-    ZoneArtifactSparkler: 1012
-    ZoneArtifactBattery: 2025
-    ZoneArtifactFlash: 4050
-    ArtMoon: 5063
-    ZoneArtifactTesla: 7593
-    ZoneArtifactIce: 8438
+    ZoneArtifactSparkler: 472
+    ZoneArtifactBattery: 945
+    ZoneArtifactFlash: 1890
+    ArtMoon: 2362
+    ZoneArtifactTesla: 3543
+    ZoneArtifactIce: 3937
     # Gravity group - 1
-    ArtMedusa: 843
-    ZoneArtifactFlower: 1690
-    ZoneArtifactNightStar: 4218
+    ArtMedusa: 393
+    ZoneArtifactFlower: 787
+    ZoneArtifactNightStar: 1968
     # Gravity group - 2
-    ZoneArtifactVyvert: 1012
-    ZoneArtifactAmoeba: 1690
-    ZoneArtifactGravi: 5063
-    ZoneArtifactGoldfish: 6750
-    ZoneArtifactSpring: 8438
-    ZoneArtifactFocus: 3375
-    ZoneArtifactStuntman: 6750
-    ZoneArtifactDistorter: 10125
-    ZoneArtifactSoul: 8438
+    ZoneArtifactVyvert: 472
+    ZoneArtifactAmoeba: 787
+    ZoneArtifactGravi: 2362
+    ZoneArtifactGoldfish: 3150
+    ZoneArtifactSpring: 3937
+    ZoneArtifactFocus: 1575
+    ZoneArtifactStuntman: 3150
+    ZoneArtifactDistorter: 4725
+    ZoneArtifactSoul: 3937
     # Acidic group - 1
-    ZoneArtifactBlood: 1350
-    ZoneArtifactMeat: 2531
-    ZoneArtifactKolobok: 3375
+    ZoneArtifactBlood: 630
+    ZoneArtifactMeat: 1181
+    ZoneArtifactKolobok: 1575
     # Acidic group - 2
-    ZoneArtifactPellicle: 1690
-    ZoneArtifactBaloon: 5906
+    ZoneArtifactPellicle: 787
+    ZoneArtifactBaloon: 2755
 
     # Mutant parts
 
@@ -230,7 +230,6 @@
         ClothingUniformJumpsuitCasualRed: 5
         ClothingHeadHatSovietUshankaStalker: 40
     - name: Крафты
-      priority: 12
       priority: 12
       items:
         CraftFerments: 450
