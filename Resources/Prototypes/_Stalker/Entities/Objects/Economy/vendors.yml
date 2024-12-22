@@ -213,11 +213,8 @@
   startingInventory:
     BoxFlare: 50
     BoxZiptie: 5
-    UNstandartCrate: 2
     UNstandartCrateT3: 10
-    UNstandartCrateT3P90: 5
     STWeaponSMGMp5: 10
-    STWeaponSMGStalkerP90: 5
     PillDexalin: 50
     radioprotectpill: 5
     psyblock: 5

@@ -49,8 +49,28 @@
     Blunt: 5
 
 - type: damageModifierSet
+  id: BuyurerMutant
+  class: 3
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 0.45
+    Heat: 3
+    Cold: 3
+    Poison: 0
+    Cellular: 0
+    Radiation: 0
+    Caustic: 0
+    Compression: 20 #to make boars die from fucking anoms
+    Psy: 0
+  flatReductions:
+    Blunt: 2
+    Slash: 2
+    Piercing: 10
+
+- type: damageModifierSet
   id: BloodsuckerMutant
-  class: 2
+  class: 3
   coefficients:
     Blunt: 1
     Slash: 1
@@ -85,7 +105,7 @@
     Psy: 0
   flatReductions:
     Blunt: 5
-    Piercing: 6
+    Piercing: 10
 
 - type: damageModifierSet
   id: CloneMutant

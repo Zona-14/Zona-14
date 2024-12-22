@@ -141,7 +141,7 @@
 - type: entity
   parent: BaseClothingLegs
   id: ClothingLegsJeansDolgCamouflage
-  name: dolg camouflage jeans
+  name: avangard camouflage jeans
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Legs/Jeans/Camouflage/dolg.rsi

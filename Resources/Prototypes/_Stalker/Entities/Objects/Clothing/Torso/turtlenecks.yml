@@ -81,7 +81,7 @@
 - type: entity
   parent: BaseClothingTorso
   id: ClothingTorsoTurtlenecksDolgCamouflage
-  name: dolg camouflage turtlenecks
+  name: avangard camouflage turtlenecks
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Torso/Turtlenecks/dolg_camouflage.rsi
@@ -91,7 +91,7 @@
 - type: entity
   parent: BaseClothingTorso
   id: ClothingTorsoTurtlenecksRedDolgCamouflage
-  name: red dolg camouflage turtlenecks
+  name: red avangard camouflage turtlenecks
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Torso/Turtlenecks/red_dolg_camouflage.rsi

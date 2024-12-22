@@ -1,6 +1,7 @@
 - type: shopPreset
   id: NpcResearchInstitut # 0.7x
   itemsForSale:
+
      # Thermal group - 1
     ZoneArtifactFireball: 472
     ZoneArtifactEye: 787
@@ -40,6 +41,7 @@
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
+
     MutantPartBoarHoof: 94 # T1
     MutantPartSeasonedBoarHoof: 227 # T2
     MutantPartOldBoarHoof: 425 # T3
@@ -59,6 +61,7 @@
     MutantPartOraculeEye: 1680
     MutantPartPseudogiantHeart: 4200
     MutantPartZombieHand: 315
+
   categories:
     - name: ССП-99
       priority: 1
@@ -128,7 +131,6 @@
         ZoneArtifactDetectorPulse: 100
         ZoneArtifactDetectorHunter: 400
         ZoneArtifactDetectorResponse: 1000
-        ZoneArtifactDetectorSpruce: 1500
     - name: Провизия
       priority: 6
       items:
@@ -171,41 +173,9 @@
         #SelfSteampack: 30
         #MilitarySteampack: 200
         #SciSteampack: 500
-    - name: Оружие
-      priority: 8
-      items:
-        WeaponPistolStalkerGlock: 300
-        STWeaponRevolverSWModel325: 1275
-        STWeaponRevolverSWModel625: 1650
-        STWeaponShotgunStalkerSPAS: 1250
-        STWeaponRifleStalkerL85: 2100
-        STWeaponSMGMp5: 2450
-        STWeaponShotgunMossberg: 600
-        STWeaponSMGBizon: 3400
-    - name: Магазины
-      priority: 9
-      items:
-        BaseGlockMag10: 85
-        SpeedLoader45ACPEmpty: 75
-        556Mag20: 125
-        556Mag30: 175
-        BaseMP5Mag: 125
-        BizonMag: 450
-    - name: Патроны
-      priority: 10
-      items:
-        7mmBuckshotBox: 50
-        6mmBuckshotBox: 400
-        8mmBuckshotBox: 1400
-        919PSOGJBox: 100
-        919PSTBox: 225
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 225
-        556FMJBox: 300
-        918PGJBox: 100
-        918PSTBox: 225
+
     - name: Кастомизация
-      priority: 11
+      priority: 8
       items:
         ClothingMaskNeckFacemask: 20
         ClothingHandsGlovesFingerless: 35
@@ -230,7 +200,7 @@
         ClothingUniformJumpsuitCasualRed: 5
         ClothingHeadHatSovietUshankaStalker: 40
     - name: Крафты
-      priority: 12
+      priority: 9
       items:
         CraftFerments: 450
         # Tech cards

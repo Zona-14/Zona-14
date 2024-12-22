@@ -101,8 +101,8 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: ClothingOuterArmorHeavyDebt
-  name: тяжёлый бронежилет долга
-  description: тяжёлый бронежилет V типа, улучшенный умельцами долга, специально для тяжёлых стычек между группировками.
+  name: тяжёлый бронежилет Авангарда
+  description: тяжёлый бронежилет V типа, улучшенный умельцами Авангарда, специально для тяжёлых стычек между группировками.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_duty_armor.rsi

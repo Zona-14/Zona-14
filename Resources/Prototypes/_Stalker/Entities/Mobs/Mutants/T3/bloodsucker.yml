@@ -30,7 +30,7 @@
           behaviors:
             - !type:PlaySoundBehavior
               sound:
-                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
+                path: /Audio/_Stalker/Mutants/bloodsucker_die_1.ogg
     - type: EmitSoundOnSpawn
       sound:
         path: /Audio/_Stalker/Mutants/bloodsucker_scream.ogg

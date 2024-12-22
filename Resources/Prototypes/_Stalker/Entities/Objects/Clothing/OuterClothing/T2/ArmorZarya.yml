@@ -134,8 +134,8 @@
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaDolg
-  name: заря долга
-  description: Представляет собой сочетание двухслойной прорезиненной ткани с плексигласовой прокладкой и встроенного бронежилета. По сути, тот же самый комбинезон "Заря" только модифицирован умельцами группировки "Долг" для более безопасных вылазок в условиях Зоны.
+  name: заря авангарда
+  description: Представляет собой сочетание двухслойной прорезиненной ткани с плексигласовой прокладкой и встроенного бронежилета. По сути, тот же самый комбинезон "Заря" только модифицирован умельцами группировки "Авангард" для более безопасных вылазок в условиях Зоны.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
@@ -160,7 +160,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetZaryaDolg
-  name: капюшон Зари Долга
+  name: капюшон Зари Авангарда
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite

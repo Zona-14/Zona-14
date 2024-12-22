@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: Боец Долга
+  name: Боец Авангарда
   icon: Dolg
-  description: Уничтожитель зоны.
+  description: Защитник человечества.
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -33,9 +33,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Лидер Долга
+  name: Лидер Авангарда
   icon: Dolg
-  description: Уничтожитель зоны.
+  description: Защитник человечества.
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -47,7 +47,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы командуете другими бойцами Долга.
+  supervisors: Вы командуете другими бойцами Авангарда.
   special:
     - !type:AddComponentSpecial
       components:

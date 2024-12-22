@@ -269,8 +269,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitDolg1
-  name: форма Долга
-  description: стандартный комбинезон, используемый группировкой «Долг».
+  name: форма Авангарда
+  description: стандартный комбинезон, используемый группировкой «Авангард».
   suffix: Stalker
   components:
     - type: Sprite
@@ -283,8 +283,8 @@
 - type: entity
   parent: UnsensoredClothingUniformSkirtBase
   id: ClothingUniformJumpsuitDolg2
-  name: форма Долга чёрная
-  description: стандартный комбинезон, используемый группировкой «Долг».
+  name: форма Авангарда чёрная
+  description: стандартный комбинезон, используемый группировкой «Авангард».
   suffix: Stalker
   components:
     - type: Sprite

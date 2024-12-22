@@ -34149,7 +34149,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: HydroponicsToolSpade
+- proto: STspade
   entities:
   - uid: 694
     components:

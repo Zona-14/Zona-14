@@ -16,6 +16,9 @@
         Base: byurger
       Dead:
         Base: dead
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: BuyurerMutant
   - type: MobThresholds
     thresholds:
       0: Alive
