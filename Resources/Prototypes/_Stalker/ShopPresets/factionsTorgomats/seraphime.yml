@@ -80,64 +80,28 @@
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
-    # Thermal group - 1
-    ZoneArtifactFireball: 225
-    ZoneArtifactEye: 375
-    ZoneArtifactFlame: 750
-    # Thermal group - 2
-    ZoneArtifactCristall: 937
-    ZoneArtifactLithosphere: 1500
-    # Electrical group - 1
-    ZoneArtifactSparkler: 225
-    ZoneArtifactBattery: 450
-    ZoneArtifactFlash: 900
-    ArtMoon: 1125
-    ZoneArtifactTesla: 1687
-    ZoneArtifactIce: 1875
-    # Gravity group - 1
-    ArtMedusa: 187
-    ZoneArtifactFlower: 375
-    ZoneArtifactNightStar: 937
-    # Gravity group - 2
-    ZoneArtifactVyvert: 225
-    ZoneArtifactAmoeba: 375
-    ZoneArtifactGravi: 1125
-    ZoneArtifactGoldfish: 1500
-    ZoneArtifactSpring: 1875
-    ZoneArtifactFocus: 750
-    ZoneArtifactStuntman: 1500
-    ZoneArtifactDistorter: 2250
-    ZoneArtifactSoul: 1875
-    # Acidic group - 1
-    ZoneArtifactBlood: 300
-    ZoneArtifactMeat: 562
-    ZoneArtifactKolobok: 750
-    # Acidic group - 2
-    ZoneArtifactPellicle: 375
-    ZoneArtifactBaloon: 1312
-
-    # Mutant parts
+    # Mutant parts - Персональная Мета на продажу
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 45 # T1
-    MutantPartSeasonedBoarHoof: 108 # T2
-    MutantPartOldBoarHoof: 202 # T3
+    MutantPartBoarHoof: 22 # T1 * 0,5
+    MutantPartSeasonedBoarHoof: 100 # T2 
+    MutantPartOldBoarHoof: 151 # T3 * 0,75
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 30
-    MutantPartFleshEye: 67
-    FoodMeatSpiderLeg: 17
+    MutantPartBlindDogTail: 30 #
+    MutantPartFleshEye: 67 #
+    FoodMeatSpiderLeg: 17 #
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 300
-    MutantPartPseudodogTail: 150
-    MutantPartSnorkFoot: 150
+    MutantPartLeshiyRoot: 450 # * 1,5
+    MutantPartPseudodogTail: 220 # * 1,5
+    MutantPartSnorkFoot: 150 #
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 300
-    MutantPartOraculeEye: 800
-    MutantPartPseudogiantHeart: 2000
-    MutantPartZombieHand: 150
+    MutantPartBloodsuckerTentacles: 200 # * 0,5
+    MutantPartOraculeEye: 250 # * 0,5
+    MutantPartPseudogiantHeart: 3000 # * 1,5
+    MutantPartZombieHand: 400 # * 4
   categories:
     - name: Оружие
       priority: 1
@@ -259,52 +223,16 @@
 - type: shopPreset
   id: SerafimShopPresetHeavy
   itemsForSale:
-    # Thermal group - 1
-    ZoneArtifactFireball: 112
-    ZoneArtifactEye: 187
-    ZoneArtifactFlame: 375
-    # Thermal group - 2
-    ZoneArtifactCristall: 468
-    ZoneArtifactLithosphere: 750
-    # Electrical group - 1
-    ZoneArtifactSparkler: 112
-    ZoneArtifactBattery: 225
-    ZoneArtifactFlash: 450
-    ArtMoon: 562
-    ZoneArtifactTesla: 843
-    ZoneArtifactIce: 937
-    # Gravity group - 1
-    ArtMedusa: 93
-    ZoneArtifactFlower: 187
-    ZoneArtifactNightStar: 468
-    # Gravity group - 2
-    ZoneArtifactVyvert: 112
-    ZoneArtifactAmoeba: 187
-    ZoneArtifactGravi: 562
-    ZoneArtifactGoldfish: 750
-    ZoneArtifactSpring: 937
-    ZoneArtifactFocus: 375
-    ZoneArtifactStuntman: 750
-    ZoneArtifactDistorter: 1125
-    ZoneArtifactSoul: 937
-    # Acidic group - 1
-    ZoneArtifactBlood: 150
-    ZoneArtifactMeat: 281
-    ZoneArtifactKolobok: 375
-    # Acidic group - 2
-    ZoneArtifactPellicle: 187
-    ZoneArtifactBaloon: 656
-
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 23 # T1
+    MutantPartBoarHoof: 99 # T1 * 4
     MutantPartSeasonedBoarHoof: 54 # T2
     MutantPartOldBoarHoof: 101 # T3
 
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 15
-    MutantPartFleshEye: 33
+    MutantPartFleshEye: 120 # * 4
     FoodMeatSpiderLeg: 8
 
     #T2 -------- Health * 1.8
