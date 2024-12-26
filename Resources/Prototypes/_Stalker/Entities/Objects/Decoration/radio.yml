@@ -1914,59 +1914,6 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
-- type: entity
-  parent: BaseItem
-  id: CassetePremiumTwentyThreeRadio
-  suffix: Stalker, кассета (Силуэты)
-  name: кассета "Силуэты"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
-- type: entity
-  parent: BaseItem
-  id: CassetePremiumTwentyFourRadio
-  suffix: Stalker, кассета (Запомню)
-  name: кассета "Запомню"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
-- type: entity
-  parent: BaseItem
-  id: CassetePremiumTwentyFiveRadio
-  suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
-  name: кассета "Low Roar - I'll Keep Coming"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
 
 # Contributor
 - type: entity

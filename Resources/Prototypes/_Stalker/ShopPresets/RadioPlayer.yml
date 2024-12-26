@@ -199,9 +199,6 @@
          CassetePremiumTwentyRadio: 600
          CassetePremiumTwentyOneRadio: 600
          CassetePremiumTwentyTwoRadio: 600
-         CassetePremiumTwentyThreeRadio: 600
-         CassetePremiumTwentyFourRadio: 600
-         CassetePremiumTwentyFiveRadio: 600
   contributorCategories:
       - name: Кассеты
         items:

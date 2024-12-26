@@ -1255,7 +1255,6 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Fangs
-    permitId: STSeraphimPDA
     shopPresetId: SerafimShopPresetLight
   - type: TypingIndicator
     proto: robot
@@ -1297,7 +1296,6 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Fangs
-    permitId: STSeraphimPDA
     shopPresetId: SerafimShopPresetHeavy
   - type: TypingIndicator
     proto: robot
