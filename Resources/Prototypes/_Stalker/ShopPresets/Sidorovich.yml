@@ -270,7 +270,6 @@
         ClothingLegsGorka5: 50
         ClothingLegsGorka6b: 50
         ClothingLegsNavyPants: 50
-        ClothingLegsNewbie: 50
         ClothingLegsRussianNumber: 50
         ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
         ClothingTorsoTurtlenecksBlackTurtleneck: 50
@@ -279,7 +278,6 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-        ClothingTorsoTurtlenecksNewbie: 50
     - name: Развлечения
       priority: 11
       items:

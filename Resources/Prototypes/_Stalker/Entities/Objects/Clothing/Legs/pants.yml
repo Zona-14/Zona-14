@@ -323,18 +323,8 @@
 
 - type: entity
   parent: BaseClothingLegs
-  id: ClothingLegsNewbie
-  name: newbie
-  components:
-    - type: Sprite
-      sprite: _Stalker/Clothing/Legs/Jeans/newbie.rsi
-    - type: Clothing
-      sprite: _Stalker/Clothing/Legs/Jeans/newbie.rsi
-
-- type: entity
-  parent: BaseClothingLegs
   id: ClothingLegsRussianNumber
-  name: russian number
+  name: russian pixel 2
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Legs/Jeans/russian_number.rsi

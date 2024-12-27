@@ -248,12 +248,3 @@
     - type: Clothing
       sprite: _Stalker/Clothing/Torso/Turtlenecks/matrosska.rsi
 
-- type: entity
-  parent: BaseClothingTorso
-  id: ClothingTorsoTurtlenecksNewbie
-  name: newbie
-  components:
-    - type: Sprite
-      sprite: _Stalker/Clothing/Torso/Turtlenecks/newbie.rsi
-    - type: Clothing
-      sprite: _Stalker/Clothing/Torso/Turtlenecks/newbie.rsi
