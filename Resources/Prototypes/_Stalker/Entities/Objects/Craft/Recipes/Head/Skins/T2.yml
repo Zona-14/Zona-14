@@ -9,6 +9,16 @@
     time: 5
 
 - type: lightCraftingRecipe
+  id:  STCraftSkinClothingHeadInfantryHelmetUN
+  results:
+    - ClothingHeadInfantryHelmetUN
+  steps:
+    firstIngredient: STSkinsKitUnitar
+    secondIngredient: ClothingHeadHelmetInfantry
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
   id:  STCraftSkinClothingHeadHelmetInfantryPilgrim
   results:
     - ClothingHeadHelmetInfantryPilgrim

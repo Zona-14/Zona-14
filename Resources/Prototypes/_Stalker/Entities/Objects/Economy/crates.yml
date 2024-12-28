@@ -68,8 +68,8 @@
     - type: SpawnItemsOnUse
       items:
         - id: ClothingBeltTarzanGreen
-        - id: STClothingOuterArmorLightPlateVestBaseUN
-        - id: ClothingHeadAssaultHelmetUN
+        - id: STClothingOuterArmorLightPlateVestBaseANAUN
+        - id: ClothingHeadInfantryHelmetUN
         - id: ClothingBackpackDuffelCommonStalker
         - id: BaseRadio
         - id: Brutepack

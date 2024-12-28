@@ -57,6 +57,18 @@
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
+  id: STClothingOuterArmorLightPlateVestBaseANAUN
+  name: ANA Tactical ООН
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/UN.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/UN.rsi
+  - type: Craftable
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAPilgrim
   name: ANA Tactical Паломника
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины либо библию и кадило
