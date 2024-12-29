@@ -1924,7 +1924,7 @@
   - type: STWeight
     self: 0.15
   - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti
+    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
   - type: Tag
     tags:
       - Cassete
@@ -1942,7 +1942,7 @@
   - type: STWeight
     self: 0.15
   - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu
+    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
   - type: Tag
     tags:
       - Cassete
@@ -1960,7 +1960,7 @@
   - type: STWeight
     self: 0.15
   - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming
+    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
   - type: Tag
     tags:
       - Cassete
