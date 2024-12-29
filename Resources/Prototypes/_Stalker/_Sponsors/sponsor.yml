@@ -35,7 +35,7 @@
     nazoltof:
     - name: Персональная категория
       items:
-        STWeaponRifleSVDSGrass: 14000
+        STWeaponRifleSVDSGrass: 20000
     KLeymi:
     - name: Персональная категория
       items:
@@ -57,3 +57,7 @@
         ClothingTorsoTurtlenecksCamouflage: 50
         BookStalkerSeraphimFAQ: 20
         ClothingOuterArmorZaryaSeraRuined: 1000
+    farforik:
+    - name: Персональная категория
+      items:
+        STWeaponRifleStalkerVeprFarforik: 8000

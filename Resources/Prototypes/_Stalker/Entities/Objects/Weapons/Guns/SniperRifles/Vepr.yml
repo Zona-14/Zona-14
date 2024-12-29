@@ -94,3 +94,17 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+
+- type: entity
+  name: ВПО-129 "Трава"
+  suffix: ST, Скин, Кастомка
+  parent: STWeaponRifleStalkerVepr
+  id: STWeaponRifleStalkerVeprFarforik
+  description: Чудесное решение для кустового кемпера.
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
