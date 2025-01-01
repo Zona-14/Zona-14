@@ -8,6 +8,8 @@
   - type: Tag
     tags:
     - Brutepack
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: blocade
@@ -78,6 +80,8 @@
     size: Tiny
     sprite: _Stalker/Objects/medicine.rsi
     state: radprotector
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.7, 0.7
@@ -149,6 +153,8 @@
     size: Tiny
     sprite: _Stalker/Objects/medicine.rsi
     state: antirad
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: antirad

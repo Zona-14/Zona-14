@@ -13,6 +13,8 @@
       - state: screen_off
         map: ["base"]
         shader: unshaded
+  - type: RepositoryItem
+    categoryName: Детекторы
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -31,6 +33,8 @@
   description: A simplified hunter model that can only influence anomalies, which allows you to obtain some artifacts. A burnt copy of the hunter made from stolen drawings.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 0.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/pulse.rsi
     layers:
@@ -57,6 +61,8 @@
   description: The simplest detector, which does not even know how to determine distance, but only the presence of artifacts. Despite this, he is still able to find the most common and widespread artifacts.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/hunter.rsi
   - type: ZoneArtifactDetector
@@ -87,6 +93,8 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/response.rsi
     layers:
@@ -115,6 +123,8 @@
   description: It is a strong directional antenna combined with a “Response” detector filling. This allows him to accurately determine the distance in order to display it on the screen.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/spruce.rsi
   - type: ZoneArtifactDetector
@@ -132,6 +142,8 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 2.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/barracuda.rsi
   - type: ZoneArtifactDetector
@@ -152,6 +164,8 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/bear.rsi
     layers:
@@ -187,6 +201,8 @@
   description: A version of the detector based on the special properties of the gravitation artifact. But due to its small scale, this artifact greatly reduces all indicators of the detector, except for its power to influence anomalies. Because of this, he can receive most artifacts from the zone.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 3
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/wolfhound.rsi
   - type: ZoneArtifactDetector

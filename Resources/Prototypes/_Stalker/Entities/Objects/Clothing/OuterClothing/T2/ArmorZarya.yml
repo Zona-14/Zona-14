@@ -103,8 +103,12 @@
     - type: Armor
       armorClass: 1
       armorLevels:
-        nonPvPPhysical: 2
-        piercing: -1
+        nonPvPPhysical: 3
+        piercing: -2
+        radiation: -2
+        heat: -1
+        psy: -1
+        shock: -1
 
 - type: entity
   parent: STClothingHeadHatBase

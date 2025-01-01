@@ -46,6 +46,8 @@
   - type: Food
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/bread.rsi
+  - type: RepositoryItem
+    categoryName: Припасы
   - type: SolutionContainerManager
     solutions:
       food:

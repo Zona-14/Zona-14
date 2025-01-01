@@ -19,6 +19,8 @@
       - Medkit
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Healing
     damageContainers:
       - Biological
@@ -196,6 +198,8 @@
   suffix: ST
   description: Обычная универсальная аптечка военного назначения. При помощи неё можно справиться с такими травмами как порезы, ожоги, пулевые и осколочные ранения, отравления и другими. Включает в себя стандартный набор медикаментов. Проста в использовании.
   components:
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     state: medkit-1
   - type: Healing
@@ -256,6 +260,8 @@
   components:
   - type: STWeight
     self: 0.4
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     state: medkit-2
   - type: Healing
@@ -290,6 +296,8 @@
   components:
   - type: STWeight
     self: 0.6
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     state: medkit-3
   - type: Healing
@@ -326,6 +334,8 @@
   components:
   - type: STWeight
     self: 1
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Tag
     tags:
     - Brutepack
@@ -375,6 +385,8 @@
   - type: Tag
     tags:
     - Brutepack
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-5

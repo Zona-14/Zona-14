@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: STClothingMaskGasStandardT1Base
   name: база стандартного противогаза T1 от радиации
   suffix: ST, T1, Rad

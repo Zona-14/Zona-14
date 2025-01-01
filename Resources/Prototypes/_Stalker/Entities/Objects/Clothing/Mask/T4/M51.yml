@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: ClothingMaskM51
   suffix: ST, T4, Rad
   name: противогаз М-51

@@ -80,6 +80,9 @@
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
+    StalkerFoodAir: 65
+    StalkerFoodBrusnika: 100
+    StalkerFoodYatrishnik: 150
     # Mutant parts - Персональная Мета на продажу
 
     #Boars -------- Health * T * 0.45

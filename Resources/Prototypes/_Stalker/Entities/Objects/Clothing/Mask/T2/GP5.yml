@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: ClothingMaskGP5
   suffix: ST, T2, Caustic
   name: противогаз ГП-5

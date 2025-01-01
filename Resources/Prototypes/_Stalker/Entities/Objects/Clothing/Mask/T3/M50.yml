@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: ClothingMaskM50
   suffix: ST, T3, Rad
   name: противогаз M50
