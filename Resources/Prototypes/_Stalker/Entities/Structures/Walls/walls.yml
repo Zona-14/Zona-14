@@ -396,3 +396,20 @@
   - type: IconSmooth
     key: walls
     base: necropolis
+
+- type: entity
+  parent: BaseWall
+  id: STWallLava
+  suffix: ST, Mapping, wall
+  name: Стена из базальта
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    sprite: Structures/Walls/wall_lava.rsi
+  - type: Icon
+    sprite: Structures/Walls/wall_lava.rsi
+  - type: IconSmooth
+    key: walls
+    base: wall_lava
