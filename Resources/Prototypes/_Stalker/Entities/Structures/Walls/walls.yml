@@ -413,3 +413,24 @@
   - type: IconSmooth
     key: walls
     base: wall_lava
+
+- type: entity
+  id: STinvisiblewallforevor
+  name: STinvisiblewallforevor
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Airtight
