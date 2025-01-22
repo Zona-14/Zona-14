@@ -533,4 +533,6 @@
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-MilBase
+      portalName: Lobby-Agro-MilBase-SciBase
+    - type: AccessReader
+      access: [["Military"], ["SciBase"]]
