@@ -168,6 +168,7 @@
     - type: Clothing
       sprite: _Stalker/Clothing/Legs/Jeans/Camouflage/project/peshka.rsi
 
+
 - type: entity
   parent: BaseClothingLegs
   id: ClothingLegsJeansProjectLeader
