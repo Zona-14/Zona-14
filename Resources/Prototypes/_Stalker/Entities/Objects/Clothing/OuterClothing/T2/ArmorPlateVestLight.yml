@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBase
-  name: базовый легкий бронежилет #base
+  name: базовый лёгкий бронежилет #base
   suffix: ST, T2, PvP
   abstract: true
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
@@ -44,6 +44,8 @@
     damageCoefficient: 0.90
   - type: Craftable
 
+# Freedom - 1
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseFreedom
@@ -72,6 +74,8 @@
       - 8,2,8,3
       - 10,2,10,3
 
+# Stalker - 2
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseStalker
@@ -82,6 +86,21 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
+
+# Dolg - 3
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseDolg
+  name: лёгкий бронежилет 'Долга'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+
+# Military - 4
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -104,6 +123,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
+# Zavet - 5
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -115,6 +135,8 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zavet_bronik.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zavet_bronik.rsi
+
+# Bandit - 6
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -145,6 +167,25 @@
       - 5,-2,5,-2
       - 6,-2,6,-2
       - 8,-2,8,-2
+
+
+# Serafims - 9
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseSera
+  name: лёгкий бронежилет 'Серафимов'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-light-armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-light-armor.rsi
+
+
+
+# Old groups
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMerc
@@ -229,3 +270,4 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/clear_sky_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/clear_sky_armor.rsi
+

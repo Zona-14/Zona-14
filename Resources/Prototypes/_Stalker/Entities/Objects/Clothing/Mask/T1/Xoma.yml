@@ -29,10 +29,11 @@
 - type: entity
   parent: ClothingMaskXoma
   id: ClothingMaskGasDolg2
-  name: стандартный противогаз Авангарда 2
+  name: стандартный противогаз Долга
   description: Вряд ли он уничтожит Зону, но он очень старается  Защищает от радиации.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_dolg2.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/gasmask_dolg2.rsi
+

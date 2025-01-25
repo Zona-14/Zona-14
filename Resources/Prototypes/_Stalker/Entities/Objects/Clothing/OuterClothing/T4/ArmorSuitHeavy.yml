@@ -1,6 +1,6 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: STClothingOuterArmorHeavy
+  id: STClothingOuterArmorVeryHeavy
   name: КСН-13 «Бегемот»
   description: Костюм Специального Назначения «Бегемот», используется государственными оперативниками в условиях ЧЗО.
   suffix: ST, T4, PvE

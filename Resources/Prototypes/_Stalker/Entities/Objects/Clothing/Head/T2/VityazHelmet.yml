@@ -87,3 +87,14 @@
     sprite: _Stalker/Objects/Clothing/hats/Kapelan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Kapelan.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetTacticalT2Base
+  id: ClothingHeadHelmetVityaz1M
+  name: шлем "Витязь 1М" 'Долга'
+  description: Противоударный шлем "Витязь-М" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi

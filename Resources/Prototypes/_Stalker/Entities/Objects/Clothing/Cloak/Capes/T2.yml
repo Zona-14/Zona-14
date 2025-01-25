@@ -240,3 +240,5 @@
     sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetSerafim
+
+

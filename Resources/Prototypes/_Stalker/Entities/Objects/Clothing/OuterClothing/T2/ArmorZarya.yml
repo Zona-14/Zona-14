@@ -32,6 +32,7 @@
     damageCoefficient: 0.90
   - type: Craftable
 
+# Stalker №1 - 1
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -59,6 +60,8 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_stalker.rsi
 
+# Stalker №2
+
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaTourist
@@ -71,6 +74,25 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_tourist.rsi
   - type: STWeight
     self: -7
+
+# Stalker №3
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaHunter
+  name: комбинезон «Кинолог»
+  description: Крайне популярная среди сталкеров кустарная модификация «Зари». Создан для защиты от мутантов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 2
+      piercing: -1
+
+# Jabs - 2
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -87,7 +109,42 @@
     baseWalkSpeed: 1.05
     baseSprintSpeed: 1.05
 
-## Seraphims
+# Military - 3 +
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaMilitary
+  name: пустынная «Заря» 'Военных'
+  description: «Заря» 'Военных', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 2
+      piercing: -2
+      environment: -1
+
+# Renegates - 4 +
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaRene
+  name: комбинезон «Заря» 'Ренегатов'
+  description: «Заря» 'Ренегатов', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
+  - type: Armor
+    armorLevels:
+      piercing: -1
+      environment: 2
+
+# Serafims - 3
 
 - type: entity
   parent: ClothingOuterArmorZaryaHunter
@@ -139,6 +196,7 @@
     armorLevels:
       nonPvPPhysical: 1
       piercing: -1
+# Dolg - 4
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -177,6 +235,7 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
 
+
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaPoisk
@@ -192,20 +251,27 @@
       nonPvPPhysical: 1
       environment: -1
 
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: ClothingOuterArmorZaryaHunter
-  name: комбинезон «Кинолог»
-  description: Крайне популярная среди сталкеров кустарная модификация «Зари». Создан для защиты от мутантов.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 2
-      piercing: -1
+# Bandits - 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Mods
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -236,6 +302,11 @@
     armorClass: 1
     armorLevels:
       environment: 4
+
+# Mods
+
+# Old groups
+
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -307,6 +378,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
+
 
 #СКИНЫ
 

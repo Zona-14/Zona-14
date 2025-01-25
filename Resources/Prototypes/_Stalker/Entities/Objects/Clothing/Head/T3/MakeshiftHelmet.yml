@@ -30,3 +30,16 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+# Jabs - 1
+
+- type: entity
+  parent: STClothingHeadHelmetMakeshiftTacticalT3
+  id: STClothingHeadHelmetMakeshiftTacticalT3Jabs
+  name: кустарный шлем 'Жаб'
+  description: Сделанный вручную шлем из качественных материалов
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/makeshift_helmet_jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/makeshift_helmet_jabs.rsi
