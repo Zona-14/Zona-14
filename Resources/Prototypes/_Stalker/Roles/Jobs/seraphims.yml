@@ -45,6 +45,8 @@
     torso: STClothingTorsoSerafimLittleChaos
     mask: STClothingMaskKufei
     gloves: STClothingHandsGlovesSera
+    pocket1: STBoltBagFilled
+    pocket2: GeigerCounter
 
 
 - type: job
@@ -98,3 +100,5 @@
     torso: STClothingTorsoSerafimFullReady
     mask: STClothingMaskKufei
     gloves: STClothingHandsGlovesSera
+    pocket1: STBoltBagFilled
+    pocket2: GeigerCounter
