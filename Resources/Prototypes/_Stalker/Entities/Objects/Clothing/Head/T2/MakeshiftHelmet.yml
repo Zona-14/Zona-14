@@ -11,16 +11,16 @@
     sprite: _Stalker/Clothing/Head/makeshift_helmet.rsi
   - type: Craftable
   - type: STWeight
-    self: 2.1
+    self: 3.1
   - type: Armor
-    armorClass: 3
+    armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.6
-        Slash: 0.7
-        Blunt: 0.7
+        Piercing: 0.75
+        Slash: 0.8
+        Blunt: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.8
   - type: Reflect
     reflectProb: 0.08
     spread: 360

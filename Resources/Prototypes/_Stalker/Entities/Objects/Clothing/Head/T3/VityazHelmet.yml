@@ -1,9 +1,9 @@
 - type: entity
   abstract: true
   parent: STClothingHeadBase
-  id: STClothingHeadHelmetTacticalT2Base
-  name: база тактического шлема T2
-  suffix: ST, T2, Tactical
+  id: STClothingHeadHelmetTacticalT3Base
+  name: база тактического шлема T3
+  suffix: ST, T3, Tactical
   components:
   - type: Craftable
   - type: IngestionBlocker
@@ -13,16 +13,16 @@
       - BlockMask
       - HidesNose
   - type: STWeight
-    self: 2
+    self: 4
   - type: Armor
-    armorClass: 2
+    armorClass: 3
     modifiers:
       coefficients:
-        Slash: 0.8
-        Blunt: 0.8
-        Piercing: 0.9
+        Slash: 0.7
+        Blunt: 0.7
+        Piercing: 0.6
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.75
   - type: Reflect
     reflectProb: 0.05
     spread: 360
@@ -34,7 +34,7 @@
     - Hair
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1C
   name: шлем "Витязь 1С"
   description: Противоударный шлем "Витязь-С" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
@@ -45,7 +45,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1C.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1T
   name: шлем "Витязь 1Т"
   description: Противоударный шлем "Витязь 1С", модифицированный отступниками
@@ -56,7 +56,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1T.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1L
   name: шлем "Витязь 1L"
   description: Противоударный шлем "Витязь 1С", модифицированный Ренегатами.
@@ -67,7 +67,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1L.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1B
   name: шлем "Витязь 1Б"
   description: Противоударный шлем "Витязь 1С", на который нанесены три полоски
@@ -78,7 +78,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1B.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1P
   name: шлем "Капелан"
   description: Противоударный шлем "Витязь 1С", модифицированный Паломниками.
@@ -89,7 +89,7 @@
     sprite: _Stalker/Objects/Clothing/hats/Kapelan.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT2Base
+  parent: STClothingHeadHelmetTacticalT3Base
   id: ClothingHeadHelmetVityaz1M
   name: шлем "Витязь 1М" 'Долга'
   description: Противоударный шлем "Витязь-М" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
