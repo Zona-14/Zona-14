@@ -2,23 +2,23 @@
   id: STNPCBarmenPreset # 0.5x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 338
-    ZoneArtifactEye: 562
-    ZoneArtifactFlame: 1125
+    ZoneArtifactFireball: 152
+    ZoneArtifactEye: 253
+    ZoneArtifactFlame: 506
     # Thermal group - 2
-    ZoneArtifactCristall: 1406
-    ZoneArtifactLithosphere: 2250
+    ZoneArtifactCristall: 633
+    ZoneArtifactLithosphere: 1013
     # Electrical group - 1
-    ZoneArtifactSparkler: 338
-    ZoneArtifactBattery: 675
-    ZoneArtifactFlash: 1350
-    ArtMoon: 1687
-    ZoneArtifactTesla: 2531
-    ZoneArtifactIce: 2812
+    ZoneArtifactSparkler: 152
+    ZoneArtifactBattery: 304
+    ZoneArtifactFlash: 608
+    ArtMoon: 759
+    ZoneArtifactTesla: 1139
+    ZoneArtifactIce: 1265
     # Gravity group - 1
-    ArtMedusa: 281
-    ZoneArtifactFlower: 562
-    ZoneArtifactNightStar: 1406
+    ArtMedusa: 126
+    ZoneArtifactFlower: 253
+    ZoneArtifactNightStar: 633
     # Gravity group - 2
     ZoneArtifactVyvert: 338
     ZoneArtifactAmoeba: 562
@@ -35,24 +35,24 @@
     ZoneArtifactKolobok: 1125
     # Acidic group - 2
     ZoneArtifactPellicle: 562
-    ZoneArtifactBaloon: 1968
+    ZoneArtifactBaloon: 2300
 
-    # Mutant parts
+   # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 68 # T1
-    MutantPartSeasonedBoarHoof: 162 # T2
+    MutantPartBoarHoof: 145 # T1
+    MutantPartSeasonedBoarHoof: 175 # T2
     MutantPartOldBoarHoof: 304 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 45
+    MutantPartBlindDogTail: 65
     MutantPartFleshEye: 100
     FoodMeatSpiderLeg: 25
 
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 450
     MutantPartPseudodogTail: 225
-    MutantPartSnorkFoot: 225
+    MutantPartSnorkFoot: 285
 
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 450
@@ -71,16 +71,15 @@
         STWeaponRevolverSWModel625: 1650
         STWeaponShotgunStalkerSPAS: 1875
         STWeaponShotgunProtecta: 3450
-        STWeaponRifleStalkerAK74: 4950
+        STWeaponRifleStalkerAK74: 6500
         STWeaponRifleM16: 3675
         STWeaponRifleM4: 5250
         STWeaponRifleSig550: 5550
         STWeaponRifleStalkerAKM: 5850
+        STWeaponSniperMosin: 6000
         STWeaponRifleStalkerFAL: 5475
-        STWeaponRifleStalkerVepr: 14700
         STWeaponSMGMp5: 3675
         STWeaponSMGBizon: 5100
-        STWeaponRifleVSS: 13050
     - name: Магазины
       priority: 2
       items:
@@ -94,7 +93,6 @@
         545Mag30: 263
         556Mag20: 188
         556Mag30: 263
-        739Mag30: 338
         751Mag20: 368
         Base754Mag5: 548
         BizonMag: 675
@@ -117,32 +115,30 @@
         725LRNPCBox: 338
         725PSTBox: 675
         # 9.19
-        919PSOGJBox: 150
-        919PSTBox: 338
-        919RIPBox: 338
-        919PBMBox: 675
-        # 9.19
-        918PGJBox: 150
-        918PSTBox: 338
-        918SP7Box: 338
-        918PBMBox: 675
+        919PSOGJBox: 50
+        919PSTBox: 200
+        919PBMBox: 950
+        # 9.18
+        918PGJBox: 40
+        918PSTBox: 150
+        918PBMBox: 850
         # 5.45
-        545FMJBox: 375
-        545HPBox: 375
-        545PCBox: 750
+        545FMJBox: 100
+        545HPBox: 1700
+        545PCBox: 2400
         # 5.56
-        556FMJBox: 450
-        556WarmagBox: 450
-        556M855Box: 825
+        556FMJBox: 110
+        556M855Box: 1700
+        556M856Box: 2500
         # 7.39
-        739FMJBox: 900
-        739HPBox: 900
+        739FMJBox: 1850
+        739HPBox: 2600
         # 7.51
-        751M80Box: 900
-        751UNBox: 900
+        751M80Box: 1840
+        751UNBox: 2900
         # 7.54
-        754FMJBox: 975
-        754HPBox: 975
+        754FMJBox: 2000
+        754HPBox: 2900
         # 9.39
         939SP5Box: 570
         939SP6Box: 1080
@@ -152,14 +148,14 @@
         # body
         STClothingOuterArmorLightPlateVestBaseANAgray: 3081
         STClothingOuterArmorLightPlateVestBaseANAgreen: 3081
-        ClothingOuterArmorStalker: 2971
-        ClothingOuterArmorSevaStalker: 2504
+        ClothingOuterArmorStalker: 4000
+        ClothingOuterArmorSevaStalker: 2500
         # mask
         ClothingMaskGP7: 165
         ClothingMaskGasZarya: 125
         ClothingMaskXoma: 95
         # helmet
-        ClothingHeadHelmetBerill5MMilitary: 1141
+        ClothingHeadHelmetVityaz1C: 3500 # T3 uni
         # cape
         ClothingOuterCoatLoyalist: 1754
         ClothingOuterCoatLoyalistLight: 1050
@@ -216,7 +212,7 @@
         ZoneAnomalyDetectorAD2: 1050
         # Artifact detectors
         ZoneArtifactDetectorPulse: 100
-        ZoneArtifactDetectorHunter: 600
+        ZoneArtifactDetectorHunter: 300
         ZoneArtifactDetectorResponse: 1100
         ZoneArtifactDetectorSpruce: 2600
 
@@ -251,6 +247,7 @@
         antiradpill: 150
         MedkitCMSStalker: 800
         MedkitGrizzlyStalker: 1100
+        Defibrillator: 900
     - name: Кастомизация
       priority: 9
       items:

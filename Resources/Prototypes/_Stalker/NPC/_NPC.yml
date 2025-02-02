@@ -94,7 +94,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: NpcPetrAlkash # временно
+    shopPresetId: NpcSidor
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -133,7 +133,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: NpcPetrAlkash # временно
+    shopPresetId: STNPCBarmenPreset
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
