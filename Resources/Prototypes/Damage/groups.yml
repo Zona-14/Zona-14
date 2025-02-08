@@ -42,3 +42,10 @@
   name: damage-group-genetic
   damageTypes:
     - Cellular
+
+# this whole group is a stalker change
+- type: damageGroup
+  id: Mutant
+  name: damage-group-brute
+  damageTypes:
+    - Mutant
