@@ -159,6 +159,28 @@
 
 - type: entity
   parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorSeaDevil
+  name: detector SeaDevil
+  description: An improved version of the "Barracuda" detector. Retaining all the advantages of its predecessor, the "Sea Devil" is capable of detecting artifacts that previously remained undetectable.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 2.5
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/barracuda.rsi
+  - type: ZoneArtifactDetector
+    level: 4
+    detectionDistance: 18
+    activationDistance: 2
+    updateInterval: 0.2
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+  - type: ZoneArtifactDetectorDistanceIndicator
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
+
+- type: entity
+  parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorBear
   name: detector bear
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.

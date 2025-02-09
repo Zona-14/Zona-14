@@ -189,7 +189,7 @@
         ZoneArtifactDetectorResponse: 600 # T2
         ZoneArtifactDetectorSpruce: 2200 # T2
         ZoneArtifactDetectorBarracuda: 3000 # T3
-        ZoneArtifactDetectorBear: 4500 # T4
+        ZoneArtifactDetectorSeaDevil: 7000 # T4
     - name: Утилиты
       priority: 7
       items:

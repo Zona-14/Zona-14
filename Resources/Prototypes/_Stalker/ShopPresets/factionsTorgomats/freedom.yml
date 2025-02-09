@@ -194,7 +194,7 @@
         ZoneArtifactDetectorResponse: 600 # T2
         ZoneArtifactDetectorSpruce: 2200 # T2
         ZoneArtifactDetectorBarracuda: 2900 # T3
-        ZoneArtifactDetectorBear: 4200 # T4
+        ZoneArtifactDetectorBear: 7000 # T4
     - name: Утилиты
       priority: 8
       items:
