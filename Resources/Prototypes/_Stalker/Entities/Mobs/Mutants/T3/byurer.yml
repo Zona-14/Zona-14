@@ -17,7 +17,6 @@
       Dead:
         Base: dead
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: BuyurerMutant
   - type: MobThresholds
     thresholds:

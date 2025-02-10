@@ -9,7 +9,6 @@
       spawned:
         - id: MutantPartOraculeEye
     - type: Damageable
-      damageContainer: Biological
       damageModifierSet: MutantOracles
     - type: DamageStateVisuals
       states:

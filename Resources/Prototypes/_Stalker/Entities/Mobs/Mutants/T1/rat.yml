@@ -59,7 +59,6 @@
     baseWalkSpeed: 3.2
     baseSprintSpeed: 4
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: PathetictMutant
   - type: SlowOnDamage
     speedModifierThresholds:

@@ -19,7 +19,6 @@
       maximum: 580
     # Other
     - type: Damageable
-      damageContainer: Biological
       damageModifierSet: STMutatedGosha
     - type: DamageStateVisuals
       states:

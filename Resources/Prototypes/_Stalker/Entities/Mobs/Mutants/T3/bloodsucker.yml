@@ -20,7 +20,6 @@
         Dead:
           Base: dead
     - type: Damageable
-      damageContainer: Biological
       damageModifierSet: BloodsuckerMutant
     - type: Destructible
       thresholds:

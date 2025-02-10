@@ -133,7 +133,6 @@
         types:
           Slash: 6
     - type: Damageable
-      damageContainer: Biological
       damageModifierSet: CloneMutant
     - type: Destructible
       thresholds:

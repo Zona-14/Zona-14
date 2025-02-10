@@ -9,6 +9,7 @@
     Cold: 3.5
     Caustic: 0.2
     Compression: 20
+    Mutant: 1
 
 - type: damageModifierSet
   id: DefaultMutant
@@ -25,6 +26,7 @@
     Caustic: 0.2
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Slash: 5
@@ -44,6 +46,7 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Piercing: 2
     Blunt: 5
@@ -63,6 +66,7 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 2
     Slash: 2
@@ -83,6 +87,7 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 6
     Slash: 6
@@ -103,6 +108,7 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Piercing: 10
@@ -122,6 +128,7 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
 
 - type: damageModifierSet
   id: MutantOracles
@@ -138,6 +145,7 @@
     Caustic: 0
     Compression: 0
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Piercing: 10
@@ -157,6 +165,7 @@
     Caustic: 0
     Compression: 0
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Piercing: 10
@@ -176,6 +185,7 @@
     Caustic: 0
     Compression: 0
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Piercing: 12
@@ -195,6 +205,7 @@
     Caustic: 0
     Compression: 0
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
     Piercing: 5
