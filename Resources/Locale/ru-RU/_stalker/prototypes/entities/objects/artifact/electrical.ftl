@@ -1,0 +1,12 @@
+ent-ZoneArtifactSparkler = { ent-BaseArtifact.name }
+    .suffix = Stalker, Бенгальский огонь
+ent-ZoneArtifactBattery = { ent-BaseArtifact.name }
+    .suffix = Stalker, Батарейка
+ent-ZoneArtifactFlash = { ent-BaseArtifact.name }
+    .suffix = Stalker, Вспышка
+ent-ArtMoon = { ent-BaseArtifact.name }
+    .suffix = Stalker, Лунный свет
+ent-ZoneArtifactTesla = { ent-BaseArtifact.name }
+    .suffix = Stalker, Тесла
+ent-ZoneArtifactIce = { ent-BaseArtifact.name }
+    .suffix = Stalker, Снежинка
