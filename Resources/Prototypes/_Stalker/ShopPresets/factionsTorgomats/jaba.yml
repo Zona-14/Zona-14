@@ -78,7 +78,7 @@
         WeaponRifleStalkerGalil: 4500
         STWeaponRifleStalkerGalatz: 4000
           # Smg
-        WeaponSubMachineGunStalkerTommyGun: 5000
+        WeaponSubMachineGunStalkerTommyGun: 2500
         STWeaponSMGMp5: 1350
         STWeaponSMGViper: 600
           # Other
@@ -96,8 +96,8 @@
         BizonMag9x18: 300
         BaseMP5Mag: 260
         Vz61Mag: 100
-        TommyGunBigDrum: 1150
-        TommyGunDrum2: 700
+        TommyGunBigDrum: 700
+        TommyGunDrum2: 300
           # Other
         GlockMag24: 120
         GlockMag33: 440
