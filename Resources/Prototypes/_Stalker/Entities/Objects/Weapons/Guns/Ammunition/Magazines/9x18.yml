@@ -123,6 +123,8 @@
     zeroVisible: false
   - type: Appearance
   - type: Craftable
+  - type: RepositoryItem
+    categoryName: Магазины
 
 ######################### Скорпион #########################
 - type: entity
