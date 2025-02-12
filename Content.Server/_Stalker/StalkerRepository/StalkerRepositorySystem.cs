@@ -478,6 +478,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     #endregion
 
     #region ContainersLogic
+
     /// <summary>
     /// Ejecting method, used in <see cref="OnEjectMessage"/>
     /// </summary>
@@ -486,29 +487,50 @@ public sealed class StalkerRepositorySystem : EntitySystem
     /// <param name="amount">Amount of items to eject</param>
     private void EjectItems(EntityUid repository, RepositoryItemInfo item, int amount = 1)
     {
-        // get transform of repository to determine coordinates to spawn items
         var xform = Transform(repository);
         if (!TryComp<StalkerRepositoryComponent>(repository, out var repoComp))
             return;
-        // loop while we are not ejected all items
-        while (amount != 0)
+
+        if (item.Count < amount)
         {
-            // spawn and reduce weight
+            _sawmill.Debug($"EjectItems failed: tried to eject {amount} {item.ProductEntity}, but only {item.Count} available!");
+            return;
+        }
+
+        var totalWeightToRemove = item.Weight * amount;
+        if (repoComp.CurrentWeight < totalWeightToRemove)
+        {
+            _sawmill.Debug($"EjectItems failed: weight would become negative! CurrentWeight: {repoComp.CurrentWeight}, removing: {totalWeightToRemove}");
+            return;
+        }
+
+        int ejected = 0;
+
+        while (ejected < amount)
+        {
             var spawned = Spawn(item.ProductEntity, xform.Coordinates);
+            if (spawned == null)
+            {
+                _sawmill.Error($"Failed to spawn item {item.ProductEntity} at {xform.Coordinates}");
+                break;
+            }
+
             repoComp.CurrentWeight -= item.Weight;
+            ejected++;
+
             if (item.SStorageData is IItemStalkerStorage iss)
             {
-                // call spawnedItem method to restore data inside all components of that item
-                _stalkerStorageSystem.SpawnedItem(spawned,iss);
+                _stalkerStorageSystem.SpawnedItem(spawned, iss);
             }
             else
             {
-                // usually not used, but still...
                 RemoveItemsInsideContainer(spawned);
             }
-            amount--;
         }
+
+        _sawmill.Debug($"Successfully ejected {ejected} {item.ProductEntity} from repository {repository}");
     }
+
     /// <summary>
     /// Checks for items to contain inside player inventory, so its unreal to "hack" our repository by throwing away one item of the same type.
     /// </summary>
