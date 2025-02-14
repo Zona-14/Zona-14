@@ -130,8 +130,10 @@
   parent: BaseShellShotgun
   components:
     - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
       layers:
-        - state: beanbag
+      - state: beanbag
+        map: [ "enum.AmmoVisualLayers.Base" ]
     - type: CartridgeAmmo
       deleteOnSpawn: true
       proto: PelletShotgunBeanbagStalker
