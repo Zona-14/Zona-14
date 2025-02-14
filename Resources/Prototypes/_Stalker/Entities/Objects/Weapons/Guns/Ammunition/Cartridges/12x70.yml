@@ -14,18 +14,13 @@
     - ShellShotgun
   - type: CartridgeAmmo
     deleteOnSpawn: true
-    proto: Bullet7mmBuckshot
     count: 8
     spread: 25
     soundEject:
       collection: ShellEject
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    drawdepth: Items
   - type: Appearance
-  - type: SpentAmmoVisuals
   - type: Trash
     time: 300
 
