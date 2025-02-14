@@ -32,7 +32,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
-using System.Collections.Concurrent;
+using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -229,12 +229,14 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     #endregion
 
-    private ConcurrentDictionary<EntityUid, bool> _currentlyProcessingEjects = new ConcurrentDictionary<EntityUid, bool>();
+    private HashSet<EntityUid> _currentlyProcessingEjects = new HashSet<EntityUid>();
 
     private void OnEjectMessage(EntityUid uid, StalkerRepositoryComponent component, RepositoryEjectMessage msg)
     {
-        if (msg.Actor == null || !_currentlyProcessingEjects.TryAdd(msg.Actor, true))
+        if (msg.Actor == null || _currentlyProcessingEjects.Contains(msg.Actor))
             return;
+
+        _currentlyProcessingEjects.Add(msg.Actor);
 
         try
         {
@@ -249,27 +251,27 @@ public sealed class StalkerRepositorySystem : EntitySystem
             }
 
             var item = GetFirstItem(component.ContainedItems, msg.Item.Identifier);
-            if (item == null || item.Count < msg.Count)
-            {
-                _sawmill.Debug($"Failed to eject {msg.Count} {msg.Item.Name}: Not enough in repository!");
+            if (item == null)
                 return;
+
+            item.Count -= msg.Count;
+
+            if (item.SStorageData is IItemStalkerStorage stalker)
+            {
+                stalker.CountVendingMachine -= (uint)msg.Count;
             }
 
-            bool success = EjectItems(GetEntity(msg.Entity), item, msg.Count);
+            if (item.Count <= 0)
+                component.ContainedItems.Remove(item);
 
-            if (!success)
-            {
-                _sawmill.Debug($"EjectItems failed for {msg.Item.Identifier}, reverting changes.");
-                return;
-            }
-
+            EjectItems(GetEntity(msg.Entity), item, msg.Count);
             _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} ejected {msg.Count} {msg.Item.Name} from repository");
             _stalkerStorageSystem.SaveStorage(component);
             UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
         }
         finally
         {
-            _currentlyProcessingEjects.TryRemove(msg.Actor, out _);
+            _currentlyProcessingEjects.Remove(msg.Actor);
         }
     }
 
@@ -483,45 +485,40 @@ public sealed class StalkerRepositorySystem : EntitySystem
     /// <param name="repository">EntityUid of our repository to eject from</param>
     /// <param name="item"><see cref="RepositoryItemInfo"/> to eject</param>
     /// <param name="amount">Amount of items to eject</param>
-    private bool EjectItems(EntityUid repository, RepositoryItemInfo item, int amount)
+    private void EjectItems(EntityUid repository, RepositoryItemInfo item, int amount = 1)
     {
         var xform = Transform(repository);
         if (!TryComp<StalkerRepositoryComponent>(repository, out var repoComp))
+            return;
+
+        if (item.Count < amount)
         {
-            _sawmill.Error($"EjectItems failed: Repository component missing on {repository}");
-            return false;
+            _sawmill.Debug($"EjectItems failed: tried to eject {amount} {item.ProductEntity}, but only {item.Count} available!");
+            return;
         }
 
-        var repoItem = repoComp.ContainedItems.FirstOrDefault(i => i.Identifier == item.Identifier);
-        if (repoItem == null || repoItem.Count < amount)
+        var totalWeightToRemove = item.Weight * amount;
+        if (repoComp.CurrentWeight < totalWeightToRemove)
         {
-            _sawmill.Debug($"EjectItems failed: tried to eject {amount} {item.ProductEntity}, but only {repoItem?.Count ?? 0} available!");
-            return false;
+            _sawmill.Debug($"EjectItems failed: weight would become negative! CurrentWeight: {repoComp.CurrentWeight}, removing: {totalWeightToRemove}");
+            return;
         }
 
         int ejected = 0;
 
         while (ejected < amount)
         {
-            if (repoItem.Count <= 0)
-            {
-                _sawmill.Error($"EjectItems ERROR: Trying to eject {repoItem.ProductEntity} but count is already 0!");
-                break;
-            }
-
-            var spawned = Spawn(repoItem.ProductEntity, xform.Coordinates);
+            var spawned = Spawn(item.ProductEntity, xform.Coordinates);
             if (spawned == null)
             {
-                _sawmill.Error($"EjectItems failed: Could not spawn {repoItem.ProductEntity} at {xform.Coordinates}");
+                _sawmill.Error($"Failed to spawn item {item.ProductEntity} at {xform.Coordinates}");
                 break;
             }
 
+            repoComp.CurrentWeight -= item.Weight;
             ejected++;
 
-            repoItem.Count = Math.Max(0, repoItem.Count - 1);
-            repoComp.CurrentWeight = Math.Max(0, repoComp.CurrentWeight - repoItem.Weight);
-
-            if (repoItem.SStorageData is IItemStalkerStorage iss)
+            if (item.SStorageData is IItemStalkerStorage iss)
             {
                 _stalkerStorageSystem.SpawnedItem(spawned, iss);
             }
@@ -531,16 +528,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
             }
         }
 
-        if (repoItem.Count == 0)
-        {
-            repoComp.ContainedItems.Remove(repoItem);
-            _sawmill.Debug($"EjectItems: Removed {repoItem.ProductEntity} from repository as count reached zero.");
-        }
-
-        _stalkerStorageSystem.SaveStorage(repoComp);
-        _sawmill.Debug($"Successfully ejected {ejected} {repoItem.ProductEntity} from repository {repository}");
-
-        return ejected > 0;
+        _sawmill.Debug($"Successfully ejected {ejected} {item.ProductEntity} from repository {repository}");
     }
 
     /// <summary>
