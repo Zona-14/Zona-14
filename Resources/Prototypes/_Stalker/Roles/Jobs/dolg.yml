@@ -22,7 +22,6 @@
         - type: Access
           tags:
             - Dolg
-            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: Dolg
