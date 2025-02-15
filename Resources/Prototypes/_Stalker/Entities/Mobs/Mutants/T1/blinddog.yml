@@ -61,7 +61,7 @@
           Slash: 16
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
-      baseSprintSpeed: 4
+      baseSprintSpeed: 6
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi
       layers:
