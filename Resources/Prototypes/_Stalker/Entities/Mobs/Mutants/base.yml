@@ -85,7 +85,7 @@
             -1
     - type: Damageable
       damageContainer: Mutant
-      damageModifierSet: DefaultMutant
+      damageModifierSet: STMutantT1DamageModifierSet
     - type: AtmosExposed
     - type: Flammable
       fireSpread: true
