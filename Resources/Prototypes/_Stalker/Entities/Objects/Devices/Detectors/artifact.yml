@@ -109,6 +109,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
 
@@ -149,6 +150,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
@@ -171,6 +173,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
@@ -211,6 +214,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
@@ -232,6 +236,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
@@ -262,6 +267,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
 
