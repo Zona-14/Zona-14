@@ -52,7 +52,7 @@
     - tasks:
       - !type:HTNPrimitiveTask
         operator: !type:PlaySoundOperator
-          sound: /Audio/_Stalker/Mutated/Gosha/blinddog_roar.ogg
+          sound: /Audio/_Stalker/Mutants/blinddog_roar.ogg
 
       - !type:HTNPrimitiveTask
          operator: !type:MoveToOperator
@@ -64,9 +64,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -85,9 +89,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -106,9 +114,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -127,9 +139,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -148,9 +164,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -169,9 +189,13 @@
            rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:SetFloatOperator
           targetKey: AttackDelay
-          amount: 1
+          amount: 0.5
 
       - !type:HTNPrimitiveTask
         operator: !type:WaitOperator
@@ -203,6 +227,10 @@
           rangeKey: MeleeRange
 
       - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
         operator: !type:MeleeOperator
           targetKey: Target
         preconditions:
@@ -216,4 +244,3 @@
             id: MeleeService
             proto: NearbyMeleeTargets
             key: Target
-
