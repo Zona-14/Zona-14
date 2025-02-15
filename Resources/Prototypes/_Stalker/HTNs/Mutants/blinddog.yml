@@ -4,10 +4,6 @@
     - tasks:
       - !type:HTNCompoundTask
         task: STBlindDogMeleeCombatCompound
-    
-    - tasks:
-      - !type:HTNCompoundTask
-        task: STBlindDogRoarRestoreCompound
 
       - !type:HTNCompoundTask
         task: IdleCompound
@@ -26,6 +22,9 @@
    
       - !type:HTNCompoundTask
         task: STBlindDogMeleeAttackTargetCompound
+
+      - !type:HTNCompoundTask
+        task: STBlindDogRoarRestoreCompound
 
 - type: htnCompound
   id: STBlindDogRoarRestoreCompound
@@ -52,7 +51,7 @@
     - tasks:
       - !type:HTNPrimitiveTask
         operator: !type:PlaySoundOperator
-          sound: /Audio/_Stalker/Mutated/Gosha/blinddog_roar.ogg
+          sound: /Audio/_Stalker/Mutants/blinddog_roar.ogg
 
       - !type:HTNPrimitiveTask
          operator: !type:MoveToOperator
@@ -91,79 +90,6 @@
           - !type:KeyExistsPrecondition
             key: AttackDelay
 
-      - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
-
-      - !type:HTNPrimitiveTask
-        operator: !type:SetFloatOperator
-          targetKey: AttackDelay
-          amount: 1
-
-      - !type:HTNPrimitiveTask
-        operator: !type:WaitOperator
-          key: AttackDelay
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: AttackDelay
-
-      - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
-
-      - !type:HTNPrimitiveTask
-        operator: !type:WaitOperator
-          key: AttackDelay
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: AttackDelay
-
-      - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
-
-      - !type:HTNPrimitiveTask
-        operator: !type:WaitOperator
-          key: AttackDelay
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: AttackDelay
-
-      - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
-
-      - !type:HTNPrimitiveTask
-        operator: !type:WaitOperator
-          key: AttackDelay
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: AttackDelay
-
-      - !type:HTNPrimitiveTask
-        operator: !type:SetBoolOperator
-          targetKey: Roared
-          value: true
 
 - type: htnCompound
   id: STBlindDogMeleeAttackTargetCompound

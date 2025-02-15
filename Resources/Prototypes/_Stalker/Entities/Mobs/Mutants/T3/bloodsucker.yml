@@ -20,7 +20,7 @@
         Dead:
           Base: dead
     - type: Damageable
-      damageModifierSet: BloodsuckerMutant
+      damageModifierSet: STMutantT3DamageModifierSet
     - type: Destructible
       thresholds:
         - trigger:

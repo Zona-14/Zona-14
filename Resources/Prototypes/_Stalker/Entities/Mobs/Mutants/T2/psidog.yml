@@ -5,6 +5,14 @@
   suffix: ST, T2
   description: Мутировавший волк, обладающий существенными пси-способностями и способный создавать иллюзии. Редкая и очень опасная тварь.
   components:
+    - type: Damageable
+      damageModifierSet: STMutantT2DamageModifierSet
+    - type: HTN
+      rootTask:
+        task: STBlindDogCompound
+      blackboard:
+        VisionRadius: !type:Single
+          15.0
     - type: STWeight
       self: 55
     - type: Sprite
@@ -29,8 +37,8 @@
       speedModifierThresholds:
         200: 0.8
     - type: MovementSpeedModifier
-      baseWalkSpeed : 3.2
-      baseSprintSpeed : 4
+      baseWalkSpeed : 3.12
+      baseSprintSpeed : 6
     - type: MeleeWeapon
       attackRate: 0.7
       heavyWindupModifier: 1
@@ -88,6 +96,12 @@
   description: Мутировавший волк, обладающий существенными пси-способностями и способный создавать иллюзии. Редкая и очень опасная тварь.
   suffix: Stalker, Мутант, Копия
   components:
+    - type: HTN
+      rootTask:
+        task: STBlindDogCompound
+      blackboard:
+        VisionRadius: !type:Single
+          15.0
     - type: TimedDespawn
       lifetime: 10
     - type: STWeight
