@@ -56,7 +56,7 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Slash: 36
+          Slash: 32
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.12
       baseSprintSpeed: 6

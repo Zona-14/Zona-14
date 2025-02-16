@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMobMutant
+  parent: STBaseMobMutant
   id: MobMutantBlindDog
   name: слепой пёс
   suffix: ST, T1
