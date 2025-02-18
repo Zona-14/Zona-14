@@ -1,16 +1,11 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server._Stalker.Procedural;
 using Content.Server._Stalker.Sponsors;
 using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.Storage;
-using Content.Server.Station.Systems;
-using Content.Shared._Stalker.CCCCVars;
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
-using Content.Shared.Interaction;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -21,6 +16,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Server._Stalker.Trash;
 
 namespace Content.Server._Stalker.Teleports;
 
@@ -37,6 +33,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
+    private ISawmill _sawmill = default!;
 
 
     //Путь к карте сталкер арены
@@ -56,6 +53,9 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
         SubscribeLocalEvent<StalkerPortalComponent, GetVerbsEvent<InteractionVerb>>(OnInteractStalkerPortal);
         SubscribeLocalEvent<StalkerPortalPersonalComponent, GetVerbsEvent<InteractionVerb>>(OnInteractStalkerPortalPersonal);
+
+        SubscribeLocalEvent<RequestClearArenaGridsEvent>(OnClearArenaGrids);
+        _sawmill = Logger.GetSawmill("repository");
     }
 
     private void OnInteractStalkerPortal(EntityUid uid, StalkerPortalComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -98,6 +98,20 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         });
     }
 
+    private void OnClearArenaGrids(RequestClearArenaGridsEvent args)
+    {
+        foreach(var data in StalkerArenaDataList)
+        {
+            var gridIdNet = NetEntity.Parse(data.GridId.ToString());
+
+            if (!_ent.TryGetEntity(gridIdNet, out var gridId) || !_ent.HasComponent<MapGridComponent>(gridId))
+                continue;
+
+            _ent.DeleteEntity(gridId);
+        }
+        StalkerArenaDataList.Clear();
+    }
+
     // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену
     private void OnCollideStalkerPortalPersonal(EntityUid uid, StalkerPortalPersonalComponent component, ref StartCollideEvent args)
     {
@@ -117,24 +131,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
         if (component.ReturnPortalEntity.IsValid())
         {
-            var player = actor.PlayerSession;
-            var data = GetFromStalkerTeleportDataList(player.Name);
-            var gridIdNet = NetEntity.Parse(data.GridId.ToString());
-
-            Logger.Debug($"player {player}");
-            Logger.Debug($"data {data}");
-            Logger.Debug($"gridIdNet {gridIdNet}");
-
-
-
-            if (!_ent.TryGetEntity(gridIdNet, out var gridId) || !_ent.HasComponent<MapGridComponent>(gridId))
-                return;
-
-            _ent.DeleteEntity(gridId);
-            Logger.Debug($"tried to delete {gridId}");
-
             TeleportEntity(otherEntity, new EntityCoordinates(component.ReturnPortalEntity, new Vector2(0, -1f)));
-            RemoveFromStalkerTeleportDataList(player.Name);
         }
     }
 
@@ -195,7 +192,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
             }
         }
 
-        StalkerArenaDataList.Add(new StalkerArenaData(admin.Name,ArenaMap[admin.UserId],ArenaGrid[admin.UserId]));
+        StalkerArenaDataList.Add(new StalkerArenaData(admin.Name, ArenaMap[admin.UserId], ArenaGrid[admin.UserId]));
 
         SetReturnPortal(ArenaGrid[admin.UserId],teleportName,returnTeleportEntityUid);
 
