@@ -21,7 +21,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-    state: base
+    state: "base"
 
 - type: entity
   id: Cartridge739FMJ
