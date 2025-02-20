@@ -97,3 +97,5 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/A-545.rsi
     scale: 0.75, 0.75
+  - type: Gun
+    fireRate: 7.75

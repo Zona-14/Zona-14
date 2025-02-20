@@ -91,3 +91,6 @@
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/ARX160.rsi
       scale: 0.75, 0.75
+    - type: Gun
+      angleIncrease: 5
+      angleDecay: 29

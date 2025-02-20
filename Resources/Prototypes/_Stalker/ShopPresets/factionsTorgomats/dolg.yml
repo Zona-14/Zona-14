@@ -41,7 +41,6 @@
         STWeaponGunAKS74U: 1490
         STWeaponRifleStalkerAK74: 3000
         STSTWeaponRifleStalkerAK74M: 4350
-        WeaponMachineGunRPD: 10000
           # Smg
         STWeaponSMGPP91: 1000
         STWeaponSMGBizon: 2000
@@ -51,12 +50,9 @@
         WeaponPistolStalkerTT: 250
         STWeaponSniperMosin: 1000
         STWeaponRifleStalkerAKM: 3000
-        STWeaponRifleStalkerVAL: 15000
-        STWeaponRifleSVDS: 11000
     - name: Магазины
       priority: 2
       items:
-        Magazine762x39RPD: 1200
           # 7mm
         Base1270Mag: 150 #T1
         Saiga1270Mag10: 350
@@ -75,8 +71,6 @@
         PP91Mag: 210
           # Other
         Base939Mag10: 100
-        939Mag20: 250
-        939Mag30: 550
         BasePMMag: 70
         TTMag: 100
         BaseAPSMag: 150
@@ -89,9 +83,6 @@
         725PBox: 90
         725PTBox: 225
         725PSTBox: 675
-        # 9.39
-        939SP5Box: 250
-        939SP6Box: 625
         # 9.19
         919PSOGJBox: 80
         919PSTBox: 200
