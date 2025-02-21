@@ -51,7 +51,6 @@ public sealed class TrashDeletingSystem : EntitySystem
     }
 
     private bool _warningIssued = false;
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -66,9 +65,14 @@ public sealed class TrashDeletingSystem : EntitySystem
             return;
 
         _chat.DispatchServerAnnouncement("Произошла очистка мусора и пустых схронов, некоторые предметы на полу пропали!");
-        RaiseLocalEvent(new RequestClearArenaGridsEvent());
 
         var trashEnts = EntityQueryEnumerator<TrashComponent>();
+
+        _nextTimeUpdate = _timing.CurTime + TimeSpan.FromMinutes(_updateTime);
+        _warningIssued = false;
+
+        RaiseLocalEvent(new RequestClearArenaGridsEvent()); // we better move it here, im not really sure why this shit is so unpredictible
+
         while (trashEnts.MoveNext(out var uid, out var comp))
         {
             if (comp.DeletingTime == null)
@@ -83,9 +87,6 @@ public sealed class TrashDeletingSystem : EntitySystem
             if (comp.DeletingTime <= _timing.CurTime)
                 QueueDel(uid);
         }
-
-        _warningIssued = false;
-        _nextTimeUpdate = _timing.CurTime + TimeSpan.FromMinutes(_updateTime);
     }
 
 
