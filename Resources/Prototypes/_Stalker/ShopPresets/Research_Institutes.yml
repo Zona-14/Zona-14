@@ -108,7 +108,7 @@
         BoxZiptie: 50
         BoxSafebox: 300
         CheapLighter: 5
-        FlippoLighter: 25
+        FlippoLighter: 200
         GeigerCounter: 50
         BaseRadio: 50
         FlashlightSeclite: 50
@@ -126,9 +126,9 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-        CigPackBlack: 10
-        CigarCase: 50
-        CigarGoldCase: 100
+        CigPackBlack: 100
+        CigarCase: 500
+        CigarGoldCase: 1000
     - name: Провизия
       priority: 9
       items:
