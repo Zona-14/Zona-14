@@ -460,46 +460,6 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCMilitaryWardrobe
-  name: Гардеробщик [→   ←]
-  suffix: ST, Gruppirovki
-  description: Выдаёт комплекты ПСЗ новоприбывшим солдатам.
-  components:
-  - type: Sprite
-    sprite: _Stalker\NPC\Groups\wardrobe-military.rsi
-    state: icon
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: SupplyTalons
-    shopPresetId: MilitaryPSZShopPreset
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
-- type: entity
-  parent: NPCDoll
   id: NPCMilitaryPrapor
   name: Прапор [→   ←]
   suffix: ST, Gruppirovki
