@@ -634,6 +634,16 @@
   - type: AccessReader
     access: [["Project"]]
 
+- type: entity
+  id: STMetalDoorFalloutProjectOrchestratorClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Проект
+  components:
+  - type: AccessReader
+    access: [["ProjectOrchestrator"]]
+
 # Жабам
 - type: entity
   id: WoodDoorFalloutJaba
