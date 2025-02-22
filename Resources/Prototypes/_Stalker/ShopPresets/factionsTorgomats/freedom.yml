@@ -22,6 +22,7 @@
     # Gravity group - 2
     ZoneArtifactVyvert: 600
     ZoneArtifactAmoeba: 900
+    ZoneArtifactFloodlight: 900
     ZoneArtifactGravi: 1800
     ZoneArtifactGoldfish: 7200
     ZoneArtifactSpring: 5400

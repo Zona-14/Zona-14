@@ -115,23 +115,22 @@ public sealed class SponsorsManager
 
     private async Task<bool> IsGiven(NetUserId userId)
     {
-        var requestUrl = $"{_apiUrl}/is_given?id={userId}&method=ss14&api_token={_apiKey}";
-        var response = await _httpClient.GetAsync(requestUrl);
-
-        return (int)response.StatusCode == 200;
+        // Hotfix.
+        // TODO: Use extra table from auth API.
+        return true;
     }
 
     public async Task SetGiven(NetUserId userId, bool given)
     {
-        var requestUrl = $"{_apiUrl}/given?id={userId}&given={(given ? 1 : 0)}&method=ss14&api_token={_apiKey}";
-        var response = await _httpClient.PostAsync(requestUrl, null);
-        if (!response.IsSuccessStatusCode)
-            _sawmill.Error($"Error setting given value for {userId}");
-
-        if (TryGetInfo(userId, out var data))
-        {
-            data.IsGiven = given;
-        }
+        // var requestUrl = $"{_apiUrl}/given?id={userId}&given={(given ? 1 : 0)}&method=ss14&api_token={_apiKey}";
+        // var response = await _httpClient.PostAsync(requestUrl, null);
+        // if (!response.IsSuccessStatusCode)
+        //     _sawmill.Error($"Error setting given value for {userId}");
+        //
+        // if (TryGetInfo(userId, out var data))
+        // {
+        //     data.IsGiven = given;
+        // }
     }
 
     public async Task MakeWipe()

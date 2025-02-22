@@ -6,7 +6,7 @@
   description: Немецкая винтовка СИГ под 5.56.
   components:
   - type: STWeight
-    self: 4.1
+    self: 3.5
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
   - type: Sprite
@@ -19,10 +19,18 @@
       path: /Audio/_Stalker/Effects/Guns/scar.ogg
       params:
         volume: -2
+    projectileSpeed: 30
     minAngle: 50
     maxAngle: 90
     angleIncrease: 3
     angleDecay: 15
+    shotsPerBurst: 3
+    ShotsPerBurstModified: 3
+    selectedMode: Burst
+    availableModes:
+      - Burst
+      - SemiAuto
+      - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:

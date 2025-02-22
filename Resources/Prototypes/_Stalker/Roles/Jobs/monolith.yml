@@ -1,6 +1,6 @@
 - type: job
   id: StalkerMonolith
-  name: Монолит
+  name: Скиталец
   icon: monolith
   description: Символ тихого, но пугающего присутствия.
   playTimeTracker: JobMonolith

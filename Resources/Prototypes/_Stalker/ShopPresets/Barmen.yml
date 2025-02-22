@@ -22,6 +22,7 @@
     # Gravity group - 2
     ZoneArtifactVyvert: 300
     ZoneArtifactAmoeba: 450
+    ZoneArtifactFloodlight: 450
     ZoneArtifactGravi: 900
     ZoneArtifactGoldfish: 3600
     ZoneArtifactSpring: 2700
@@ -74,6 +75,7 @@
         STWeaponRifleStalkerAK74: 3500
         STWeaponRifleM16: 3250
         STWeaponRifleSig550: 4250
+        WeaponRifleStalkerGroza545: 4250
         STWeaponRifleStalkerAKM: 3750
         STWeaponSniperMosin: 1300
         STWeaponRifleStalkerFAL: 2125
@@ -183,6 +185,7 @@
         ClothingGoPro: 250
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
+        STHeadLight: 350
         HatchetStalker: 150
         STCraftGlueKitT3: 1000
         STCraftPlasticFittingT3: 1000
@@ -313,6 +316,8 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
+        CardBin: 100
+        PokerCardBin: 150
   sponsorCategories:
     1:
       - name: sponsor
