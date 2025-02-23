@@ -199,7 +199,16 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         // stalker-changes-start
         if (profile != null && InventorySystem.TryGetSlotEntity(entity.Value, "id", out var idUid) && TryComp<PdaComponent>(idUid.Value, out var pdaComponent))
         {
-            _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity.Value, profile.Name);
+            unchecked
+            {
+                int hash = 17; // lmao shizo
+                foreach (char c in profile.Name)
+                {
+                    hash = hash * 31 + c;
+                }
+                long numericHash = Math.Abs(hash) % 100_000_000;
+                _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity.Value, numericHash.ToString("D8"));
+            }
         }
         // stalker-changes-end
 
