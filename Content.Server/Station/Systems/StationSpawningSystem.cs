@@ -193,6 +193,13 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             }
         }
 
+        // stalker-changes-start
+        if (profile != null && InventorySystem.TryGetSlotEntity(entity.Value, "id", out var idUid) && TryComp<PdaComponent>(idUid.Value, out var pdaComponent))
+        {
+            _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity.Value, profile.Name);
+        }
+        // stalker-changes-end
+
         DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);
         return entity.Value;
