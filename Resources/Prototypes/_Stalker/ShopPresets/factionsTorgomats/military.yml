@@ -460,6 +460,7 @@
       items:
         ClothingHeadBandana1Military: 15
         ClothingHeadBandana2Military: 15
+        ClothingMaskNeckBalaklava1: 50
 
     - name: Провизия
       priority: 2

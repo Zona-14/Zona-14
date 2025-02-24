@@ -1,6 +1,7 @@
 - type: mapLoader
   id: StalkerBaseMaps
   mapPaths:
+
     RedForest: /Maps/_ST/World/RedForestV61.yml
     KordonUnerground: /Maps/_ST/World/KordonPodzemV40.yml
     Svalka: /Maps/_ST/World/SvalkaV147.yml
