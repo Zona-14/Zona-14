@@ -103,8 +103,6 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
     private void OnClearArenaGrids(RequestClearArenaGridsEvent args)
     {
-        List<EntityUid?> entitiesToDelete = new();
-
         foreach (var data in StalkerArenaDataList)
         {
             var gridIdNet = NetEntity.Parse(data.GridId.ToString());
@@ -115,16 +113,10 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
             if (!TryComp<TransformComponent>(gridId, out var transform))
                 continue;
 
+            var enumerator = transform.ChildEnumerator;
             bool hasMind = false;
 
-            List<EntityUid> children = new();
-            var enumerator = transform.ChildEnumerator;
             while (enumerator.MoveNext(out var ent))
-            {
-                children.Add(ent);
-            }
-
-            foreach (var ent in children)
             {
                 if (TryComp<MindContainerComponent>(ent, out var mind) && mind.HasMind)
                 {
@@ -133,19 +125,13 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
                 }
             }
 
-            if (!hasMind)
-            {
-                entitiesToDelete.Add(gridId);
-                RemoveFromStalkerTeleportDataList(data.Login);
-            }
-        }
+            if (hasMind)
+                continue;
 
-        foreach (var entity in entitiesToDelete)
-        {
-            _ent.DeleteEntity(entity);
+            _ent.DeleteEntity(gridId);
+            RemoveFromStalkerTeleportDataList(data.Login);
         }
     }
-
 
 
     // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену
