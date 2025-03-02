@@ -40,4 +40,6 @@
             # Avangard
             StalkerDolg: [ 0, -1 ]
             StalkerHeadDolg: [ 0, -1 ]
+            # CherniyeTulpari
+            StalkerTulpari: [ 0, -1 ]
  
