@@ -109,6 +109,8 @@
         918PGJBox: 75
         918PSTBox: 180
         918PBMBox: 450
+        556FMJBox: 350
+        556M855Box: 875
     - name: Броня и снаряжение
       priority: 4
       items:
