@@ -30,6 +30,7 @@ namespace Content.Shared._Stalker.Jumpscare
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float DamageRadius = 0.5f;
+
         [AutoPausedField]
         public TimeSpan? StartTime = TimeSpan.FromSeconds(0f);
         [AutoPausedField]
@@ -55,8 +56,28 @@ namespace Content.Shared._Stalker.Jumpscare
 
         [AutoPausedField]
         public TimeSpan? NextTimeUpdate;
-        // seconds
+
+        // in seconds
         [DataField]
         public float UpdateCooldown;
+
+        // step params
+        [ViewVariables(VVAccess.ReadWrite)]
+        public Vector2 JumpTarget = new(0, 0);
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int CurrentStep = 0;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int TotalSteps = 10;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float StepInterval = 0.1f;
+
+        [AutoPausedField]
+        public TimeSpan? NextStepTime;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool MovingToJumpTarget = false;
     }
 }

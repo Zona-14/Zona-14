@@ -21,8 +21,8 @@ public sealed class JumpscareSystem : EntitySystem
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -35,13 +35,19 @@ public sealed class JumpscareSystem : EntitySystem
                 continue;
             comp.NextTimeUpdate = _timing.CurTime + TimeSpan.FromSeconds(comp.UpdateCooldown);
 
+            if (comp.MovingToJumpTarget)
+            {
+                MoveTowardsTarget(uid, comp, frameTime);
+                continue;
+            }
+
             if (CheckHumanTarget(uid, comp) is not { } humanTarget)
                 continue;
 
             if (_timing.CurTime > comp.EndTime)
             {
                 comp.StartTime = _timing.CurTime;
-                comp.EndTime = comp.StartTime + TimeSpan.FromSeconds(comp.ReloadTime + _random.NextFloat(-comp.RandomiseReloadTime, comp.RandomiseReloadTime)) ;
+                comp.EndTime = comp.StartTime + TimeSpan.FromSeconds(comp.ReloadTime + _random.NextFloat(-comp.RandomiseReloadTime, comp.RandomiseReloadTime));
 
                 if (TryComp<MobStateComponent>(uid, out var entityMobState) && _mobState.IsAlive(uid, entityMobState))
                 {
@@ -55,13 +61,9 @@ public sealed class JumpscareSystem : EntitySystem
 
             if (_timing.CurTime > comp.PreparingEndTime && !comp.OnCoolDown)
             {
-                comp.Jumping = true;
-
-                // Set the jump start and end times here
-                comp.JumpStartTime = _timing.CurTime;
-                comp.JumpEndTime = comp.JumpStartTime + TimeSpan.FromSeconds(0.5f);
-
-                var gomen = _xform.GetWorldPosition(humanTarget) - _xform.GetWorldPosition(uid);
+                var startPos = _xform.GetWorldPosition(uid);
+                var targetPos = _xform.GetWorldPosition(humanTarget);
+                var gomen = targetPos - startPos;
                 var length = gomen.Length();
 
                 if (length > comp.AttackDistance)
@@ -69,34 +71,34 @@ public sealed class JumpscareSystem : EntitySystem
                     gomen *= comp.AttackDistance / length;
                 }
 
-                _throwing.TryThrow(uid, gomen, comp.JumpPower, user: uid, pushbackRatio: 0);
-                _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(2f), false, 0.5f, 0.5f);
-
+                comp.JumpTarget = startPos + gomen;
+                comp.CurrentStep = 0;
+                comp.NextStepTime = _timing.CurTime;
+                comp.MovingToJumpTarget = true;
                 comp.OnCoolDown = true;
             }
-
-            if (_timing.CurTime > comp.JumpEndTime)
-            {
-                comp.JumpStartTime = _timing.CurTime;
-                comp.JumpEndTime = comp.JumpStartTime + TimeSpan.FromSeconds(0.5f);
-                comp.Jumping = false;
-            }
-
-            if (!comp.Jumping)
-                continue;
-
-            foreach (var target in _lookup.GetEntitiesInRange(uid, comp.DamageRadius))
-            {
-                if (target == uid || !HasComp<HumanoidAppearanceComponent>(target) ||
-                    HasComp<JumpscareResistantComponent>(target))
-                    continue;
-
-                EnsureComp<JumpscareResistantComponent>(target);
-                _damage.TryChangeDamage(target, comp.ChargeDamage);
-                if (comp.StaminaDamage > 0)
-                    _stamina.TakeStaminaDamage(target, comp.StaminaDamage);
-            }
         }
+    }
+
+    private void MoveTowardsTarget(EntityUid uid, JumpscareComponent comp, float frameTime)
+    {
+        if (_timing.CurTime < comp.NextStepTime)
+            return;
+
+        var currentPos = _xform.GetWorldPosition(uid);
+        var targetPos = comp.JumpTarget;
+        var gomen = targetPos - currentPos;
+        if (gomen.Length() < 0.1f || comp.CurrentStep >= comp.TotalSteps)
+        {
+            comp.MovingToJumpTarget = false;
+            return;
+        }
+
+        var step = gomen / (comp.TotalSteps - comp.CurrentStep);
+        _xform.SetWorldPosition(uid, currentPos + step);
+
+        comp.CurrentStep++;
+        comp.NextStepTime = _timing.CurTime + TimeSpan.FromSeconds(comp.StepInterval);
     }
 
     private EntityUid? CheckHumanTarget(EntityUid uid, JumpscareComponent component)
@@ -109,8 +111,8 @@ public sealed class JumpscareSystem : EntitySystem
         var xform = Transform(uid);
         var mapCoords = _xform.ToMapCoordinates(xform.Coordinates);
         // we'll iterate only through dynamic objects, cause we don't need to check non-alive objects
-        _lookup.GetEntitiesInRange(mapCoords, component.AttackRadius, entities,
-            LookupFlags.Dynamic);
+        _lookup.GetEntitiesInRange(mapCoords, component.AttackRadius, entities, LookupFlags.Dynamic);
+
         foreach (var entity in entities)
         {
             if (!HasComp<HumanoidAppearanceComponent>(entity))
