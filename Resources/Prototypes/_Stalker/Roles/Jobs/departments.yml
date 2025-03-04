@@ -22,7 +22,6 @@
 #   # - Doctor
 #   # - HeadDoctor
 #   # - Police
-#   # - StalkerJournalist
 #   # - StalkerUN
 #   # - StalkerSBU
 #   # - StalkerZavet
@@ -45,6 +44,7 @@
   - StalkerProjectPawn
   - StalkerPoisk
   - StalkerTulpari
+  - StalkerJournalist
 
 - type: department
   id: StalkerBrigands

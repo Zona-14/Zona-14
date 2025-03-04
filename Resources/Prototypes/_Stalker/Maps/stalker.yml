@@ -42,4 +42,6 @@
             StalkerHeadDolg: [ 0, -1 ]
             # CherniyeTulpari
             StalkerTulpari: [ 0, -1 ]
+            # journalists
+            StalkerJournalist: [ 0, -1 ]
  
