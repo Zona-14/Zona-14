@@ -59,7 +59,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorRenegate
-  name: бронекостюм «Ил»
+  name: бронекостюм 'Ил'
   description: Ренегаты не церемонятся с красотой. Этот костюм из резины и металла сделан для того, чтобы выжить в Топях и отбиться от любой твари. Желтые вставки - чтобы было легче найти мертвеца в грязи.
   components:
   - type: Sprite
@@ -108,7 +108,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorDeserter
-  name: бронекомбез отступников "Гоплит"
+  name: бронекомбез отступников "Гоплит" # не переименовывайте
   description: Дешёвый и надёжный бронекомбез отступников хорошо защищающий от мутантов и пуль. 3 класс
   components:
   - type: Sprite
@@ -120,7 +120,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorMerc
-  name: бронекостюм «Орлан»
+  name: бронекомбез наёмника
   description: За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite

@@ -92,7 +92,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseDolg
-  name: бронежилет «Щиток-2» долга
+  name: лёгкий бронежилет 'Долга'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -174,7 +174,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseSera
-  name: бронежилет «Щиток-2» Серафимов
+  name: лёгкий бронежилет 'Серафимов'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -224,7 +224,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseRenegate
-  name: бронежилет «Ухмылка Мертвеца»
+  name: бронежилет 'Ухмылка Мертвеца'
   description: Этот бронежилет видел слишком много. Ржавый металл, оранжевая мазня, череп, смотрящий прямо в душу… асимметричный наплечник только добавляет безумия. Владелец явно перешел черту.
   components:
   - type: Sprite

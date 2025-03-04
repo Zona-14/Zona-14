@@ -1,221 +1,27 @@
 - type: shopPreset
   id: MercShopPreset
   itemsForSale:
-    # Thermal group - 1
-    ZoneArtifactFireball: 400
-    ZoneArtifactEye: 600
-    ZoneArtifactFlame: 1200
-    # Thermal group - 2
-    ZoneArtifactCristall: 2400
-    ZoneArtifactLithosphere: 4800
-    # Electrical group - 1
-    ZoneArtifactSparkler: 400
-    ZoneArtifactBattery: 600
-    ZoneArtifactFlash: 1200
-    ArtMoon: 2400
-    ZoneArtifactTesla: 3600
-    ZoneArtifactIce: 4800
-    # Gravity group - 1
-    ArtMedusa: 400
-    ZoneArtifactFlower: 600
-    ZoneArtifactNightStar: 2400
-    # Gravity group - 2
-    ZoneArtifactVyvert: 400
-    ZoneArtifactAmoeba: 600
-    ZoneArtifactGravi: 1200
-    ZoneArtifactGoldfish: 4800
-    ZoneArtifactSpring: 3600
-    ZoneArtifactFocus: 3600
-    ZoneArtifactStuntman: 4800
-    ZoneArtifactDistorter: 4800
-    ZoneArtifactSoul: 3600
-    # Acidic group - 1
-    ZoneArtifactBlood: 1200
-    ZoneArtifactMeat: 2400
-    ZoneArtifactKolobok: 3600
-    # Acidic group - 2
-    ZoneArtifactPellicle: 400
-    ZoneArtifactBaloon: 3600
-
-
-     # Mutant parts
-
-  #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 95 # T1
-    MutantPartSeasonedBoarHoof: 190 # T2
-    MutantPartOldBoarHoof: 285 # T3
-
-    #T1 -------- Health * 1
-    MutantPartBlindDogTail: 65
-    MutantPartFleshEye: 140
-    FoodMeatSpiderLeg: 35
-
-    #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 385
-    MutantPartPseudodogTail: 210
-    MutantPartSnorkFoot: 350
-
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 525
-    MutantPartOraculeEye: 1120
-    MutantPartPseudogiantHeart: 2800
-    MutantPartZombieHand: 420
-
+    FoodTinMRETrash: 5
   categories:
     - name: Оружие
       priority: 1
       items:
-        STWeaponShotgunMP155T: 45
-        WeaponPistolStalkerGlock: 200
-        STWeaponShotgunToz34: 225
-        WeaponShotgunStalkerMP133: 385
-        STWeaponShotgunMossberg: 630
-        STWeaponShotgunMP153: 900
-        STWeaponSMGMp5: 2000
-        STWeaponRifleStalkerFAL: 2125
-        STWeaponRifleM16: 3250
-        STWeaponRifleSig550: 4250
-    - name: Магазины
-      priority: 2
-      items:
-        Base545Mag10: 50
-        545Mag20: 175
-        545Mag30: 275
-        Base739Mag10: 100
-        Base754Mag5: 250
-        739Mag45: 450
-        BaseMP5Mag: 275
-        751Mag20: 350
-        BaseGlockMag10: 135
-        Base556Mag10: 75
-        556Mag20: 200
-        556Mag30: 300
-    - name: Боеприпасы
-      priority: 3
-      items:
-        6mmBuckshotBox: 115
-        7mmBuckshotBox: 45
-        919PSOGJBox: 75
-        919PSTBox: 180
-        919PBMBox: 450
-        545FMJBox: 200
-        739FMJBox: 750
-        751M80Box: 745
-        754FMJBox: 675
-        754HPBox: 1015
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 325
-        45ACPAPBox: 815
-        918PGJBox: 75
-        918PSTBox: 180
-        918PBMBox: 450
+        STCombatKnife: 10
     - name: Броня и снаряжение
       priority: 4
       items:
         STSkinsKitMercenary: 500
         ClothingOuterJacketMerc: 50
-        STClothingOuterArmorLightPlateVestBaseMerc: 1100
-        ClothingOuterArmorSevaMerc: 2500
-        ClothingOuterArmorMerc: 3100
-        ClothingHeadMercLight: 300
-    - name: Хранилища и Контейнеры
+    - name: Утилиты
       priority: 5
       items:
-        ClothingBackpackDuffelGreenStalker: 30
-        ClothingBackpackTacticOliveStalker: 450
-        ClothingBackpackMercStalker: 1200
-        ClothingBeltBandolierStalker: 20
-        ClothingBeltTarzanGreen: 200
-        ClothingBeltTarzanOrange: 200
-        BoxArtcont: 450
-        MedkitCMSStalker: 450
-        MedkitGrizzlyStalker: 850
-    - name: Плащи и Противогазы
-      priority: 6
-      items:
-        ClothingOuterCoatDoshdevik: 100
-        ClothingOuterCoatLoyalistLight: 1550
-        ClothingMaskGasZarya: 100
-        ClothingMaskGasM40: 250
-        ClothingMaskGP7: 900
-    - name: Исследовательское снаряжение
-      priority: 7
-      items:
-        STBoltBagFilled: 50
-        BoxArtcont: 500 # T1
-        ZoneAnomalyDetectorAD1: 550 # T1
-          # Detectors
-        ZoneArtifactDetectorPulse: 100 # T1
-        ZoneArtifactDetectorHunter: 400 # T2
-        ZoneArtifactDetectorResponse: 1200 # T2
-    - name: Утилиты
-      priority: 8
-      items:
-        STCombatKnife: 25
-        TrashBag: 30
-        BoxZiptie: 50
-        BoxSafebox: 300
-        CheapLighter: 5
+        EncryptionKeyMercStalker: 50
+        ClothingHeadsetMercStalker: 100
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
-        PowerCellHyper: 50
-        HandheldGPSBasic: 50
-        Paper: 2
-        Pen: 5
-        Binocularus1: 800
-        BoxFlare: 60
-        ClothingBackpackDuffelGreenStalkerHydroponic: 500
-        Beaker: 40
-        Syringe: 20
-        ClothingGoPro: 250
-        ExtendedEmergencyOxygenTankFilledStalker: 50
-        TrashDetectorTier1: 200
-        Matchbox: 10
-        HatchetStalker: 150
-    - name: Провизия
-      priority: 9
+    - name: Аномалии
+      priority: 6
       items:
-        STEnergyDrink: 250
-        STEnergyDrinkMonster: 250
-        STEnergyDrinkRevo: 300
-        STDrinkBeerCanBaltic: 90
-        DrinkVodkaBottleFull: 55
-        STFoodBreadPlain: 35
-        DrinkFlaskOld: 30
-        DrinkWaterBottleFull: 45
-        FoodTinMRE: 120
-        DrinkLemonadehBottleFull: 50
-        STFoodMeatSalami: 350
-    - name: Медицина
-      priority: 10
-      items:
-          # Cheap
-        PillDexalin: 20
-        PillDexalinPlusStalker: 45
-        STOintment: 20
-        STGauze: 25
-        STBrutepack: 20
-          # Expensive
-        antiradpill: 100
-        radioprotectpill: 150
-        Bloodpack: 250
-        psyblock: 350
-        MedkitAI2: 200
-        MedkitMilitary: 400
-        Defibrillator: 1000
-    - name: Развлечения
-      priority: 12
-      items:
-        # Dices
-        DiceBag: 20
-        # Board games
-        CheckerBoard: 40
-        ChessBoard: 40
-        BackgammonBoard: 40
-        # Battle maps
-        SandBattlemap: 60
-        GrassBattlemap: 60
-        # Instruments
-        AcousticGuitarInstrument: 300
-        AccordionInstrument: 500
+        # Bolt bags
+        STBoltBagFilled: 65
+        STBoltBagOliveGrayFilled: 65
