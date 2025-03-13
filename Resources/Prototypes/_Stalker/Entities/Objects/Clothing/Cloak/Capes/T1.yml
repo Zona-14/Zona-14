@@ -61,9 +61,9 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatKKK
-  name: балахон ку-клукс-клана
+  name: куклус плащ
   suffix: ST, T1
-  description: Белые балахоны Ку-Клукс-Клана, представляют собой длинные белые одежды с капюшонами, которые символизируют анонимность и единство членов организации. Эти балахоны часто ассоциируются с расистскими действиями ККК, подчеркивая их идеологию превосходства белой расы.
+  description: ккк.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
@@ -82,9 +82,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: капирот
+  name: капюшон куклус плаща
   categories: [ HideSpawnMenu ]
-  description: Средневековый испанский головной убор, остроконечный колпак конической формы. Первоначально изготовленные из картона капироты применялись испанскими флагеллантами. Во времена инквизиции обтянутые тканью капироты наряду с желтыми накидками использовались для облачения осужденных на смертную казнь.
+  description: Покрывает вашу голову ККК.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi

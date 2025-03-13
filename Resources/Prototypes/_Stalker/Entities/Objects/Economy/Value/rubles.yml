@@ -7,8 +7,6 @@
   description: Национальная валюта Российской Федерации. Интересный факт - 1 рубль равен 100 копейкам.
   suffix: Stalker
   components:
-  - type: STWeight
-    self: 0.32
   - type: PhysicalComposition
     materialComposition:
       Credit: 1

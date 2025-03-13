@@ -1,10 +1,8 @@
 - type: entity
   id: Brick
-  name: кирпич
+  name: Кирпич
   suffix: ST, Mapping
-  description: Глинянный кирпич, способен выдерживать высокие температуры, он является незаменимым при возведении разного рода построек.
   components:
-  - type: Clickable
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/brick.rsi
     state: base

@@ -7,11 +7,7 @@
     },
     "states": [
         {
-            "name": "green_tb",
-            "directions": 4
-        },
-		{
-            "name": "blue_tb",
+            "name": "base",
             "directions": 4
         }
     ]

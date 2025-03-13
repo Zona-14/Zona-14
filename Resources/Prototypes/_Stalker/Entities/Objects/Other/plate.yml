@@ -3,7 +3,6 @@
   parent: BaseStructureStalkerDynamic
   name: бетонные плиты
   suffix: Stalker
-  description: Один из основных видов железобетонных изделий, применяемых в строительстве.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Other/Plate.rsi

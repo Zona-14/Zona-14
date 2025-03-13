@@ -3,7 +3,6 @@
   abstract: true
   parent: BaseStructureStalkerDynamic
   name: Сломанная деревянная кровать
-  description: Довольно старая кровать, к сожалению поспать не получится...
   suffix: ST, Decor
   components:
     - type: Sprite

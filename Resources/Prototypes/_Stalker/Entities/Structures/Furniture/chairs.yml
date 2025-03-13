@@ -54,11 +54,11 @@
     - Wooden
 
 - type: entity
-  name: стул
+  name: chair
   id: STSeatBase
   suffix: ST, Mapping
   abstract: true
-  description: Ты сидишь на этом. Либо по воле, либо по принуждению.
+  description: You sit in this. Either by will or force.
   placement:
     mode: PlaceFree
   components:
@@ -87,7 +87,7 @@
     damageModifierSet: Metallic
 
 - type: entity
-  name: стул
+  name: chair
   id: STUnanchoredChairBase
   parent: STSeatBase
   suffix: ST, Mapping
@@ -131,7 +131,7 @@
     state: comfy
 
 - type: entity
-  name: деревянный стул
+  name: wooden chair
   id: STChairWood
   parent: STUnanchoredChairBase
   suffix: ST, Mapping
@@ -147,11 +147,11 @@
 
 
 - type: entity
-  name: деревянная лавочка
+  name: wooden bench
   id: STWoodenBench
   suffix: ST, Mapping
   parent: STChairBase
-  description: У тебя заноза? Ну, по крайней мере, это экологично.
+  description: Did you get a splinter? Well, at least it’s eco friendly.
   components:
   - type: Sprite
     state: wooden-bench
