@@ -60,8 +60,6 @@
   id: MutantPartOldBoarHoof
   name: old boar hoof
   components:
-    - type: Item
-      size: Small
     - type: STWeight
       self: 2.5
     - type: Sprite
@@ -76,8 +74,6 @@
   id: MutantPartSeasonedBoarHoof
   name: seasoned boar hoof
   components:
-    - type: Item
-      size: Small
     - type: STWeight
       self: 2.75
     - type: Sprite
@@ -92,8 +88,6 @@
   id: MutantPartBoarHoof
   name: boar hoof
   components:
-    - type: Item
-      size: Small
     - type: STWeight
       self: 3.25
     - type: Sprite
@@ -108,10 +102,6 @@
   id: MutantPartFleshEye
   name: flesh eye
   components:
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,1,1
     - type: STWeight
       self: 1.75
     - type: Sprite
