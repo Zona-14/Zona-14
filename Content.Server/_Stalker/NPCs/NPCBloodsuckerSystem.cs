@@ -21,9 +21,7 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+
 
     /// <inheritdoc/>
     public override void Initialize()
