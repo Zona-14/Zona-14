@@ -32,7 +32,7 @@
   suffix: ST
   parent: STWeaponShotgunProtecta
   id: STweaponShotgunPRETecta
-  description: Дробовик "Protecta" с деревянным прикладом и обмотаный кое-где бинтами.
+  description: Дробовик "Protecta" с деревянным прикладом и обмотанный кое-где бинтами.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
