@@ -11,6 +11,17 @@
         - id: CraftHideBloodSucker
           maxAmount: 1
           prob: 0.30
+    - type: NPCBloodsucker
+      stunTime: 3
+      damageOnSuck:
+        types:
+          Bloodloss: 17
+        ModifyBloodLevel: -30
+      healOnSuck:
+        groups:
+          Brute: -124
+          Burn: -124
+        ModifyBloodLevel: 133
     - type: DamageStateVisuals
       states:
         Alive:
@@ -56,7 +67,7 @@
       footstepSoundCollection:
         path: /Audio/_Stalker/Mutants/bloodsucker_breath2.ogg
         params:
-          volume: -8
+          volume: -999999
     - type: MobThresholds
       thresholds:
         0: Alive
