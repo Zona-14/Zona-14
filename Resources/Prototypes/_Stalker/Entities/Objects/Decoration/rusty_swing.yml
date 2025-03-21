@@ -1,9 +1,9 @@
 - type: entity
   id: STRustySwing
   parent: BaseRock
-  name: ржавые качели
+  name: rusty swing
   suffix: ST, Mapping
-  description: Ржавые качели, скрипящие на ветру, словно забытые воспоминания о давно ушедших днях детства.
+  description: A rusty swing creaking in the wind, like a forgotten memory of long-gone childhood days.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/r_swing.rsi
