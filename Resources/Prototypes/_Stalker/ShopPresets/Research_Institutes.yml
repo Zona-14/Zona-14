@@ -75,7 +75,6 @@
         MedkitGrizzlyStalker: 850 # T2
           # Belts
         ClothingBeltBandolierStalker: 50
-        ClothingBeltVoron: 45
     - name: Плащи и Противогазы
       priority: 6
       items:
@@ -111,7 +110,7 @@
         FlippoLighter: 200
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
+        STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -121,6 +120,8 @@
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
         Syringe: 20
+        LargeBeaker: 50
+        BaseChemistryEmptyVial: 40
         ClothingGoPro: 250
         ExtendedEmergencyOxygenTankFilledStalker: 50
         TrashDetectorTier1: 200
@@ -174,6 +175,8 @@
         ClothingMaskNeckFacemask: 20
         ClothingHandsGlovesFingerless: 35
         ClothingHandsGlovesMercFingerless: 35
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingShoesBootsMerc: 5
         ClothingShoesSwat: 5
         ClothingOuterCoatLab: 5

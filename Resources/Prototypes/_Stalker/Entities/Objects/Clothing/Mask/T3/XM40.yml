@@ -9,9 +9,9 @@
     tags:
       - BlockMask
   - type: Sprite
-    sprite: _Stalker\Objects\Clothing\mask\xm40military.rsi
+    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
   - type: Clothing
-    sprite: _Stalker\Objects\Clothing\mask\xm40military.rsi
+    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
   - type: Armor
@@ -28,6 +28,6 @@
 #  description: Чувствуется запах дешёвой краски.
 #  components:
 #  - type: Sprite
-#    sprite: _Stalker\Objects\Clothing\mask\xm40military.rsi
+#    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
 #  - type: Clothing
-#    sprite: _Stalker\Objects\Clothing\mask\xm40military.rsi
+#    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
