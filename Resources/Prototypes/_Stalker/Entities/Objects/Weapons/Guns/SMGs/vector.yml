@@ -24,8 +24,6 @@
       map: ["enum.GunVisualLayers.Muzzle"]
     - state: grip
       map: ["enum.GunVisualLayers.Underbarrel"]
-    - state: scope
-      map: ["enum.GunVisualLayers.Scope"]
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
     scale: 0.75, 0.75
   - type: Clothing
@@ -42,7 +40,6 @@
       gun_module_underbarrel: !type:ContainerSlot
       gun_module_muzzle: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-      gun_module_scope: !type:ContainerSlot
   - type: STScopeVisuals
     scopeState: scope
   - type: ItemSlots
@@ -75,12 +72,6 @@
         whitelist:
           tags:
           - STWeaponModuleSMGGrip
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
 
 - type: entity
   name: KRISS Vector-9
