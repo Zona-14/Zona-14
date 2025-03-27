@@ -28,13 +28,13 @@ public sealed partial class GunComponent : Component
     public SoundSpecifier? SoundGunshotModified;
 
     [DataField]
-    public SoundSpecifier? SoundEmpty = new SoundPathSpecifier("/Audio/Weapons/Guns/Empty/empty.ogg");
+    public SoundSpecifier? SoundEmpty = new SoundPathSpecifier("/Audio/_Stalker/Weapons/Guns/RifleGen/Empty/empty.ogg");
 
     /// <summary>
     /// Sound played when toggling the <see cref="SelectedMode"/> for this gun.
     /// </summary>
     [DataField]
-    public SoundSpecifier? SoundMode = new SoundPathSpecifier("/Audio/Weapons/Guns/Misc/selector.ogg");
+    public SoundSpecifier? SoundMode = new SoundPathSpecifier("/Audio/_Stalker/Weapons/Guns/RifleGen/Misc/selector.ogg");
 
     #endregion
 
