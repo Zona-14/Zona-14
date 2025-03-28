@@ -401,3 +401,46 @@
     sprite: _Stalker/Clothing/Head/Hats/Ret4hat.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/Head/Hats/Ret4hat.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: STClothingCapeFreedomChain
+  name: кольчужный плащ свободы
+  description: Кольчуга совмещённая с маскировочной сетью в камуфляже свободы.
+  suffix: ST, T4
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/freechain.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/freechain.rsi
+  - type: STWeight
+    self: 5.5
+  - type: Craftable
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8
+        Caustic: 0.8
+        Shock: 0.8
+        Psy: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHatChainFreedom
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHatChainFreedom
+  name: капюшон
+  description: Капюшон кольчуги свободы.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_freechain.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_freechain.rsi
