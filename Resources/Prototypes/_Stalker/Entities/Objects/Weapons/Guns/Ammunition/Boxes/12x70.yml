@@ -20,6 +20,29 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  parent: BaseAmmoBoxStalker
+  id: MutantBuckshotBox
+  name: Коробка картечи mutant
+  description: Для дробовиков, в коробке 10 штук. Бесполезно против брони.
+  components:
+  - type: MagazineVisuals
+    magState: 1270red
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: CartridgeMutantBuckshot
+    whitelist:
+      tags:
+        - ShellShotgun
+  - type: Sprite
+    layers:
+    - state: 1270
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 1270red-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+
+
+- type: entity
   parent: 7mmBuckshotBox
   id: 6mmBuckshotBox
   name: Коробка картечи 6.5мм "Экспресс"

@@ -39,6 +39,22 @@
     state: "base"
 
 - type: entity
+  id: CartridgeMutantBuckshot
+  name: 12x70 Картечь mutant
+  parent: BaseShotgunBullet
+  components:
+  - type: CartridgeAmmo
+    count: 12
+    proto: BulletMutantBuckshot
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "base"
+
+- type: entity
   id: Cartridge6mmBuckshot
   name: 12x70 Картечь 6.5мм "Экспресс"
   parent: BaseShotgunBullet

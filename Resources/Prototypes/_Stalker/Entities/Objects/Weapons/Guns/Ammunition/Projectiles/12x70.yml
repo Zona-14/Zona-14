@@ -24,6 +24,27 @@
         Piercing: 10
 
 - type: entity
+  id: STPelletMutant
+  name: pellet 7mm
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Mutant: 10
+
+- type: entity
+  id: BulletMutantBuckshot
+  name: bullet (7mm buckshot)
+  parent: STPelletMutant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPelletMutant
+    count: 9
+    spread: 15
+
+- type: entity
   id: Bullet7mmBuckshot
   name: bullet (7mm buckshot)
   parent: STPellet7mm
