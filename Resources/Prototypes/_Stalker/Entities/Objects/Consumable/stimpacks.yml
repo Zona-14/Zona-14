@@ -1,5 +1,5 @@
 - type: entity
-  name: Monolith Steampack
+  name: Monolith Stimpack
   parent: ChemicalMedipen
   id: STStimpackMololith
   suffix: ST, Lord
