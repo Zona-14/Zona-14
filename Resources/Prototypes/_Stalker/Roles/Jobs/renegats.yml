@@ -24,7 +24,7 @@
             - Renegat
         - type: Bands
           band: Stalker
-          bandIcon: dnr
+          bandIcon: rene
         - type: BlockTackingHolyItems
 
 - type: startingGear

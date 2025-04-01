@@ -58,7 +58,7 @@
           - Sci
       - type: Bands
         band: Stalker
-        bandIcon: pl
+        bandIcon: ecologists
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -92,7 +92,7 @@
             - SciHead
         - type: Bands
           band: Stalker
-          bandIcon: pl
+          bandIcon: sci
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker

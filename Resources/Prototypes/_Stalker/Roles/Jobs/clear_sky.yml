@@ -24,7 +24,7 @@
           - CN
       - type: Bands
         band: Stalker
-        bandIcon: jyd
+        bandIcon: cn
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker

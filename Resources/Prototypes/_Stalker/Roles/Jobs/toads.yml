@@ -24,7 +24,7 @@
           - Jaba
       - type: Bands
         band: Stalker
-        bandIcon: de
+        bandIcon: jaba
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker

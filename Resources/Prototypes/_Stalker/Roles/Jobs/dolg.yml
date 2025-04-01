@@ -24,7 +24,7 @@
             - Dolg
         - type: Bands
           band: Stalker
-          bandIcon: ussr
+          bandIcon: Dolg
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -60,7 +60,7 @@
             - Stalker
         - type: Bands
           band: Stalker
-          bandIcon: ussr
+          bandIcon: Dolg
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
