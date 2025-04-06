@@ -50,7 +50,7 @@
     materialComposition:
       Meaterial: 300
   - type: Trash
-    time: 300
+    time: 600
 
 - type: entity
   parent: FoodMeatBase
