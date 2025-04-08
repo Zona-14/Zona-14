@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Content.Server._Stalker.WarZone;
 using Content.Shared._Stalker.WarZone;
+using Content.Shared._Stalker.WarZone.Requirenments;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
@@ -19,25 +20,14 @@ public sealed partial class WarZoneSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
 
-    /// <summary>
-    /// Tracks ongoing capture states per War Zone entity.
-    /// </summary>
     private readonly Dictionary<EntityUid, CaptureState> _activeCaptures = new();
-
-    /// <summary>
-    /// Tracks last reward distribution timestamps per War Zone.
-    /// </summary>
     private readonly Dictionary<EntityUid, TimeSpan> _lastRewardTimes = new();
 
     public override void Initialize()
     {
         base.Initialize();
-
-        // Subscribe to trigger events for player entry/exit
         SubscribeLocalEvent<WarZoneComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<WarZoneComponent, EndCollideEvent>(OnEndCollide);
-
-        // TODO: Load initial ownership states from database
     }
 
     public override void Update(float frameTime)
@@ -59,21 +49,20 @@ public sealed partial class WarZoneSystem : EntitySystem
 
     private void UpdateCapture(EntityUid zone, CaptureState state, TimeSpan now)
     {
-        // Pause/reset if multiple groups present
+        var frameTimeSec = (float)_gameTiming.FrameTime.TotalSeconds;
+
         if (state.PresentBandIds.Count > 1 || state.PresentFactionIds.Count > 1)
         {
-            state.ProgressSeconds = 0;
+            ResetAllRequirements(zone);
             return;
         }
 
-        // Pause/reset if no one present
         if (state.PresentBandIds.Count == 0 && state.PresentFactionIds.Count == 0)
         {
-            state.ProgressSeconds = 0;
+            ResetAllRequirements(zone);
             return;
         }
 
-        // Determine attacker
         Guid? attackerBand = null;
         Guid? attackerFaction = null;
 
@@ -82,45 +71,96 @@ public sealed partial class WarZoneSystem : EntitySystem
         if (state.PresentFactionIds.Count == 1)
             attackerFaction = GetFirst(state.PresentFactionIds);
 
-        // If attacker is current owner, do nothing
         if ((attackerBand != null && attackerBand == state.DefendingBandId) ||
             (attackerFaction != null && attackerFaction == state.DefendingFactionId))
         {
-            state.ProgressSeconds = 0;
+            ResetAllRequirements(zone);
             return;
         }
 
-        // Increment timer
-        state.ProgressSeconds += (float)_gameTiming.FrameTime.TotalSeconds;
+        if (!_entityManager.TryGetComponent(zone, out WarZoneComponent? wzComp) ||
+            !_prototypeManager.TryIndex<STWarZonePrototype>(wzComp.ZoneProto, out var wzProto))
+            return;
 
-        // Fetch capture time requirement from prototype
-        float captureTime = 30f; // default fallback
+        var allMet = true;
 
-        if (_entityManager.TryGetComponent(zone, out WarZoneComponent? wzComp) &&
-            _prototypeManager.TryIndex<STWarZonePrototype>(wzComp.ZoneProto, out var wzProto))
+        if (wzProto.Requirements != null)
         {
-            // TODO: Replace with wzProto.CaptureTimeRequirement when added
-            captureTime = (float)wzProto.RewardPeriod.TotalSeconds; // temporary use of RewardPeriod
+            foreach (var req in wzProto.Requirements)
+            {
+                if (!req.Check(_dbManager, attackerBand, attackerFaction, frameTimeSec))
+                {
+                    allMet = false;
+                    break;
+                }
+            }
         }
 
-        if (state.ProgressSeconds >= captureTime)
+        if (!allMet)
+            return;
+
+        state.DefendingBandId = attackerBand;
+        state.DefendingFactionId = attackerFaction;
+
+        _dbManager.SetStalkerZoneOwnershipAsync(
+            wzComp.ZoneProto,
+            attackerBand != null ? new ProtoId<STBandPrototype>(attackerBand.ToString()) : null,
+            attackerFaction != null ? new ProtoId<NpcFactionPrototype>(attackerFaction.ToString()) : null);
+
+        var msg = $"Zone '{wzComp.PortalName}' captured!";
+        Logger.InfoS("warzone", msg);
+    }
+
+    private void ResetAllRequirements(EntityUid zone)
+    {
+        if (!_entityManager.TryGetComponent(zone, out WarZoneComponent? wzComp))
+            return;
+
+        if (!_prototypeManager.TryIndex<STWarZonePrototype>(wzComp.ZoneProto, out var wzProto))
+            return;
+
+        if (wzProto.Requirements == null)
+            return;
+
+        foreach (var req in wzProto.Requirements)
         {
-            // Transfer ownership
-            state.DefendingBandId = attackerBand;
-            state.DefendingFactionId = attackerFaction;
-            state.ProgressSeconds = 0;
-
-            // Update database ownership
-            _dbManager.SetStalkerZoneOwnershipAsync(
-                wzComp.ZoneProto,
-                attackerBand != null ? new ProtoId<STBandPrototype>(attackerBand.ToString()) : null,
-                attackerFaction != null ? new ProtoId<NpcFactionPrototype>(attackerFaction.ToString()) : null);
-
-            // Announce capture success
-            var msg = $"Zone '{wzComp.PortalName}' captured!";
-            // TODO: Replace with proper chat or popup system
-            Logger.InfoS("warzone", msg);
+            if (req is CaptureTimeRequirenment captureReq)
+                captureReq.Reset();
         }
+    }
+
+    private void DistributeRewards(EntityUid zone, TimeSpan lastRewardTime, TimeSpan now)
+    {
+        if (!_entityManager.TryGetComponent(zone, out WarZoneComponent? wzComp))
+            return;
+
+        if (!_prototypeManager.TryIndex<STWarZonePrototype>(wzComp.ZoneProto, out var wzProto))
+            return;
+
+        var period = wzProto.RewardPeriod;
+
+        if (now - lastRewardTime < period)
+            return;
+
+        if (!_activeCaptures.TryGetValue(zone, out var state))
+            return;
+
+        var points = wzProto.RewardPointsPerPeriod;
+
+        if (state.DefendingBandId != null)
+        {
+            _dbManager.SetStalkerBandAsync(
+                new ProtoId<STBandPrototype>(state.DefendingBandId.ToString()),
+                points);
+        }
+        else if (state.DefendingFactionId != null)
+        {
+            _dbManager.SetStalkerFactionAsync(
+                new ProtoId<NpcFactionPrototype>(state.DefendingFactionId.ToString()),
+                points);
+        }
+
+        _lastRewardTimes[zone] = now;
     }
 
     private static Guid GetFirst(HashSet<Guid> set)
@@ -130,30 +170,12 @@ public sealed partial class WarZoneSystem : EntitySystem
         return Guid.Empty;
     }
 
-    private void DistributeRewards(EntityUid zone, TimeSpan lastRewardTime, TimeSpan now)
-    {
-        // TODO: Check if RewardPeriod elapsed
-        // If so, add RewardPointsPerPeriod to owner and update timestamp
-    }
-
-    private sealed class CaptureState
-    {
-        public TimeSpan CaptureStartTime;
-        public float ProgressSeconds;
-        public Guid? AttackingBandId;
-        public Guid? AttackingFactionId;
-        public Guid? DefendingBandId;
-        public Guid? DefendingFactionId;
-
-        public HashSet<Guid> PresentBandIds = new();
-        public HashSet<Guid> PresentFactionIds = new();
-    }
     private void OnStartCollide(EntityUid uid, WarZoneComponent component, ref StartCollideEvent args)
     {
         var other = args.OtherEntity;
 
         if (!_entityManager.TryGetComponent(other, out BandsComponent? bands))
-            return; // Not a player or no band info
+            return;
 
         var bandId = bands.BandProto;
         ProtoId<NpcFactionPrototype>? factionId = null;
@@ -172,8 +194,6 @@ public sealed partial class WarZoneSystem : EntitySystem
         state.PresentBandIds.Add(Guid.Parse(bandId));
         if (factionId != null)
             state.PresentFactionIds.Add(Guid.Parse(factionId));
-
-        // TODO: Implement logic to start or continue capture based on presence
     }
 
     private void OnEndCollide(EntityUid uid, WarZoneComponent component, ref EndCollideEvent args)
@@ -181,7 +201,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         var other = args.OtherEntity;
 
         if (!_entityManager.TryGetComponent(other, out BandsComponent? bands))
-            return; // Not a player or no band info
+            return;
 
         var bandId = bands.BandProto;
         ProtoId<NpcFactionPrototype>? factionId = null;
@@ -197,7 +217,14 @@ public sealed partial class WarZoneSystem : EntitySystem
         state.PresentBandIds.Remove(Guid.Parse(bandId));
         if (factionId != null)
             state.PresentFactionIds.Remove(Guid.Parse(factionId));
+    }
 
-        // TODO: Implement logic to pause or reset capture if no allies remain
+    private sealed class CaptureState
+    {
+        public Guid? DefendingBandId;
+        public Guid? DefendingFactionId;
+
+        public HashSet<Guid> PresentBandIds = new();
+        public HashSet<Guid> PresentFactionIds = new();
     }
 }

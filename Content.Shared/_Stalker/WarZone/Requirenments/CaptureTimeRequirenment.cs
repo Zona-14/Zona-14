@@ -1,25 +1,31 @@
-using System.Diagnostics.CodeAnalysis;
-using JetBrains.Annotations;
-using Robust.Shared.Prototypes;
+using System;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Stalker.WarZone.Requirenments;
 
-[UsedImplicitly]
+/// <summary>
+/// Requirement: attacker must hold uncontested for a certain time.
+/// </summary>
 [Serializable, NetSerializable]
-public sealed partial class CaptureTimeRequirenment : BaseWarZoneRequirenment
+public sealed class CaptureTimeRequirenment : BaseWarZoneRequirenment
 {
-    /// How long you need to spent capturing the spot
-    [DataField(required: true)]
-    public TimeSpan CaptureTime;
+    [DataField("captureTime")]
+    public float CaptureTime = 30f;
 
-    public override bool Check(IEntityManager entManager,
-        IPrototypeManager protoManager,
-        [NotNullWhen(false)] out FormattedMessage? reason)
+    /// <summary>
+    /// Tracks current progress in seconds.
+    /// </summary>
+    [NonSerialized]
+    public float ProgressSeconds = 0f;
+
+    public override bool Check(IServerDbManager dbManager, Guid? attackerBand, Guid? attackerFaction, float frameTime)
     {
-        reason = new FormattedMessage();
+        ProgressSeconds += frameTime;
+        return ProgressSeconds >= CaptureTime;
+    }
 
-        return true;
+    public void Reset()
+    {
+        ProgressSeconds = 0f;
     }
 }

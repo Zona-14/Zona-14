@@ -1,26 +1,36 @@
-using System.Diagnostics.CodeAnalysis;
-using JetBrains.Annotations;
+using System;
+using System.Collections.Generic;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Stalker.WarZone.Requirenments;
 
-[UsedImplicitly]
+/// <summary>
+/// Requirement: attacker must own all specified zones.
+/// </summary>
 [Serializable, NetSerializable]
-public sealed partial class ZoneOwnershipRequirenment : BaseWarZoneRequirenment
+public sealed class ZoneOwnershipRequirenment : BaseWarZoneRequirenment
 {
-    /// <summary>
-    /// Required zones which should be captured before this one can be handled
-    /// </summary>
-    [DataField(required: true)]
-    public List<ProtoId<STWarZonePrototype>> RequiredZones { get; set; } = new();
+    [DataField("requiredZones")]
+    public List<ProtoId<STWarZonePrototype>> RequiredZones = new();
 
-    public override bool Check(IEntityManager entManager,
-        IPrototypeManager protoManager,
-        [NotNullWhen(false)] out FormattedMessage? reason)
+    public override bool Check(IServerDbManager dbManager, Guid? attackerBand, Guid? attackerFaction, float frameTime)
     {
-        reason = new FormattedMessage();
+        foreach (var zoneId in RequiredZones)
+        {
+            var ownership = dbManager.GetStalkerWarOwnershipAsync(zoneId).Result;
+            if (ownership == null)
+                return false;
+
+            var owns = false;
+            if (attackerBand != null && ownership.BandId == attackerBand)
+                owns = true;
+            if (attackerFaction != null && ownership.FactionId == attackerFaction)
+                owns = true;
+
+            if (!owns)
+                return false;
+        }
 
         return true;
     }
