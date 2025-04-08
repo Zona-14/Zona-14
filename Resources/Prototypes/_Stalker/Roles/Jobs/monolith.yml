@@ -1,0 +1,48 @@
+- type: job
+  id: StalkerMonolith
+  name: job-monolith
+  icon: monolith
+  description: job-monolith-desc
+  playTimeTracker: JobMonolith
+  whitelisted: true
+  requirements:
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAdvanced
+    #   time: 1
+    #   inverted: true
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAnomalists
+    #   time: 1
+    #   inverted: true
+  startingGear: MonolithGear
+  supervisors: job-monolith-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Monolith
+      - type: Bands
+        band: Stalker
+        bandIcon: monolith
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+- type: startingGear
+  id: MonolithGear
+  equipment:
+    id: MonolithPDA
+    belt: ClothingBeltStorageWaistbag
+    torso: ClothingTorsoTurtlenecksMonolithCamouflage
+    legs: ClothingLegsJeansMonolithCamouflage
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesFingerless

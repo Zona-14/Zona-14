@@ -1,8 +1,8 @@
 - type: job
   id: Seraphim
-  name: Серафим
+  name: job-seraphim
   icon: seraphim
-  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
+  description: job-seraphim-desc
   playTimeTracker: JobSeraphims
   whitelisted: true
   requirements:
@@ -13,14 +13,16 @@
       species:
       - Human
       - Dwarf
-  startingGear: StalkerGear
-  supervisors: Вы служите во имя Его.
+  startingGear: SeraphimGear
+  supervisors: job-seraphim-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 20
+          psy: 50
         - type: PsyonicsActionLight
+        - type: PsyonicsActionSmoke
         - type: Bands
           band: Stalker
           bandIcon: seraphim
@@ -33,12 +35,26 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+- type: startingGear
+  id: SeraphimGear
+  equipment:
+    id: STSeraphimPDA
+    neck: ClothingStalkerNeckTokenSeraphim
+    belt: ClothingBeltStorageWaistbag
+    shoes: STClothingShoesBootsSeraFilled
+    legs: STClothingLegsSerafimPants
+    torso: STClothingTorsoSerafimLittleChaos
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
+    pocket1: STBoltBagFilled
+    pocket2: GeigerCounter
+
 
 - type: job
   id: SeraphimHead
-  name: Лидер Серафмиов
-  icon: seraphim
-  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
+  name: job-head-seraphim
+  icon: seraphim_officer
+  description: job-head-seraphim-desc
   playTimeTracker: JobHeadSeraphims
   whitelisted: true
   requirements:
@@ -49,24 +65,43 @@
       species:
       - Human
       - Dwarf
-  startingGear: StalkerGear
-  supervisors: Вы служите во имя Его.
+  startingGear: SeraphimHeadGear
+  supervisors: job-seraphim-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 50
+          psy: 75
         - type: PsyonicsActionLight
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionSmoke
         - type: Access
           tags:
             - Seraphims
             - SeraphimsHead
         - type: Bands
           band: Stalker
-          bandIcon: seraphim
+          bandIcon: seraphim_officer
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: AutoImplant
+          implants:
+          - STSeraBombImplant
+- type: startingGear
+  id: SeraphimHeadGear
+  equipment:
+    id: STSeraphimPDA
+    neck: ClothingStalkerNeckTokenSeraphim
+    belt: ClothingBeltStorageWaistbag
+    shoes: STClothingShoesBootsSeraFilled
+    legs: STClothingLegsSerafimPants
+    torso: STClothingTorsoSerafimFullReady
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
+    pocket1: STBoltBagFilled
+    pocket2: GeigerCounter

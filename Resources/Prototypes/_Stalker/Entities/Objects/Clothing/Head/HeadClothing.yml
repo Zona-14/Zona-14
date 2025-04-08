@@ -8,6 +8,9 @@
     sprite: _Stalker/Objects/Clothing/hats/beaniehat.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/beaniehat.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadBase
@@ -46,6 +49,9 @@
     sprite: _Stalker/Objects/Clothing/hats/soviet_ushanka.rsi
   - type: AddAccentClothing
     accent: RussianAccent
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingHeadBase
@@ -60,6 +66,9 @@
     sprite: _Stalker/Objects/Clothing/hats/bag.rsi
   - type: Blindfold
   - type: FlashImmunity
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadBase
@@ -124,17 +133,6 @@
 
 - type: entity
   parent: STClothingHeadBase
-  id: ClothingHeadHatBeaniehatMilitary
-  name: шапка
-  description: Чёрная шапка. Не даст замёрзнуть голове.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/beaniehat-military.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/beaniehat-military.rsi
-
-- type: entity
-  parent: STClothingHeadBase
   id: ClothingHeadHatPoliceHat
   name: полицейская фуражка
   description: Для важных шишек.
@@ -167,3 +165,14 @@
     sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
+
+- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadCapMerc
+  name: merc's cap
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/merc_cap.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/merc_cap.rsi

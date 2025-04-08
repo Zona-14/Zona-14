@@ -63,7 +63,7 @@
 
 - type: entity
   name: HK-416
-  suffix: ST
+  suffix: ST, Скин
   parent: STWeaponRifleM4
   id: STWeaponRifleHK416
   description: HK-416 Немецкий автомат, адаптированный под американскую модульную систему AR-15, созданный фирмой Heckler & Koch.
@@ -77,12 +77,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/hk416.rsi
   - type: Gun
-    fireRate: 7
+    fireRate: 7.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/m4.ogg
       params:
         volume: -2
     minAngle: 50
-    maxAngle: 105
-    angleIncrease: 3.8
+    maxAngle: 90
+    angleIncrease: 3
     angleDecay: 32.5

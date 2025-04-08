@@ -81,7 +81,7 @@ namespace Content.Server.IoC
             IoCManager.Register<JoinQueueManager>(); // stalker-changes - Corvax Queue Adaptation
             IoCManager.Register<SponsorsManager>(); // stalker-changes-sponsors
             IoCManager.Register<BanWebhook>(); // stalker-changes-bans
-
+            IoCManager.Register<_Stalker.ServerAdministration.ServerApi>(); // Stalker-Changes - Stalker Server API
         }
     }
 }

@@ -1,7 +1,7 @@
 - type: sponsor
   id: trueNiggaGettoSponsors
   repositoryWeight:
-    1: 150.0
+    1: 200.0
     2: 350.0
     3: 600.0
     4: 1000.0
@@ -35,7 +35,7 @@
     nazoltof:
     - name: Персональная категория
       items:
-        STWeaponRifleSVDSGrass: 14000
+        STWeaponRifleSVDSGrass: 15000
     KLeymi:
     - name: Персональная категория
       items:
@@ -45,6 +45,10 @@
       items:
         STClothingOuterCoatNovember: 500
         STWeaponRifleHK416: 3500
+        ClothingOuterArmorKeeper: 2500
+        STWeaponRifleStalkerA545: 3500
+        STWeaponRifleARX160: 7000
+        ClothingHeadHelmetKeeper: 2000
     Deliko:
     - name: Персональная категория
       items:
@@ -57,3 +61,30 @@
         ClothingTorsoTurtlenecksCamouflage: 50
         BookStalkerSeraphimFAQ: 20
         ClothingOuterArmorZaryaSeraRuined: 1000
+    farforik:
+    - name: Персональная категория
+      items:
+        STWeaponRifleStalkerVeprFarforik: 8000
+    Ret4:
+    - name: Персональная категория
+      items:
+        ClothingOuterCoatRet: 1754
+        STweaponShotgunPRETecta: 2900
+    Resads:
+    - name: Персональная категория
+      items:
+        STWeaponRifleSigSniper: 5000
+    Neko_Gecko:
+    - name: Персональная категория
+      items:
+        STWeaponSMGVector9Forest: 4000
+        MP5Mag50: 500
+    onlyweed:
+    - name: Персональная категория
+      items:
+        STWeaponRifleAK203: 15000
+    Desayler:
+    - name: Персональная категория
+      items:
+        ClothingNeckExoSpeed: 10000
+

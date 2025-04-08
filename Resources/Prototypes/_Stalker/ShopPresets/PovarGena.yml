@@ -5,39 +5,13 @@
     FoodMeatBoarCooked: 53
     FoodMeatDog: 12
     FoodMeatDogCooked: 37
-    FoodBreadPlain: 15
-    FoodTinMRE: 15
-    FoodMeatSalami: 30
-    FoodBreadBaguette: 22
-    FoodCheese: 45
-    FoodBurgerPlain: 32
-    FoodBreadButteredToast: 12
-    FoodBreadFrenchToast: 15
-    FoodBreadGarlicSlice: 15
-    FoodOnionRings: 13
-    FoodBakedCookie: 9
-    FoodSnackChocolateBar: 15
-    FoodCakeBatter: 13
-    FoodButter: 10
-    FoodDoughPie: 11
-    FoodDough: 10
-    FoodBreadBun: 5
-    FoodMeat: 25
-    FoodCheeseSlice: 10
-    FoodBreadPlainSlice: 4
-    DrinkMilkCarton: 25
-    FoodEgg: 2
-    ReagentContainerFlour: 15
-    FoodCondimentBottleEnzyme: 2
-    FoodMealPigblanket: 20
-    BookCookingStalker: 25
   categories:
     - name: Еда
       priority: 1
       items:
-        FoodBreadPlain: 40
+        STFoodBreadPlain: 40
         FoodTinMRE: 30
-        FoodMeatSalami: 60
+        STFoodMeatSalami: 60
         FoodBreadBaguette: 35
         FoodCheese: 75
         FoodBurgerPlain: 65
@@ -60,7 +34,7 @@
         FoodBreadBun: 15
         FoodMeat: 50
         FoodCheeseSlice: 25
-        FoodBreadPlainSlice: 8
+        STFoodBreadPlainSlice: 8
         DrinkMilkCarton: 50
         FoodEgg: 3
         ReagentContainerFlour: 30

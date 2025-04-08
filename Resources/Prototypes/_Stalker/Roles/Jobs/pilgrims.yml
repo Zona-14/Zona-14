@@ -1,8 +1,8 @@
 - type: job
   id: StalkerPostulant
-  name: Паломник
+  name: job-postulant
   icon: pilgrim
-  description: Послушник в монашеском ордене
+  description: job-postulant-desc
   playTimeTracker: JobPostulant
   whitelisted: true
   requirements:
@@ -14,10 +14,14 @@
       - Human
       - Dwarf
   startingGear: PilgrimPostulantGear
-  supervisors: Вы подчиняетесь все кто выше вас в иерархии
+  supervisors: job-postulant-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 50
+        - type: PsyonicsActionLight
         - type: Access
           tags:
           - Pilgrim
@@ -33,9 +37,9 @@
 
 - type: job
   id: StalkerBishop
-  name: Епископ
+  name: job-bishop
   icon: pilgrim
-  description: глава монашеского ордена
+  description: job-bishop-desc
   playTimeTracker: JobBishop
   whitelisted: true
   requirements:
@@ -47,10 +51,16 @@
       - Human
       - Dwarf
   startingGear: PilgrimMonkGear
-  supervisors: Вы подчиняетесь только господу нашему Богу
+  supervisors: job-bishop-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 99
+        - type: PsyonicsActionLight
+          range: 10
+          cost: 10
         - type: Access
           tags:
           - Pilgrim
@@ -63,6 +73,7 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+
 
 - type: startingGear
   id: PilgrimPostulantGear

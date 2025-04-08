@@ -22,7 +22,6 @@
 #   # - Doctor
 #   # - HeadDoctor
 #   # - Police
-#   # - StalkerJournalist
 #   # - StalkerUN
 #   # - StalkerSBU
 #   # - StalkerZavet
@@ -38,14 +37,10 @@
   - StalkerHeadDolg
   - StalkerFreedom
   - StalkerHeadFreedom
-  - StalkerMechanic
-  - StalkerTrader
-  - StalkerClown
   - StalkerClearSky
   - StalkerNeutral
-  - StalkerProjectOrchestrator
-  - StalkerProjectPawn
   - StalkerPoisk
+  - StalkerJournalist
 
 - type: department
   id: StalkerBrigands
@@ -74,6 +69,9 @@
   - MilitaryHead
   - StalkerScientist
   - StalkerHeadScientist
+  - StalkerISSG
+  - MilitaryStalker
+  - StalkerUN
 
 - type: department
   id: StalkerReligius
@@ -82,12 +80,13 @@
   color: "#C0C0C0"
   weight: 6
   roles:
+  - StalkerMonolith
   - StalkerPostulant
   - StalkerBishop
   - StalkerGreh
   - Seraphim
   - SeraphimHead
-
+  - StalkerZavet
 - type: department
   id: Evolver
   name: department-Evolver

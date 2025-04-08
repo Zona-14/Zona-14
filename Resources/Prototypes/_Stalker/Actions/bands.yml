@@ -1,8 +1,8 @@
 - type: entity
   id: ActionToggleBands
-  name: снять / надеть нашивку
-  description: Переключает видимость нашивки вашей группировки.
-  noSpawn: true
+  name: переключить видимость нашивки
+  description: Позволяет не показывать или показывать нашивку (значок или шеврон) на персонаже. Это может быть полезно, если вы хотите изменить внешний вид своего героя или просто поиграть со стилем.
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -12,8 +12,8 @@
 - type: entity
   id: ActionChangeBand
   name: сменить нашивку
-  description: Меняет нашивку
-  noSpawn: true
+  description: Позволяет менять нашивку (значок или шеврон) на своем персонаже. Вы можете выбрать разные нашивки, чтобы подчеркнуть стиль или добиться желаемого внешнего вида своего героя.
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       checkCanInteract: false

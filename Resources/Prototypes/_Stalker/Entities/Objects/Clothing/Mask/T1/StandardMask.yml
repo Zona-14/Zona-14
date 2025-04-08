@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: STClothingMaskGasStandardT1Base
   name: база стандартного противогаза T1 от радиации
   suffix: ST, T1, Rad
@@ -69,8 +69,22 @@
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasSera
+  name: стандартный противогаз Серафимов
+  description: Защищает от вопросов про религию, и от радиации.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Armor
+    armorLevels:
+       radiation: 1
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasDolg1
-  name: стандартный противогаз Долга 1
+  name: стандартный противогаз 'Долга'
   description: Вряд ли он уничтожит Зону, но он очень старается  Защищает от радиации.
   components:
   - type: Sprite
@@ -81,7 +95,7 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasFreedom
-  name: стандартный противогаз Свободы
+  name: стандартный противогаз группировки «Воля»
   description: Увы, не в фектарне. Защищает от радиации.
   components:
   - type: Sprite

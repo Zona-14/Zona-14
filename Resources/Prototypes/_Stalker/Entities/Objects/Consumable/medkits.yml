@@ -19,6 +19,8 @@
       - Medkit
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Healing
     damageContainers:
       - Biological
@@ -33,14 +35,14 @@
   id: STBrutepack
   suffix: ST
   name: набор от ушибов
-  description: помогает от физических повреждений
+  description: Компактный комплект для лечения травм, содержащий охлаждающий пакет и противовоспалительные средства. Помогает снять боль, уменьшить отеки и ускорить заживление ушибов. Полезен после стычек с мутантами или неудачного падения.
   components:
   - type: Healing
     damageContainers:
       - Biological
     damage:
       groups:
-        Brute: -15
+        Brute: -8
     bloodlossModifier: -5 # a suture should stop ongoing bleeding
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
@@ -49,14 +51,46 @@
   - type: Stack
     stackType: STBrutepack
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
 
 - type: stack
   id: STBrutepack
   name: набор от ушибов
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
   spawn: STBrutepack
+  maxCount: 10
+
+- type: entity
+  parent: STBrutepack
+  id: STBrutepackSera
+  suffix: ST, Скин
+  name: баночка с мазью
+  description: Плохо пахнущая мазь, сделаная из молотого корня Живокуста и давленного глаза Плоти, прекрасно лечит ушибы.
+  components:
+  - type: Stack
+    stackType: STBrutepackSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+
+- type: stack
+  id: STBrutepackSera
+  name: баночка с мазью
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  spawn: STBrutepackSera
   maxCount: 10
 
 - type: entity
@@ -64,19 +98,51 @@
   id: STOintment
   suffix: ST
   name: мазь
-  description: помогает от ожогов и обморожения
+  description: Универсальное средство для обработки мелких ран, ожогов и раздражений. Ускоряет регенерацию тканей и защищает от инфекций. Наносится тонким слоем, расходуется экономно. Имеет слабый, но специфический запах, характерный для аптечных препаратов.
   components:
   - type: Stack
     stackType: STOintment
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
 
 - type: stack
   id: STOintment
   name: мазь
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: ointment
   spawn: STOintment
+  maxCount: 10
+
+- type: entity
+  parent: STOintment
+  id: STOintmentSera
+  suffix: ST, Скин
+  name: горькая мазь
+  description: Отвратительная вязкая жижа с ужасным запахом, сделаная из выжимки печени Кабана, тем не менее она на удивление хорошо заживляет химические и радиационные ожоги. Применяется серафимами в том числе как средство борьбы с раком кожи.
+  components:
+  - type: Stack
+    stackType: STOintmentSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+
+- type: stack
+  id: STOintmentSera
+  name: горькая мазь
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STOintmentSera
   maxCount: 10
 
 - type: entity
@@ -84,11 +150,29 @@
   id: STGauze
   suffix: ST
   name: бинт
-  description: останавливает кровотечение
+  description: Используется для остановки кровотечений и перевязки ран. Эффективно снижает риск заражения, если применен вовремя. Обязательный предмет в выживании, занимает мало места, но может спасти жизнь в экстремальных условиях.
   components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -5
+        Piercing: -5
+    bloodlossModifier: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: STGauze
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
 
 - type: stack
   id: STGauze
@@ -100,14 +184,50 @@
   maxCount: 10
 
 - type: entity
+  parent: STGauze
+  id: STGauzeSera
+  suffix: ST, Скин
+  name: кусок тряпки
+  description: Будь то прокипяченая ткань или же найденый в развалинах старый бинт, в любом случае живущие в зоне Серафимы используют это целях бинтования ран.
+  components:
+  - type: Stack
+    stackType: STGauzeSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+
+- type: stack
+  id: STGauzeSera
+  name: кусок тряпки
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STGauzeSera
+  maxCount: 10
+
+- type: entity
   parent: BaseMedkit
   id: MedkitAI2
   name: аптечка АИ-2
   suffix: ST
   description: Обычная универсальная аптечка военного назначения. При помощи неё можно справиться с такими травмами как порезы, ожоги, пулевые и осколочные ранения, отравления и другими. Включает в себя стандартный набор медикаментов. Проста в использовании.
   components:
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai1.rsi
     state: medkit-1
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai1.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -126,9 +246,35 @@
   id: MedkitAI2
   name: Аптечка АИ-2
   icon:
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: "_Stalker/Objects/Medicine/medkit/ai1.rsi"
     state: medkit-1
   spawn: MedkitAI2
+  maxCount: 4
+
+- type: entity
+  parent: MedkitAI2
+  id: MedkitAI2Sera
+  suffix: ST, Скин
+  name: набор кустарных медикаментов
+  description: Замотаный в ткань набор разных банок, склянок и порошков, а также старых хирургических инструментов. Используется серафимами для основательного лечения как глубоких укусов мутантов, так и пулевых и осколочных ранений. В сравнении с современной медициной крайне не практичный способ оказания раненому медпомощи, и тем не менее им пользуются его создатели не имея иной альтернативы.
+  components:
+  - type: Stack
+    stackType: MedkitAI2Sera
+    count: 4
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+
+- type: stack
+  id: MedkitAI2Sera
+  name: набор лечебных трав
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  spawn: MedkitAI2Sera
   maxCount: 4
 
 - type: entity
@@ -140,8 +286,18 @@
   components:
   - type: STWeight
     self: 0.4
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai2.rsi
     state: medkit-2
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai2.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -160,8 +316,8 @@
   id: MedkitMilitary
   name: Армейская Аптечка
   icon:
-    sprite: _Stalker/Objects/medicine.rsi
-    state: medkit-1
+    sprite: "_Stalker/Objects/Medicine/medkit/ai2.rsi"
+    state: medkit-2
   spawn: MedkitMilitary
   maxCount: 4
 
@@ -174,8 +330,18 @@
   components:
   - type: STWeight
     self: 0.6
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai3.rsi
     state: medkit-3
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai3.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -196,8 +362,8 @@
   id: MedkitScience
   name: Научная Аптечка
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
-    state: medkit-1
+    sprite: "_Stalker/Objects/Medicine/medkit/ai3.rsi"
+    state: medkit-3
   spawn: MedkitScience
   maxCount: 4
 
@@ -210,12 +376,21 @@
   components:
   - type: STWeight
     self: 1
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Tag
     tags:
     - Brutepack
   - type: Sprite
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: _Stalker/Objects/Medicine/medkit/ai4.rsi
     state: medkit-4
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai4.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damageContainers:
       - Biological
@@ -242,7 +417,7 @@
   id: MedkitElite
   name: Элитная Аптечка
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
+    sprite: "_Stalker/Objects/Medicine/medkit/ai4.rsi"
     state: medkit-4
   spawn: MedkitElite
   maxCount: 4
@@ -259,9 +434,18 @@
   - type: Tag
     tags:
     - Brutepack
+  - type: RepositoryItem
+    categoryName: Медицина
   - type: Sprite
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: _Stalker/Objects/Medicine/medkit/ai5.rsi
     state: medkit-5
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai5.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damageContainers:
       - Biological
@@ -285,7 +469,7 @@
   id: MedkitLAR
   name: Аптечка «LAR»
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
+    sprite: "_Stalker/Objects/Medicine/medkit/ai5.rsi"
     state: medkit-5
   spawn: MedkitLAR
   maxCount: 4

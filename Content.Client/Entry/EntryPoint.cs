@@ -8,6 +8,7 @@ using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
+using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
@@ -77,6 +78,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!; // Corvax-Auth
         [Dependency] private readonly JoinQueueManager _joinQueueManager = default!; // Corvax-Queue
         [Dependency] private readonly SponsorsManager _sponsors = default!; // Stalker-Changes-Sponsors
+        [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
 
         public override void Init()
         {
@@ -146,6 +148,12 @@ namespace Content.Client.Entry
             _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
         }
 
+        public override void Shutdown()
+        {
+            base.Shutdown();
+            _titleWindowManager.Shutdown();
+        }
+
         public override void PostInit()
         {
             base.PostInit();
@@ -164,12 +172,13 @@ namespace Content.Client.Entry
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
             _voteManager.Initialize();
-            _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
-            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
+            _userInterfaceManager.SetDefaultTheme("STDefaultTheme"); // stalker-changes-UI
+            _userInterfaceManager.SetActiveTheme("STDefaultTheme"); // stalker-changes-UI
             _documentParsingManager.Initialize();
             _discordAuthManager.Initialize(); // Stalker-Changes-Auth
             _joinQueueManager.Initialize(); // Stalker-Changes - Corvax Queue Adaptation
             _sponsors.Initialize(); // Stalker-Changes-Sponsors
+            _titleWindowManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
             {

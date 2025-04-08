@@ -20,6 +20,9 @@
   id: MagazineUSAS
 
 - type: Tag
+  id: Cartridge1255
+
+- type: Tag
   id: MagazineGSH-18
 
 - type: Tag
@@ -56,3 +59,7 @@
 
 - type: Tag
   id: STCombatKnife
+
+- type: Tag
+  id: STArtifact
+

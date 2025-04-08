@@ -1,8 +1,8 @@
 - type: job
   id: StalkerBandit
-  name: Бандит
+  name: job-bandit
   icon: band
-  description: Рейдеры и мародеры Зоны, начиная от мелких головорезов и гангстеров и заканчивая организованными преступными синдикатами.
+  description: job-bandit-desc
   playTimeTracker: JobBandit
   whitelisted: true
   requirements:
@@ -14,7 +14,8 @@
       - Human
       - Dwarf
   startingGear: BandGear
-  supervisors: Вы никому не подчиняетесь...
+  supervisors: job-bandit-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -34,10 +35,11 @@
 
 - type: job
   id: StalkerHeadBandit
-  name: Пахан
+  name: job-head-bandit
   icon: band
-  description: Рейдеры и мародеры Зоны, начиная от мелких головорезов и гангстеров и заканчивая организованными преступными синдикатами.
+  description: job-head-bandit-desc
   playTimeTracker: JobHeadBandit
+  whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
     #   role: JobHeadBandit
@@ -47,7 +49,8 @@
       - Human
       - Dwarf
   startingGear: BandGear
-  supervisors: Вы никому не подчиняетесь...
+  supervisors: job-bandit-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -71,6 +74,7 @@
     id: BandPDA
     neck: ClothingBandageStalkerPetuh
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsCombat
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas
+    pocket1: RadioBandPlayer

@@ -20,8 +20,8 @@
       projectileSpeed: 18
       minAngle: 65
       maxAngle: 110
-      angleIncrease: 1
-      angleDecay: 5
+      angleIncrease: 3
+      angleDecay: 10
       fireRate: 14
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/PPSh.ogg
@@ -42,12 +42,6 @@
           whitelist:
             tags:
               - STWeaponModuleSMGSilencer
-        gun_module_underbarrel:
-          name: Underbarrel
-          priority: 2
-          whitelist:
-            tags:
-              - STWeaponModuleSMGGrip
         gun_chamber:
           name: Chamber
           startingItem:

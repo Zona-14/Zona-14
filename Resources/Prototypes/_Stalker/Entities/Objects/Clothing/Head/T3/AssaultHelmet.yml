@@ -11,10 +11,6 @@
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Slash: 6
-        Blunt: 6
-        Piercing: 12
       coefficients:
         Piercing: 0.7
         Slash: 0.8
@@ -26,12 +22,16 @@
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmet
-  name: штурмовой шлем
-  description: Это шлем, специально разработанный для защиты от колющих атак.
+  name: шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/assault_helm.rsi
@@ -41,8 +41,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetUN
-  name: штурмовой шлем ООН
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: шлем «Зенит» ООН
+  description: боевой шлем марки «Зенит» третьего класса защиты в цветах миротворцев.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/un_head.rsi
@@ -52,10 +52,45 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetDeserter
-  name: штурмовой шлем отступников
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: шлем «Зенит-Л»
+  description: Шлем полностью покрывающий всю голову владельца кроме лица, очки приварены к шлему, не пытайтесь их снять!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_legat_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_legat_deserter.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT3Base
+  id: ClothingHeadAssaultHelmetMilitary
+  name: военный шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты в зелёном цвете.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_military.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_military.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT3Base
+  id: ClothingHeadAssaultHelmetBandit
+  name: бандитский шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_bandit.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_bandit.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT3Base
+  id: ClothingHeadAssaultHelmetDolg
+  name: шлем «Зенит» Долга
+  description: боевой шлем марки «Зенит» третьего класса защиты.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/assault_helm_dolg.rsi
+
+

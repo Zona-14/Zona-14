@@ -5,9 +5,14 @@
 # а куда ты делась в мастере? Нипон
   suffix: Stalker, Медуза
   components:
+  - type: Butcherable
+    spawned:
+      - id: ArtMedusaActive1
+        amount: 1
   - type: Craftable
   - type: Sprite
     state: medusa
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySpringboard
   - type: ZoneArtifactDetectorTarget
@@ -42,6 +47,7 @@
   components:
   - type: Sprite
     state: flower
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyPulse
   - type: ZoneArtifactDetectorTarget
@@ -81,6 +87,7 @@
   components:
   - type: Sprite
     state: night_star
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyNoGravity
   - type: ZoneArtifactDetectorTarget
@@ -122,6 +129,7 @@
   components:
   - type: Sprite
     state: vyvert
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -151,7 +159,8 @@
   suffix: Stalker, Амеба
   components:
   - type: Sprite
-    state: amoeba # Сам рисовал xd
+    state: amoeba
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -182,6 +191,7 @@
   components:
   - type: Sprite
     state: gravi
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -215,6 +225,7 @@
   components:
   - type: Sprite
     state: goldfish
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -248,6 +259,7 @@
   components:
   - type: Sprite
     state: spring
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -282,6 +294,7 @@
   components:
   - type: Sprite
     state: focus
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget
@@ -319,6 +332,7 @@
   components:
   - type: Sprite
     state: stuntman
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget
@@ -356,6 +370,7 @@
   components:
   - type: Sprite
     state: distorter
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget

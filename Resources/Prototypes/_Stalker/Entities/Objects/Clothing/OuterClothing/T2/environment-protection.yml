@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingOuterBaseLarge
   id: STFireProtectionSuit
-  name: костюм пожарного
+  name: КП-3 «Парник»
   suffix: ST, T2, Env
-  description: Предназначен для высоких температур
+  description: Костюм Пожарный третьей модели, предназначен для работы с высокими температурами
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/firesuit.rsi
@@ -37,7 +37,7 @@
   name: шлем пожарного
   suffix: ST
   description: Термоизолирующий шлем
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/fireprotecthelmet.rsi
@@ -52,3 +52,6 @@
   - type: Tag
     tags:
     - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair

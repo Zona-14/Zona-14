@@ -19,10 +19,6 @@
     - type: Armor
       armorClass: 4
       modifiers:
-        flatReductions:
-          Piercing: 10
-          Blunt: 2
-          Slash: 2
         coefficients:
           Piercing: 0.75
           Heat: 0.90
@@ -35,3 +31,7 @@
       spread: 360
       reflects:
         - NonEnergy
+      soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+    - type: HideLayerClothing
+      slots:
+      - Hair

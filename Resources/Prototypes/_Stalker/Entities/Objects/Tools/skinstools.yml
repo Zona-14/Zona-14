@@ -27,11 +27,6 @@
 
 - type: entity
   parent: STSkinsKitBase
-  name: Набор проекта
-  id: STSkinsKitProject # add somehow
-
-- type: entity
-  parent: STSkinsKitBase
   name: Набор Чистого Неба #aka CN
   id: STSkinsKitClearSky
 
@@ -42,7 +37,7 @@
 
 - type: entity
   parent: STSkinsKitBase
-  name: Набор Свободы
+  name: Набор «Воля»
   id: STSkinsKitFreedom
 
 - type: entity
@@ -88,7 +83,7 @@
 - type: entity
   parent: STSkinsKitBase
   name: Набор Серафима
-  id: STSkinsKitSeraphim # куда?
+  id: STSkinsKitSeraphim # куда? Туда
 
 - type: entity
   parent: STSkinsKitBase

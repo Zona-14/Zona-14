@@ -1,7 +1,7 @@
 - type: entity
   id: RandomLootBox1
   name: рандомный спавн лута
-  nospawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Stalker, НЕ МАППИТЬ
   parent: FlexibleMarker
   components:
@@ -65,7 +65,7 @@
       - FoodSnackChocolate
       - FoodCondimentPacketSoy
       - FoodCondimentPacketSalt
-      - FoodBreadPlain
+      - STFoodBreadPlain
       - FoodSnackChips
     chance: 0.40
     offset: 0.0

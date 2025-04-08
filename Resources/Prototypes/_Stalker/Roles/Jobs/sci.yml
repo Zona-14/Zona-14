@@ -1,8 +1,8 @@
 - type: job
   id: StalkerScientist
-  name: Учёный
+  name: job-scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: job-scientist-desc
   playTimeTracker: JobStalkerSci
   whitelisted: true
   requirements:
@@ -14,7 +14,8 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -30,12 +31,52 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Military
+
+- type: job
+  id: StalkerISSG
+  name: job-issg
+  icon: ecologists
+  description: job-issg-desc
+  playTimeTracker: JobStalkerISSG
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobStalkerSci
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SciGear
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Sci
+      - type: Bands
+        band: Stalker
+        bandIcon: ecologists
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Military
 
 - type: job
   id: StalkerHeadScientist
-  name: Ведущий Учёный
+  name: job-head-scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: job-head-scientist-desc
   playTimeTracker: JobHeadStalkerSci
   whitelisted: true
   requirements:
@@ -47,7 +88,8 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -63,6 +105,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Military
 
 - type: startingGear
   id: SciGear

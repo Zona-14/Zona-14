@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Stalker.PullDoAfter;
 using Content.Shared.Armor;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -10,6 +11,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
@@ -33,6 +35,7 @@ public abstract partial class InventorySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly SharedStrippableSystem _strippable = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!; // Stalker-Changes
 
     [ValidatePrototypeId<ItemSizePrototype>]
@@ -49,7 +52,7 @@ public abstract partial class InventorySystem
 
     private void OnEntRemoved(EntityUid uid, InventoryComponent component, EntRemovedFromContainerMessage args)
     {
-        if(!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
+        if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
             return;
 
         HideSlotsOnConcealerUnequip(uid, component, args.Container.ID); // stalker-changes
@@ -63,8 +66,8 @@ public abstract partial class InventorySystem
 
     private void OnEntInserted(EntityUid uid, InventoryComponent component, EntInsertedIntoContainerMessage args)
     {
-        if(!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
-           return;
+        if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
+            return;
 
         HideSlotsOnConcealerEquip(uid, component, args.Container.ID); // stalker-changes
         var equippedEvent = new DidEquipEvent(uid, args.Entity, slotDef);
@@ -123,7 +126,7 @@ public abstract partial class InventorySystem
 
         RaiseLocalEvent(held.Value, new HandDeselectedEvent(actor));
 
-        TryEquip(actor, actor, held.Value, ev.Slot, predicted: true, inventory: inventory, force: true, checkDoafter:true);
+        TryEquip(actor, actor, held.Value, ev.Slot, predicted: true, inventory: inventory, force: true, checkDoafter: true);
     }
 
     public bool TryEquip(EntityUid uid, EntityUid itemUid, string slot, bool silent = false, bool force = false, bool predicted = false,
@@ -158,24 +161,26 @@ public abstract partial class InventorySystem
             return false;
         }
 
+
+
         if (checkDoafter &&
             clothing != null &&
             clothing.EquipDelay > TimeSpan.Zero &&
             (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
             _containerSystem.CanInsert(itemUid, slotContainer))
-        {
+        { // stalker-changes-start
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                clothing.EquipDelay,
+                TryComp<PullDoAfterComponent>(itemUid, out var pullDoAfterComponent) ? TimeSpan.FromSeconds(pullDoAfterComponent.PullTime) : clothing.EquipDelay,
                 new ClothingEquipDoAfterEvent(slot),
                 itemUid,
                 target,
                 itemUid)
             {
-                BreakOnMove = true,
+                BreakOnMove = false,
                 NeedHand = true,
-            };
+            }; // stalker-changes-end
 
             _doAfter.TryStartDoAfter(args);
             return false;
@@ -402,6 +407,25 @@ public abstract partial class InventorySystem
         bool reparent = true,
         bool checkDoafter = false)
     {
+        var itemsDropped = 0;
+        return TryUnequip(actor, target, slot, out removedItem, ref itemsDropped,
+            silent, force, predicted, inventory, clothing, reparent, checkDoafter);
+    }
+
+    private bool TryUnequip(
+        EntityUid actor,
+        EntityUid target,
+        string slot,
+        [NotNullWhen(true)] out EntityUid? removedItem,
+        ref int itemsDropped,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false)
+    {
         removedItem = null;
 
         if (TerminatingOrDeleted(target))
@@ -433,43 +457,53 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        //we need to do this to make sure we are 100% removing this entity, since we are now dropping dependant slots
-        if (!force && !_containerSystem.CanRemove(removedItem.Value, slotContainer))
+        // we need to do this to make sure we are 100% removing this entity, since we are now dropping dependant slots
+        if (!force && !_containerSystem.CanRemove(removedItem.Value, slotContainer)) // stalker-changes-start
             return false;
 
         if (checkDoafter &&
             Resolve(removedItem.Value, ref clothing, false) &&
             (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
             clothing.UnequipDelay > TimeSpan.Zero)
-        {
+        { // stalker-changes-start
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                clothing.UnequipDelay,
+                TryComp<PullDoAfterComponent>(removedItem, out var pullDoAfterComponent) ? TimeSpan.FromSeconds(pullDoAfterComponent.PullTime) : clothing.UnequipDelay,
                 new ClothingUnequipDoAfterEvent(slot),
                 removedItem.Value,
                 target,
                 removedItem.Value)
             {
-                BreakOnMove = true,
+                BreakOnMove = false,
                 NeedHand = true,
-            };
+            }; // stalker-changes-end
 
             _doAfter.TryStartDoAfter(args);
             return false;
         }
+
+        if (!_containerSystem.Remove(removedItem.Value, slotContainer, force: force, reparent: reparent))
+            return false;
+
+        // this is in order to keep track of whether this is the first instance of a recursion call
+        var firstRun = itemsDropped == 0;
+        ++itemsDropped;
 
         foreach (var slotDef in inventory.Slots)
         {
             if (slotDef != slotDefinition && slotDef.DependsOn == slotDefinition.Name)
             {
                 //this recursive call might be risky
-                TryUnequip(actor, target, slotDef.Name, true, true, predicted, inventory, reparent: reparent);
+                TryUnequip(actor, target, slotDef.Name, out _, ref itemsDropped, true, true, predicted, inventory, reparent: reparent);
             }
         }
 
-        if (!_containerSystem.Remove(removedItem.Value, slotContainer, force: force, reparent: reparent))
-            return false;
+        // we check if any items were dropped, and make a popup if they were.
+        // the reason we check for > 1 is because the first item is always the one we are trying to unequip,
+        // whereas we only want to notify for extra dropped items.
+        if (!silent && _gameTiming.IsFirstTimePredicted && firstRun && itemsDropped > 1)
+            _popup.PopupClient(Loc.GetString("inventory-component-dropped-from-unequip", ("items", itemsDropped - 1)), target, target);
 
         // TODO: Inventory needs a hot cleanup hoo boy
         // Check if something else (AKA toggleable) dumped it into a container.
@@ -501,8 +535,8 @@ public abstract partial class InventorySystem
 
         if ((containerSlot == null || slotDefinition == null) && !TryGetSlotContainer(target, slot, out containerSlot, out slotDefinition, inventory))
             return false;
-
-        if (slot == "mask" && TryGetSlotEntity(target, "head", out var headItem, inventory) && // Stalker-Changes-Start
+        // Stalker-Changes-Start
+        if (slot == "mask" && TryGetSlotEntity(target, "head", out var headItem, inventory) &&
             TryGetSlotEntity(target, slot, out var maskItem, inventory))
         {
             if (_tagSystem.HasTag(maskItem.Value, "BlockMask") && _tagSystem.HasTag(headItem.Value, "BlockMask"))
@@ -540,8 +574,9 @@ public abstract partial class InventorySystem
                 reason = "You need to unequip your belt or outer first";
                 return false;
             }
-        } // Stalker-Changes-End
-        if (containerSlot.ContainedEntity is not {} itemUid)
+        }
+        // Stalker-Changes-End
+        if (containerSlot.ContainedEntity is not { } itemUid)
             return false;
 
         if (!_containerSystem.CanRemove(itemUid, containerSlot))

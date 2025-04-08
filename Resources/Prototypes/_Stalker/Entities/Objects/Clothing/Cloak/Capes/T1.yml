@@ -30,6 +30,10 @@
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
+  - type: Storage
+    maxItemSize: Large
+    grid:
+      - 0,0,1,1
   - type: Armor
     armorClass: 1
     modifiers:
@@ -57,9 +61,9 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatKKK
-  name: куклус плащ
+  name: ku-klux-klan hoodie
   suffix: ST, T1
-  description: ккк.
+  description: The Ku Klux Klan's white robes are long white hooded garments that symbolize the anonymity and unity of the organization's members. These robes are often associated with the racist actions of the KKK, emphasizing their ideology of white supremacy.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
@@ -78,9 +82,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: капюшон куклус плаща
-  noSpawn: true
-  description: Покрывает вашу голову ККК.
+  name: capirot
+  categories: [ HideSpawnMenu ]
+  description: A medieval Spanish headdress, a pointed conical cap. Originally made of cardboard, capirotes were used by Spanish flagellants. During the Inquisition, cloth-covered capirotes were used, along with yellow capes, to dress those condemned to death.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi
@@ -110,7 +114,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetPahanCoat
   name: капюшон плаща пахана
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: Sprite
@@ -143,7 +147,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHatHoodCoatPoisk
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -173,7 +177,7 @@
   id: ClothingHeadCassock
   name: капюшон рясы
   description: капюшон из грубой ткани от монашеской рясы
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
@@ -220,3 +224,41 @@
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
+
+- type: entity
+  parent: ClothingOuterCoatDoshdevik
+  id: STClothingCapeT1Serafim
+  name: плащ серафимов
+  suffix: ST, T1, Скин
+  description: Выполнен в тёмно-зелёной цветовой гамме
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetSerafim
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetSerafim
+  name: капюшон плаща серафимов
+  noSpawn: true
+  description: Покрывает вашу голову
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCapeRenegat
+  name: плащ ренегатов
+  description: Кусок ткани в пиксельном какашном камуфляже, при желании можно носить как плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi

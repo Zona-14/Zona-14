@@ -3,7 +3,7 @@
   parent: BaseArtifact
   id: ArtBlood
   description: Артефакт гравитационной природы. Фонит, но даёт защиту от физ. урона.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: RadiationSource
     slope: 1
@@ -41,12 +41,17 @@
     maxItemSize: Normal
     grid:
     - 0,0,1,1
+  - type: Clothing
+    quickEquip: true
+    slots:
+      - ARTIFACT
   - type: RadiationBlockingContainer
     resistance: 2
   - type: SuppressArtifactContainer
   - type: Sprite
     sprite: _Stalker/Objects/Misc/artcontainers.rsi
     state: old
+    scale: 0.5, 0.5
 
 - type: entity
   name: продвинутый контейнер для артефактов
@@ -54,10 +59,17 @@
   id: BoxArtcont1
   description: Вмещает в себя до 3 штук артефактов и полностью блокирует их свойства. Улучшенная кустарно версия, которую достаточно сложно найти.
   components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,5,1
   - type: Storage
     maxItemSize: Normal
     grid:
     - 0,0,5,1
+    whitelist:
+      tags:
+        - STArtifact
   - type: PersonalDamageBlock
   - type: RadiationBlockingContainer
     resistance: 5
@@ -66,6 +78,7 @@
     sprite: _Stalker/Objects/Misc/artcontainers.rsi
     state: new
 
+
 # Артефакты 32x32
 
 - type: entity
@@ -73,7 +86,7 @@
   parent: BaseArtifact
   id: Art1
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -85,7 +98,7 @@
   parent: BaseArtifact
   id: Art2
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -97,7 +110,7 @@
   parent: BaseArtifact
   id: Art3
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -109,7 +122,7 @@
   parent: BaseArtifact
   id: Art9
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -121,7 +134,7 @@
   parent: BaseArtifact
   id: Art10
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -133,7 +146,7 @@
   parent: BaseArtifact
   id: Art12
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -145,7 +158,7 @@
   parent: BaseArtifact
   id: Art13
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -157,7 +170,7 @@
   parent: BaseArtifact
   id: Art14
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -169,7 +182,7 @@
   parent: BaseArtifact
   id: Art15
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -181,7 +194,7 @@
   parent: BaseArtifact
   id: Art16
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -193,7 +206,7 @@
   parent: BaseArtifact
   id: Art19
   description: Артефакт химической природы, эластичный и приятный на ощупь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -205,7 +218,7 @@
   parent: BaseArtifact
   id: Art20
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -217,7 +230,7 @@
   parent: BaseArtifact
   id: Art21
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -229,7 +242,7 @@
   parent: BaseArtifact
   id: Art22
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi
@@ -241,7 +254,7 @@
   parent: BaseArtifact
   id: Art23
   description: Артефакт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts.rsi

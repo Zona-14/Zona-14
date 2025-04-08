@@ -16,6 +16,14 @@
 
 - type: entity
   parent: STBaseBlueprint
+  id: STDetectorAD3Blueprint
+  name: Рецепт детектор аномалий 3-й модели (ДА-3)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeDetectorAD3
+
+- type: entity
+  parent: STBaseBlueprint
   id: STZoneArtifactDetectorPulseBlueprint
   name: Рецепт Детектора артефактов "Пульс"
   components:

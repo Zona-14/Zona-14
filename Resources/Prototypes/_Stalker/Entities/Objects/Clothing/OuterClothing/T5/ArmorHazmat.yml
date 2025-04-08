@@ -18,9 +18,9 @@
       armorClass: 4
       modifiers:
         flatReductions:
-          Blunt: 5
-          Slash: 5
-          Piercing: 7
+          Blunt: 9
+          Slash: 9
+          Piercing: 9
           Radiation: 10
           Caustic: 10
         coefficients:
@@ -39,7 +39,7 @@
   id: ClothingHeadHazmat
   name: шлем ХАЗМАТа
   description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
@@ -63,3 +63,6 @@
           Shock: 0.3
           Radiation: 0.45
           Psy: 0.5
+    - type: HideLayerClothing
+      slots:
+      - Hair

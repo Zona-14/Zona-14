@@ -80,13 +80,29 @@
 
 # Repository for FreedomBand - End
 
+# Repository for Serafim - Start
+
+- type: entity
+  parent: BandRepositoryBase
+  id: PortalBandSerafimRepository
+  suffix: 1000
+  name: Band-Serafim-Repository
+  description: Подвал охотников... Пфф, ничего интересного...
+  components:
+    - type: AccessReader
+      access: [["Seraphims"]]
+    - type: StalkerBandTeleport
+      portalName: _PortalBandSerafimRepository
+      repositoryWeight: 1000
+
+# Repository for Serafim - End
+
 # Repository for DebtBand - Start
 
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandDebtRepository
   suffix: 1000
-  noSpawn: false
   name: Band-Debt-Repository
   description: Band-Debt-Repository-desc
   components:
@@ -112,7 +128,7 @@
 - type: entity
   parent: MapTeleportBase
   id: PortalBandDolgRepositoryPortal
-  suffix: Вокзал - Склад долга
+  suffix: Вокзал - Склад Авангарда
   name: TrainStation-Cordon
   components:
     - type: AccessReader
@@ -198,6 +214,23 @@
       repositoryWeight: 500
 
 # Repository for Military - End
+
+# Repository for Jabs - Start
+
+- type: entity
+  parent: BandRepositoryBase
+  id: PortalBandJabaRepository
+  suffix: 1000
+  name: Band-Jaba-Repository
+  description: Подвал гениев крафтов... Не может быть! Там-...
+  components:
+    - type: AccessReader
+      access: [["Jaba"]]
+    - type: StalkerBandTeleport
+      portalName: _PortalBandJabaRepository
+      repositoryWeight: 1000
+
+# Repository for Jabs - End
 
 # Repository for Deserters - Start
 
@@ -581,7 +614,6 @@
   parent: BandRepositoryBase
   id: PortalBandPoiskRepository
   suffix: 2500
-  noSpawn: false
   name: Band-Poisk-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -592,21 +624,21 @@
     repositoryWeight: 2500
 # Repository for Poisk - End
 
-# Repository for Project - Start
+# Repository for Monolith - Start
 - type: entity
   parent: BandRepositoryBase
-  id: PortalBandProjectRepository
-  suffix: 2000
+  id: PortalBandMonolithRepository
+  suffix: 2500
   noSpawn: false
-  name: Band-Project-Repository
+  name: Band-Monolith-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
   - type: AccessReader
-    access: [["Project"]]
+    access: [["Monolith"]]
   - type: StalkerBandTeleport
-    portalName: _PortalBandProjectRepository
-    repositoryWeight: 2000
-# Repository for Poisk - End
+    portalName: _PortalBandMonolithRepository
+    repositoryWeight: 2500
+# Repository for Monolith - End 
 
 # BandPrototype
 - type: bandLoader
@@ -664,3 +696,8 @@
     - "_PortalBandNeutralsRepository"
     - "_PortalBandPoiskRepository"
     - "_PortalBandProjectRepository"
+
+    - "_PortalBandJabaRepository"
+    - "_PortalBandSerafimRepository"
+
+    - "_PortalBandMonolithRepository"

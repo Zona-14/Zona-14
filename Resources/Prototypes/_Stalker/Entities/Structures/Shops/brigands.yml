@@ -32,25 +32,5 @@
       map: [ "enum.ConstructionVisuals.Layer" ]
     - state: normal-unshaded
   - type: Shop
-    moneyId: Dollar
-    shopPresetId: DollarBandsShopPreset
-
-# Жабы
-
-- type: entity
-  parent: StalkerShop
-  id: StalkerShopJaba
-  name: Торгомат, Жаб
-  description: Как торговец туда поместился?
-  suffix: ST, Mapping, Жабы
-  components:
-    - type: Sprite
-      drawdepth: Objects
-      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_black.rsi
-      layers:
-        - state: torgomat_black
-          map: [ "enum.ConstructionVisuals.Layer" ]
-        - state: normal-unshaded
-    - type: Shop
-      moneyId: Roubles
-      shopPresetId: ShopPresetJaba
+    moneyId: R
+    shopPresetId: BandsShopPreset

@@ -13,9 +13,9 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 8
-        Piercing: 12
+        Blunt: 7
+        Slash: 7
+        Piercing: 8
         Heat: 1
         Shock: 1
       coefficients:
@@ -38,6 +38,17 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/6b13.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/6b13.rsi
+
+- type: entity
+  parent: STClothingOuterArmor6B13Base
+  id: ClothingOuterArmor6B13Sera
+  name: 6Б13 'Серафимов'
+  description: Стандартный бронежилет IV типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-6b13.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-6b13.rsi
 
 - type: entity
   parent: STClothingOuterArmor6B13Base
@@ -65,7 +76,7 @@
   parent: STClothingOuterArmor6B13Base
   id: STClothingOuterArmorVolchankaFreedom
   name: нагрудник «Волчанка»
-  description: Производимый ремесленниками группировки «Свобода» усиленный нагрудник с защитой больше от пуль, чем от всего остального. Переработанные 6б13
+  description: Производимый ремесленниками группировки «Воля» усиленный нагрудник с защитой больше от пуль, чем от всего остального. Является кустарной модификацией 6б13.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi

@@ -2,11 +2,11 @@
   parent: BaseItem
   id: BaseAmmoBoxStalker
   name: Базовая коробка сталкера
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
   - type: RepositoryItem
-    categoryName: Патроны
+    categoryName: Боеприпасы
   - type: STWeight
     self: 0.5
   - type: BallisticAmmoProvider
@@ -37,7 +37,7 @@
   parent: BaseItem
   id: BaseAmmoCinkBoxStalker
   name: Базовый ящик сталкера
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
   - type: Trash

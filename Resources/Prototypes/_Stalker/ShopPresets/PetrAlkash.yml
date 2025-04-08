@@ -41,8 +41,16 @@
       items:
         Matchbox: 15
         CigaretteFilter: 6
-        PaperRolling: 6
-        PackPaperRollingFilters: 21
-        PackPaperRolling: 21
+        STPaperRolling: 6
         DrinkShotGlass: 10
         DrinkFlaskBar: 40
+  sponsorCategories:
+    1:
+      - name: sponsor
+        items:
+          STWeaponGunAKS74UWhite: 650
+  contributorCategories:
+    - name: contributor
+      items:
+        STWeaponShotgunMP153Voron: 550
+        WeaponPistolStalkerAPSHugo: 250

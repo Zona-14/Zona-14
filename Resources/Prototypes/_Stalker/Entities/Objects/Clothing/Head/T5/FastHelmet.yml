@@ -10,10 +10,6 @@
   - type: Armor
     armorClass: 5
     modifiers:
-      flatReductions:
-        Piercing: 20
-        Blunt: 10
-        Slash: 10
       coefficients:
         Piercing: 0.5
         Blunt: 0.6
@@ -25,6 +21,10 @@
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT5Base

@@ -32,6 +32,17 @@
     sound:
       path: /Audio/_Stalker/Music/Radio/wolf_hunt.ogg
 
+- type: entity
+  parent: RadioStalkerPlayer
+  id: RadioBandPlayer
+  name: кассетный плеер Бандитов
+  suffix: ST, переносной
+  description: Кассетный плеер, представленный в 1983 году и выполненный в ультракомпактном корпусе, который по габаритам меньше даже самой аудиокассеты. Это стало возможным за счёт раздвижной конструкции, что и позволяло установить внутрь кассету.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/mp3playerband.rsi
+    state: base
+
 # КАССЕТЫ
 
 - type: entity
@@ -1914,6 +1925,60 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyThreeRadio
+  suffix: Stalker, кассета (Силуэты)
+  name: кассета "Силуэты"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyFourRadio
+  suffix: Stalker, кассета (Запомню)
+  name: кассета "Запомню"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyFiveRadio
+  suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
+  name: кассета "Low Roar - I'll Keep Coming"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
 # Contributor
 - type: entity
   parent: BaseItem
@@ -2560,8 +2625,8 @@
 - type: entity
   parent: BaseItem
   id: CasseteLoseMyMindInHysteriaContributorRadio
-  suffix: Stalker, кассета, (Funked Up)
-  name: кассета "Funked Up"
+  suffix: Stalker, кассета, (Lose My Mind In Hysteria)
+  name: кассета "Lose My Mind In Hysteria"
   description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
   components:
   - type: STWeight
@@ -3460,7 +3525,7 @@
 
 - type: entity
   id: RadioStalkerSovietDonate
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: RadioBaseStalker
   suffix: Stalker, Soviet Donate
   components:
@@ -3469,3 +3534,15 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/soviet.ogg
+
+- type: entity
+  id: RadioStandStalkerSerafimDistant
+  parent: RadioBaseStalker
+  suffix: Stalker, Serafim 10 тайлов
+  components:
+  - type: AmbientSound
+    volume: -8
+    range: 10
+    enabled: true
+    sound:
+      path: /Audio/_Stalker/serafim_embient.ogg

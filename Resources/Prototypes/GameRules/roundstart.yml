@@ -190,6 +190,20 @@
       - MindRoleTraitor
 
 - type: entity
+  id: TraitorReinforcement
+  parent: BaseTraitorRule
+  components:
+  - type: TraitorRule
+    giveUplink: false
+    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+    giveBriefing: false
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      mindRoles:
+      - MindRoleTraitor
+
+- type: entity
   id: Revolutionary
   parent: BaseGameRule
   components:
@@ -271,7 +285,6 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-        
 
 - type: entityTable
   id: SpaceTrafficControlTable
@@ -332,12 +345,12 @@
   - type: RoundstartStationVariationRule
     rules:
     - id: BasicPoweredLightVariationPass
-    - id: BasicTrashVariationPass
+    # - id: BasicTrashVariationPass # stalker-changes
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
-    - id: BasicPuddleMessVariationPass
-      prob: 0.99
-      orGroup: puddleMess
-    - id: BloodbathPuddleMessVariationPass
-      prob: 0.01
-      orGroup: puddleMess
+    # - id: BasicPuddleMessVariationPass # stalker-changes-start
+    #   prob: 0.99
+    #   orGroup: puddleMess
+    # - id: BloodbathPuddleMessVariationPass
+    #   prob: 0.01
+    #   orGroup: puddleMess # stalker-changes-end

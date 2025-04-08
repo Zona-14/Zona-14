@@ -14,9 +14,9 @@
     armorClass: 5
     modifiers:
       flatReductions:
-        Piercing: 15
-        Blunt: 15
-        Slash: 15
+        Piercing: 8
+        Blunt: 8
+        Slash: 10
       coefficients:
         Piercing: 0.5
         Blunt: 0.65
