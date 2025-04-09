@@ -115,11 +115,13 @@ public sealed partial class WarZoneSystem : EntitySystem
         }
 
         var ownerships = new Dictionary<ProtoId<STWarZonePrototype>, (int? BandId, int? FactionId)>();
+        var lastCaptureTimes = new Dictionary<ProtoId<STWarZonePrototype>, DateTime?>();
+        var zonePrototypes = new Dictionary<ProtoId<STWarZonePrototype>, STWarZonePrototype>();
+
+        var requiredZoneIds = new HashSet<ProtoId<STWarZonePrototype>>();
 
         if (wzProto.Requirements != null)
         {
-            var requiredZoneIds = new HashSet<ProtoId<STWarZonePrototype>>();
-
             foreach (var req in wzProto.Requirements)
             {
                 if (req is ZoneOwnershipRequirenment zoneReq)
@@ -128,14 +130,20 @@ public sealed partial class WarZoneSystem : EntitySystem
                         requiredZoneIds.Add(rid);
                 }
             }
+        }
 
-            foreach (var rid in requiredZoneIds)
+        foreach (var rid in requiredZoneIds)
+        {
+            var ownership = await _dbManager.GetStalkerWarOwnershipAsync(rid);
+            if (ownership != null)
             {
-                var ownership = await _dbManager.GetStalkerWarOwnershipAsync(rid);
-                if (ownership != null)
-                {
-                    ownerships[rid] = (ownership.BandId, ownership.FactionId);
-                }
+                ownerships[rid] = (ownership.BandId, ownership.FactionId);
+                lastCaptureTimes[rid] = ownership.LastCapturedByCurrentOwnerAt;
+            }
+
+            if (_prototypeManager.TryIndex<STWarZonePrototype>(rid, out var reqProto))
+            {
+                zonePrototypes[rid] = reqProto;
             }
         }
 
@@ -145,7 +153,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         {
             foreach (var req in wzProto.Requirements)
             {
-                if (!req.Check(attackerBand, attackerFaction, ownerships, frameTimeSec))
+                if (!req.Check(attackerBand, attackerFaction, ownerships, lastCaptureTimes, zonePrototypes, wzComp.ZoneProto, frameTimeSec))
                 {
                     allMet = false;
                     break;
@@ -165,11 +173,11 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         if (attackerBand.HasValue)
         {
-            foreach (var proto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
+            foreach (var bandProto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
             {
-                if (proto.DatabaseId == attackerBand.Value)
+                if (bandProto.DatabaseId == attackerBand.Value)
                 {
-                    bandProtoId = proto.ID;
+                    bandProtoId = bandProto.ID;
                     break;
                 }
             }
@@ -177,11 +185,11 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         if (attackerFaction.HasValue)
         {
-            foreach (var proto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
+            foreach (var factionProto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
             {
-                if (proto.DatabaseId == attackerFaction.Value)
+                if (factionProto.DatabaseId == attackerFaction.Value)
                 {
-                    factionProtoId = proto.ID;
+                    factionProtoId = factionProto.ID;
                     break;
                 }
             }
@@ -240,22 +248,22 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         if (state.DefendingBandId.HasValue)
         {
-            foreach (var proto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
+            foreach (var bandProto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
             {
-                if (proto.DatabaseId == state.DefendingBandId.Value)
+                if (bandProto.DatabaseId == state.DefendingBandId.Value)
                 {
-                    _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(proto.ID), points);
+                    _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(bandProto.ID), points);
                     break;
                 }
             }
         }
         else if (state.DefendingFactionId.HasValue)
         {
-            foreach (var proto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
+            foreach (var factionProto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
             {
-                if (proto.DatabaseId == state.DefendingFactionId.Value)
+                if (factionProto.DatabaseId == state.DefendingFactionId.Value)
                 {
-                    _dbManager.SetStalkerFactionAsync(new ProtoId<NpcFactionPrototype>(proto.ID), points);
+                    _dbManager.SetStalkerFactionAsync(new ProtoId<NpcFactionPrototype>(factionProto.ID), points);
                     break;
                 }
             }

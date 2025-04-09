@@ -18,6 +18,9 @@ public sealed partial class CaptureTimeRequirenment : BaseWarZoneRequirenment
         int? attackerBand,
         int? attackerFaction,
         Dictionary<ProtoId<STWarZonePrototype>, (int? BandId, int? FactionId)> ownerships,
+        Dictionary<ProtoId<STWarZonePrototype>, DateTime?> lastCaptureTimes,
+        Dictionary<ProtoId<STWarZonePrototype>, STWarZonePrototype> zonePrototypes,
+        ProtoId<STWarZonePrototype> currentZoneId,
         float frameTime)
     {
         ProgressSeconds += frameTime;

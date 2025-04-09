@@ -35,6 +35,9 @@ public sealed class WarpZoneSystem : SharedWarZoneSystem
             if (_protoMan.TryIndex(warZone.ZoneProto.Id, out STWarZonePrototype? zoneProto) && zoneProto?.Requirements != null)
             {
                 var ownerships = new Dictionary<ProtoId<STWarZonePrototype>, (int? BandId, int? FactionId)>();
+                var lastCaptureTimes = new Dictionary<ProtoId<STWarZonePrototype>, DateTime?>();
+                var zonePrototypes = new Dictionary<ProtoId<STWarZonePrototype>, STWarZonePrototype>();
+                var currentZoneId = warZone.ZoneProto;
                 var requiredZoneIds = new HashSet<ProtoId<STWarZonePrototype>>();
 
                 foreach (var req in zoneProto.Requirements)
@@ -50,15 +53,24 @@ public sealed class WarpZoneSystem : SharedWarZoneSystem
                 {
                     var ownership = _dbManager.GetStalkerWarOwnershipAsync(rid).GetAwaiter().GetResult();
                     if (ownership != null)
+                    {
                         ownerships[rid] = (ownership.BandId, ownership.FactionId);
+                        lastCaptureTimes[rid] = ownership.LastCapturedByCurrentOwnerAt;
+                    }
+
+                    if (_protoMan.TryIndex(rid, out var proto))
+                    {
+                        zonePrototypes[rid] = proto;
+                    }
                 }
+
 
                 int? attackerBand = null;
                 int? attackerFaction = null;
 
                 foreach (var req in zoneProto.Requirements)
                 {
-                    req.Check(attackerBand, attackerFaction, ownerships, frameTime);
+                    req.Check(attackerBand, attackerFaction, ownerships, lastCaptureTimes, zonePrototypes, currentZoneId, frameTime);
                 }
             }
         }
