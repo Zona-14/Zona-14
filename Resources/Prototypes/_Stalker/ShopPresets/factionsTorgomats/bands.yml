@@ -181,14 +181,14 @@
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 200 #T2
-        545Mag30: 600 #T3
+        545Mag20: 300 #T2
+        545Mag30: 700 #T3
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
         739Mag45: 450
           # Smg
-        BaseMP5Mag: 250
+        BaseMP5Mag: 200
         Vz61Mag: 100
         PPSHDrum: 400
         BasePPSHMag: 200
@@ -210,12 +210,12 @@
         725PSTBox: 200
         # 9.19
         919PSOGJBox: 65
-        919PSTBox: 140
+        919PSTBox: 170
         919PBMBox: 225
         # 5.45
-        545FMJBox: 580
+        545FMJBox: 480
         545HPBox: 1000
-        545PCBox: 800
+        545PCBox: 850
         # 7.39
         739FMJBox: 675
         # 7.51
@@ -230,7 +230,7 @@
          # 9.18
         918PGJBox: 65
         918PSTBox: 170
-        918PBMBox: 225
+        918PBMBox: 200
     - name: shop-category-armor
       priority: 4
       items:
@@ -276,6 +276,7 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 500 # T1
+        ZoneAnomalyDetectorAD1: 450 # T1
     - name: shop-category-utilities
       priority: 8
       items:
