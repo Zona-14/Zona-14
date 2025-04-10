@@ -7,7 +7,7 @@
     - !type:ZoneOwnershipRequirenment
       requiredZones: []
     - !type:CaptureTimeRequirenment
-      captureTime: 900
+      captureTime: 30
 
 # Entity prototype referencing the above meta-prototype
 - type: entity

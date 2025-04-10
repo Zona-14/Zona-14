@@ -264,7 +264,28 @@ public sealed partial class WarZoneSystem : EntitySystem
         }
 
         if (!allMet)
+        {
+            // Update capture progress based on CaptureTimeRequirenment(s)
+            float maxProgress = 0f;
+            if (wzProto.Requirements != null)
+            {
+                foreach (var req in wzProto.Requirements)
+                {
+                    if (req is CaptureTimeRequirenment timeReq && timeReq.CaptureTime > 0f)
+                    {
+                        var progress = timeReq.ProgressSeconds / timeReq.CaptureTime;
+                        if (progress > maxProgress)
+                            maxProgress = progress;
+                    }
+                }
+            }
+
+            // Clamp between 0 and 1
+            maxProgress = Math.Clamp(maxProgress, 0f, 1f);
+            comp.CaptureProgress = maxProgress;
+
             return;
+        }
 
         comp.DefendingBandProtoId = attackerBand;
         comp.DefendingFactionProtoId = attackerFaction;
@@ -302,6 +323,9 @@ public sealed partial class WarZoneSystem : EntitySystem
             ("attacker", defenderName)));
 
         _lastRewardTimes[zone] = _gameTiming.CurTime;
+
+        // Set capture progress to 100% on successful capture
+        comp.CaptureProgress = 1f;
     }
 
     private void ResetAllRequirements(EntityUid zone)
@@ -320,6 +344,9 @@ public sealed partial class WarZoneSystem : EntitySystem
             if (req is CaptureTimeRequirenment captureReq)
                 captureReq.Reset();
         }
+
+        // Reset capture progress
+        wzComp.CaptureProgress = 0f;
     }
 
     private void DistributeRewards(EntityUid zone, TimeSpan lastRewardTime, TimeSpan now)

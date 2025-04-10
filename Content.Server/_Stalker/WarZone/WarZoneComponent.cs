@@ -38,4 +38,6 @@ public sealed partial class WarZoneComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public HashSet<string> PresentFactionProtoIds = new();
+    [ViewVariables(VVAccess.ReadOnly)]
+    public float CaptureProgress = 0f;
 }
