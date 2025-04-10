@@ -28,6 +28,8 @@ public sealed partial class WarZoneSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
 
+    private readonly Dictionary<int, float> _bandPoints = new();
+    private readonly Dictionary<int, float> _factionPoints = new();
     private readonly Dictionary<EntityUid, TimeSpan> _lastRewardTimes = new();
 
     public override void Initialize()
@@ -53,14 +55,28 @@ public sealed partial class WarZoneSystem : EntitySystem
             {
                 var band = await _dbManager.GetStalkerBandAsync(bandProto.ID);
                 if (band == null)
+                {
                     await _dbManager.SetStalkerBandAsync(bandProto.ID, 0);
+                    _bandPoints[bandProto.DatabaseId] = 0;
+                }
+                else
+                {
+                    _bandPoints[bandProto.DatabaseId] = band.RewardPoints;
+                }
             }
 
             foreach (var factionProto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
             {
                 var faction = await _dbManager.GetStalkerFactionAsync(factionProto.ID);
                 if (faction == null)
+                {
                     await _dbManager.SetStalkerFactionAsync(factionProto.ID, 0);
+                    _factionPoints[factionProto.DatabaseId] = 0;
+                }
+                else
+                {
+                    _factionPoints[factionProto.DatabaseId] = faction.RewardPoints;
+                }
             }
 
             component.InitialLoadComplete = false;
@@ -266,6 +282,9 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         string defenderName = GetAttackerName(comp.DefendingBandId, comp.DefendingFactionId);
         _chatManager.DispatchServerAnnouncement($"Zone '{comp.PortalName}' captured by {defenderName}!");
+
+        // Reset reward timer on capture
+        _lastRewardTimes[zone] = _gameTiming.CurTime;
     }
 
     private void ResetAllRequirements(EntityUid zone)
@@ -299,7 +318,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         if (now - lastRewardTime < period)
             return;
 
-        if (wzComp.DefendingBandId == null && wzComp.DefendingFactionId == null && !wzProto.ShouldAwardWhenDefenderPresent)
+        if (wzComp.DefendingBandId == null && wzComp.DefendingFactionId == null && wzProto.ShouldAwardWhenDefenderPresent)
             return;
 
         var points = wzProto.RewardPointsPerPeriod;
@@ -307,12 +326,16 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         if (wzComp.DefendingBandId.HasValue)
         {
+            var bandDbId = wzComp.DefendingBandId.Value;
             foreach (var bandProto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
             {
-                if (bandProto.DatabaseId == wzComp.DefendingBandId.Value)
+                if (bandProto.DatabaseId == bandDbId)
                 {
-                    _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(bandProto.ID), (int)points);
-                    Logger.InfoS("warzone", $"Awarded {points} points to band {bandProto.Name} for controlling {wzComp.PortalName}");
+                    var currentPoints = _bandPoints.TryGetValue(bandDbId, out var val) ? val : 0;
+                    var newPoints = currentPoints + (int)points;
+                    _bandPoints[bandDbId] = newPoints;
+                    _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(bandProto.ID), newPoints);
+                    Logger.InfoS("warzone", $"Awarded {points} points to band {bandProto.Name} (total: {newPoints}) for controlling {wzComp.PortalName}");
                     rewarded = true;
                     break;
                 }
@@ -320,12 +343,16 @@ public sealed partial class WarZoneSystem : EntitySystem
         }
         else if (wzComp.DefendingFactionId.HasValue)
         {
+            var factionDbId = wzComp.DefendingFactionId.Value;
             foreach (var factionProto in _prototypeManager.EnumeratePrototypes<NpcFactionPrototype>())
             {
-                if (factionProto.DatabaseId == wzComp.DefendingFactionId.Value)
+                if (factionProto.DatabaseId == factionDbId)
                 {
-                    _dbManager.SetStalkerFactionAsync(new ProtoId<NpcFactionPrototype>(factionProto.ID), (int)points);
-                    Logger.InfoS("warzone", $"Awarded {points} points to faction {factionProto.ID} for controlling {wzComp.PortalName}");
+                    var currentPoints = _factionPoints.TryGetValue(factionDbId, out var val) ? val : 0;
+                    var newPoints = currentPoints + (int)points;
+                    _factionPoints[factionDbId] = newPoints;
+                    _dbManager.SetStalkerFactionAsync(new ProtoId<NpcFactionPrototype>(factionProto.ID), newPoints);
+                    Logger.InfoS("warzone", $"Awarded {points} points to faction {factionProto.ID} (total: {newPoints}) for controlling {wzComp.PortalName}");
                     rewarded = true;
                     break;
                 }
@@ -511,36 +538,24 @@ public sealed partial class WarZoneSystem : EntitySystem
 
             var ownership = await _dbManager.GetStalkerWarOwnershipAsync(component.ZoneProto);
 
-            if (ownership != null && ownership.LastCapturedByCurrentOwnerAt.HasValue && wzProto.CaptureCooldownHours > 0)
+            if (ownership != null)
             {
-                DateTime captureTime = ownership.LastCapturedByCurrentOwnerAt.Value;
-                DateTime cooldownEndDateTime = captureTime.AddHours(wzProto.CaptureCooldownHours);
-                DateTime currentDateTime = DateTime.UtcNow;
+                // Store raw DB numerical IDs directly
+                component.DefendingBandId = ownership.BandId;
+                component.DefendingFactionId = ownership.FactionId;
 
-                if (cooldownEndDateTime > currentDateTime)
+                if (ownership.LastCapturedByCurrentOwnerAt.HasValue && wzProto.CaptureCooldownHours > 0)
                 {
-                    TimeSpan remainingCooldown = cooldownEndDateTime - currentDateTime;
-                    component.CooldownEndTime = _gameTiming.CurTime + remainingCooldown;
-                }
+                    DateTime captureTime = ownership.LastCapturedByCurrentOwnerAt.Value;
+                    DateTime cooldownEndDateTime = captureTime.AddHours(wzProto.CaptureCooldownHours);
+                    DateTime currentDateTime = DateTime.UtcNow;
 
-                int? dbBandId = null;
-                if (ownership.BandId.HasValue)
-                {
-                    string bandProtoIdStr = ownership.BandId.Value.ToString();
-                    if (_prototypeManager.TryIndex<STBandPrototype>(bandProtoIdStr, out var dbBandProto))
-                        dbBandId = dbBandProto.DatabaseId;
+                    if (cooldownEndDateTime > currentDateTime)
+                    {
+                        TimeSpan remainingCooldown = cooldownEndDateTime - currentDateTime;
+                        component.CooldownEndTime = _gameTiming.CurTime + remainingCooldown;
+                    }
                 }
-
-                int? dbFactionId = null;
-                if (ownership.FactionId.HasValue)
-                {
-                    string factionProtoIdStr = ownership.FactionId.Value.ToString();
-                    if (_prototypeManager.TryIndex<NpcFactionPrototype>(factionProtoIdStr, out var dbFactionProto))
-                        dbFactionId = dbFactionProto.DatabaseId;
-                }
-
-                component.DefendingBandId = dbBandId;
-                component.DefendingFactionId = dbFactionId;
             }
 
             component.InitialLoadComplete = true;

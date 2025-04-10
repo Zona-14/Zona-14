@@ -6,7 +6,7 @@
     - Mutated
     - NanoTrasen
     - Military
-  databaseId: 2
+  databaseId: 4
 
 - type: npcFaction
   id: Mutated
@@ -16,14 +16,14 @@
     - MutatedHunter
     - NanoTrasen
     - Military
-  databaseId: 3
+  databaseId: 14
 
 - type: npcFaction
   id: Stalker
   hostile:
     - Mutated
     - Military
-  databaseId: 1
+  databaseId: 3
 
 - type: npcFaction
   id: Military
@@ -33,7 +33,7 @@
   - Stalker
   - NanoTrasen
   - Passive
-  databaseId: 4
+  databaseId: 9
 
 - type: npcFaction
   id: Bandit
@@ -41,4 +41,4 @@
   - Mutated
   - MutatedHunter
   - Military
-  databaseId: 5
+  databaseId: 8
