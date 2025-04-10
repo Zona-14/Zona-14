@@ -27,7 +27,7 @@ public sealed class WarZoneAdminCommand : IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        if (args.Length < 4 && !(args.Length == 3 && args[0] == "setpoints"))
+        if (args.Length < 4)
         {
             shell.WriteLine(Help);
             return;
@@ -37,38 +37,58 @@ public sealed class WarZoneAdminCommand : IConsoleCommand
 
         if (args[0] == "setpoints")
         {
-            if (args.Length != 3)
+            if (args.Length != 4)
             {
                 shell.WriteLine(Help);
                 return;
             }
 
             var target = args[1];
-            if (!int.TryParse(args[2], out var points))
+            if (!int.TryParse(args[2], out var dbid))
+            {
+                shell.WriteLine("Invalid dbid.");
+                return;
+            }
+
+            if (!int.TryParse(args[3], out var points))
             {
                 shell.WriteLine("Invalid points value.");
                 return;
             }
 
-            if (!int.TryParse(args[2], out _))
+            if (target == "band")
             {
-                shell.WriteLine("Invalid points value.");
-                return;
+                warZoneSystem.SetBandPoints(dbid, points);
+                foreach (var bandProto in _prototypeManager.EnumeratePrototypes<Content.Shared._Stalker.Bands.STBandPrototype>())
+                {
+                    if (bandProto.DatabaseId == dbid)
+                    {
+                        await _dbManager.SetStalkerBandAsync(bandProto.ID, points);
+                        shell.WriteLine($"Set band {dbid} points to {points}");
+                        return;
+                    }
+                }
+                shell.WriteLine($"Band with dbid {dbid} not found.");
+            }
+            else if (target == "faction")
+            {
+                warZoneSystem.SetFactionPoints(dbid, points);
+                foreach (var factionProto in _prototypeManager.EnumeratePrototypes<Content.Shared.NPC.Prototypes.NpcFactionPrototype>())
+                {
+                    if (factionProto.DatabaseId == dbid)
+                    {
+                        await _dbManager.SetStalkerFactionAsync(factionProto.ID, points);
+                        shell.WriteLine($"Set faction {dbid} points to {points}");
+                        return;
+                    }
+                }
+                shell.WriteLine($"Faction with dbid {dbid} not found.");
+            }
+            else
+            {
+                shell.WriteLine(Help);
             }
 
-            if (!int.TryParse(args[2], out points))
-            {
-                shell.WriteLine("Invalid points value.");
-                return;
-            }
-
-            if (!int.TryParse(args[2], out points))
-            {
-                shell.WriteLine("Invalid points value.");
-                return;
-            }
-
-            shell.WriteLine("Invalid command format.");
             return;
         }
 
