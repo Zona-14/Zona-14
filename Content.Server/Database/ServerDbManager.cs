@@ -1113,7 +1113,6 @@ namespace Content.Server.Database
         public Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default) // Added for BandsSystem
         {
             DbReadOpsMetric.Inc();
-            // Assuming _db has the corresponding method GetPlayersWithRoleWhitelistAsync
             return RunDbCommand(() => _db.GetPlayersWithRoleWhitelistAsync(roleIds, cancel));
         }
 

@@ -28,50 +28,6 @@ namespace Content.Shared._Stalker.Bands
         {
             base.Initialize();
         }
-
-        // private void OnInit(EntityUid uid, BandsComponent component, ComponentInit args)
-        // {
-        //     EnsureComp<StatusIconComponent>(uid);
-
-        //     if (component is { AltBand: not null, CanChange: true })
-        //         _actions.AddAction(uid, ref component.ActionChangeEntity, component.ActionChange, uid);
-
-        //     _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
-        // }
-        // private void OnChange(Entity<BandsComponent> entity, ref ChangeBandEvent args)
-        // {
-        //     var comp = entity.Comp;
-        //     if (comp.AltBand == null || !comp.CanChange)
-        //         return;
-
-        //     (comp.BandStatusIcon, comp.AltBand) = (comp.AltBand, comp.BandStatusIcon);
-        //     Dirty(entity);
-        //     args.Handled = true;
-        // }
-
-        // private void OnRemove(EntityUid uid, BandsComponent component, ComponentRemove args)
-        // {
-        //     RemComp<StatusIconComponent>(uid);
-
-        //     var proto = _protoManager.Index<JobIconPrototype>(component.BandStatusIcon);
-
-        //     _actions.RemoveAction(uid, component.ActionEntity);
-        //     if (component.ActionChangeEntity != null)
-        //         _actions.RemoveAction(uid, component.ActionChangeEntity);
-        // }
-
-        // private void OnToggle(EntityUid uid, BandsComponent component, ToggleBandsEvent args)
-        // {
-        //     if (!_mobState.IsAlive(uid))
-        //         return;
-
-        //     var proto = _protoManager.Index<JobIconPrototype>(component.BandStatusIcon);
-
-        //     component.Enabled = !component.Enabled;
-        //     Dirty(uid, component);
-
-        //     args.Handled = true;
-        // }
     }
 
     [Serializable, NetSerializable]
@@ -81,22 +37,21 @@ namespace Content.Shared._Stalker.Bands
         public int MaxMembers { get; }
         public List<BandMemberInfo> Members { get; }
         public bool CanManage { get; }
-        public List<WarZoneInfo> WarZones { get; } // Added
-        public List<BandPointsInfo> BandPoints { get; } // Added
+        public List<WarZoneInfo> WarZones { get; }
+        public List<BandPointsInfo> BandPoints { get; }
 
         public BandsManagingBoundUserInterfaceState(
             string? bandName,
             int maxMembers,
             List<BandMemberInfo> members,
             bool canManage,
-            List<WarZoneInfo>? warZones, // Added, nullable for safety during construction
-            List<BandPointsInfo>? bandPoints) // Added, nullable for safety during construction
+            List<WarZoneInfo>? warZones,
+            List<BandPointsInfo>? bandPoints)
         {
             BandName = bandName;
             MaxMembers = maxMembers;
             Members = members; // Assuming members is never null based on existing code
             CanManage = canManage;
-            // Initialize new lists - ensure they are never null
             WarZones = warZones ?? new List<WarZoneInfo>();
             BandPoints = bandPoints ?? new List<BandPointsInfo>();
         }
@@ -112,7 +67,7 @@ namespace Content.Shared._Stalker.Bands
         public float Cooldown { get; } // In seconds
         public string Attacker { get; }
         public string Defender { get; }
-        public float Progress { get; } // 0.0 to 1.0
+        public float Progress { get; } // 0.0 to 1.0. TODO: Not implemented yet
 
         public WarZoneInfo(string zoneId, string owner, float cooldown, string attacker, string defender, float progress)
         {
