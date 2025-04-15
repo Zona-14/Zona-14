@@ -84,22 +84,14 @@
   - type: Physics
     bodyType: Static
   - type: Advertise
-    pack: NPCStalkerSidorAds    
-    # test start
+    pack: NPCStalkerSidorAds
   - type: ActivatableUI
-    key: enum.BandsUiKey.Key
+    key: enum.ShopUiKey.Key
+    singleUser: true
   - type: UserInterface
     interfaces:
       enum.ShopUiKey.Key:
-        type: BandsManagingUserInterface
-    # test end
-  # - type: ActivatableUI
-  #   key: enum.ShopUiKey.Key
-  #   singleUser: true
-  # - type: UserInterface
-  #   interfaces:
-  #     enum.ShopUiKey.Key:
-  #       type: ShopBoundUserInterface
+        type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
     shopPresetId: NpcSidor

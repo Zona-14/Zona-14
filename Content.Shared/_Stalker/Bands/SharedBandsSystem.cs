@@ -11,12 +11,6 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._Stalker.Bands
 {
-    // UI key for bands managing UI
-    [Serializable, NetSerializable]
-    public enum BandsUiKey
-    {
-        Key = 0
-    }
     [Virtual]
     public class SharedBandsSystem : EntitySystem
     {
@@ -81,59 +75,58 @@ namespace Content.Shared._Stalker.Bands
             args.Handled = true;
         }
     }
+}
 
-    [Serializable, NetSerializable]
-    public sealed class BandsManagingBoundUserInterfaceState : BoundUserInterfaceState
+[Serializable, NetSerializable]
+public sealed class BandsManagingBoundUserInterfaceState : BoundUserInterfaceState
+{
+    public string? BandName { get; }
+    public int MaxMembers { get; }
+    public List<BandMemberInfo> Members { get; }
+    public bool CanManage { get; }
+
+    public BandsManagingBoundUserInterfaceState(string? bandName, int maxMembers, List<BandMemberInfo> members, bool canManage)
     {
-        public string? BandName { get; }
-        public int MaxMembers { get; }
-        public List<BandMemberInfo> Members { get; }
-        public bool CanManage { get; }
-
-        public BandsManagingBoundUserInterfaceState(string? bandName, int maxMembers, List<BandMemberInfo> members, bool canManage)
-        {
-            BandName = bandName;
-            MaxMembers = maxMembers;
-            Members = members;
-            CanManage = canManage;
-        }
+        BandName = bandName;
+        MaxMembers = maxMembers;
+        Members = members;
+        CanManage = canManage;
     }
+}
 
-    [Serializable, NetSerializable]
-    public sealed class BandMemberInfo
+[Serializable, NetSerializable]
+public sealed class BandMemberInfo
+{
+    public NetUserId UserId { get; }
+    public string PlayerName { get; }
+    public string RoleId { get; }
+
+    public BandMemberInfo(NetUserId userId, string playerName, string roleId)
     {
-        public NetUserId UserId { get; }
-        public string PlayerName { get; }
-        public string RoleId { get; }
-
-        public BandMemberInfo(NetUserId userId, string playerName, string roleId)
-        {
-            UserId = userId;
-            PlayerName = playerName;
-            RoleId = roleId;
-        }
+        UserId = userId;
+        PlayerName = playerName;
+        RoleId = roleId;
     }
+}
 
-    [Serializable, NetSerializable]
-    public sealed class BandsManagingAddMemberMessage : BoundUserInterfaceMessage
+[Serializable, NetSerializable]
+public sealed class BandsManagingAddMemberMessage : BoundUserInterfaceMessage
+{
+    public string PlayerName { get; }
+
+    public BandsManagingAddMemberMessage(string playerName)
     {
-        public string PlayerName { get; }
-
-        public BandsManagingAddMemberMessage(string playerName)
-        {
-            PlayerName = playerName;
-        }
+        PlayerName = playerName;
     }
+}
 
-    [Serializable, NetSerializable]
-    public sealed class BandsManagingRemoveMemberMessage : BoundUserInterfaceMessage
+[Serializable, NetSerializable]
+public sealed class BandsManagingRemoveMemberMessage : BoundUserInterfaceMessage
+{
+    public Guid PlayerUserId { get; }
+
+    public BandsManagingRemoveMemberMessage(Guid playerUserId)
     {
-        public Guid PlayerUserId { get; }
-
-        public BandsManagingRemoveMemberMessage(Guid playerUserId)
-        {
-            PlayerUserId = playerUserId;
-        }
+        PlayerUserId = playerUserId;
     }
-
 }

@@ -83,18 +83,27 @@ namespace Content.Server._Stalker.Bands
             }
             else
             {
-                // If no actor/session, cannot update UI meaningfully.
-                Logger.WarningS("bands", $"Could not determine user context for BandsManaging UI update on {ToPrettyString(uid)}");
-                // Send an empty/default state
-                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false));
-                return;
+                // Attempt to get any player session associated with the UI if actor is null (e.g., from ComponentStartup)
+                if (_uiSystem.TryGetUi(uid, component.Key, out var ui) && ui.SubscribedSessions.FirstOrDefault() is { } firstSession)
+                {
+                     userId = firstSession.UserId;
+                     session = firstSession; // Store the found session
+                }
+                 else
+                 {
+                    // Cannot determine user context, cannot update UI meaningfully.
+                    Logger.WarningS("bands", $"Could not determine user context for BandsManaging UI update on {ToPrettyString(uid)}");
+                    // Send an empty/default state
+                    _uiSystem.SetUiState(uid, component.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false));
+                    return;
+                 }
             }
 
             // If userId is still null after checks, we cannot proceed.
             if (userId == null)
             {
                  Logger.ErrorS("bands", $"Failed to obtain NetUserId for BandsManaging UI update on {ToPrettyString(uid)}.");
-                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false));
+                _uiSystem.SetUiState(uid, component.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false));
                  return;
             }
 
@@ -119,7 +128,7 @@ namespace Content.Server._Stalker.Bands
             var state = new BandsManagingBoundUserInterfaceState(bandName, maxMembers, members, canManage); // Use members directly
 
             // Use the correct SetUiState overload - no session needed here.
-            _uiSystem.SetUiState(uid, BandsUiKey.Key, state);
+            _uiSystem.SetUiState(uid, component.Key, state);
         }
 
 
@@ -128,7 +137,7 @@ namespace Content.Server._Stalker.Bands
         private async void OnAddMember(EntityUid uid, BandsManagingComponent component, BandsManagingAddMemberMessage msg)
         {
             // Use the requested pattern for getting session from the message actor
-            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (msg.Actor is not { } actor || !_mindSystem.TryGetSession(actor, out var session))
                 return;
 
             var leaderUserId = session.UserId;
@@ -147,7 +156,6 @@ namespace Content.Server._Stalker.Bands
 
             // Prevent adding self
             if (leaderUserId == targetUserId)
-                return;
 
             var leaderBandInfo = await GetPlayerBandInfoAsync(leaderUserId);
             if (leaderBandInfo == null)
@@ -174,10 +182,9 @@ namespace Content.Server._Stalker.Bands
             }
 
             // Find the lowest rank role ID from the band's hierarchy prototype
-            if (leaderBandInfo.Prototype.Hierarchy.Count == 0)
-                return;
-            var minKey = leaderBandInfo.Prototype.Hierarchy.Keys.Min();
-            var lowestRankRoleId = leaderBandInfo.Prototype.Hierarchy[minKey].ToString();
+            var lowestRankRoleId = leaderBandInfo.Prototype.Hierarchy.Count > 0
+                ? leaderBandInfo.Prototype.Hierarchy.OrderBy(kvp => kvp.Key).FirstOrDefault().Value?.ID // Use Role ID from prototype
+                : null; // Handle case where hierarchy might be empty
 
             if (string.IsNullOrEmpty(lowestRankRoleId))
             {
@@ -187,17 +194,16 @@ namespace Content.Server._Stalker.Bands
 
             // Add the lowest rank role to the target player using JobWhitelistManager or DBManager
             // Assuming AddRoleWhitelistAsync is the correct method
-            // Add the lowest rank role to the target player using AddJobWhitelist
-            await _dbManager.AddJobWhitelist(targetUserId.UserId, new ProtoId<JobPrototype>(lowestRankRoleId));
+            await _dbManager.AddRoleWhitelistAsync(targetUserId, lowestRankRoleId);
 
             // Update UI state after modification
-            UpdateUiState((uid, component), msg.Actor);
+            UpdateUiState((uid, component), actor);
         }
 
         private async void OnRemoveMember(EntityUid uid, BandsManagingComponent component, BandsManagingRemoveMemberMessage msg)
         {
             // Use the requested pattern for getting session from the message actor
-            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (msg.Actor is not { } actor || !_mindSystem.TryGetSession(actor, out var session))
                 return;
 
             var leaderUserId = session.UserId;
@@ -215,17 +221,15 @@ namespace Content.Server._Stalker.Bands
 
             // Construct a set of all role IDs associated with this band prototype's hierarchy
             var bandRoleIds = leaderBandInfo.Prototype.Hierarchy.Values
-                                    .Select(p => p.ToString()) // Get Role IDs from prototype hierarchy
-                                    .ToHashSet();
+                                .Select(p => p.ID) // Get Role IDs from prototype hierarchy
+                                .ToHashSet();
             // Also include the main band prototype ID if it represents the leader/base role
-            bandRoleIds.Add(leaderBandInfo.Prototype.ID.ToString());
+            bandRoleIds.Add(leaderBandInfo.Prototype.ID);
 
 
             // Get the roles the target member has that are part of this band
-            // Get all whitelisted jobs for the player
-            var whitelistedJobs = await _dbManager.GetJobWhitelists(msg.PlayerUserId);
-            var memberRolesInBand = whitelistedJobs
-                .Where(roleId => bandRoleIds.Contains(roleId))
+            var memberRolesInBand = (await _dbManager.GetRoleWhitelistsAsync(msg.PlayerUserId))
+                .Where(rw => bandRoleIds.Contains(rw.RoleId))
                 .ToList();
 
             if (!memberRolesInBand.Any())
@@ -234,11 +238,11 @@ namespace Content.Server._Stalker.Bands
             // Remove all band-related roles from the target member
             foreach (var roleWhitelist in memberRolesInBand)
             {
-                await _dbManager.RemoveJobWhitelist(msg.PlayerUserId, new ProtoId<JobPrototype>(roleWhitelist));
+                await _dbManager.RemoveRoleWhitelistAsync(msg.PlayerUserId, roleWhitelist.RoleId);
             }
 
             // Update UI state after modification
-            UpdateUiState((uid, component), msg.Actor);
+            UpdateUiState((uid, component), actor);
         }
 
         // --- Methods from SharedBandsSystem ---
@@ -292,28 +296,27 @@ namespace Content.Server._Stalker.Bands
         /// </summary>
         private async Task<ServerBandInfo?> GetPlayerBandInfoAsync(NetUserId userId)
         {
-            // 1. Get the player's whitelisted jobs and use the first as their "primary" for band purposes
-            var whitelistedJobs = await _dbManager.GetJobWhitelists(userId);
-            var primaryRole = whitelistedJobs.FirstOrDefault();
+            // 1. Get player's primary role using JobWhitelistManager
+            var primaryRole = await _jobWhitelistManager.GetPrimaryJobAsync(userId); // Assuming such a method exists
             if (primaryRole == null)
-                return null; // Player has no whitelisted jobs
+                return null; // Player has no primary role assigned
 
             // 2. Find the STBandPrototype whose ID matches the primary role ID
             // This assumes the STBandPrototype ID *is* the RoleId. Adjust if mapping is different.
-            if (!_prototypeManager.TryIndex<STBandPrototype>(primaryRole, out var bandProto))
+            if (!_prototypeManager.TryIndex<STBandPrototype>(primaryRole.RoleId, out var bandProto))
             {
                 // It's possible not every role corresponds to a band leader role
                 // Check if the player belongs to *any* band role defined in *any* band prototype hierarchy
                 foreach (var proto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
                 {
-                    var candidateJobs = await _dbManager.GetJobWhitelists(userId);
-                    var bandRoleIds = proto.Hierarchy.Values.Select(p => p.ToString()).ToHashSet();
-                    bandRoleIds.Add(proto.ID.ToString()); // Include base role
+                    var playerRoles = await _dbManager.GetRoleWhitelistsAsync(userId);
+                    var bandRoleIds = proto.Hierarchy.Values.Select(p => p.ID).ToHashSet();
+                    bandRoleIds.Add(proto.ID); // Include base role
 
-                    if (candidateJobs.Any(r => bandRoleIds.Contains(r)))
+                    if (playerRoles.Any(r => bandRoleIds.Contains(r.RoleId)))
                     {
                         // Player is part of this band, find the corresponding DB entry if needed
-                        var dbBand = await _dbManager.GetStalkerBandAsync(proto.ID);
+                        var dbBand = await _dbManager.GetStalkerBandByProtoIdAsync(proto.ID); // Need this DB method
                         return new ServerBandInfo(proto, dbBand);
                     }
                 }
@@ -322,7 +325,7 @@ namespace Content.Server._Stalker.Bands
 
 
             // 3. Player's primary role IS a band leader role. Find the corresponding DB entry if needed.
-            var bandDbInfo = await _dbManager.GetStalkerBandAsync(bandProto.ID);
+            var bandDbInfo = await _dbManager.GetStalkerBandByProtoIdAsync(bandProto.ID); // Need this DB method
 
             return new ServerBandInfo(bandProto, bandDbInfo);
         }
@@ -334,22 +337,19 @@ namespace Content.Server._Stalker.Bands
         private async Task<List<BandMemberInfo>> GetBandMembersAsync(STBandPrototype bandProto) // Return List<BandMemberInfo>
         {
             var members = new List<BandMemberInfo>(); // Create List<BandMemberInfo>
-            var bandRoleIds = bandProto.Hierarchy.Values.Select(p => p.ToString()).ToHashSet();
-            bandRoleIds.Add(bandProto.ID.ToString()); // Include the base/leader role
+            var bandRoleIds = bandProto.Hierarchy.Values.Select(p => p.ID).ToHashSet();
+            bandRoleIds.Add(bandProto.ID); // Include the base/leader role
 
             // Find all players whitelisted for any role in this band's hierarchy
             // This likely requires a DB method like GetPlayersWithAnyRoleWhitelistAsync(roleIds)
-            // There is no direct DB method for this; you may need to filter all players or use a custom query.
-            // For now, this will be left as a placeholder.
-            var memberRecords = new List<PlayerRecord>(); // TODO: Implement actual lookup for all players with any of these whitelisted jobs.
+            var memberRecords = await _dbManager.GetPlayersWithAnyRoleWhitelistAsync(bandRoleIds); // Need this DB method
 
             foreach (var record in memberRecords)
             {
                 // Determine the primary role *within the band context* if needed, or just use overall primary
-                // Use the first whitelisted job as the "role" for display, or "Unknown"
-                var jobs = await _dbManager.GetJobWhitelists(record.UserId);
-                var displayRole = jobs.FirstOrDefault() ?? "Unknown";
-                members.Add(new BandMemberInfo(record.UserId, record.LastSeenUserName, displayRole));
+                var primaryRole = await _jobWhitelistManager.GetPrimaryJobAsync(record.UserId);
+                // Create BandMemberInfo directly
+                members.Add(new BandMemberInfo(record.UserId, record.LastSeenUserName, primaryRole?.RoleId ?? "Unknown"));
             }
 
             return members;
@@ -360,31 +360,8 @@ namespace Content.Server._Stalker.Bands
         /// </summary>
         private async Task<bool> CanPlayerManageBandAsync(NetUserId userId)
         {
-            // 1. Get the player's band component (STBandPrototype)
-            if (!_playerManager.TryGetSessionById(userId, out var session) || session.AttachedEntity is not { } player)
-                return false;
-            if (!EntityManager.TryGetComponent(player, out BandsComponent? bandsComp) || bandsComp == null)
-                return false;
-
-            // 2. Get the band prototype
-            if (!_prototypeManager.TryIndex<STBandPrototype>(bandsComp.BandProto, out var bandProto))
-                return false;
-
-            // 3. Get the player's job (use first whitelisted job)
-            var whitelistedJobs = await _dbManager.GetJobWhitelists(userId);
-            var playerJob = whitelistedJobs.FirstOrDefault();
-            if (playerJob == null)
-                return false;
-
-            // 4. Find the rank ID for that job in the prototype's Hierarchy
-            var found = bandProto.Hierarchy.FirstOrDefault(kvp => kvp.Value == playerJob);
-            if (found.Value.Equals(default(ProtoId<JobPrototype>)))
-                return false;
-
-            var rankId = found.Key;
-
-            // 5. Compare to ManagingRankId
-            return rankId >= bandProto.ManagingRankId;
+            // Use the existing DB method as indicated by the original code structure
+            return await _dbManager.CanPlayerManageBandAsync(userId);
         }
     }
 

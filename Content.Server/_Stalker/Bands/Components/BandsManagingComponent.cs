@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
-using Content.Shared._Stalker.Bands;
+using System; // For Enum
 
 namespace Content.Server._Stalker.Bands.Components
 {
@@ -15,6 +15,15 @@ namespace Content.Server._Stalker.Bands.Components
         /// The BUI key used for this component.
         /// </summary>
         [DataField("uiKey", customTypeSerializer: typeof(EnumSerializer))]
-        public Enum UiKey = BandsUiKey.Key;
+        public Enum UiKey = BandsManagingUiKey.Key;
+    }
+
+    /// <summary>
+    /// Enum for the BUI key.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public enum BandsManagingUiKey : byte
+    {
+        Key
     }
 }
