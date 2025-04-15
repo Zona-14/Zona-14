@@ -13,3 +13,7 @@ ent-Magazine10USAS12x70 = { ent-BaseMagazineUSAS12x70 }
 ent-Magazine20USAS12x70 = drum USAS 12x70 (10)
     .desc = USAS 12x70 drum for AK shotguns. Capacity of fractions is 20. Sold empty.
     .suffix = { ent-BaseMagazineUSAS12x70.suffix }
+ent-DrumAutoAssSmall = Магазин АА-12 (9)
+    .desc = Магазин АА-12 12х70 для дробовиков. Вместимость дроби 9. Продают пустым.
+ent-DrumAutoAssBig = Барабан АА-12 (20)
+    .desc = Барабан АА-12 12х70 для дробовиков. Вместимость дроби 20. Продают пустым.
