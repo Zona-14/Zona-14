@@ -113,3 +113,5 @@
   - type: NpcFactionMember
     factions:
     - Military
+  - type: Trash
+    time: 6000
