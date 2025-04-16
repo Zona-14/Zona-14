@@ -79,9 +79,9 @@
         WeaponRifleStalkerGalil: 4500
         STWeaponRifleStalkerGalatz: 4000
           # Smg
-        WeaponSubMachineGunStalkerTommyGun: 3500
-        STWeaponSMGMp5: 1600
-        STWeaponSMGViper: 900
+        WeaponSubMachineGunStalkerTommyGun: 2500
+        STWeaponSMGMp5: 1350
+        STWeaponSMGViper: 600
           # Other
         STWeaponRevolverChiappaRhino60DS: 900
         WeaponPistolStalkerGlock: 200

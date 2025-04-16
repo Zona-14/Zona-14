@@ -127,10 +127,10 @@
     WeaponStalkerPistolTec9: 125
     STWeaponSMGMP40: 150
     STWeaponSMGMp5: 850
-    STWeaponSMGPP91: 500
-    WeaponSubMachineGunStalkerTommyGun: 3500
-    STWeaponSMGStalkerCP2Veresk: 1200
-    STWeaponSubMachineGunVityaz: 1000
+    STWeaponSMGPP91: 375
+    WeaponSubMachineGunStalkerTommyGun: 2500
+    STWeaponSMGStalkerCP2Veresk: 750
+    STWeaponSubMachineGunVityaz: 750
 
     #7.62x25
     WeaponPistolStalkerTT: 125
