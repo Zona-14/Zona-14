@@ -1,20 +1,20 @@
 - type: job
-  id: StalkerOpolchenec
-  name: job-Opolchenec
+  id: StalkerMilita
+  name: job-Milita
   icon: opolchenie
-  description: job-opolchenec-desc
-  playTimeTracker: JobOpolchenec
+  description: job-milita-desc
+  playTimeTracker: JobMilita
   whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
-    #   role: JobOpolchenec
+    #   role: JobMilita
     #   time: 1
     - !type:SpeciesRequirement
       species:
       - Human
       - Dwarf
   startingGear: OpolcheniyeGear
-  supervisors: job-opolchenec-supervisor
+  supervisors: job-milita-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -48,9 +48,9 @@
 - type: stBand
   id: STOpolchenyeBand
   name: opolchenye
-  factionId: Opolchenci
+  factionId: Stalker
   maxMembers: 10
   managingRankId: 3
   hierarchy:
-    1: StalkerOpolchenec
+    1: StalkerMilita
 

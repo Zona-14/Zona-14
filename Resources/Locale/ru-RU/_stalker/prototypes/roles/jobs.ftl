@@ -134,6 +134,6 @@ job-un = Представитель ООН
 job-un-desc = Представитель высот.
 job-un-supervisor = Вы не кому не подчиняетесь...
 
-job-Opolchenec = Боец ополчения
-job-opolchenec-desc = Сталкерское ополчение.
-job-opolchenec-supervisor = Вы подчиняетесь своему лидеру.
+job-Milita = Боец ополчения
+job-milita-desc = Сталкерское ополчение.
+job-milita-supervisor = Вы подчиняетесь своему лидеру.
