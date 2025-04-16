@@ -56,15 +56,20 @@ pg_username = "postgres"
 pg_password = "SlFJNKGObySMWvveXEQkKJFSNZvXPJRxeFtzazJiMSgRSmCxVI"
 
 [infolinks]
-discord = "patreon = "https://discord.gg/4WF2RzYg6U"
+discord = "https://discord.gg/BuvKkKhrjn"
 patreon = "https://boosty.to/stalkerss14"
+
+[physics]
+grid_splitting = false
+maxlinvelocity = 72
+target_minimum_tickrate = 120
 
 [npc]
 max_updates = 150
 
 [hub]
 advertise = true
-tags = "lang:ru,rp:high,region:eu_e"
+tags = "lang:ru,region:eu_e,rp:med"
 hub_urls = "https://hub.spacestation14.com/"
 
 [watchdog]
