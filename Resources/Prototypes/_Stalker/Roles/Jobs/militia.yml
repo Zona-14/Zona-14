@@ -65,6 +65,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Milita
 
 - type: startingGear
   id: MilitiaGear
