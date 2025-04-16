@@ -5,6 +5,9 @@
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 2 # Время перезарядки захвата зоны в часах
   requirements:
+    - !type:TimeWindowRequirenment
+      startHourUtc: 10 # Start hour in UTC (e.g., 10:00 UTC)
+      endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC)
     - !type:ZoneOwnershipRequirenment
       requiredZones: [] # Здесь можно указать зоны, которые должны быть захвачены для захвата этой зоны. Не тестил.
     - !type:CaptureTimeRequirenment
