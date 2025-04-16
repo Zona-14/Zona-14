@@ -56,15 +56,15 @@
 - type: entity
   parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltBandolierStalker
-  name: патронташ
-  description: Патронташ для патронов любого калибра.
+  name: набор подсумков новичка
+  description: Подсумки для патронов любого калибра.
   components:
     - type: STWeight
       self: 0.5
     - type: Sprite
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Clothing
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Item
       size: Huge
     - type: Tag
@@ -80,7 +80,6 @@
         tags:
           - CartridgeAmmo
           - Cartridge
-
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
