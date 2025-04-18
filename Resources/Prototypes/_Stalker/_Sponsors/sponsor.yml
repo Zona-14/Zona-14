@@ -20,7 +20,7 @@
       items:
         STWeaponGunAKS74UWhite: 50
         STWeaponRifleStalkerVAL: 800
-        WeaponShotgunAnomalySawedOff: 50
+        STWeaponShotgunSawedOfAnomaly: 50
         8mmBuckshotBox: 5
         939BPBox: 50
         939Mag30: 50
@@ -35,7 +35,7 @@
     nazoltof:
     - name: Персональная категория
       items:
-        STWeaponRifleSVDSGrass: 15000
+        STWeaponSniperSVDSGrass: 15000
     KLeymi:
     - name: Персональная категория
       items:
@@ -64,7 +64,7 @@
     farforik:
     - name: Персональная категория
       items:
-        STWeaponRifleStalkerVeprFarforik: 8000
+        STWeaponSniperVeprGrass: 8000
     Ret4:
     - name: Персональная категория
       items:

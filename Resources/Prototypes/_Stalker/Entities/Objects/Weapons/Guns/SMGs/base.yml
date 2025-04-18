@@ -43,7 +43,3 @@
       gun_module_underbarrel: !type:ContainerSlot
       gun_module_muzzle: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: STMuzzleVisuals
-    muzzleState: muzzle
-  - type: STUnderbarrelVisuals
-    underbarrelState: grip

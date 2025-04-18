@@ -67,8 +67,8 @@
       items:
         STCombatKnife: 10
           # shotgun
-        STWeaponShotgunMossberg: 630
-        STWeaponShotgunStalkerSPAS: 1300
+        STWeaponShotgunMossbergM88: 630
+        STWeaponShotgunSPAS: 1300
         STWeaponShotgunProtecta: 2610
           # prostogun
         WeaponPistolStalkerGlock: 180

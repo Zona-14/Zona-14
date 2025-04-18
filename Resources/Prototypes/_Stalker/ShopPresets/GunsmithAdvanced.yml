@@ -15,10 +15,10 @@
         STWeaponRevolverSWPC325TR: 725
         STWeaponRevolverSWModel325: 850
         STWeaponRevolverSWModel625: 1100
-        WeaponShotgunStalkerMP133: 550
-        STWeaponShotgunMossberg: 600
+        STWeaponShotgunMP133: 550
+        STWeaponShotgunMossbergM88: 600
         STWeaponShotgunMP153: 1100
-        STWeaponShotgunStalkerSPAS: 1250
+        STWeaponShotgunSPAS: 1250
         STWeaponShotgunProtecta: 2300
         STWeaponRifleStalkerSaiga545: 1100
         STWeaponGunAKS74U: 2100
@@ -29,11 +29,11 @@
         STWeaponRifleSig550: 3700
         STWeaponRifleStalkerAKM: 3900
         STWeaponRifleStalkerFAL: 3650
-        STWeaponRifleStalkerVepr: 9800
-        STWeaponRifleVSS: 8700
+        STWeaponSniperVepr: 9800
+        STWeaponSniperVSS: 8700
         STWeaponSniperMosin: 2450
         STWeaponSMGMP5: 2450
-        STWeaponSMGBizon: 3400
+        STWeaponSMGPP19: 3400
     - name: Магазины
       priority: 2
       items:

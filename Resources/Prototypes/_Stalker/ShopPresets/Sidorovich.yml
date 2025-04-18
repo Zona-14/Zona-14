@@ -69,9 +69,9 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1
-        STWeaponShotgunToz34: 250 # T1
-        WeaponShotgunStalkerMP133: 425 # T2
-        STWeaponShotgunMossberg: 700 # T2
+        STWeaponShotgunTOZ34: 250 # T1
+        STWeaponShotgunMP133: 425 # T2
+        STWeaponShotgunMossbergM88: 700 # T2
         STWeaponShotgunMP153: 1000 # T2
          # 9x18
         WeaponPistolStalkerPM: 100 #T1
@@ -83,7 +83,7 @@
           # Other
         STWeaponSMGMP5: 2000
         WeaponPistolStalkerAPS: 600 #T2
-        STWeaponRifleSKS: 1850 # T2
+        STWeaponSniperSKS: 1850 # T2
         STWeaponSniperMosin: 1000
           # Nato
     - name: shop-category-magazines
@@ -315,5 +315,5 @@
   contributorCategories:
     - name: contributor
       items:
-        STWeaponShotgunMP153Voron: 550
+        STWeaponShotgunMP153Raven: 550
         WeaponPistolStalkerAPSHugo: 250

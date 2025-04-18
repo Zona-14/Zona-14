@@ -44,7 +44,6 @@
           - STWeaponModuleSniperSilencer
       gun_chamber:
         name: Chamber
-        startingItem:
         priority: 1
         whitelist:
           tags:
@@ -61,13 +60,13 @@
 
 - type: entity
   parent: STBaseWeaponRifleSVDS
-  id: STWeaponRifleSVDS
+  id: STWeaponSniperSVDS
   name: SVDS (Dragunov Sniper Rifle)
   description: A modernized folding version of the legendary SVD sniper rifle, chambered in 7.62x54mmR. Features improved ergonomics and comes equipped with a medium-range scope. A favorite among Zone marksmen for its reliability and stopping power.
 
 - type: entity
   parent: STBaseWeaponRifleSVDS
-  id: STWeaponRifleSVDSGrass
+  id: STWeaponSniperSVDSGrass
   name: SVDS Ghillie Sniper Rifle
   description: A carefully modified SVDS with camouflage netting and minor tuning for maximum concealment in the Zone's wilderness. The 7.62x54mmR rounds ensure no mutant walks away from a well-placed shot.
   components:
@@ -80,7 +79,7 @@
 
 - type: entity
   parent: STBaseWeaponRifleSVDS
-  id: STWeaponRifleCovenantSVDS
+  id: STWeaponSniperSVDSCovenant
   name: Covenant SVDS Sniper Rifle
   description: A custom SVDS variant used by Covenant faction snipers. Features unique camouflage and faction markings while retaining all the deadly precision of the original. Chambered in 7.62x54mmR.
   components:
@@ -93,7 +92,7 @@
 
 - type: entity
   parent: STBaseWeaponRifleSVDS
-  id: STWeaponRifleSVU
+  id: STWeaponSniperSVU
   name: SVU Compact Sniper Rifle
   description: A bullpup conversion of the SVDS designed for urban operations in the Zone. The shortened barrel reduces range but improves handling in tight spaces, while still delivering 7.62x54mmR stopping power.
   components:
@@ -106,7 +105,7 @@
 
 - type: entity
   parent: STBaseWeaponRifleSVDS
-  id: STWeaponRifleSVUSera
+  id: STWeaponSniperSVUSeraphim
   name: Seraphim SVU Sniper Rifle
   description: An elite SVU variant used by the mysterious Seraphim faction. Features advanced modifications and distinctive white finish, making it both deadly and recognizable in the Zone's harsh environment.
   components:

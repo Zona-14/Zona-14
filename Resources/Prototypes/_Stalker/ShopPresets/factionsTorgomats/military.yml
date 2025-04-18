@@ -13,7 +13,7 @@
     #     WeaponMachineGunRPD: 9
     #     STWeaponRifleM14: 15
     #     STWeaponRifleStalkerAK103: 11
-    #     STWeaponRifleSVDS: 13
+    #     STWeaponSniperSVDS: 13
     - name: shop-category-armor
       priority: 2
       items:
@@ -44,7 +44,7 @@
         ArmySaigaCrate: 5
         LgbtKnife: 1
         # STWeaponRevolverDanWesson715: 1
-        # STWeaponRifleSKS: 3
+        # STWeaponSniperSKS: 3
         # STWeaponGunAKS74U: 1
         WeaponRifleStalkerGroza545: 14
         # STSTWeaponRifleStalkerAK74M: 4
@@ -187,7 +187,7 @@
       items:
             # Guns
           # 7mm
-        WeaponShotgunStalkerMP133: 385 # T1.5
+        STWeaponShotgunMP133: 385 # T1.5
         STWeaponShotgunMP153: 900 # T2
         STWeaponShotgunSaiga12: 3150 # T4
           # 5,45x39
@@ -195,10 +195,10 @@
         STWeaponRifleStalkerAKS74: 3000
         STSTWeaponRifleStalkerAK74M: 4350
         WeaponMachineGunRPD: 9000
-        STWeaponRifleSVDS: 11000
+        STWeaponSniperSVDS: 11000
           # Smg
         STWeaponSMGPP91: 750
-        STWeaponSMGBizon: 1700
+        STWeaponSMGPP19: 1700
         STWeaponSMGPP1901: 1500
           # Other
         STWeaponRifleStalkerAK103: 5000
@@ -208,7 +208,7 @@
         STWeaponSniperMosin: 1000
         STWeaponRifleStalkerAKM: 3000
         STWeaponRifleStalkerVAL: 15000
-        STWeaponRifleVSS: 12000
+        STWeaponSniperVSS: 12000
         ArmyCrateNewStandart: 6000
         ArmyCrateNewOfficer: 9000
 

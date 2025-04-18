@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: STBaseWeaponSniper
-  id: STBaseWeaponRifleSKS
+  id: STBaseWeaponSniperSKS
   components:
   - type: STWeight
     self: 3.75
@@ -34,7 +34,7 @@
       - STCartridge739
 
 - type: entity
-  parent: STBaseWeaponRifleSKS
-  id: STWeaponRifleSKS
+  parent: STBaseWeaponSniperSKS
+  id: STWeaponSniperSKS
   name: SKS Carbine
   description: The Simonov self-loading carbine chambered in 7.62x39mm with fixed 10-round magazine. Offers powerful caliber at low cost, though with certain limitations in Zone conditions.

@@ -53,7 +53,7 @@
           priority: 1
           whitelist:
             tags:
-              - Cartridge556
+              - STCartridge556
     - type: MagazineVisuals
       magState: mag
       steps: 6

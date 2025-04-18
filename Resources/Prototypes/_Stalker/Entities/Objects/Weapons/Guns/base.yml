@@ -4,19 +4,20 @@
   name: A gun
   abstract: true
   components:
+  - type: AmmoCounter
+  - type: Appearance
   - type: Craftable
   # Allows guns to get effects from modules,
   # without this, YOU CAN add modules but NO EFFECT
-  - type: STWeaponModuleContainer
   - type: STWeight
     self: 2.7
   - type: Clothing
     equipDelay: 1
     slots:
     - Back
+    - Back2
     - SuitStorage
     quickEquip: false
-  - type: AmmoCounter
   - type: Item
     size: Large
     shape:
@@ -42,14 +43,26 @@
       gun_chamber:
         name: Chamber
         priority: 1
+  - type: STWeaponModuleContainer
   - type: ContainerContainer
     containers:
+      ballistic-ammo: !type:Container
+        ents: []
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-    muzzleState: muzzle
-  - type: Appearance
   - type: PullDoAfter
     pullTime: 2.5
-  - type: Craftable
   - type: RepositoryItem
     categoryName: Оружие
+  - type: Gun
+    projectileSpeed: 50
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: STMuzzleVisuals
+    muzzleState: muzzle
+  - type: STScopeVisuals
+    scopeState: scope
+  - type: STUnderbarrelVisuals
+    underbarrelState: grip

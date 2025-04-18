@@ -8,10 +8,10 @@
         STCombatKnife: 10
             # Guns
         WeaponPistolStalkerGlock: 200
-        STWeaponShotgunToz34: 200
-        STWeaponShotgunMossberg: 650
+        STWeaponShotgunTOZ34: 200
+        STWeaponShotgunMossbergM88: 650
         STWeaponRevolverRugerRedhawk: 750
-        STWeaponShotgunStalkerSPAS: 1350
+        STWeaponShotgunSPAS: 1350
         STWeaponRevolverSWModel625: 1650
         STWeaponGunAKS74U: 1750
         STWeaponSMGPP1901: 2250

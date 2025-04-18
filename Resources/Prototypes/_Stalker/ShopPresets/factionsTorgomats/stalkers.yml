@@ -69,9 +69,9 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T0.5
-        STWeaponShotgunToz34: 350 # T2
-        WeaponShotgunStalkerMP133: 315 # T1.5
-        STWeaponShotgunMossberg: 680 # T2
+        STWeaponShotgunTOZ34: 350 # T2
+        STWeaponShotgunMP133: 315 # T1.5
+        STWeaponShotgunMossbergM88: 680 # T2
         STWeaponShotgunMP153: 1230 # T3
           # 5,45x39
         STWeaponRifleStalkerSaiga545: 1030

@@ -75,12 +75,12 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 45 #T0.5
-        STWeaponShotgunToz34: 200 # T1
+        STWeaponShotgunTOZ34: 200 # T1
           # 5,45x39
         STWeaponRifleStalkerSaiga545: 800
         STWeaponGunAKS74U: 1490
         STWeaponRifleStalkerAKS74: 3000
-        STWeaponSMGBizon: 1700
+        STWeaponSMGPP19: 1700
           # Other
         STWeaponRevolverRugerRedhawk: 300
         WeaponStalkerPistolTec9: 250
@@ -88,7 +88,7 @@
         STWeaponSMGMP40: 300
         STWeaponSMGPPSh41: 2500
         STWeaponSMGMP5: 1800
-        STWeaponRifleSKS: 1700
+        STWeaponSniperSKS: 1700
         WeaponGameRevolverMateba: 300
         STWeaponSMGVZ61: 600
     - name: shop-category-magazines

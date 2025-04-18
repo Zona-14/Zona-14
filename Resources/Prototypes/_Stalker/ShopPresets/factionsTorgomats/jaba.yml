@@ -69,9 +69,9 @@
         StalkerBallBat: 150
             # Guns
           # 7mm
-        STWeaponShotgunToz34: 225 # T2
-        WeaponShotgunStalkerMP133: 385 # T1.5
-        STWeaponShotgunMossberg: 630 # T2
+        STWeaponShotgunTOZ34: 225 # T2
+        STWeaponShotgunMP133: 385 # T1.5
+        STWeaponShotgunMossbergM88: 630 # T2
         STWeaponShotgunProtecta: 2610
           # Nato
         STWeaponRifleStalkerL85: 1900

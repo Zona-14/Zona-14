@@ -53,8 +53,8 @@
           - STCartridge919
 
 - type: entity
-  parent: STWeaponSMGPP91
-  id: STBaseWeaponSMGPP91
+  parent: STBaseWeaponSMGPP91
+  id: STWeaponSMGPP91
   name: PP-91 "Kedr" SMG
   description: The PP-91 "Kedr" compact submachine gun chambered in 9x18mm Makarov. Features an integrated suppressor and simple blowback operation, making it ideal for covert operations in the Zone despite reduced muzzle velocity.
 

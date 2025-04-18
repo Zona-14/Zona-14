@@ -18,7 +18,7 @@
       state: kb2
     - type: SpawnItemsOnUse
       items:
-        - id: WeaponShotgunStalkerMP133
+        - id: STWeaponShotgunMP133
         - id: ClothingOuterArmorZaryaStalker
         - id: ClothingBeltBandolierStalker
         - id: 8mmBuckshotBox
@@ -151,11 +151,11 @@
     - type: SpawnItemsOnUse
       items:
         - id: ClothingOuterArmorReinger
-        - id: STWeaponRifleSVDS
-        - id: STWeaponRifleVSS
+        - id: STWeaponSniperSVDS
+        - id: STWeaponSniperVSS
         - id: WeaponPistolStalkerAPSHugo
         - id: WeaponPistolStalkerAPSHugo
-        - id: STWeaponShotgunMP153Voron
+        - id: STWeaponShotgunMP153Raven
         - id: MedkitScience
         - id: MedkitScience
         - id: MedkitScience

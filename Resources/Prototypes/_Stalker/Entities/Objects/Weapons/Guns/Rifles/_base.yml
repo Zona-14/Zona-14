@@ -43,11 +43,6 @@
       magState: mag
       steps: 1
       zeroVisible: true
-    # You need to declare visuals, to change icons depending on equipped modules
-    - type: STMuzzleVisuals
-      muzzleState: muzzle
-    - type: STScopeVisuals
-      scopeState: scope
     - type: ChamberMagazineAmmoProvider
       soundRack:
         path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg

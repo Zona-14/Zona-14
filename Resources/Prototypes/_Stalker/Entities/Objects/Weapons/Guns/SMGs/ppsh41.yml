@@ -47,7 +47,6 @@
           - STCartridge725
 
 - type: entity
-  abstract: true
   parent: STBaseWeaponSMGPPSh41
   id: STWeaponSMGPPSh41
   name: PPSh-41 Submachine Gun

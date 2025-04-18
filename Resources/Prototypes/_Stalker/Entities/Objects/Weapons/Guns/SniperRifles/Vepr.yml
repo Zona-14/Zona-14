@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: STBaseWeaponSniper
-  id: STVBaseWeaponRifleStalkerVepr
+  id: STVBaseWeaponSniperVepr
   components:
   - type: STWeight
     self: 3.2
@@ -60,14 +60,14 @@
     offset: 8
 
 - type: entity
-  parent: STVBaseWeaponRifleStalkerVepr
-  id: STWeaponRifleStalkerVepr
+  parent: STVBaseWeaponSniperVepr
+  id: STWeaponSniperVepr
   name: VPO-129 "Vepr" 7.62x54mm
   description: The VPO-129 Vepr-1V is a civilian hunting carbine with rifled barrel, based on the legendary Soviet Army light machine gun design. Chambered in powerful 7.62x54mmR, it's a favorite among Zone marksmen for its reliability.
 
 - type: entity
-  parent: STVBaseWeaponRifleStalkerVepr
-  id: STWeaponRifleStalkerVeprSerafim
+  parent: STVBaseWeaponSniperVepr
+  id: STWeaponSniperVeprSeraphim
   name: Tactical VPO-129 "Seraphim"
   description: Custom tactical VPO-129 variant with distinctive Seraphim faction markings and modifications. The white finish provides both visibility and intimidation factor in Zone operations.
   components:
@@ -79,8 +79,8 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
 
 - type: entity
-  parent: STVBaseWeaponRifleStalkerVepr
-  id: STWeaponRifleStalkerVeprFarforik
+  parent: STVBaseWeaponSniperVepr
+  id: STWeaponSniperVeprGrass
   name: VPO-129 "Grass" Camo
   description: A bushman's dream - this Vepr variant features custom camouflage netting and vegetation attachments for maximum concealment in the Zone's wilderness.
   components:

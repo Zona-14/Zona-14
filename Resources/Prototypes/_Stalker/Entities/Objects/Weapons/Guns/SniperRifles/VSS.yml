@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: STBaseWeaponSniper
-  id: STBaseWeaponRifleVSS
+  id: STBaseWeaponSniperVSS
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
@@ -62,7 +62,7 @@
     offset: 8
 
 - type: entity
-  parent: STBaseWeaponRifleVSS
-  id: STWeaponRifleVSS
+  parent: STBaseWeaponSniperVSS
+  id: STWeaponSniperVSS
   name: VSS Vintorez
   description: Special Sniper Rifle chambered in the rare but devastating 9x39mm caliber. Comes equipped with medium-range optics and integrated suppressor.

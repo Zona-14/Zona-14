@@ -67,10 +67,6 @@
         whitelist:
           tags:
             - STWeaponModuleSniperSilencer
-  - type: STScopeVisuals
-    scopeState: sight
-  - type: STMuzzleVisuals
-    muzzleState: muzzle
   - type: Scope
     zoom: 1.3
     delay: 1

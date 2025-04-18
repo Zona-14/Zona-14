@@ -5,14 +5,14 @@
     - name: Оружие
       priority: 1
       items:
-        STWeaponShotgunToz34: 200
+        STWeaponShotgunTOZ34: 200
         WeaponPistolStalkerPM: 225
         WeaponPistolStalkerTT: 250
         STWeaponRevolverTaurusJudge: 450
         STWeaponRevolverTaurusTracker455: 550
         STWeaponRevolverSWPC325TR: 725
-        WeaponShotgunStalkerMP133: 550
-        STWeaponShotgunMossberg: 600
+        STWeaponShotgunMP133: 550
+        STWeaponShotgunMossbergM88: 600
         STWeaponShotgunMP153: 1100
         STWeaponRifleStalkerSaiga545: 1100
         STWeaponRifleStalkerFAL: 3650

@@ -60,7 +60,7 @@
           prob: 0.005
         - id: STWeaponSMGMP5
           prob: 0.005
-        - id: STWeaponShotgunStalkerSPAS
+        - id: STWeaponShotgunSPAS
           prob: 0.005
         - id: STWeaponGunAKS74U
           prob: 0.005

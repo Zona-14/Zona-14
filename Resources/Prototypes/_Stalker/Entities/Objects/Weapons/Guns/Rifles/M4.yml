@@ -59,7 +59,7 @@
           priority: 1
           whitelist:
             tags:
-              - Cartridge556
+              - STCartridge556
 
 - type: entity
   name: HK-416
