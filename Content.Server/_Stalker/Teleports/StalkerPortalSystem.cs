@@ -31,11 +31,11 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly StalkerDbSystem _stalkerDbSystem = default!;
     [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
-    [Dependency] private readonly SponsorsManager _sponsors = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
+    [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
     private ISawmill _sawmill = default!;
 
 
@@ -209,8 +209,8 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
                 RaiseLocalEvent(entity, ev);
 
                 // Sponsors
-                // Giving max weight by-ref, to modify it inside method
-                _sponsors.RepositoryMaxWeight(ref stalkerRepositoryComponent.MaxWeight, admin.UserId);
+                stalkerRepositoryComponent.MaxWeight =
+                    _sponsorSystem.GetRepositoryWeight(admin.UserId, stalkerRepositoryComponent.MaxWeight);
                 break;
             }
         }

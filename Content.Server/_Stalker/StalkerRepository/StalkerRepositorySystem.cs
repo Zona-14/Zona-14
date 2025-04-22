@@ -101,36 +101,23 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (!_playerManager.TryGetSessionByUsername(args.Admin, out var session))
             return;
 
-        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorData))
+        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorData) ||
+            sponsorData.SponsorProtoId is null)
             return;
 
         // already gave
         if (sponsorData.IsGiven)
             return;
 
-        var items = new List<EntProtoId>();
-        var sponsorPrototypes = _prototypeMan.EnumeratePrototypes<SponsorPrototype>();
-        foreach (var proto in sponsorPrototypes)
-        {
-            foreach (var kvp in proto.RepositorySponsorItems)
-            {
-                if (kvp.Key <= (int)sponsorData.Level)
-                {
-                    items.AddRange(kvp.Value);
-                }
-            }
-
-            if (sponsorData.Contributor)
-            {
-                items.AddRange(proto.ContribItems);
-            }
-        }
+        var index = _prototypeMan.Index(sponsorData.SponsorProtoId.Value);
+        var items = index.RepositoryItems;
 
         foreach (var item in items)
         {
             var info = GenerateItemInfoByPrototype(item);
             InsertToRepo((uid, component), info);
         }
+        
         Task.Run(() => _sponsors.SetGiven(session.UserId, true));
         _stalkerStorageSystem.SaveStorage(component);
     }

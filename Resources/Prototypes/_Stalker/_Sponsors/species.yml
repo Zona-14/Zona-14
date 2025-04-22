@@ -1,0 +1,7 @@
+# TODO: Currently this is just a definition of the prototype, it won't change anything
+
+#- type: sponsorSpecies
+#  id: SponsorHumanFat
+#  speciesId: HumanFat
+#  sponsorIds:
+#    - SponsorBacker

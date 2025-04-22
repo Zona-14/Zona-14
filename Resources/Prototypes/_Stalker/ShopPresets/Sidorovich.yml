@@ -316,7 +316,7 @@
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
   sponsorCategories:
-    1:
+    SponsorBread:
       - name: sponsor
         items:
           STWeaponRifleAKS74UWhite: 650

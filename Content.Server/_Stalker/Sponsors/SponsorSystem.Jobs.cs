@@ -12,7 +12,7 @@ public sealed partial class SponsorSystem
 {
     [Dependency] private readonly JobWhitelistManager _jobWhitelist = default!;
     
-    private Dictionary<Enum, List<ProtoId<JobPrototype>>> _whitelist = new();
+    private Dictionary<ProtoId<SponsorPrototype>, List<ProtoId<JobPrototype>>> _whitelist = new();
 
     private void InitializeJobs()
     {
@@ -35,7 +35,10 @@ public sealed partial class SponsorSystem
         if (!_sponsors.TryGetInfo(userId, out var info))
             return;
 
-        if (!_whitelist.TryGetValue(info.Level, out var jobs))
+        if (info.SponsorProtoId is null)
+            return;
+        
+        if (!_whitelist.TryGetValue(info.SponsorProtoId.Value, out var jobs))
             return;
 
         _jobWhitelist.AddSponsorWhitelist(userId, jobs);
@@ -47,7 +50,7 @@ public sealed partial class SponsorSystem
         
         foreach (var prototype in prototypes)
         {
-            var list = _whitelist.GetOrNew(prototype.Level);
+            var list = _whitelist.GetOrNew(prototype.SponsorId);
             list.AddRange(prototype.Jobs);
         }
     }

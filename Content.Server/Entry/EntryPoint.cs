@@ -112,9 +112,6 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ServerApi>().Initialize();
 
                 // Stalker-Changes-Start
-                IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Stalker-Changes-Auth
-                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Stalker-Changes - Corvax Queue Adaptation
-                IoCManager.Resolve<SponsorsManager>().Initialize(); // Stalker-Changes-Sponsors
                 IoCManager.Resolve<_Stalker.ServerAdministration.ServerApi>().Initialize(); // Stalker-Changes - Stalker Server API
                 // Stalker-Changes-End
 
@@ -148,6 +145,12 @@ namespace Content.Server.Entry
             }
             else
             {
+                // Stalker-Changes-Start
+                IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Stalker-Changes-Auth
+                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Stalker-Changes - Corvax Queue Adaptation
+                IoCManager.Resolve<SponsorsManager>().Initialize(); // Stalker-Changes-Sponsors
+                // Stalker-Changes-End
+                
                 IoCManager.Resolve<RecipeManager>().Initialize();
                 IoCManager.Resolve<IAdminManager>().Initialize();
                 IoCManager.Resolve<IAfkManager>().Initialize();
