@@ -48,3 +48,9 @@
             # Militia
             StalkerMilitia: [ 0, -1 ]
             StalkerMilitiaCommander: [ 0, -1 ]
+            # Evolver
+            Evolver: [0, -1]
+            EvolverPackFang: [0, -1]
+            EvolverPackAlpha: [0, -1]
+            EvolverSymbioteMedium: [0, -1]
+            EvolverSymbioteArchon: [0, -1]

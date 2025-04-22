@@ -4,6 +4,7 @@
   icon: evolver
   description: разумные мутанты, стремящиеся к постоянной эволюции и адаптации в Зоне.
   playTimeTracker: JobEvolver
+  whitelisted: true
   requirements:
     - !type:SpeciesRequirement
       species:
