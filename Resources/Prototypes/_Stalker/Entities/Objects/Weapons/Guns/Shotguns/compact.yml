@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: STBaseWeaponGun
+  parent: STBaseWeaponShotgun
   id: STBaseWeaponShotgunCompact
   components:
   - type: STWeight
