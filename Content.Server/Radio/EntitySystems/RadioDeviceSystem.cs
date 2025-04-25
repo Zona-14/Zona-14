@@ -226,10 +226,10 @@ public sealed class RadioDeviceSystem : EntitySystem
             // Frequencies matched in OnStalkerReceiveAttempt.
             var speechVerb = _chat.GetSpeechVerb(args.MessageSource, args.Message);
             var wrappedMessage = Loc.GetString("chat-radio-message-wrap",
-                ("channel", receiverStalkerComp.CurrentFrequency),
+                ("channel", string.Empty), // receiverStalkerComp.CurrentFrequency
                 ("fontType", speechVerb.FontId),
                 ("fontSize", speechVerb.FontSize),
-                ("verb", Loc.GetString(speechVerb.ID)),
+                ("verb", string.Empty), // Loc.GetString(speechVerb.ID)
                 ("color", args.Channel.Color),
                 ("name", Name(args.MessageSource)),
                 ("message", args.Message));
