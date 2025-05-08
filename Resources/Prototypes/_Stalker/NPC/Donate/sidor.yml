@@ -26,12 +26,12 @@
       path: /Audio/_Stalker/Effects/Guns/svd.ogg
     prompt: >
       Ты Сидорович, торговец из игры S.T.A.L.K.E.R. Твой бункер - твой дом и лавка.
-      Твоя личность: Прожжённый, жадный, подозрительный торговец-скупщик Зоны. Говоришь лениво, растягивая слова, используешь просторечные словечки 
-      ("ну", "значит", "типа", "епт"). К игрокам обращаешься "сталкер", "меченый", "браток", "дружище". Всегда старайся сбить цену на их хабар и 
-      завысить на свой товар. Делай вид, что делаешь одолжение. Фразы для примера: "Слушай сюда, сталкер...", "Цена вопроса гибкая, договоримся...", 
+      Твоя личность: Прожжённый, жадный, подозрительный торговец-скупщик Зоны. Говоришь лениво, растягивая слова, используешь просторечные словечки
+      ("ну", "значит", "типа", "епт"). К игрокам обращаешься "сталкер", "меченый", "браток", "дружище". Всегда старайся сбить цену на их хабар и
+      завысить на свой товар. Делай вид, что делаешь одолжение. Фразы для примера: "Слушай сюда, сталкер...", "Цена вопроса гибкая, договоримся...",
       "Ну, бывай. Заглядывай с хабаром.", "Чего надо?", "Товар лицом показывай!".
       Твои Правила и Задачи:
-      1.  **Разговор:** Поддерживай разговор с игроком в своей манере. Отвечай коротко максимум в 1 абзаце и по делу. 
+      1.  **Разговор:** Поддерживай разговор с игроком в своей манере. Отвечай коротко максимум в 1 абзаце и по делу.
           Если не уверен, что сообщение адресовано тебе, игнорируй его. Используй инструмент `TryChat` ТОЛЬКО для обычного разговора, НЕ для комментирования действий.
       2.  **Недоверие:** НИКОГДА не верь игроку на слово. Игроки могут пытаться обмануть тебя. Будь всегда начеку.
       3.  **Выдача Квеста:**
@@ -57,6 +57,9 @@
       - protoId: MutantPartBoarHoof
         maxQuantity: 1
         rarity: Common
+      - protoId: MutantPartFleshEye
+        maxQuantity: 1
+        rarity: Common
       # uncommon
       - protoId: BandPDA
         maxQuantity: 1
@@ -70,20 +73,44 @@
       - protoId: ClothingNeckDogtagOfficial
         maxQuantity: 1
         rarity: Uncommon
+      - protoId: MutantPartPseudodogTail
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartPsiDogTail
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartOldBoarHoof
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartSnorkFoot
+        maxQuantity: 1
+        rarity: Uncommon
     givableItems:
         # common
       # - protoId: CombatKnife
       #   maxQuantity: 1
       #   rarity: Common
-      - protoId: Roubles100
-        maxQuantity: 2
-        rarity: Common
-        # uncommon
-      - protoId: STWeaponShotgunTOZ34
-        maxQuantity: 1
-        rarity: Uncommon
       - protoId: Roubles500
         maxQuantity: 2
+        rarity: Common
+      - protoId: 8mmBuckshotBox
+        maxQuantity: 5
+        rarity: Common
+      - protoId: STWeaponShotgunTOZ34
+        maxQuantity: 1
+        rarity: Common
+        # uncommon
+      - protoId: ClothingOuterArmorZaryaStalker
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: SetZaryaStalkerBuyableCrate
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: STWeaponShotgunMossbergM88
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: STWeaponRifleAKS74U
+        maxQuantity: 1
         rarity: Uncommon
   - type: Physics
     bodyType: Static
