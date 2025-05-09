@@ -156,8 +156,9 @@
         ClothingOuterArmorZN1: 2100 # T2 - universal
         ClothingOuterArmorAborigineFreedom: 4350 # T3
         ClothingOuterArmorYegerFreedom: 2325 # т2
-        ClothingOuterArmorFreedomDefender: 3100 # T3
-        ClothingOuterArmorSevaStalker: 2250 # T3 - ENV
+        ClothingOuterArmorSevaFreedom: 3350 # T3 - ENV
+        SetFreedomVeterBuyableCrate: 5000 # T3 - ENV
+        SetFreedomDefenderBuyableCrate: 5000 # T3
     - name: shop-category-storage-and-containers
       priority: 5
       items:
