@@ -109,12 +109,13 @@
       priority: 1
       items:
         STCombatKnife: 2
-       # 7mm
+        # 7mm
         STWeaponShotgunMP155T: 8 #T0.5
         STWeaponShotgunTOZ34: 40 # T1
         STWeaponShotgunBenelliM4Super90Seraphim: 220
         STWeaponShotgunBenelliM4Super90: 220
         STWeaponShotgunSaiga12Seraphim: 560
+        STWeaponShotgunAArchangel: 700
         # 5,45x39
         STWeaponRifleSaiga545: 225
         STWeaponRifleAKS74U: 315
@@ -199,6 +200,9 @@
           # Other
         TTMag: 19
         739Mag30: 60
+        DrumAutoAssSmall: 80
+        DrumAutoAssBig: 200
+        DrumAutoAssVeryBig: 600
     - name: shop-category-ammunition
       priority: 6
       items:
@@ -533,8 +537,8 @@
         754FMJBox: 325
         754HPBox: 325
         # 9x39 boxes
-        STBox9x39PSO: 50
-        STBox9x39SP6Uch: 190
+        STBox9x39PSO: 190
+        STBox9x39SP6Uch: 50
         STBox9x39SP5: 190
         STBox9x39PAB9: 360
 
