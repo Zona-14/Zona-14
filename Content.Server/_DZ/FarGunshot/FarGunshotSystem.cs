@@ -1,4 +1,5 @@
-﻿using Content.Shared.Weapons.Ranged.Events;
+﻿using Content.Shared._DZ.FarGunshot;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -15,14 +16,14 @@ public sealed class FarGunshotSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<FarGunshotComponent, AmmoShotEvent>(OnFarGunshot);
+        SubscribeLocalEvent<FarGunshotComponent, FargunshotEvent>(OnFarGunshot);
 
     }
 
-    public void OnFarGunshot(EntityUid uid, FarGunshotComponent component, AmmoShotEvent args)
+    public void OnFarGunshot(EntityUid uid, FarGunshotComponent component, FargunshotEvent args)
     {
 
-        if (uid == EntityUid.Invalid || component.Range <= 14f || component.IsIntegredSilencer)
+        if (uid == EntityUid.Invalid || component.Range <= 14f || component.IsIntegredSilencer || args.gunUid != uid)
             return;
 
         var shootPos = _transform.GetMapCoordinates(uid);

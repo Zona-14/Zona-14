@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Weapons.Ranged.Components;
+using Content.Shared._DZ.FarGunshot;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -269,6 +270,11 @@ public sealed partial class GunSystem : SharedGunSystem
 
                 ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
                 shotProjectiles.Add(ammoEnt);
+
+                // stalker-changes-start
+                var farSoundEvent = new FargunshotEvent(gunUid);
+                RaiseLocalEvent(gunUid, farSoundEvent);
+                // stalker-changes-end
 
                 for (var i = 1; i < ammoSpreadComp.Count; i++)
                 {
