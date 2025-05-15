@@ -10,7 +10,7 @@ public sealed partial class FarGunshotComponent : Component
     /// The start max range of farsound, non modified
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Range = 260;
+    public float Range = 260f;
 
     /// <summary>
     /// The base sound to use when the gun is fired from far dist.
@@ -19,10 +19,16 @@ public sealed partial class FarGunshotComponent : Component
     public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_DZ/Effects/FarGunshots/rifle1.ogg");
 
     /// <summary>
-    /// Gun with integrated silencer (vss, vsk, as-val etc)
+    /// Gun with silencer (vss, vsk, as-val or module)
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool IsIntegredSilencer = false;
+    public bool IsSilenced = false;
+
+    /// <summary>
+    /// How much should silencer decrease range (by miltiply)
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float SilencerDecrease = 0.4f;
 
     // TODO: silencer impl
 }

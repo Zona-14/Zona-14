@@ -4,7 +4,8 @@
   id: STBaseWeaponSniperVSS
   components:
   - type: FarGunshots
-    isIntegredSilencer: true
+    isSilenced: true
+    silencerDecrease: 0.5
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/base.rsi
     equipDelay: 1.5

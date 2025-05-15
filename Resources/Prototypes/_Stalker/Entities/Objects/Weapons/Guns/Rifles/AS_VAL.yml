@@ -4,7 +4,8 @@
   id: STBaseWeaponRifleASVAL
   components:
   - type: FarGunshots
-    isIntegredSilencer: true
+    isSilenced: true
+    silencerDecrease: 0.6
   - type: STWeight
     self: 3
   - type: Clothing

@@ -22,17 +22,27 @@ public sealed class FarGunshotSystem : EntitySystem
 
     public void OnFarGunshot(EntityUid uid, FarGunshotComponent component, FargunshotEvent args)
     {
-
-        if (uid == EntityUid.Invalid || component.Range <= 14f || component.IsIntegredSilencer || args.gunUid != uid)
+        if (uid == EntityUid.Invalid || args.gunUid != uid)
             return;
 
         var shootPos = _transform.GetMapCoordinates(uid);
 
+        var range = component.IsSilenced ? component.Range * component.SilencerDecrease : component.Range;
+
+        if (component.Range <= 14f) // we need this since i want to decrease number of uselles iterations
+            return;
+
         // Create a filter for players who are far enough to hear the distant gunshot,
         // excluding those within close range (14)
         var farSoundFilter = Filter.Empty()
-            .AddInRange(shootPos, component.Range)
+            .AddInRange(shootPos, range)
             .RemoveInRange(shootPos, 14f);
+
+        // TODO:
+        // Actually, i think we need to override .AddInRange(MapCoordinates mappos, float range)
+        // so it would skip vanilla tiles, so we could decrease amount of iterations for each gunshot
+        // but i want to take a look and how it actually work, and maybe after perfomance issue start to
+        // rewritign this (торнадыч сказал что лагать не будет)
 
         // Play the distant gunshot sound globally:
         // - Enabled for replay recording
