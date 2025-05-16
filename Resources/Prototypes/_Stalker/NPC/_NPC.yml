@@ -1046,9 +1046,9 @@
     sprite: _Stalker/Objects/NPCs/bluprint_computer.rsi
     state: base
   - type: Physics
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NPCBlueprintSeller
+#  - type: Shop  #Commented, shop-preset wiped
+#    moneyId: Roubles
+#    shopPresetId: NPCBlueprintSeller  #If you uncomment it - CHANGE SHOP PRESET
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
