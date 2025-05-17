@@ -1206,7 +1206,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: ClothingMaskGP7
         - id: 545Mag30
@@ -1267,7 +1267,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
         - id: ClothingMaskGP21
         - id: 739Mag30
@@ -1332,7 +1332,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: ClothingOuterArmorIssgSpark
         - id: BaseMP5Mag
         - id: BaseMP5Mag

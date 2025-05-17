@@ -179,7 +179,7 @@
     belt: ClothingBeltStorageWaistbag
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsCombatFilled
 
 - type: startingGear
   id: OksopSpecOps
