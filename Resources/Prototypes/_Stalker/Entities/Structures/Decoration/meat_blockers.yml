@@ -28,12 +28,13 @@
           closed: ""
           ajar: ""
           open: ""
+          eye: ""
   - type: Damageable
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 50
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
