@@ -30,10 +30,6 @@
     fireRate: 7.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/l85.ogg
-    selectedMode: FullAuto
-    availableModes:
-    - SemiAuto
-    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
