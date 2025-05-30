@@ -230,3 +230,38 @@
       weight: 0.09
     - protoId: ZoneAnomalyRift
       weight: 2
+
+- type: stAnomalyGenerationOptions
+  id: STRostokAndWildsGenerationOptions
+  options:
+    totalCount: 500
+    anomalyEntries:
+    # Electrical
+    - protoId: ZoneAnomalySource
+      weight: 2
+    - protoId: ZoneAnomalyGarland
+      weight: 5
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 2
+    - protoId: ZoneAnomalyGazirovka
+      weight: 5
+    - protoId: ZoneAnomalyKissel
+      weight: 3
+    # Gravity
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyPulse
+    - protoId: ZoneAnomalyGrabber
+      weight: 3
+    # Thermal
+    - protoId: ZoneAnomalyWitchesCircle
+    - protoId: ZoneAnomalySteam
+      weight: 2
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
