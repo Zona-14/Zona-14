@@ -122,8 +122,12 @@ BoarTrigger10 : STTriggerBoar142510
 BoarTrigger100 : STTriggerBoar145030
 STTriggerBlindDog1210: STTriggerBlindDog121010
 STTriggerBlindDog1420: STTriggerBlindDog142010
+STTriggerBlindDog12100: STTriggerBlindDog125010
+STTriggerBlindDog14100: STTriggerBlindDog145010
 STTriggerBoar1210: STTriggerBoar121010
 STTriggerBoar1420: STTriggerBoar142510
+STTriggerBoar12100: STTriggerBoar125010
+STTriggerBoar14100: STTriggerBoar145010
 STTriggerBush1210: STTriggerBush121010
 STTriggerBush12100: STTriggerBush125010
 STTriggerFlesh1210: STTriggerFlesh121010
@@ -132,6 +136,7 @@ STTriggerFlesh14100: STTriggerFlesh145010
 STTriggerFlesh1420: STTriggerFlesh142010
 STTriggerFleshNeutral12100: STTriggerFleshNeutral125010
 STTriggerFleshNeutral1420: STTriggerFleshNeutral142010
+STTriggerFleshNeutral14100: STTriggerFleshNeutral145010
 STTriggerSpider1420: STTriggerSpider142010
 STTriggerPseudodog1210: STTriggerPseudodog121010
 STTriggerPseudodog12100: STTriggerPseudodog125010
