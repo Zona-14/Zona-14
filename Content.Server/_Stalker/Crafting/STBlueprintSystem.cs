@@ -92,7 +92,7 @@ public sealed class STBlueprintSystem : EntitySystem
             stringBuilder.AppendLine(Loc.GetString("st-blueprint-ingridients"));
             foreach (var (id, details) in blueprint.Items)
             {
-                var name = $"Любой {id}";
+                var name = id;
 
                 if (!details.Tag)
                 {
