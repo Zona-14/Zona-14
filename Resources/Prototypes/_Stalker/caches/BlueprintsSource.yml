@@ -54,8 +54,6 @@
         # Blueprints
         - id: ClothingOuterCoatPahanBlueprint
           prob: 0.05
-        - id: ClothingOuterCoatPoiskBlueprint
-          prob: 0.05
         - id: ClothingOuterCoatBolotniyBlueprint
           prob: 0.05
         - id: ClothingOuterCoatKolchygaBlueprint

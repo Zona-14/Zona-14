@@ -60,8 +60,37 @@
 
 - type: entity
   parent: BaseItem
-  name: Рецепт черного армейского тактического рюкзака (Т5)
+  name: Рецепт проффесионаольного серого рюкзака (Т5)
+  description: Любой рюкзак (т4) - 1шт, шкура Т2 - 5шт, набор базовых ниток T1 - 2шт, артефакт выверт - 3шт.
+  id: ClothingBackpackDuffelSuperStalkerGrayBlueprint
+  suffix: ST, крафт
+  components:
+    - type: Sprite
+      state: blueprint
+      sprite: _Stalker/Objects/Craft/blueprint.rsi
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+
+- type: entity
+  parent: BaseItem
+  name: Рецепт проффесионаольного зеленого рюкзака (Т5)
+  description: Любой рюкзак (т4) - 1шт, шкура Т2 - 5шт, набор базовых ниток T1 - 2шт, артефакт выверт - 3шт.
   id: ClothingBackpackDuffelSuperStalkerBlueprint
+  suffix: ST, крафт
+  components:
+    - type: Sprite
+      state: blueprint
+      sprite: _Stalker/Objects/Craft/blueprint.rsi
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+
+- type: entity
+  parent: BaseItem
+  name: Рецепт проффесионального рюкзака (Т6)
+  description: Любой рюкзак (т5) - 1шт, крепкая шкура T3 - 1шт, набор базовых ниток T1 - 2шт, артефакт Амёба - 2шт.
+  id: ClothingBackpackDuffelRareStalkerBlueprint
   suffix: ST, крафт
   components:
     - type: Sprite
