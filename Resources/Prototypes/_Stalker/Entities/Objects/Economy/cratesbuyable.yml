@@ -370,6 +370,10 @@
         - id: ClothingBackpackStalkerZaryaGreen
       sound:
         path: /Audio/Effects/unwrap.ogg
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 4.5
 
 - type: entity
   parent: STBaseItem
@@ -394,6 +398,10 @@
         - id: ClothingBackpackStalkerZaryaBlack
       sound:
         path: /Audio/Effects/unwrap.ogg
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 4.5
 
 - type: entity
   parent: STBaseItem
@@ -418,6 +426,10 @@
         - id: ClothingBackpackStalkerZaryaGreen
       sound:
         path: /Audio/Effects/unwrap.ogg
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 4.5
 
 - type: entity
   parent: STBaseItem
@@ -442,7 +454,10 @@
         - id: STOxygenTanksFractionalMonolith
       sound:
         path: /Audio/Effects/unwrap.ogg
-
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 4.5
 
 
 
