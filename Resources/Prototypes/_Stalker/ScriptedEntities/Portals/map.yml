@@ -1129,16 +1129,18 @@
       godmodeCooldown: 5
 ######################################################### глобал апдате 2025
 - type: entity
-  parent: MapTeleportBase
+  parent: GroupedTeleportBase
   id: VhodNaTopi
   name: Вход на Топи
   components:
-    - type: NewMapTeleport
-      portalName: VhodNaTopi
-      allowAll: false
+    - type: GroupTeleport
+      group: "VhodNaTopi2"
+      targetGroup: "VhodNaTopi1"
+      allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
       godmodeCooldown: 5
+      time: 5
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -1153,16 +1155,18 @@
       godmodeCooldown: 5
 
 - type: entity
-  parent: MapTeleportBase
+  parent: GroupedTeleportBase
   id: Topi-RedForestOdnstor
   name: Топи - Рыжий лес
   components:
-    - type: NewMapTeleport
-      portalName: Topi-RedForestOdnstor
-      allowAll: false
+    - type: GroupTeleport
+      group: "Topi-RedForestOdnstor2"
+      targetGroup: "Topi-RedForestOdnstor1"
+      allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
       godmodeCooldown: 5
+      time: 5
 
 - type: entity
   parent: MapTeleportBaseUncollide
