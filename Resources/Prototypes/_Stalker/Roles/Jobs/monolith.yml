@@ -50,6 +50,7 @@
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesNovice
+    back: ClothingBackpackDuffelBlackStalker
 - type: stBand
   id: STMonolithBand
   name: Monolith

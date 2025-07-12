@@ -147,13 +147,15 @@
         # cape
         ClothingOuterCoatLoyalist: 1754
         ClothingOuterCoatLoyalistLight: 1050
-        # back
-        ClothingBackpackDuffelMedicalStalker: 350 # 7,7 med only
-        ClothingBackpackTacticBeigeStalker: 425  # 6,5
-        ClothingBackpackTacticOliveStalker: 425
-        ClothingBackpackMercStalker: 650 # 6,6
-        ClothingBackpackDuffelBlackTacticStalker: 900
-        ClothingBackpackDuffelOliveTacticStalker: 900
+          # BackPacks
+        ClothingBackpackTownBlackStalker: 185 # T1
+        ClothingBackpackTownWhiteStalker: 190 # T1
+        ##-------------------------------------------
+        ClothingBackpackTacticOliveStalker: 557 # T2
+        ClothingBackpackTacticBeigeStalker: 568 # T2
+        ##-------------------------------------------  
+        ClothingBackpackStalkerZaryaGreen: 1059 # T3 |pvp backpack   
+        ##-------------------------------------------
         # belt
         ClothingBeltBandolierStalker: 75
         ClothingBeltTarzanOrange: 200

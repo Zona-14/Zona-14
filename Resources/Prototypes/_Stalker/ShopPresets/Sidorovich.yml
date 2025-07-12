@@ -156,17 +156,21 @@
       priority: 5
       items:
           # BackPacks
-        ClothingBackpackDuffelGreenStalker: 50 # T1
-        ClothingBackpackTacticOliveStalker: 1050 # T2
-        ClothingBackpackMercStalker: 1650 # T3
+        ClothingBackpackTownBlackStalker: 155 # T1
+        ClothingBackpackTownWhiteStalker: 150 # T1
+        ##-------------------------------------------
+        ClothingBackpackTacticOliveStalker: 497 # T2
+        ClothingBackpackTacticBeigeStalker: 498 # T2
+        ##-------------------------------------------  
+        ClothingBackpackMercStalker: 899 # T3 |pve backpack
+        ##-------------------------------------------
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
           # Containers
-        MedkitCMSStalker: 450 # T1
+        MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2
-         # T4
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
