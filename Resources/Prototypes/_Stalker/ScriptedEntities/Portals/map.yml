@@ -1130,12 +1130,12 @@
 ######################################################### глобал апдате 2025
 - type: entity
   parent: GroupedTeleportBase
-  id: VhodNaTopi
+  id: EnterOnTopi
   name: Вход на Топи
   components:
     - type: GroupTeleport
-      group: "VhodNaTopi2"
-      targetGroup: "VhodNaTopi1"
+      group: "EnterOnTopi2"
+      targetGroup: "EnterOnTopi1"
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
@@ -1144,11 +1144,11 @@
 
 - type: entity
   parent: MapTeleportBaseUncollide
-  id: VhodNaTopiUncollide
+  id: EnterOnTopiUncollide
   name: Вход на Топи Uncollide
   components:
     - type: NewMapTeleport
-      portalName: VhodNaTopi
+      portalName: EnterOnTopi
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 5
@@ -1156,12 +1156,12 @@
 
 - type: entity
   parent: GroupedTeleportBase
-  id: Topi-RedForestOdnstor
+  id: Topi-RedForestOneside
   name: Топи - Рыжий лес
   components:
     - type: GroupTeleport
-      group: "Topi-RedForestOdnstor2"
-      targetGroup: "Topi-RedForestOdnstor1"
+      group: "Topi-RedForestOneside2"
+      targetGroup: "Topi-RedForestOneside1"
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
@@ -1170,11 +1170,11 @@
 
 - type: entity
   parent: MapTeleportBaseUncollide
-  id: Topi-RedForestOdnstorUncollide
+  id: Topi-RedForestOnesideUncollide
   name: Топи - Рыжий лес Uncollide
   components:
     - type: NewMapTeleport
-      portalName: Topi-RedForestOdnstor
+      portalName: Topi-RedForestOneside
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 5
