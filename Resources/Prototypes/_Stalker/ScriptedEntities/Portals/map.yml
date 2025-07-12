@@ -1143,18 +1143,16 @@
       time: 5
 
 - type: entity
-  parent: GroupedTeleportUncollideBase
+  parent: MapTeleportBaseUncollide
   id: EnterOnTopiUncollide
   name: Вход на Топи Uncollide
   components:
-    - type: GroupTeleport
-      group: "EnterOnTopi1"
-      targetGroup: "EnterOnTopi2"
-      allowAll: true
+    - type: NewMapTeleport
+      portalName: EnterOnTopi
+      allowAll: false
       cooldownEnabled: true
       cooldownTime: 5
       godmodeCooldown: 5
-      time: 5
 
 - type: entity
   parent: GroupedTeleportBase
@@ -1171,15 +1169,13 @@
       time: 5
 
 - type: entity
-  parent: GroupedTeleportUncollideBase
+  parent: MapTeleportBaseUncollide
   id: Topi-RedForestOnesideUncollide
   name: Топи - Рыжий лес Uncollide
   components:
-  - type: GroupTeleport
-    group: "Topi-RedForestOneside1"
-    targetGroup: "Topi-RedForestOneside2"
-    allowAll: true
-    cooldownEnabled: true
-    cooldownTime: 5
-    godmodeCooldown: 5
-    time: 5
+    - type: NewMapTeleport
+      portalName: Topi-RedForestOneside
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
