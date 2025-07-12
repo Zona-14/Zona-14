@@ -65,6 +65,3 @@
     magState: mag
     steps: 1
     zeroVisible: true
-  - type: Tag
-    tags:
-    - StWeapon
