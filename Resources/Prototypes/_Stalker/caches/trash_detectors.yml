@@ -11,12 +11,30 @@
       prototypes:
         # values
         - ClothingNeckBronzeheart
+        - ClothingNeckBronzeheart
+        - ClothingNeckBronzeheart
+        - ClothingNeckCargomedal
         - ClothingNeckCargomedal
         - ClothingNeckEngineermedal
+        - ClothingNeckEngineermedal
+        - Wristwatch
+        - Wristwatch
         - Wristwatch
         - SilverRing
+        - SilverRing
+        - SilverRing
+        - SilverRing
+        - SilverRing
+        - GoldRing
+        - GoldRing
         - GoldRing
         - TreasureCoinIron
+        - TreasureCoinIron
+        - TreasureCoinIron
+        - TreasureCoinIron
+        - TreasureCoinGold
+        - TreasureCoinGold
+        - TreasureCoinGold
         - TreasureCoinGold
         - TreasureCoinSilver
         - ClothingStalkerNeckToken
