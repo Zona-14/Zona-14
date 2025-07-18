@@ -118,8 +118,8 @@
         # 5,45x39
         STWeaponRifleSaiga545: 1125
         STWeaponRifleAKS74U: 1800
-        STWeaponRifleStalkerAK12Sera: 7400
-        STWeaponRifleStalkerAK12: 7400
+        STWeaponRifleStalkerAK12Sera: 9400
+        STWeaponRifleStalkerAK12: 9400
         # Smg
         STWeaponSMGMP5: 1500
         STWeaponSMGStalkerCP2VereskSera: 1700
@@ -130,10 +130,12 @@
         STWeaponSniperVeprSeraphim: 15000
         STWeaponSniperVepr: 15000
 
+
     - name: shop-category-armor
       priority: 2
       items:
         ClothingHeadHelmetSH68: 600 # T1 - PVE
+
         ClothingHeadHelmetInfantrySera: 1500 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 3500 # T2 - PVE
         ClothingHeadAssaultHelmetSeraZastup: 4000 # T3 - PVP
@@ -504,11 +506,6 @@
         # 7.54
         754FMJBox: 325
         754HPBox: 325
-        # 9.39
-        939SP5Box: 190
-        939SP6Box: 360
-    - name: shop-category-ammunition
-      priority: 10
 
 - type: shopPreset
   id: SerafimShopPresetHeavy1
@@ -653,6 +650,7 @@
     - name: shop-category-utilities
       priority: 8
       items:
+
         STTorchSera: 2
         STCombatKnife: 1
         TrashBag: 1
