@@ -62,6 +62,11 @@
     MutantPartZombieHand: 420
     # Smuggling
     TradeBox: 4000
+    STFoodMeatSalo: 70
+    FoodMeatBoar: 40
+    FoodMeatDog: 20
+    FoodMeatBoarCooked: 60
+    FoodMeatDogCooked: 50
 
   categories:
     - name: shop-category-weapons

@@ -84,7 +84,7 @@
         8mmBuckshotBox: 300
         # 9.19
         919PSOGJBox: 75
-        919PSTBox: 780
+        919PSTBox: 500
         919PBMBox: 1000
         919RIPBox: 300
         # 5.56
@@ -112,6 +112,7 @@
         STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1700 # T2 - ENV
         ClothingOuterArmorFreedomWind: 2000
+        ClothingOuterArmorSevaFreedom: 5000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
