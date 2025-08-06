@@ -843,7 +843,7 @@
   parent: BaseItem
   id: CasseteThirtyOneDonateRadio
   suffix: Stalker, кассета (Gimme! Gimme!)
-  name: кассета "Gimme! Gimme!" TRS-MLH
+  name: кассета "Gimme! Gimme!"
   description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
   components:
   - type: STWeight
