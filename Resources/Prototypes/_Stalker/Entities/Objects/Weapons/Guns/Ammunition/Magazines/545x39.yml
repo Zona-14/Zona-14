@@ -130,3 +130,35 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: 545Mag30Junk
+  name: магазин 5,45х39 мученика (30)
+  description: Магазин 5.45х39 для мученика. Вместимость пуль 30. Продают пустым. Очень хлипкие, любое падение вероятнее всего сломает их.
+  parent: Base545Mag10
+  tag: Stalker
+  components:
+  - type: Tag
+    tags:
+      - Magazine545Junk
+      - JunkMagazine
+  - type: STWeight
+    self: 0.5
+  - type: BallisticAmmoProvider
+    capacity: 30
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/545/30Junk.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+

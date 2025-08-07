@@ -1,5 +1,6 @@
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
@@ -8,6 +9,9 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
+    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
+
     protected const string MagazineSlot = "gun_magazine";
 
     protected virtual void InitializeMagazine()
@@ -149,8 +153,13 @@ public abstract partial class SharedGunSystem
         var ejectMag = component.AutoEject && count == 0;
         if (ejectMag)
         {
+            var ent = GetMagazineEntity(uid);
+
             EjectMagazine(uid, component);
             Audio.PlayPredicted(component.SoundAutoEject, uid, user);
+
+            if (_entManager.TryGetComponent<TagComponent>(ent, out var tagComponent) && _tagSystem.HasTag(tagComponent, "JunkMagazine"))
+                _entManager.DeleteEntity(ent);
         }
 
         UpdateMagazineAppearance(uid, appearance, !ejectMag, count, capacity);

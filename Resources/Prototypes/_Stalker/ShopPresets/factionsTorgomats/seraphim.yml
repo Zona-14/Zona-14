@@ -48,6 +48,7 @@
         Base545Mag10: 50 #T1
         545Mag20: 220 #T2
         545Mag30: 400 #T3
+        545Mag30Junk: 50 #T3
         # 7,62x54 and 39
         Base739Mag10: 200
         739Mag30: 500
