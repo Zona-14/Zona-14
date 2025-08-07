@@ -207,37 +207,4 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: 545Mag30Junk
-        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-        priority: 4
-        whitelist:
-          tags:
-          - Magazine545Junk
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerRu
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeRu
-      gun_chamber:
-        name: Chamber
-        priority: 1
-        whitelist:
-          tags:
-          - STCartridge545Junk
-  - type: ChamberMagazineAmmoProvider
-    autoEject: true
-    soundAutoEject:
-      path: /Audio/_Stalker/Weapons/Guns/MagOut/garand_eject.ogg
 
