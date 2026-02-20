@@ -73,29 +73,6 @@
     spread: 340
 
 - type: entity
-  parent: BaseArtifact
-  id: ZoneArtifactDarkCube
-  suffix: Stalker, Тёмный куб
-  components:
-  - type: Sprite
-    state: dark_cube
-    scale: 0.5, 0.5
-  - type: ZoneArtifact
-    anomaly: ZoneAnomalyPulse
-  - type: ZoneArtifactDetectorTarget
-    detectedLevel: 5
-  - type: PointLight
-    radius: 1.5
-    energy: 6
-    color: "#000000"
-    castShadows: false
-  - type: Storage
-    grid:
-      - 0,0,8,8
-  - type: STWeight
-    self: 15
-
-- type: entity
   name: Ночная звезда
   parent: BaseArtifact
   id: ZoneArtifactNightStar
@@ -155,14 +132,14 @@
     damage:
       types:
         Piercing: -0.3
-        Caustic: 0.2
+        Caustic: 0.4
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.8
+        Piercing: 0.93
   - type: STWeight
     self: -10
 

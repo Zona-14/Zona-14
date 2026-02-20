@@ -58,8 +58,8 @@
   - type: STWeight
     self: 50
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5.5
-    baseSprintSpeed: 9.0
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 6.0
   - type: FootstepModifier
     footstepSoundCollection:
       collection: BarestepWood # TO DO

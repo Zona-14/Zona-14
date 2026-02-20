@@ -273,7 +273,9 @@
       price: 310
     - productEntity: ClothingHeadHelmetUlach
       price: 300
-    - productEntity: STWeaponRifleStalkerAK12
+    - productEntity: STWeaponRifleHK416
+      price: 270
+    - productEntity: STWeaponRifleAM17
       price: 270
 #      productEntity: STShotgunKS23
 #      price: 240

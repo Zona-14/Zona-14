@@ -72,7 +72,7 @@
   components:
   - type: Sprite
     state: baccum
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
@@ -95,7 +95,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Cold: 0.5
+        Cold: 0.8
 
 - type: entity
   parent: BaseArtifact
@@ -104,7 +104,7 @@
   components:
   - type: Sprite
     state: diamond
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
@@ -119,12 +119,7 @@
       types:
         Cold: 2.3
         Psy: -1.6
-        Piercing: 1.4
-        Blunt: 2
     interval: 1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.65
-    sprintModifier: 1.65
   - type: STWeight
     self: -1
   - type: Armor
@@ -142,7 +137,7 @@
   components:
   - type: Sprite
     state: charger
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
@@ -163,12 +158,6 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.35
     sprintModifier: 1.35
-  - type: Armor
-    hiddenExamine: true
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Compression: 0.75
 
 - type: entity
   parent: BaseArtifact

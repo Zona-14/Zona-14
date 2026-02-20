@@ -119,7 +119,7 @@
   components:
     - type: Sprite
       state: compass
-      scale: 0.5, 0.5
+      scale: 0.8, 0.8
     - type: ZoneArtifact
       anomaly: AnomSEpicentre
     - type: ZoneArtifactDetectorTarget
@@ -131,24 +131,20 @@
     - type: PersonalDamage
       damage:
         types:
-          Radiation: -1
-          Cold: -2
-          Compression: -3
-          Heat: -3
-          Shock: -3
-          Caustic: -1
-          Asphyxiation: -1
-          Piercing: 0.7
-          Blunt: 0.5
+          Radiation: 6
+          Cold: 2
       interval: 1
     - type: Storage
       grid:
         - 0,0,3,3
     - type: STWeight
       self: 30
-    - type: Reflect
-      reflectProb: 0.1
-      spread: 340
+    - type: Armor
+      hiddenExamine: true
+      armorClass: 2
+      modifiers:
+        coefficients:
+          Piercing: 0.7
 
 - type: entity
   name: Распятие
@@ -158,7 +154,7 @@
   components:
   - type: Sprite
     state: crucifix
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyNoGravity
   - type: ZoneArtifactDetectorTarget
@@ -180,9 +176,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.7
-  - type: STWeight
-    self: -5
+        Piercing: 0.85
 
 - type: entity
   parent: BaseArtifact
@@ -191,7 +185,7 @@
   components:
   - type: Sprite
     state: thorn
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyPulse
   - type: ZoneArtifactDetectorTarget
@@ -201,23 +195,6 @@
     energy: 5.5
     color: "#e5d0ff"
     castShadows: false
-  - type: PersonalDamage
-    damage:
-      types:
-        Piercing: -1
-        Heat: -3
-    interval: 1
-  - type: Armor
-    hiddenExamine: true
-    armorClass: 2
-    modifiers:
-      flatReductions:
-        Piercing: 1
-      coefficients:
-        Slash: 1.2
-  - type: Reflect
-    reflectProb: 0.15
-    spread: 340
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -275,7 +252,7 @@
   components:
   - type: Sprite
     state: arf
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -288,18 +265,47 @@
   - type: PersonalDamage
     damage:
       types:
-        Compression: 0.3
+        Caustic: 0.1
+        Heat: 0.4
+        Compression: 0.2
+        Radiation: 0.3
+        Psy: -0.3
     interval: 1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      coefficients:
-        Cold: 0.7
-        Radiation: 0.95
-  - type: Reflect
-    reflectProb: 0.1
-    spread: 340
+      flatReductions:
+        Psy: 3
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactDarkCube
+  suffix: Stalker, Тёмный куб
+  components:
+  - type: Sprite
+    state: dark_cube
+    scale: 0.8, 0.8
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyPulse
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 5
+  - type: PointLight
+    radius: 1.5
+    energy: 6
+    color: "#000000"
+    castShadows: false
+  - type: Storage
+    grid:
+      - 0,0,8,8
+    blacklist:
+      tags:
+      - STArtifact
+    quickInsert: true
+    areaInsert: true
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: STWeight
+    self: 15
+  - type: Dumpable

@@ -41,7 +41,7 @@
   components:
   - type: Sprite
     state: bunch
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalyJarka
   - type: ZoneArtifactDetectorTarget
@@ -56,7 +56,7 @@
       types:
         Blunt: -0.3
         Slash: -0.3
-        Heat: 0.3
+        Heat: 0.7
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -68,8 +68,6 @@
         Compression: 0.6
       flatReductions:
         Piercing: 1
-        Slash: 2
-        Cold: 4
   - type: ExplosionResistance
     damageCoefficient: 0.8
 
@@ -125,7 +123,7 @@
   components:
   - type: Sprite
     state: rock
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: PointLight
     radius: 0.5
     energy: 4
@@ -199,7 +197,7 @@
   components:
   - type: Sprite
     state: sun
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -212,7 +210,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Cold: -4
+        Cold: -2.5
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -232,7 +230,7 @@
   components:
   - type: Sprite
     state: root
-    scale: 0.5, 0.5
+    scale: 0.8, 0.8
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -243,7 +241,7 @@
     color: "#ff0000"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: 1
+    staminaDamage: 8
     damage:
       types:
         Bloodloss: -3
@@ -263,7 +261,7 @@
   components:
   - type: Sprite
     state: conflagration
-    scale: 0.5, 0.5
+    scale: 0.9, 0.9
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -275,9 +273,9 @@
     castShadows: false
   - type: Explosive
     explosionType: Default
-    maxIntensity: 100
+    maxIntensity: 50
     intensitySlope: 5
-    totalIntensity: 240
+    totalIntensity: 150
     canCreateVacuum: false
   - type: TriggerOnUse
   - type: TimerTrigger
