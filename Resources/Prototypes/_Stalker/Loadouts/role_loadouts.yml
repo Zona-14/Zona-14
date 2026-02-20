@@ -18,6 +18,24 @@
   - STGlasses
 
 - type: roleLoadout
+  id: Jobrookie
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STOuterClothingStalkerGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroup
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+
+- type: roleLoadout
   id: JobStalkerVeteran
   groups:
   - STTrinketsGroupOne
@@ -110,6 +128,24 @@
   - STOuterClothingDolg
 
 - type: roleLoadout
+  id: StalkerNoviceDolg
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroup
+  - STTorsoGroupDolg
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingDolg
+
+- type: roleLoadout
   id: JobStalkerHeadDolg
   groups:
   - STTrinketsGroupOne
@@ -130,6 +166,24 @@
 # Свобода
 - type: roleLoadout
   id: JobStalkerFreedom
+  groups:
+  - STTrinketsGroupOne
+  - STTrinketsGroupTwo
+  - STBackpackGroup
+  - STStorageTrinkets
+  - STShoesGroup
+  - STMaskStalkerGroup
+  - STBeltStalkerGroup
+  - STlegsGroupFreedom
+  - STTorsoGroupFreedom
+  - STSuitstorageGroup
+  - STStorage
+  - STStorageAmmunition
+  - STGlasses
+  - STOuterClothingFreedom
+
+- type: roleLoadout
+  id: JobStalkerNoviceFreedom
   groups:
   - STTrinketsGroupOne
   - STTrinketsGroupTwo
