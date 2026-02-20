@@ -168,7 +168,7 @@
   - type: ZoneArtifact
     anomaly: ZoneAnomalyKissel
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 1
+    detectedLevel: 2
   - type: PointLight
     radius: 1.5
     energy: 2.5
