@@ -221,7 +221,7 @@
   - type: ZoneArtifact
     anomaly: ZoneAnomalySource
   - type: ZoneArtifactDetectorTarget
-    detectedLevel: 3
+    detectedLevel: 4
   - type: PersonalDamage
     staminaDamage: -4
     damage:
