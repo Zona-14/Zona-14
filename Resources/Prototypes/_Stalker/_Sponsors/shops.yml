@@ -216,8 +216,8 @@
       STWeaponSniperSVUTop: 12000
 
 - type: personalShop
-  id: PersonalClown_228Shop
-  username: Clown_228
+  id: Personalclown_228Shop
+  username: clown_228
   categories:
   - name: Персональная категория
     items:
