@@ -517,7 +517,7 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_VANO.rsi
     - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHardsuitSevaHelmSci
+      clothingPrototype: ClothingHeadHardsuitSevaVano
       slot: head
     - type: Armor
       armorClass: 3
