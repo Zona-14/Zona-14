@@ -107,7 +107,7 @@
         volume: -10
     minAngle: 50
     maxAngle: 85
-    angleIncrease: 2
+    angleIncrease: 2.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
