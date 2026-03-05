@@ -81,6 +81,8 @@
          WeaponPistolStalkerAPS: 500
          STWeaponRevolverSWPC325TR: 1000
          STWeaponSMGPPSh41: 2200
+         STWeaponSMGPP19: 3000
+         STWeaponSMGPP91: 3500
          STWeaponRifleSaiga545: 1150
          STWeaponRifleAKS74U: 1600
          STWeaponSniperMosin: 1600
