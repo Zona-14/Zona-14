@@ -92,7 +92,7 @@
   id: STWeaponSniperHK417
   name: HK417
   suffix: ST, Кастомка
-  description:
+  description: The Marksman rifle is a 7.62x51 mm rifle based on the HK416.
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/hk417.rsi
