@@ -27,4 +27,15 @@ public abstract class RDEntitySystemSingleton<TComponent> : RDEntitySystem where
     {
         Dirty(Inst);
     }
+
+    protected void DirtyField(string field)
+    {
+        if (Inst.Comp is not IComponentDelta delta)
+        {
+            Log.Fatal("You dumb, yor singleton component not fieldDeltas, what are you doing????!");
+            return;
+        }
+
+        DirtyField(Inst, delta, field);
+    }
 }
