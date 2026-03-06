@@ -1,5 +1,4 @@
-﻿using Content.Server._Stalker.ZoneArtifact.Components;
-using Content.Server._Stalker.ZoneArtifact.Components.Detector;
+﻿using Content.Server._Stalker.ZoneArtifact.Components.Detector;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneArtifact.Components; // ST14-EN: Moved artis to shared
 using Content.Shared._Stalker.ZoneArtifact.Events;
