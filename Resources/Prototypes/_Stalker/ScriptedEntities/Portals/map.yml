@@ -1399,4 +1399,4 @@
   name: RedForest-Dolina
   components:
     - type: NewMapTeleport
-      portalName: Dolina-Kordon
+      portalName: Dolina-RedForest
