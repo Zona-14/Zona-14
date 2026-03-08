@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 
@@ -8,29 +9,34 @@ public sealed partial class RDWatcherSystem
 {
     [Dependency] private readonly SharedPvsOverrideSystem _pvsOverride = null!;
 
+    private readonly List<EntityUid> _tmpEntities = new(128);
+
     private void UpdateWatcherPositions()
     {
-        foreach (var watcher in _watcherCache)
+        for (var i = 0; i < _watcherCache.Count; i++)
         {
-            UpdateWatcherPosition(watcher);
+            UpdateWatcherPosition(_watcherCache[i]);
         }
     }
 
     private void UpdateWatcherPosition(Entity<RDWatcherComponent> watcher)
     {
-        if (watcher.Comp.Entities.Count == 0)
+        var entities = watcher.Comp.Entities;
+        if (entities.Count == 0)
             return;
 
         var sum = Vector2.Zero;
         var count = 0;
-
         MapId? mapId = null;
-        foreach (var ent in watcher.Comp.Entities)
+
+        foreach (var ent in entities)
         {
             if (!ent.Valid)
                 continue;
 
-            sum += _transform.GetWorldPosition(ent);
+            var pos = _transform.GetWorldPosition(ent);
+
+            sum += pos;
             mapId ??= _transform.GetMapId(ent);
             count++;
         }
@@ -44,37 +50,76 @@ public sealed partial class RDWatcherSystem
         Dirty(watcher);
     }
 
+    private Entity<RDWatcherComponent> CreateWatcher(List<EntityUid> entities) =>
+        CreateWatcher(entities.ToHashSet());
+
     private Entity<RDWatcherComponent> CreateWatcher(HashSet<EntityUid> entities)
     {
-        var instance = Spawn(null, MapCoordinates.Nullspace);
-        var component = EnsureComp<RDWatcherComponent>(instance);
+        var uid = Spawn(null, MapCoordinates.Nullspace);
+        var comp = EnsureComp<RDWatcherComponent>(uid);
 
-        component.Entities = entities;
-        DirtyField(instance, component, nameof(RDWatcherComponent.Entities));
+        comp.Entities = entities;
+        DirtyField(uid, comp, nameof(RDWatcherComponent.Entities));
 
-        var watcher = (instance, component);
+        var watcher = (uid, comp);
+
         UpdateWatcherPosition(watcher);
 
-        _pvsOverride.AddGlobalOverride(instance);
+        _pvsOverride.AddGlobalOverride(uid);
 
         return watcher;
     }
 
-    private void WatcherAdd(Entity<RDWatcherComponent> watcher, HashSet<EntityUid> group)
+    #region Sync
+
+    private void WatcherSync(Entity<RDWatcherComponent> watcher, IEnumerable<EntityUid> group)
     {
+        var entities = watcher.Comp.Entities;
+
+        _tmpEntities.Clear();
+        _tmpEntities.AddRange(entities);
+
+        foreach (var uid in _tmpEntities)
+        {
+            WatcherRemove(watcher, uid);
+        }
+
         foreach (var uid in group)
         {
             WatcherAdd(watcher, uid);
         }
     }
 
-    private void WatcherAdd(Entity<RDWatcherComponent> entity, EntityUid targetUid)
+    #endregion
+
+    #region Add
+
+    private void WatcherAdd(Entity<RDWatcherComponent> watcher, EntityUid targetUid)
     {
-        entity.Comp.Entities.Add(targetUid);
-        DirtyField(entity, entity.Comp, nameof(RDWatcherComponent.Entities));
+        if (!watcher.Comp.Entities.Add(targetUid))
+            return;
 
         var watcherTarget = EnsureComp<RDWatcherTargetComponent>(targetUid);
-        watcherTarget.Watcher = entity;
+        watcherTarget.Watcher = watcher;
+
         DirtyField(targetUid, watcherTarget, nameof(RDWatcherTargetComponent.Watcher));
     }
+
+    #endregion
+
+    #region Remove
+
+    private void WatcherRemove(Entity<RDWatcherComponent> watcher, EntityUid targetUid)
+    {
+        if (!watcher.Comp.Entities.Remove(targetUid))
+            return;
+
+        if (!TryComp<RDWatcherTargetComponent>(targetUid, out var target))
+            return;
+
+        target.Watcher = null;
+        DirtyField(targetUid, target, nameof(RDWatcherTargetComponent.Watcher));
+    }
+
+    #endregion
 }

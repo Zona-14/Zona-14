@@ -1,13 +1,23 @@
 ﻿using Content.Server.Administration;
 using Content.Shared._RD.Watcher;
 using Content.Shared.Administration;
+using Robust.Shared.Console;
 using Robust.Shared.Toolshed;
 
 namespace Content.Server._RD.Watcher;
 
-[ToolshedCommand, AdminCommand(AdminFlags.Mapping)]
+[ToolshedCommand(Name = "rd_watcher"), AdminCommand(AdminFlags.Mapping)]
 public sealed class RDWatcherCommand : ToolshedCommand
 {
+    [Dependency] private readonly IConsoleHost _console = null!;
+
+    [CommandImplementation("vv")]
+    public void ViewVariables([CommandInvocationContext] IInvocationContext ctx)
+    {
+        var watcherSystem = EntityManager.System<RDWatcherSystem>();
+        _console.RemoteExecuteCommand(ctx.Session, $"vv {watcherSystem.ViewVariablesUid}");
+    }
+
     [CommandImplementation("list")]
     public void List([CommandInvocationContext] IInvocationContext ctx)
     {
