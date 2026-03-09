@@ -42,6 +42,3 @@
             #projet
             StalkerProjectPawn: [ 0, -1 ]
             StalkerProjectOrchestrator: [ 0, -1 ]
-            # Mercenary
-            StalkerMercenary: [ 0, -1 ]
-            StalkerHeadMercenary: [ 0, -1 ]
