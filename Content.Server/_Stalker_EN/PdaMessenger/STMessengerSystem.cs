@@ -6,7 +6,6 @@ using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker_EN.CCVar;
-using Content.Shared._Stalker_EN.CharacterRank;
 using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.BulletinBoard;
 using Content.Shared._Stalker_EN.News;
@@ -329,12 +328,6 @@ public sealed partial class STMessengerSystem : EntitySystem
                 return;
 
             // Re-resolve the holder's band before access check (band may have changed)
-            if (TryComp<TransformComponent>(loaderUid, out var pdaXform))
-            {
-                var holder = pdaXform.ParentUid;
-                if (holder.IsValid())
-                    server.OwnerBand = ResolveMobBand(holder);
-            }
 
             if (!HasChannelAccess(channelProto, server))
                 return;
@@ -358,9 +351,6 @@ public sealed partial class STMessengerSystem : EntitySystem
         string? senderFaction = !isAnonymous
             ? ResolveContactFaction(senderKey)
             : null;
-        string? senderRankIcon = !isAnonymous
-            ? ResolveContactRankIcon(senderKey)
-            : null;
 
         var message = new STMessengerMessage(
             msgId,
@@ -369,8 +359,7 @@ public sealed partial class STMessengerSystem : EntitySystem
             _timing.CurTime,
             send.ReplyToId,
             replySnippet,
-            senderFaction,
-            senderRankIcon);
+            senderFaction);
 
         chatMessages.Add(message);
 
@@ -486,14 +475,6 @@ public sealed partial class STMessengerSystem : EntitySystem
         {
             if (!TryComp<STMessengerServerComponent>(cartridgeUid, out var server))
                 continue;
-
-            // Re-resolve the holder's band before access check (band may have changed)
-            if (TryComp<TransformComponent>(pdaUid, out var pdaXform))
-            {
-                var holder = pdaXform.ParentUid;
-                if (holder.IsValid())
-                    server.OwnerBand = ResolveMobBand(holder);
-            }
 
             if (!HasChannelAccess(channelProto, server))
                 continue;
@@ -756,13 +737,10 @@ public sealed partial class STMessengerSystem : EntitySystem
                     contactEntry.UserId, contactEntry.CharacterName, currentFaction);
             }
 
-            var rankIcon = ResolveContactRankIcon(contactKey);
-
             contactInfos.Add(new STMessengerContactInfo(
                 contactEntry.CharacterName,
                 contactMessengerId,
-                contactEntry.FactionName,
-                rankIcon));
+                contactEntry.FactionName));
         }
 
         return new STMessengerUiState(
@@ -980,20 +958,6 @@ public sealed partial class STMessengerSystem : EntitySystem
     /// Resolves the current rank icon of an online contact by looking up their PDA holder's STCharacterRankComponent.
     /// Returns null if the contact is offline, PDA is not equipped, or has no rank.
     /// </summary>
-    private string? ResolveContactRankIcon((Guid UserId, string CharName) contactKey)
-    {
-        if (!_characterToPda.TryGetValue(contactKey, out var pdaUid))
-            return null;
-
-        if (!TryComp<TransformComponent>(pdaUid, out var xform))
-            return null;
-
-        var holder = xform.ParentUid;
-        if (!TryComp<STCharacterRankComponent>(holder, out var rank))
-            return null;
-
-        return rank.RankIconId;
-    }
 
     /// <summary>
     /// Resolves the current faction of an online contact by looking up their PDA holder's BandsComponent.

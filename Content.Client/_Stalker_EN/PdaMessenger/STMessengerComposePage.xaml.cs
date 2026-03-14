@@ -87,7 +87,7 @@ public sealed partial class STMessengerComposePage : BoxContainer
         {
             // Use the display name (character name) if available, otherwise fall back to messenger ID from chat ID
             RecipientLabel.Text = displayName ?? chatId[STMessengerChat.DmChatPrefix.Length..];
-            AnonymousToggle.Visible = false
+            AnonymousToggle.Visible = false;
         }
         else
         {
