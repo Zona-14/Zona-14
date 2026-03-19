@@ -200,7 +200,7 @@
   - STOuterClothingDolg
 
 - type: roleLoadout
-  id: StalkerNoviceDolg
+  id: JobStalkerNoviceDolg
   groups:
   - STTrinketsGroupOne
   - STTrinketsGroupTwo
