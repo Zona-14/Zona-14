@@ -1,7 +1,6 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Make by Ch00pSuey/shiniest_meat_bicycle for Stalker",
+  "copyright": "Stalker14 CLA",
   "size": {
     "x": 48,
     "y": 48
@@ -21,7 +20,15 @@
       "directions": 4
     },
     {
+      "name": "equipped-BACKPACK-scope",
+      "directions": 4
+    },
+    {
       "name": "equipped-SUITSTORAGE",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGE-scope",
       "directions": 4
     },
     {
@@ -32,7 +39,15 @@
       "directions": 4
     },
     {
+      "name": "inhand-left-scope",
+      "directions": 4
+    },
+    {
       "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right-scope",
       "directions": 4
     },
     {
@@ -43,7 +58,15 @@
       "directions": 4
     },
     {
+      "name": "wielded-inhand-left-scope",
+      "directions": 4
+    },
+    {
       "name": "wielded-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-right-scope",
       "directions": 4
     }
   ]

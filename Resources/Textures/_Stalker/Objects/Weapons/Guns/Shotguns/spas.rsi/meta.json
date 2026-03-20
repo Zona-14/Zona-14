@@ -1,12 +1,39 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-4.0",
-  "copyright": "TOZ-34 by CORVAX Stalker",
+  "copyright": "Stalker14 CLA",
   "size": {
     "x": 48,
     "y": 48
   },
   "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "bolt-open"
+    },
+    {
+      "name": "butt-close"
+    },
+    {
+      "name": "butt-open"
+    },
+    {
+      "name": "equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BACKPACK-butt",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGE",
+      "directions": 4
+    },
+    {
+      "name": "equipped-SUITSTORAGE-butt",
+      "directions": 4
+    },
     {
       "name": "icon"
     },
@@ -15,7 +42,23 @@
       "directions": 4
     },
     {
+      "name": "inhand-left-butt-c",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left-butt-o",
+      "directions": 4
+    },
+    {
       "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right-butt-c",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right-butt-o",
       "directions": 4
     },
     {
@@ -23,15 +66,23 @@
       "directions": 4
     },
     {
+      "name": "wielded-inhand-left-butt-c",
+      "directions": 4
+    },
+    {
+      "name": "wielded-inhand-left-butt-o",
+      "directions": 4
+    },
+    {
       "name": "wielded-inhand-right",
       "directions": 4
     },
     {
-      "name": "equipped-SUITSTORAGE",
+      "name": "wielded-inhand-right-butt-c",
       "directions": 4
     },
     {
-      "name": "equipped-BACKPACK",
+      "name": "wielded-inhand-right-butt-o",
       "directions": 4
     }
   ]

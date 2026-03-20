@@ -23,5 +23,5 @@
         Blunt: 0.97
         Slash: 0.97
       flatReductions:
-        Blunt: 1
-        Slash: 1
+        Blunt: 2.5
+        Slash: 2.5

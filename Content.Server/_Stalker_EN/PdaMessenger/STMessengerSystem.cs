@@ -8,6 +8,7 @@ using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.BulletinBoard;
+using Content.Shared._Stalker_EN.News;
 using Content.Shared._Stalker_EN.PdaMessenger;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
@@ -239,6 +240,9 @@ public sealed partial class STMessengerSystem : EntitySystem
             case STMessengerNavigateToOfferEvent navigateToOffer:
                 OnNavigateToOffer(args.LoaderUid, navigateToOffer);
                 break;
+            case STMessengerNavigateToNewsEvent navigateToNews:
+                OnNavigateToNews(args.LoaderUid, navigateToNews);
+                break;
         }
     }
 
@@ -276,8 +280,11 @@ public sealed partial class STMessengerSystem : EntitySystem
         var chatId = send.TargetChatId;
         var isDm = chatId.StartsWith(STMessengerChat.DmChatPrefix, StringComparison.Ordinal);
 
+        // Effective anonymous flag: only allowed for non-DM channels that explicitly permit it
+        var isAnonymous = send.IsAnonymous && !isDm;
+
         // Determine display name: anonymous pseudonym for channels, real name for DMs
-        var displayName = (send.IsAnonymous && !isDm)
+        var displayName = isAnonymous
             ? GetOrCreatePseudonym(senderKey)
             : senderName;
 
@@ -290,6 +297,7 @@ public sealed partial class STMessengerSystem : EntitySystem
         List<STMessengerMessage> chatMessages;
         int maxMessages;
         string storageKey;
+        STMessengerChannelPrototype? channelProto = null;
 
         if (isDm)
         {
@@ -316,8 +324,20 @@ public sealed partial class STMessengerSystem : EntitySystem
         else
         {
             // Validate that the channel prototype exists to prevent clients from polluting storage
-            if (!_protoManager.HasIndex<STMessengerChannelPrototype>(chatId))
+            if (!_protoManager.TryIndex(chatId, out channelProto))
                 return;
+
+            // Re-resolve the holder's band before access check (band may have changed)
+
+            if (!HasChannelAccess(channelProto, server))
+                return;
+
+            // Enforce per-channel anonymous setting
+            if (isAnonymous && !channelProto.AllowAnonymous)
+            {
+                isAnonymous = false;
+                displayName = senderName;
+            }
 
             storageKey = chatId;
             chatMessages = _channelChats.GetOrNew(storageKey);
@@ -327,8 +347,8 @@ public sealed partial class STMessengerSystem : EntitySystem
         _nextMessageId.TryAdd(storageKey, 0);
         var msgId = ++_nextMessageId[storageKey];
 
-        // Resolve faction for non-anonymous messages; null hides faction on anonymous messages
-        string? senderFaction = !send.IsAnonymous
+        // Resolve faction and rank for non-anonymous messages; null hides them on anonymous messages
+        string? senderFaction = !isAnonymous
             ? ResolveContactFaction(senderKey)
             : null;
 
@@ -350,16 +370,20 @@ public sealed partial class STMessengerSystem : EntitySystem
             chatMessages.RemoveRange(0, chatMessages.Count - maxMessages);
 
         // Admin log — include anonymous pseudonym so admins can trace abuse
-        if (send.IsAnonymous && !isDm)
+        var replyInfo = send.ReplyToId is { } rid
+            ? $" (reply to #{rid}: \"{replySnippet}\")"
+            : "";
+
+        if (isAnonymous)
         {
-            _adminLogger.Add(LogType.PdaMessage, LogImpact.Medium,
+            _adminLogger.Add(LogType.STMessenger, LogImpact.Medium,
                 $"{ToPrettyString(args.Actor):player} sent anonymous message " +
-                $"(as \"{displayName}\") to {chatId}: {content}");
+                $"(as \"{displayName}\") to {chatId}{replyInfo}: {content}");
         }
         else
         {
-            _adminLogger.Add(LogType.PdaMessage, LogImpact.Medium,
-                $"{ToPrettyString(args.Actor):player} sent message to {chatId}: {content}");
+            _adminLogger.Add(LogType.STMessenger, LogImpact.Medium,
+                $"{ToPrettyString(args.Actor):player} sent message to {chatId}{replyInfo}: {content}");
         }
 
         if (isDm)
@@ -389,8 +413,12 @@ public sealed partial class STMessengerSystem : EntitySystem
         }
         else
         {
-            SendDiscordWebhook(chatId, displayName, content);
-            NotifyChannelRecipients(chatId, server);
+            if (channelProto!.BroadcastToDiscord)
+            {
+                SendDiscordWebhook(chatId, displayName, content);
+            }
+
+            NotifyChannelRecipients(channelProto, server);
         }
 
         BroadcastUiUpdate(chatId);
@@ -440,7 +468,7 @@ public sealed partial class STMessengerSystem : EntitySystem
             _ringer.RingerPlayRingtone((recipientPdaUid, ringer));
     }
 
-    private void NotifyChannelRecipients(string channelId, STMessengerServerComponent senderServer)
+    private void NotifyChannelRecipients(STMessengerChannelPrototype channelProto, STMessengerServerComponent senderServer)
     {
         // Use cached messenger PDAs instead of full entity query
         foreach (var (pdaUid, (cartridgeUid, _)) in _messengerPdas)
@@ -448,7 +476,10 @@ public sealed partial class STMessengerSystem : EntitySystem
             if (!TryComp<STMessengerServerComponent>(cartridgeUid, out var server))
                 continue;
 
-            if (server.MutedChannels.Contains(channelId))
+            if (!HasChannelAccess(channelProto, server))
+                continue;
+
+            if (server.MutedChannels.Contains(channelProto.ID))
                 continue;
 
             if (TryComp<RingerComponent>(pdaUid, out var ringer))
@@ -496,6 +527,10 @@ public sealed partial class STMessengerSystem : EntitySystem
         AddContactAsync(server.OwnerUserId, server.OwnerCharacterName,
             contactIdentity.UserId, contactIdentity.CharName, factionName);
 
+        _adminLogger.Add(LogType.STMessenger, LogImpact.Low,
+            $"{ToPrettyString(args.Actor):player} added messenger contact " +
+            $"{contactIdentity.CharName} (ID: {add.MessengerId})");
+
         BroadcastUiUpdate();
     }
 
@@ -514,6 +549,10 @@ public sealed partial class STMessengerSystem : EntitySystem
             return;
 
         server.Contacts.Remove(remove.ContactMessengerId);
+
+        _adminLogger.Add(LogType.STMessenger, LogImpact.Low,
+            $"{ToPrettyString(args.Actor):player} removed messenger contact " +
+            $"{contactEntry.CharacterName} (ID: {remove.ContactMessengerId})");
 
         RemoveContactAsync(server.OwnerUserId, server.OwnerCharacterName,
             contactEntry.UserId, contactEntry.CharacterName);
@@ -579,6 +618,23 @@ public sealed partial class STMessengerSystem : EntitySystem
         }
     }
 
+    private void OnNavigateToNews(NetEntity loaderNetUid, STMessengerNavigateToNewsEvent navigateToNews)
+    {
+        var loaderUid = GetEntity(loaderNetUid);
+
+        var ev = new STOpenNewsArticleEvent(loaderUid, navigateToNews.ArticleId);
+        var installed = _cartridgeLoader.GetInstalled(loaderUid);
+        foreach (var progUid in installed)
+        {
+            if (!HasComp<STNewsCartridgeComponent>(progUid))
+                continue;
+
+            RaiseLocalEvent(progUid, ref ev);
+            if (ev.Handled)
+                return;
+        }
+    }
+
     private void MarkChatAsRead(string chatId, STMessengerServerComponent server)
     {
         var isDm = chatId.StartsWith(STMessengerChat.DmChatPrefix, StringComparison.Ordinal);
@@ -628,6 +684,9 @@ public sealed partial class STMessengerSystem : EntitySystem
         var channels = new List<STMessengerChat>(_sortedChannels.Count);
         foreach (var proto in _sortedChannels)
         {
+            if (!HasChannelAccess(proto, server))
+                continue;
+
             List<STMessengerMessage>? messages = null;
             if (viewedChatId == proto.ID && _channelChats.TryGetValue(proto.ID, out var channelMessages))
                 messages = new List<STMessengerMessage>(channelMessages);
@@ -789,7 +848,7 @@ public sealed partial class STMessengerSystem : EntitySystem
 
         var userId = actor.PlayerSession.UserId.UserId;
         var charName = MetaData(holder).EntityName;
-        InitializeMessengerForPda(pdaUid, progUid.Value, server, userId, charName);
+        InitializeMessengerForPda(pdaUid, progUid.Value, server, userId, charName, holder);
 
         // Claim PDA ownership so the password settings UI works for wild PDAs
         if (TryComp<PdaComponent>(pdaUid, out var pda) && pda.PdaOwner is null)
@@ -817,7 +876,7 @@ public sealed partial class STMessengerSystem : EntitySystem
 
         var userId = args.Player.UserId.UserId;
         var charName = args.Profile.Name;
-        InitializeMessengerForPda(idEntity.Value, progUid.Value, server, userId, charName);
+        InitializeMessengerForPda(idEntity.Value, progUid.Value, server, userId, charName, args.Mob);
     }
 
     /// <summary>
@@ -830,10 +889,12 @@ public sealed partial class STMessengerSystem : EntitySystem
         EntityUid cartridgeUid,
         STMessengerServerComponent server,
         Guid userId,
-        string charName)
+        string charName,
+        EntityUid holderUid)
     {
         server.OwnerUserId = userId;
         server.OwnerCharacterName = charName;
+        server.OwnerBand = ResolveMobBand(holderUid);
 
         _characterToPda[(userId, charName)] = pdaUid;
         _messengerPdas[pdaUid] = (cartridgeUid, pdaUid);
@@ -892,6 +953,11 @@ public sealed partial class STMessengerSystem : EntitySystem
     #endregion
 
     #region Helpers
+
+    /// <summary>
+    /// Resolves the current rank icon of an online contact by looking up their PDA holder's STCharacterRankComponent.
+    /// Returns null if the contact is offline, PDA is not equipped, or has no rank.
+    /// </summary>
 
     /// <summary>
     /// Resolves the current faction of an online contact by looking up their PDA holder's BandsComponent.
@@ -970,6 +1036,25 @@ public sealed partial class STMessengerSystem : EntitySystem
         _usedPseudonyms.Add(fallback);
         _anonymousPseudonyms[identity] = fallback;
         return fallback;
+    }
+
+    /// <summary>
+    /// Resolves the band prototype ID from a mob entity's BandsComponent.
+    /// Returns null if the entity has no band.
+    /// </summary>
+    private ProtoId<STBandPrototype>? ResolveMobBand(EntityUid mobUid)
+    {
+        return TryComp<BandsComponent>(mobUid, out var bands) ? bands.BandProto : null;
+    }
+
+    /// <summary>
+    /// Returns true if the server component has access to the given channel.
+    /// Unrestricted channels (empty RequiredBands) are accessible to all.
+    /// </summary>
+    private static bool HasChannelAccess(STMessengerChannelPrototype channel, STMessengerServerComponent server)
+    {
+        return channel.RequiredBands.Count == 0
+            || (server.OwnerBand is not null && channel.RequiredBands.Contains(server.OwnerBand.Value));
     }
 
     /// <summary>

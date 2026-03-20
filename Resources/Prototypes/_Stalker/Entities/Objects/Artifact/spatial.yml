@@ -137,8 +137,11 @@
     - type: Storage
       grid:
         - 0,0,3,3
+      blacklist:
+        tags:
+        - STArtifact
     - type: STWeight
-      self: 30
+      self: 3
     - type: Armor
       hiddenExamine: true
       armorClass: 2
@@ -176,7 +179,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.85
+        Piercing: 0.9
 
 - type: entity
   parent: BaseArtifact
@@ -307,4 +310,6 @@
     walkModifier: 0.85
     sprintModifier: 0.85
   - type: STWeight
-    self: 15
+    self: 30
+  - type: STWeightInsideReduction
+    reductionFraction: 0.80
