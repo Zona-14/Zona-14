@@ -201,7 +201,8 @@
       45ACPMFMJBox: 450
       45ACPRIPBox: 300
       45ACPAPBox: 1000
-
+      754FMJBox: 1675
+      754HPBox: 1015
   - name: shop-category-armor
     priority: 4
     items:
