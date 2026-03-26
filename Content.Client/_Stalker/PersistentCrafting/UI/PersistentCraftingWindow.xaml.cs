@@ -28,9 +28,6 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
     [Dependency] private readonly IClyde _clyde = default!;
 
-    private static readonly Color WeaponAccent = PersistentCraftUiTheme.WeaponAccent;
-    private static readonly Color ArmorAccent = PersistentCraftUiTheme.ArmorAccent;
-    private static readonly Color AnomalyAccent = PersistentCraftUiTheme.AnomalyAccent;
     private static readonly Color PanelBackground = PersistentCraftUiTheme.SurfaceWindow;
     private static readonly Color CardBackground = PersistentCraftUiTheme.SurfacePanel;
     private static readonly Color CardUnlockedBackground = PersistentCraftUiTheme.SurfacePanelAlt;
@@ -57,6 +54,7 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
     private const float NodeDetailsWindowMargin = 16f;
 
     private readonly Dictionary<PersistentCraftBranch, string> _selectedNodeByBranch = new();
+    private readonly BoxContainer[] _branchHosts;
     private bool _selectPreferredBranchOnNextUpdate = true;
 
     private PersistentCraftState? _state;
@@ -71,9 +69,24 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
 
         RobustXamlLoader.Load(this);
 
-        Branches.SetTabTitle(0, Loc.GetString("persistent-craft-branch-weapon"));
-        Branches.SetTabTitle(1, Loc.GetString("persistent-craft-branch-armor"));
-        Branches.SetTabTitle(2, Loc.GetString("persistent-craft-branch-anomaly"));
+        _branchHosts =
+            new[]
+            {
+            WeaponSubNodeHost,
+            ArmorSubNodeHost,
+            AnomalySubNodeHost,
+            };
+
+        const int expectedBranchCount = 3;
+        if (_branchHosts.Length != expectedBranchCount)
+            throw new InvalidOperationException("Persistent craft skill window branch hosts are out of sync with configured branches.");
+
+        for (var index = 0; index < _branchHosts.Length; index++)
+        {
+            var branch = GetBranchByTabIndex(index);
+            Branches.SetTabTitle(index, Loc.GetString(PersistentCraftingHelper.GetBranchLocKey(branch)));
+        }
+
         PersistentCraftUiTheme.ApplyTabTheme(Branches, "persistent-craft-skill-tabs", PersistentCraftUiTheme.Selection, _uiManager);
 
         Branches.OnTabChanged += _ =>
@@ -858,7 +871,12 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
 
     private PersistentCraftBranch GetCurrentBranch()
     {
-        return Branches.CurrentTab switch
+        return GetBranchByTabIndex(Branches.CurrentTab);
+    }
+
+    private static PersistentCraftBranch GetBranchByTabIndex(int tabIndex)
+    {
+        return tabIndex switch
         {
             1 => PersistentCraftBranch.Armor,
             2 => PersistentCraftBranch.Anomaly,
@@ -902,13 +920,7 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
 
     private BoxContainer GetBranchHost(PersistentCraftBranch branch)
     {
-        return branch switch
-        {
-            PersistentCraftBranch.Weapon => WeaponSubNodeHost,
-            PersistentCraftBranch.Armor => ArmorSubNodeHost,
-            PersistentCraftBranch.Anomaly => AnomalySubNodeHost,
-            _ => WeaponSubNodeHost,
-        };
+        return _branchHosts[GetBranchTabIndex(branch)];
     }
 
     private PersistentCraftBranchState GetBranchState(PersistentCraftState state, PersistentCraftBranch branch)
@@ -922,12 +934,6 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
 
     private static Color GetBranchAccent(PersistentCraftBranch branch)
     {
-        return branch switch
-        {
-            PersistentCraftBranch.Weapon => WeaponAccent,
-            PersistentCraftBranch.Armor => ArmorAccent,
-            PersistentCraftBranch.Anomaly => AnomalyAccent,
-            _ => CardBorder,
-        };
+        return PersistentCraftUiTheme.Accent(branch);
     }
 }
