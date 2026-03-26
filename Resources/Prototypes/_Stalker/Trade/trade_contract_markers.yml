@@ -19,3 +19,13 @@
   - type: Tag
     tags:
     - TradeContractDeliveryBolotoEasy
+
+- type: entity
+  id: MarkerContractHuntBoarLair
+  parent: MarkerBase
+  name: контракт, охота, логово кабанов, болото средний
+  suffix: ST, КВЕСТЫ
+  components:
+  - type: Tag
+    tags:
+    - TradeContractHuntBoarLair

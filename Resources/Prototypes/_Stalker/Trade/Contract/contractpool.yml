@@ -1,124 +1,190 @@
+# Пул наград - Лёгкий
 - type: ncContractRewardPool
-  id: caravan_easy
+  id: ContractRewardEasy
   entries:
   - type: Item
-    id: MedkitAI2
+    id: MedkitAI2 # Аптечка АИ-2
     amount: { min: 3, max: 6 }
     weight: 3
   - type: Item
-    id: MedkitMilitary
+    id: MedkitMilitary # Военная аптечка
     amount: { min: 2, max: 5 }
     weight: 2
   - type: Item
-    id: MedkitScience
+    id: MedkitScience # Научная аптечка
     amount: { min: 1, max: 2 }
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalkerModifedType2
+    id: ClothingOuterArmorZaryaStalkerModifedType2 # Броня "Заря" (модиф. тип 2)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalkerModifedType1
+    id: ClothingOuterArmorZaryaStalkerModifedType1 # Броня "Заря" (модиф. тип 1)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalker
+    id: ClothingOuterArmorZaryaStalker # Броня "Заря"
     weight: 1
   - type: Item
-    id: SetZaryaStalkerBuyableCrate
+    id: SetZaryaStalkerBuyableCrate # Набор "Заря" (ящик)
     weight: 1
   - type: Item
-    id: ClothingBeltWebbingHolsterStalkerZarya
+    id: ClothingBeltWebbingHolsterStalkerZarya # Кобура "Заря"
     weight: 1
   - type: Item
-    id: ClothingBackpackStalkerZaryaGreen
+    id: ClothingBackpackStalkerZaryaGreen # Рюкзак "Заря" (зелёный)
     weight: 1
   - type: Item
-    id: ClothingBackpackStalkerZaryaBlack
+    id: ClothingBackpackStalkerZaryaBlack # Рюкзак "Заря" (чёрный)
     weight: 1
   - type: Item
-    id: STWeaponShotgunMP133
+    id: STWeaponShotgunMP133 # Дробовик МП-133
     weight: 1
   - type: Item
-    id: STWeaponShotgunMossbergM88
+    id: STWeaponShotgunMossbergM88 # Дробовик Mossberg M88
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorResponse
+    id: ZoneArtifactDetectorResponse # Детектор "Отклик"
     weight: 1
   - type: Item
-    id: LgbtKnife
+    id: LgbtKnife # Нож
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP24Topaz # Топаз
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25 # Граната ВОГ-25
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25gvozd # Граната ВОГ-25 «Гвоздь»
+    weight: 1
+  - type: Item
+    id: BulletGrenadeVOG25P # Граната ВОГ-25П
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSpark # Броня «Искра»
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmor6B2 # Бронежилет 6Б2
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZN1 # Броня ЗН-1
+    weight: 1
+  - type: Item
+    id: 545Mag45 # Магазин 5.45x39 (45 шт.)
+    weight: 1
+  - type: Item
+    id: 556Mag45 # Магазин 5.56 NATO (45 шт.)
     weight: 1
 
+# Пул наград - Средний
 - type: ncContractRewardPool
-  id: caravan_medium
+  id: ContractRewardMedium
   entries:
   - type: Item
-    id: MedkitAI2
+    id: MedkitAI2 # Аптечка АИ-2
     amount: { min: 3, max: 6 }
     weight: 3
   - type: Item
-    id: MedkitMilitary
+    id: MedkitMilitary # Военная аптечка
     amount: { min: 3, max: 6 }
     weight: 2
   - type: Item
-    id: MedkitScience
+    id: MedkitScience # Научная аптечка
     amount: { min: 2, max: 3 }
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorBarracuda
+    id: ZoneArtifactDetectorSpruce # Детектор Хвоя
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorSpruce
-    weight: 1
-  - type: Item
-    id: BoxArtcont
+    id: BoxArtcont # Контейнер для артефактов
     amount: { min: 1, max: 3 }
     weight: 2
   - type: Item
-    id: ClothingBackpackDuffelBlackTacticStalker
+    id: ClothingBackpackDuffelBlackTacticStalker # Тактический рюкзак (чёрный)
     weight: 1
   - type: Item
-    id: STWeaponRifleRPK74
+    id: STWeaponRifleRPK74 # РПК-74
     weight: 1
   - type: Item
-    id: STWeaponRifleSaiga739
+    id: STWeaponRifleSaiga739 # Сайга 739
     weight: 1
   - type: Item
-    id: STWeaponRifleGalatz
+    id: STWeaponRifleGalatz # Галац
     weight: 1
   - type: Item
-    id: 6mmBuckshotBoxCink
-    amount: { min: 1, max: 3 }
+    id: 6mmBuckshotBoxCink # Цинк Дроби
+    amount: { min: 1, max: 2 }
     weight: 2
   - type: Item
-    id: LgbtKnife
+    id: LgbtKnife # Нож
     weight: 1
   - type: Item
-    id: STWeaponSMGMP5
+    id: STWeaponSMGMP5 # Пистолет-пулемёт MP5
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP24Topaz # Топаз
+    weight: 2
+  - type: Item
+    id: GrenadeVOG25 # Граната ВОГ-25
+    weight: 1
+  - type: Item
+    id: GrenadeVOG25gvozd # Граната ВОГ-25 «Гвоздь»
+    weight: 1
+  - type: Item
+    id: BulletGrenadeVOG25P # Граната ВОГ-25П
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSpark # Броня «Искра»
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorMilitarySpark # Военная броня «Искра»
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorZN1 # Броня ЗН-1
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunSPAS # Дробовик SPAS-12
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKS74 # АКС-74
+    weight: 1
+  - type: Item
+    id: 545Mag45
+    amount: { min: 2, max: 3 }
+    weight: 1
+  - type: Item
+    id: 556Mag45
+    amount: { min: 2, max: 3 }
     weight: 1
 
 
+
+# Пул наград - Тяжёлый
 - type: ncContractRewardPool
-  id: caravan_hard
+  id: ContractRewardHard
   entries:
   - type: Item
-    id: BattleMedipenStalker
-    amount: { min: 1, max: 2 }
-    weight: 3
-  - type: Item
-    id: ExperimentalStimulantsStalker
+    id: STCraftSheetBrassT3 # Листы латуни Т3
+    amount: { min: 2, max: 5 }
     weight: 2
   - type: Item
-    id: STWeaponRifleAKM
+    id: ClothingOuterArmorSSP24Topaz # Топаз
+    weight: 2
+  - type: Item
+    id: ClothingOuterArmorSevaStalker # Бронекостюм "Сева"
     weight: 1
   - type: Item
-    id: STWeaponRifleAK103
+    id: ClothingOuterArmorMilitarySpark # Военная броня «Искра»
     weight: 1
   - type: Item
-    id: 545BPBox
-    weight: 2
+    id: STClothingOuterArmorLightPlateVestBaseANAgreen # Лёгкий плитник АНА (зелёный)
+    weight: 1
   - type: Item
-    id: 739BPBox
-    weight: 2
+    id: STClothingOuterArmorLightPlateVestBaseANAgray # Лёгкий плитник АНА (серый)
+    weight: 1
   - type: Item
-    id: STCraftSheetBrassT3
-    amount: { min: 3, max: 5 }
-    weight: 2
+    id: STWeaponShotgunSPAS # Дробовик SPAS-12
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKS74 # АКС-74
+    weight: 1
+

@@ -51,7 +51,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: caravan_contract_stalker_planks
@@ -69,7 +69,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: caravan_contract_stalker_copper
@@ -87,7 +87,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: caravan_contract_stalker_berries
@@ -113,7 +113,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: caravan_contract_stalker_pistol
@@ -136,7 +136,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy_nonweapons
+      id: ContractRewardEasy
 
 # ----------------------------
 # Medium contracts
@@ -157,7 +157,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_medium
+      id: ContractRewardMedium
 
 - type: storeContract
   id: caravan_contract_stalker_snork
@@ -177,7 +177,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_medium
+      id: ContractRewardMedium
 
 - type: storeContract
   id: caravan_contract_stalker_flesh
@@ -197,7 +197,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_medium
+      id: ContractRewardMedium
 
 # ----------------------------
 # Hard contracts
@@ -220,7 +220,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_hard
+      id: ContractRewardHard
 
 - type: storeContract
   id: caravan_contract_stalker_pseudogiant
@@ -240,4 +240,4 @@
     amount: { min: 2, max: 3 }
     options:
     - type: Pool
-      id: caravan_hard
+      id: ContractRewardHard

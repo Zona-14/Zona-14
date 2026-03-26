@@ -13,6 +13,10 @@
     weight: 100
   - id: trade_contract_delivery_BoxCrate
     weight: 100
+  - id: trade_contract_recovery_BoxCrate
+    weight: 100
+  - id: trade_contract_hunt_old_boar
+    weight: 75
 
 - type: storeContractsPreset
   id: TradeContractsCityPreset
@@ -44,7 +48,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: trade_contract_ArtMedusa
@@ -62,7 +66,7 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: trade_contract_MutantPartFleshEye
@@ -71,7 +75,7 @@
   difficulty: Easy
   targets:
   - id: MutantPartFleshEye
-    required: 1
+    required: { min: 2, max: 4 }
   rewards:
   - type: Currency
     id: Roubles
@@ -80,16 +84,16 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: trade_contract_MutantPartBlindDogTail
-  name: "Глаз Плоти"
+  name: "Хвосты слепых псов"
   description: "Хвосты собак на лекарство."
   difficulty: Easy
   targets:
   - id: MutantPartBlindDogTail
-    required: 3
+    required: { min: 2, max: 4 }
   rewards:
   - type: Currency
     id: Roubles
@@ -98,11 +102,11 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
 
 - type: storeContract
   id: trade_contract_delivery_BoxCrate
-  name: "Доставить ящик на шахту"
+  name: "Доставить ящик к покупателю"
   description: "Нужно донести ящик к покупателю. Не задавай вопросов."
   difficulty: Easy
   repeatable: true
@@ -125,7 +129,35 @@
     amount: { min: 1, max: 2 }
     options:
     - type: Pool
-      id: caravan_easy
+      id: ContractRewardEasy
+
+- type: storeContract
+  id: trade_contract_recovery_BoxCrate
+  name: "Вернуть ящик с болота"
+  description: "Клиент так и не забрал свой груз, а теперь там ошивается стая матерых кабанов. Отправляйся на место, разберись с охраной и притащи ящик обратно к автомату."
+  difficulty: Easy
+  repeatable: true
+  objectiveType: Delivery
+  runtime:
+    spawnPointTag: TradeContractDeliveryBolotoEasy
+    targetPrototype: BoxCrateQests
+    allowStoreWorldTurnIn: true
+    guardPrototype: MobMutantBoar
+    guardCount: 3
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  targets:
+  - id: BoxCrateQests
+    required: 1
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardEasy
 
 - type: storeContract
   id: trade_contract_delivery_tracked_copper
@@ -235,6 +267,32 @@
   - type: Currency
     id: Roubles
     amount: { min: 50, max: 80 }
+
+- type: storeContract
+  id: trade_contract_hunt_old_boar
+  name: "Охота на Старого Секача"
+  description: "В окрестностях объявился старый секач со своей свитой. Эта тварь терроризирует округу. Заказчик хочет, чтобы ты разобрался с ним. Устрани вожака, разберись с его охраной, а в качестве доказательства принеси трофейную метку с главного кабана."
+  difficulty: Medium
+  repeatable: true
+  objectiveType: Hunt
+  runtime:
+    spawnPointTag: TradeContractHuntBoarLair
+    stageGoal: 1
+    targetPrototype: MobMutantBoarOld
+    guardPrototype: MobMutantBoar
+    guardCount: 3
+    proofPrototype: NcTradeContractProofBoarHoof
+    givePinpointer: true
+    pinpointerPrototype: PinpointerUniversal
+  rewards:
+  - type: Currency
+    id: Roubles
+    amount: { min: 1000, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: ContractRewardMedium
 
 # ----------------------------
 # Multi-stage repair objective
