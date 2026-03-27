@@ -27,8 +27,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Parts/boar_parts.rsi # Я предположил этот путь к спрайту, измени его, если он другой
-    state: hoof_old
+    sprite: _Stalker/Objects/MutantParts/Old_boar_hoof.rsi
+    state: icon
     scale: 1.2, 1.2
   - type: Item
     size: Small

@@ -12,10 +12,5 @@
     - state: noticeboard
   - type: NcStore
     contractPresets:
-    - PresetBazar
+    - TradeContractsCityPreset
 
-- type: Tag
-  id: TradeContractDeliveryBolotoEasy
-
-- type: Tag
-  id: TradeContractHuntBoarLair
