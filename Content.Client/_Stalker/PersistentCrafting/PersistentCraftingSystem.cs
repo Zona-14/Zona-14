@@ -10,6 +10,7 @@ public sealed class PersistentCraftingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     private const float InventoryRefreshInterval = 0.15f;
 
+    private PersistentCraftClientPrototypeCache _prototypeCache = default!;
     private PersistentCraftStationWindow? _craftWindow;
     private PersistentCraftingWindow? _skillsWindow;
     private PersistentCraftState? _latestState;
@@ -18,6 +19,7 @@ public sealed class PersistentCraftingSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        _prototypeCache = PersistentCraftClientPrototypeCache.Create(_prototype);
 
         SubscribeNetworkEvent<OpenPersistentCraftMenuEvent>(OnOpenMenuEvent);
         SubscribeNetworkEvent<PersistentCraftStateEvent>(OnStateEvent);
@@ -117,7 +119,7 @@ public sealed class PersistentCraftingSystem : EntitySystem
         if (_craftWindow == null || _craftWindow.Disposed || !_craftWindow.IsOpen || _latestState == null)
             return;
 
-        _craftWindow.UpdateState(_latestState, _prototype.EnumeratePrototypes<PersistentCraftRecipePrototype>());
+        _craftWindow.UpdateState(_latestState, _prototypeCache);
     }
 
     private void RefreshSkillWindow()
@@ -127,8 +129,7 @@ public sealed class PersistentCraftingSystem : EntitySystem
 
         _skillsWindow.UpdateState(
             _latestState,
-            _prototype.EnumeratePrototypes<PersistentCraftNodePrototype>(),
-            _prototype.EnumeratePrototypes<PersistentCraftRecipePrototype>(),
+            _prototypeCache,
             RequestUnlock);
     }
 }

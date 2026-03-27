@@ -9,6 +9,7 @@ public sealed partial class PersistentCraftProfileComponent : Component
     public string CharacterName = string.Empty;
     public Dictionary<string, PersistentCraftBranchProfile> BranchProgress = new();
     public HashSet<string> UnlockedNodes = new();
+    public int LoadGeneration;
     public bool Loaded;
     public bool PersistenceDisabled;
 }

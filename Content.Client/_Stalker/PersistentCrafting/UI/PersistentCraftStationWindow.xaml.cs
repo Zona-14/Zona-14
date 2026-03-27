@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Client._Stalker.PersistentCrafting;
 using Content.Client._Stalker.PersistentCrafting.UI.Controls;
 using Content.Client.Message;
 using Content.Shared._Stalker.PersistentCrafting;
@@ -68,8 +69,10 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
     private bool _selectPreferredBranchOnNextUpdate = true;
     private string _lastVisibleBranch = string.Empty;
 
+    private PersistentCraftBranchRegistry _branchRegistry;
+    private PersistentCraftClientPrototypeCache? _prototypeCache;
     private PersistentCraftState? _state;
-    private List<PersistentCraftRecipePrototype> _recipes = new();
+    private IReadOnlyList<PersistentCraftRecipePrototype> _recipes = Array.Empty<PersistentCraftRecipePrototype>();
     private string _inventorySignature = string.Empty;
 
     public event Action<string>? OnCraftPressed;
@@ -79,6 +82,7 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
     {
         IoCManager.InjectDependencies(this);
         _tag = _entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
+        _branchRegistry = PersistentCraftBranchRegistry.Create(_prototype);
 
         RobustXamlLoader.Load(this);
 
@@ -99,14 +103,17 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         };
     }
 
-    public void UpdateState(PersistentCraftState state, IEnumerable<PersistentCraftRecipePrototype> recipes)
+    public void UpdateState(PersistentCraftState state, PersistentCraftClientPrototypeCache prototypeCache)
     {
+        if (!ReferenceEquals(_prototypeCache, prototypeCache))
+        {
+            _prototypeCache = prototypeCache;
+            _branchRegistry = prototypeCache.BranchRegistry;
+            InitializeBranchContainers();
+        }
+
         _state = state;
-        _recipes = recipes
-            .OrderBy(recipe => PersistentCraftingHelper.GetBranchIndex(_prototype, recipe.Branch))
-            .ThenBy(recipe => recipe.Tier)
-            .ThenBy(recipe => recipe.ID)
-            .ToList();
+        _recipes = prototypeCache.AllRecipes;
         _ownedAmountCache.Clear();
         _inventorySignature = BuildInventorySignature();
 
@@ -160,9 +167,7 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (_state == null)
             return;
 
-        var branchRecipes = _recipes
-            .Where(recipe => recipe.Branch == branch)
-            .ToList();
+        var branchRecipes = GetRecipesForBranch(branch);
 
         if (branchRecipes.Count == 0)
         {
@@ -912,9 +917,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
 
     private string GetCurrentBranch()
     {
-        return PersistentCraftingHelper.TryGetBranchByIndex(_prototype, Branches.CurrentTab, out var branch)
+        return _branchRegistry.TryGetBranchByIndex(Branches.CurrentTab, out var branch)
             ? branch
-            : (PersistentCraftingHelper.GetFirstBranch(_prototype) is { Length: > 0 } first ? first : _branchContainers.Keys.FirstOrDefault() ?? string.Empty);
+            : (_branchRegistry.FirstBranchId is { Length: > 0 } first ? first : _branchContainers.Keys.FirstOrDefault() ?? string.Empty);
     }
 
     private PersistentCraftRecipePrototype ResolveSelectedRecipe(
@@ -1128,9 +1133,7 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
 
     private bool TryResolveRequirementNode(PersistentCraftRecipePrototype recipe, out PersistentCraftNodePrototype node)
     {
-        PersistentCraftNodePrototype? resolvedNode;
-        if (_prototype.TryIndex<PersistentCraftNodePrototype>(recipe.RequiredNode, out resolvedNode) &&
-            resolvedNode != null)
+        if (TryGetNodePrototype(recipe.RequiredNode, out var resolvedNode))
         {
             node = resolvedNode;
             return true;
@@ -1145,19 +1148,22 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (_state == null)
             return;
 
-        var preferred = PersistentCraftingHelper.EnumerateBranches(_prototype)
+        var preferred = _branchRegistry.OrderedBranchIds
             .Select(branch => new
             {
                 Branch = branch,
-                Recipes = _recipes.Count(recipe => recipe.Branch == branch && HasRequirement(_state, recipe)),
+                Recipes = GetRecipesForBranch(branch).Count(recipe => HasRequirement(_state, recipe)),
                 Points = GetBranchState(_state, branch).AvailablePoints,
             })
             .OrderByDescending(entry => entry.Recipes)
             .ThenByDescending(entry => entry.Points)
             .FirstOrDefault(entry => entry.Recipes > 0 || entry.Points > 0);
 
-        if (preferred != null)
-            Branches.CurrentTab = PersistentCraftingHelper.GetBranchIndex(_prototype, preferred.Branch);
+        if (preferred != null &&
+            _branchRegistry.TryGetBranchIndex(preferred.Branch, out var branchIndex))
+        {
+            Branches.CurrentTab = branchIndex;
+        }
     }
 
     private string GetRecipeCategoryId(PersistentCraftRecipePrototype recipe)
@@ -1165,7 +1171,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (!string.IsNullOrWhiteSpace(recipe.Category))
             return recipe.Category!;
 
-        return PersistentCraftingHelper.GetDefaultCategoryId(_prototype, recipe.Branch);
+        return _branchRegistry.TryGetBranchDefinition(recipe.Branch, out var definition)
+            ? definition.DefaultCategory
+            : string.Empty;
     }
 
     private string GetRecipeSubCategoryId(PersistentCraftRecipePrototype recipe)
@@ -1173,7 +1181,8 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (!string.IsNullOrWhiteSpace(recipe.SubCategory))
             return recipe.SubCategory!;
 
-        return PersistentCraftingHelper.UsesTierSubcategories(_prototype, recipe.Branch)
+        return _branchRegistry.TryGetBranchDefinition(recipe.Branch, out var definition) &&
+               definition.UseTierSubcategories
             ? $"tier-{recipe.Tier}"
             : string.Empty;
     }
@@ -1427,12 +1436,14 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
 
     private Color GetAccent(string branch)
     {
-        return PersistentCraftingHelper.GetBranchAccent(_prototype, branch);
+        return _branchRegistry.TryGetBranchDefinition(branch, out var definition)
+            ? definition.AccentColor
+            : Color.White;
     }
 
     private string ResolveBranchTitle(string branchId)
     {
-        return PersistentCraftingHelper.TryGetBranchDefinition(_prototype, branchId, out var definition)
+        return _branchRegistry.TryGetBranchDefinition(branchId, out var definition)
             ? ResolveBranchTitle(definition)
             : branchId;
     }
@@ -1447,8 +1458,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         Branches.RemoveAllChildren();
         _branchContainers.Clear();
 
-        foreach (var definition in PersistentCraftingHelper.EnumerateBranchDefinitions(_prototype))
+        for (var index = 0; index < _branchRegistry.OrderedBranches.Count; index++)
         {
+            var definition = _branchRegistry.OrderedBranches[index];
             var container = new BoxContainer
             {
                 Orientation = BoxContainer.LayoutOrientation.Vertical,
@@ -1459,12 +1471,40 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
 
             Branches.AddChild(container);
             _branchContainers[definition.ID] = container;
-            Branches.SetTabTitle(
-                PersistentCraftingHelper.GetBranchIndex(_prototype, definition.ID),
-                ResolveBranchTitle(definition));
+            Branches.SetTabTitle(index, ResolveBranchTitle(definition));
         }
 
-        _lastVisibleBranch = PersistentCraftingHelper.GetFirstBranch(_prototype);
+        _lastVisibleBranch = _branchRegistry.FirstBranchId;
+    }
+
+    private IReadOnlyList<PersistentCraftRecipePrototype> GetRecipesForBranch(string branch)
+    {
+        if (_prototypeCache != null &&
+            _prototypeCache.RecipesByBranch.TryGetValue(branch, out var recipes))
+        {
+            return recipes;
+        }
+
+        return _recipes.Where(recipe => recipe.Branch == branch).ToList();
+    }
+
+    private bool TryGetNodePrototype(string nodeId, out PersistentCraftNodePrototype node)
+    {
+        if (_prototypeCache != null &&
+            _prototypeCache.TryGetNode(nodeId, out node))
+        {
+            return true;
+        }
+
+        if (_prototype.TryIndex<PersistentCraftNodePrototype>(nodeId, out var resolvedNode) &&
+            resolvedNode != null)
+        {
+            node = resolvedNode;
+            return true;
+        }
+
+        node = default!;
+        return false;
     }
 
     private static string GetIngredientCacheKey(PersistentCraftIngredient ingredient)
