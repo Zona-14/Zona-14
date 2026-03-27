@@ -48,7 +48,7 @@
   components:
   - type: NcStore
     contractPresets:
-    - PresetBazar
+    - TradeContractsCityPreset
   - type: Sprite
     sprite: _Stalker/NPC/CustomRadioPlayer.rsi
     state: daniil

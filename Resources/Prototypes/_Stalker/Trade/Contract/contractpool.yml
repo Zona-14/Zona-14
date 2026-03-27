@@ -74,6 +74,27 @@
   - type: Item
     id: 556Mag45 # Магазин 5.56 NATO (45 шт.)
     weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunCompact # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSniperSKS # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ArmyProvisionCrate # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ArmyMedkitMilitaryCrate # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelCommonStalker # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: SanitarCrate # Магазин 5.56 NATO (45 шт.)
+    weight: 1
 
 # Пул наград - Средний
 - type: ncContractRewardPool
@@ -155,6 +176,48 @@
     id: 556Mag45
     amount: { min: 2, max: 3 }
     weight: 1
+  - type: Item
+    id: STWeaponRifleAKM # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleAKMC # АКС-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterKorynd # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP19919 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk921 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP1901 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorAborigineStalker # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: Veles # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP2000 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalker # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalkerGray # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP99 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
 
 
 
@@ -186,5 +249,73 @@
     weight: 1
   - type: Item
     id: STWeaponRifleAKS74 # АКС-74
+    weight: 1
+  - type: Item
+    id: Dollar # доллары
+    amount: { min: 10, max: 20 }
+    weight: 2
+  - type: Item
+    id: MedkitElite # доллары
+    amount: { min: 4, max: 8 }
+    weight: 1
+  - type: Item
+    id: STWeaponRifleG36 # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleG36Alt # АКС-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterKorynd # АКС-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterIOTVGEN4 # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunSaiga12 # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponSniperVepr # АКС-74
+    weight: 1
+  - type: Item
+    id: STClothingOuterArmorLightPlateVestBasePSZ7 # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponRifleM14 # АКС-74
+    weight: 1
+  - type: Item
+    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP19919 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGStalkerCP2Veresk921 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STWeaponSMGPP1901 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: Veles # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ZoneArtifactDetectorBarracuda # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: STZoneArtifactDetectorBarracudaBlueprint # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalker # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingBackpackDuffelSuperStalkerGray # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorSSP99 # Магазин 5.56 NATO (45 шт.)
+    weight: 1
+  - type: Item
+    id: StalkerMedBandShopCrate # Магазин 5.56 NATO (45 шт.)
     weight: 1
 
