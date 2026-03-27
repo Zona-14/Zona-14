@@ -1209,7 +1209,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (GetSubCategoryPrototype(subCategoryId) is { } subCategory)
             return TryLoc(subCategory.Name) ?? subCategory.Name;
 
-        if (subCategoryId.StartsWith("tier-") && int.TryParse(subCategoryId["tier-".Length..], out var tier))
+        if (subCategoryId.StartsWith("tier-") &&
+            subCategoryId.Length > "tier-".Length &&
+            int.TryParse(subCategoryId.Substring("tier-".Length), out var tier))
             return $"{Loc.GetString("persistent-craft-level-label")} {PersistentCraftingHelper.GetTierDisplayLabel(tier)}";
 
         var locKey = $"persistent-craft-subcategory-{subCategoryId}";
@@ -1224,7 +1226,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
     private int GetSubCategoryOrder(string subCategoryId)
     {
         return GetSubCategoryPrototype(subCategoryId)?.Order
-               ?? (subCategoryId.StartsWith("tier-") && int.TryParse(subCategoryId["tier-".Length..], out var tier)
+               ?? (subCategoryId.StartsWith("tier-") &&
+                   subCategoryId.Length > "tier-".Length &&
+                   int.TryParse(subCategoryId.Substring("tier-".Length), out var tier)
                    ? tier
                    : 99);
     }
@@ -1250,7 +1254,7 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
         if (string.IsNullOrWhiteSpace(spaced))
             return string.Empty;
 
-        return char.ToUpperInvariant(spaced[0]) + spaced[1..];
+        return string.Concat(char.ToUpperInvariant(spaced[0]).ToString(), spaced.Substring(1));
     }
 
     private string GetRecipeCategoryPath(PersistentCraftRecipePrototype recipe)

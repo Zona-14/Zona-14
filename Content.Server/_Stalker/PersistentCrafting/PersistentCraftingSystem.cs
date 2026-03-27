@@ -475,27 +475,156 @@ public sealed class PersistentCraftingSystem : EntitySystem
     {
         saveData = default!;
         changed = false;
+        var usedLegacyFallback = false;
+
+        PersistentCraftSaveData? data;
 
         try
         {
-            var data = JsonSerializer.Deserialize<PersistentCraftSaveData>(json);
-            if (data is null)
+            data = JsonSerializer.Deserialize<PersistentCraftSaveData>(json);
+        }
+        catch (JsonException ex)
+        {
+            Log.Warning($"[PersistentCraft] Save parse failed for '{characterName}', attempting legacy fallback: {ex.Message}");
+            if (!TryDeserializeLegacySaveData(json, characterName, out data))
             {
-                Log.Error($"[PersistentCraft] Save data for '{characterName}' deserialized to null.");
+                Log.Error($"[PersistentCraft] Save parse failed for '{characterName}': {ex}");
                 return false;
             }
 
-            if (!TryMigrateSaveData(data, characterName, out var migrated, out var migratedChanged))
-                return false;
-
-            saveData = NormalizeSaveData(migrated, out var normalizedChanged);
-            changed = migratedChanged || normalizedChanged;
-            return true;
+            usedLegacyFallback = true;
         }
         catch (Exception ex)
         {
             Log.Error($"[PersistentCraft] Save parse failed for '{characterName}': {ex}");
             return false;
+        }
+
+        if (data is null)
+        {
+            Log.Error($"[PersistentCraft] Save data for '{characterName}' deserialized to null.");
+            return false;
+        }
+
+        if (!TryMigrateSaveData(data, characterName, out var migrated, out var migratedChanged))
+            return false;
+
+        saveData = NormalizeSaveData(migrated, out var normalizedChanged);
+        changed = usedLegacyFallback || migratedChanged || normalizedChanged;
+        return true;
+    }
+
+    private bool TryDeserializeLegacySaveData(
+        string json,
+        string characterName,
+        out PersistentCraftSaveData? saveData)
+    {
+        saveData = null;
+
+        try
+        {
+            using var doc = JsonDocument.Parse(json);
+            if (doc.RootElement.ValueKind != JsonValueKind.Object)
+                return false;
+
+            var root = doc.RootElement;
+            var data = new PersistentCraftSaveData();
+
+            if (root.TryGetProperty(nameof(PersistentCraftSaveData.Version), out var versionElement) &&
+                versionElement.ValueKind == JsonValueKind.Number &&
+                versionElement.TryGetInt32(out var parsedVersion))
+            {
+                data.Version = parsedVersion;
+            }
+
+            if (root.TryGetProperty(nameof(PersistentCraftSaveData.UnlockedNodes), out var unlockedNodesElement) &&
+                unlockedNodesElement.ValueKind == JsonValueKind.Array)
+            {
+                data.UnlockedNodes = new List<string>();
+                foreach (var nodeElement in unlockedNodesElement.EnumerateArray())
+                {
+                    if (nodeElement.ValueKind == JsonValueKind.String &&
+                        !string.IsNullOrWhiteSpace(nodeElement.GetString()))
+                    {
+                        data.UnlockedNodes.Add(nodeElement.GetString()!);
+                    }
+                }
+            }
+
+            if (root.TryGetProperty(nameof(PersistentCraftSaveData.Branches), out var branchesElement) &&
+                branchesElement.ValueKind == JsonValueKind.Array)
+            {
+                data.Branches = new List<PersistentCraftBranchSaveData>();
+
+                foreach (var branchElement in branchesElement.EnumerateArray())
+                {
+                    if (branchElement.ValueKind != JsonValueKind.Object)
+                        continue;
+
+                    if (!branchElement.TryGetProperty(nameof(PersistentCraftBranchSaveData.Branch), out var branchIdElement))
+                        continue;
+
+                    if (!TryParseLegacyBranchId(branchIdElement, characterName, out var branchId))
+                        continue;
+
+                    var availablePoints = 0;
+                    if (branchElement.TryGetProperty(nameof(PersistentCraftBranchSaveData.AvailablePoints), out var pointsElement) &&
+                        pointsElement.ValueKind == JsonValueKind.Number &&
+                        pointsElement.TryGetInt32(out var parsedPoints))
+                    {
+                        availablePoints = parsedPoints;
+                    }
+
+                    data.Branches.Add(new PersistentCraftBranchSaveData
+                    {
+                        Branch = branchId,
+                        AvailablePoints = availablePoints,
+                    });
+                }
+            }
+
+            saveData = data;
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"[PersistentCraft] Legacy save fallback failed for '{characterName}': {ex}");
+            return false;
+        }
+    }
+
+    private bool TryParseLegacyBranchId(
+        JsonElement branchElement,
+        string characterName,
+        out string branchId)
+    {
+        branchId = string.Empty;
+
+        switch (branchElement.ValueKind)
+        {
+            case JsonValueKind.String:
+                branchId = branchElement.GetString() ?? string.Empty;
+                return !string.IsNullOrWhiteSpace(branchId);
+
+            case JsonValueKind.Number:
+                if (!branchElement.TryGetInt32(out var legacyIndex))
+                    return false;
+
+                if (PersistentCraftingHelper.TryGetBranchByIndex(_proto, legacyIndex, out branchId))
+                    return true;
+
+                if (legacyIndex > 0 &&
+                    PersistentCraftingHelper.TryGetBranchByIndex(_proto, legacyIndex - 1, out branchId))
+                {
+                    Log.Warning($"[PersistentCraft] One-based legacy branch index {legacyIndex} detected for '{characterName}', remapped to '{branchId}'.");
+                    return true;
+                }
+
+                Log.Warning($"[PersistentCraft] Unknown legacy branch index {legacyIndex} for '{characterName}'.");
+                return false;
+
+            default:
+                return false;
         }
     }
 
