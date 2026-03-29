@@ -77,10 +77,20 @@ public sealed class PersistentCraftCraftExecutionService
         for (var resultIndex = 0; resultIndex < recipe.Results.Count; resultIndex++)
         {
             var result = recipe.Results[resultIndex];
-            for (var i = 0; i < result.Amount; i++)
+            var spawned = _entityManager.SpawnEntity(result.Proto, userCoordinates);
+
+            if (_entityManager.TryGetComponent(spawned, out StackComponent? stack) && result.Amount > 1)
+                _stackSystem.SetCount(spawned, result.Amount, stack);
+
+            _handsSystem.PickupOrDrop(user, spawned, checkActionBlocker: false, animate: false, dropNear: true);
+
+            if (stack == null)
             {
-                var spawned = _entityManager.SpawnEntity(result.Proto, userCoordinates);
-                _handsSystem.PickupOrDrop(user, spawned, checkActionBlocker: false, animate: false, dropNear: true);
+                for (var i = 1; i < result.Amount; i++)
+                {
+                    var extra = _entityManager.SpawnEntity(result.Proto, userCoordinates);
+                    _handsSystem.PickupOrDrop(user, extra, checkActionBlocker: false, animate: false, dropNear: true);
+                }
             }
         }
     }
