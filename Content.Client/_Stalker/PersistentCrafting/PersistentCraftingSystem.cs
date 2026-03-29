@@ -35,9 +35,9 @@ public sealed class PersistentCraftingSystem : EntitySystem
         RaiseNetworkEvent(new RequestPersistentCraftUnlockEvent(nodeId));
     }
 
-    public void RequestCraft(string recipeId)
+    public void RequestCraft(string recipeId, int amount = 1)
     {
-        RaiseNetworkEvent(new RequestPersistentCraftRecipeEvent(recipeId));
+        RaiseNetworkEvent(new RequestPersistentCraftRecipeEvent(recipeId, amount));
     }
 
     public void OpenSkillsWindow()
@@ -115,10 +115,22 @@ public sealed class PersistentCraftingSystem : EntitySystem
         if (_craftWindow.Disposed)
             _craftWindow = new PersistentCraftStationWindow();
 
-        _craftWindow.OnCraftPressed -= RequestCraft;
-        _craftWindow.OnCraftPressed += RequestCraft;
+        _craftWindow.OnCraftPressed -= OnCraftRequestedFromWindow;
+        _craftWindow.OnCraftPressed += OnCraftRequestedFromWindow;
+        _craftWindow.OnCraftBatchPressed -= OnCraftBatchRequestedFromWindow;
+        _craftWindow.OnCraftBatchPressed += OnCraftBatchRequestedFromWindow;
         _craftWindow.OnOpenSkillsPressed -= ToggleSkillsWindowFromCraft;
         _craftWindow.OnOpenSkillsPressed += ToggleSkillsWindowFromCraft;
+    }
+
+    private void OnCraftRequestedFromWindow(string recipeId)
+    {
+        RequestCraft(recipeId, 1);
+    }
+
+    private void OnCraftBatchRequestedFromWindow(string recipeId, int amount)
+    {
+        RequestCraft(recipeId, amount);
     }
 
     private void EnsureSkillsWindow()

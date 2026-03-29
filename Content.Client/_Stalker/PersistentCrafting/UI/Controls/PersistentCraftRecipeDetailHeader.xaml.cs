@@ -12,12 +12,17 @@ public sealed partial class PersistentCraftRecipeDetailHeader : Control
 {
     public PanelContainer IconHost => IconPanel;
     public Button ActionButton => CraftButton;
+    public BoxContainer BatchControls => BatchControlsRow;
+    public SpinBox BatchCountInput => BatchCountSpin;
+    public Button BatchActionButton => BatchCraftButton;
     public BoxContainer MetaContainer => MetaHost;
     public RichTextLabel InfoText => InfoLabel;
 
     public PersistentCraftRecipeDetailHeader()
     {
         RobustXamlLoader.Load(this);
+        BatchCountSpin.InitDefaultButtons();
+        BatchCountSpin.Value = 2;
     }
 
     public void SetData(string title, Color titleColor, string actionText, bool actionDisabled)

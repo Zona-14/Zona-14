@@ -54,7 +54,8 @@ public sealed partial class PersistentCraftingWindow
 
                 var parentPosition = GetNodeCanvasPosition(parentGridPosition, nodeWidth, nodeHeight, horizontalGap, verticalGap, padding);
                 var parentCenter = GetNodeCenter(parentPosition, nodeWidth, nodeHeight);
-                AddConnector(layout, parentCenter, childCenter, nodeHeight, lineThickness, accent);
+                var parentUnlocked = HasNodeUnlockedOrAutoAvailable(prerequisiteId);
+                AddConnector(layout, parentCenter, childCenter, nodeHeight, lineThickness, accent, parentUnlocked);
             }
         }
 
@@ -106,9 +107,10 @@ public sealed partial class PersistentCraftingWindow
         Vector2 childCenter,
         float nodeHeight,
         float lineThickness,
-        Color accent)
+        Color accent,
+        bool parentUnlocked = false)
     {
-        var connectorColor = accent.WithAlpha(0.35f);
+        var connectorColor = parentUnlocked ? accent.WithAlpha(0.85f) : accent.WithAlpha(0.25f);
         var parentBottom = parentCenter.Y + nodeHeight / 2f;
         var childTop = childCenter.Y - nodeHeight / 2f;
         var midY = parentBottom + (childTop - parentBottom) / 2f;
@@ -181,7 +183,7 @@ public sealed partial class PersistentCraftingWindow
             {
                 BackgroundColor = unlocked ? CardUnlockedBackground : canUnlock ? CardAvailableBackground : CardLockedBackground,
                 BorderColor = selected ? SelectedBorder : unlocked ? UnlockedBorder : canUnlock ? accent.WithAlpha(0.6f) : CardBorder,
-                BorderThickness = new Thickness(selected ? 2 : 1),
+                BorderThickness = new Thickness(selected || unlocked ? 2 : 1),
                 ContentMarginLeftOverride = bodyMargin,
                 ContentMarginRightOverride = bodyMargin,
                 ContentMarginTopOverride = bodyMargin,

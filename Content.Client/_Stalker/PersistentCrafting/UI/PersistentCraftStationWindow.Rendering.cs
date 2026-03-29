@@ -402,6 +402,20 @@ public sealed partial class PersistentCraftStationWindow
             Loc.GetString("persistent-craft-recipe-action"),
             !canCraft);
         header.ActionButton.OnPressed += _ => OnCraftPressed?.Invoke(recipe.ID);
+
+        var maxBatchCount = canCraft ? GetMaxCraftCount(recipe) : 0;
+        var showBatch = maxBatchCount >= 2;
+        header.BatchControls.Visible = showBatch;
+
+        if (showBatch)
+        {
+            header.BatchCountInput.IsValid = value => value >= 2 && value <= maxBatchCount;
+            header.BatchCountInput.OverrideValue(Math.Clamp(Math.Min(maxBatchCount, 5), 2, maxBatchCount));
+            header.BatchActionButton.Text = $"{Loc.GetString("persistent-craft-recipe-action")} xN";
+            header.BatchActionButton.Disabled = false;
+            header.BatchActionButton.OnPressed += _ => OnCraftBatchPressed?.Invoke(recipe.ID, header.BatchCountInput.Value);
+        }
+
         header.InfoText.SetMessage(FormattedMessage.FromMarkupPermissive(BuildHeaderInfoMarkup(recipe)));
         header.IconHost.PanelOverride = new StyleBoxFlat
         {

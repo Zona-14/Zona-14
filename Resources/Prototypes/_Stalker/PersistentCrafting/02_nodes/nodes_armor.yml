@@ -140,6 +140,8 @@
   displayProto: ClothingOuterArmourJacketStalker
   treeColumn: 5
   treeRow: 0
+  prerequisites:
+  - PersistentCraftArmorNodeUpgradeJacketT1
 
 - type: persistentCraftNode
   id: PersistentCraftArmorNodeUpgradeJacketT1
@@ -150,8 +152,6 @@
   displayProto: ClothingOuterJacketStalkerUpgrade
   treeColumn: 6
   treeRow: 0
-  prerequisites:
-  - PersistentCraftArmorNodeChainJacketT1
 
 - type: persistentCraftNode
   id: PersistentCraftArmorNodeAnomalyJacketT1
