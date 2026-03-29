@@ -410,12 +410,16 @@ public sealed partial class PersistentCraftStationWindow
         if (showBatch)
         {
             header.BatchCountInput.IsValid = value => value >= 2 && value <= maxBatchCount;
-            header.BatchCountInput.OverrideValue(Math.Clamp(Math.Min(maxBatchCount, 5), 2, maxBatchCount));
+            var fallbackBatchCount = Math.Clamp(Math.Min(maxBatchCount, 5), 2, maxBatchCount);
+            var rememberedBatchCount = _viewModel.GetBatchCount(recipe.ID, fallbackBatchCount);
+            var initialBatchCount = Math.Clamp(rememberedBatchCount, 2, maxBatchCount);
+            header.BatchCountInput.OverrideValue(initialBatchCount);
             header.BatchActionButton.Disabled = false;
 
             void UpdateBatchActionButton()
             {
                 var count = Math.Clamp(header.BatchCountInput.Value, 2, maxBatchCount);
+                _viewModel.SetBatchCount(recipe.ID, count);
                 header.BatchActionButton.Text = Loc.GetString("persistent-craft-recipe-batch-action", ("count", count));
             }
 

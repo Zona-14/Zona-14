@@ -217,6 +217,15 @@ public sealed class PersistentCraftingSystem : EntitySystem
         }
 
         var requestedCount = Math.Clamp(ev.Amount, 1, 50);
+        var maxCraftCount = _craftExecutionService.GetMaxCraftCount(user, recipe);
+        if (maxCraftCount <= 0)
+        {
+            PopupUser(user, "persistent-craft-station-popup-missing-items");
+            SendState(args.SenderSession, user);
+            return;
+        }
+
+        requestedCount = Math.Min(requestedCount, maxCraftCount);
         if (!TryStartCraftDoAfter(user, recipe, requestedCount, requestedCount))
             return;
 
@@ -296,15 +305,15 @@ public sealed class PersistentCraftingSystem : EntitySystem
         {
             args.Handled = true;
 
-            var isBatchCraft = args.RequestedCount > 1;
-            if (isBatchCraft)
+            var isCancelledBatchCraft = args.RequestedCount > 1;
+            if (isCancelledBatchCraft)
             {
-                var craftedCount = Math.Clamp(args.RequestedCount - args.RemainingCount, 0, args.RequestedCount);
-                var cancelledText = craftedCount > 0
+                var cancelledCraftedCount = Math.Clamp(args.RequestedCount - args.RemainingCount, 0, args.RequestedCount);
+                var cancelledText = cancelledCraftedCount > 0
                     ? Loc.GetString(
                         "persistent-craft-station-popup-batch-cancelled-progress",
                         ("recipe", ResolveRecipeName(recipe)),
-                        ("crafted", craftedCount),
+                        ("crafted", cancelledCraftedCount),
                         ("requested", args.RequestedCount))
                     : Loc.GetString(
                         "persistent-craft-station-popup-batch-cancelled",
