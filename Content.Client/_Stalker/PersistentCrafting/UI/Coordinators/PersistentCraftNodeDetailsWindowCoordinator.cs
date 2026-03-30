@@ -3,28 +3,24 @@ using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Maths;
+using Robust.Client.UserInterface.CustomControls;
 
 namespace Content.Client._Stalker.PersistentCrafting.UI.Coordinators;
 
 public sealed class PersistentCraftNodeDetailsWindowCoordinator
 {
     private readonly IClyde _clyde;
-    private readonly IUserInterfaceManager _uiManager;
     private readonly float _windowWidth;
     private readonly float _windowHeight;
     private readonly float _windowMinWidth;
     private readonly float _windowMinHeight;
     private readonly float _windowMargin;
-    private Popup? _popup;
+    private DefaultWindow? _window;
 
-    public bool IsOpen => _popup != null &&
-                          !_popup.Disposed &&
-                          _popup.Visible;
+    public bool IsOpen => _window is { Disposed: false, IsOpen: true };
 
     public PersistentCraftNodeDetailsWindowCoordinator(
         IClyde clyde,
-        IUserInterfaceManager uiManager,
         float windowWidth,
         float windowHeight,
         float windowMinWidth,
@@ -32,7 +28,6 @@ public sealed class PersistentCraftNodeDetailsWindowCoordinator
         float windowMargin)
     {
         _clyde = clyde;
-        _uiManager = uiManager;
         _windowWidth = windowWidth;
         _windowHeight = windowHeight;
         _windowMinWidth = windowMinWidth;
@@ -42,23 +37,18 @@ public sealed class PersistentCraftNodeDetailsWindowCoordinator
 
     public void Show(string title, Control content)
     {
-        EnsurePopup();
-        var popup = _popup!;
-        popup.RemoveAllChildren();
+        EnsureWindow();
+        var window = _window!;
+        window.Title = title;
+        window.Contents.RemoveAllChildren();
 
         var root = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
-            Margin = new Thickness(8),
+            Margin = new Thickness(6),
             HorizontalExpand = true,
-            VerticalExpand = false,
+            VerticalExpand = true,
         };
-        root.AddChild(new Label
-        {
-            Text = title,
-            HorizontalExpand = true,
-        });
-        root.AddChild(new Control { MinSize = new Vector2(1, 6) });
         root.AddChild(content);
 
         var scroll = new ScrollContainer
@@ -69,44 +59,49 @@ public sealed class PersistentCraftNodeDetailsWindowCoordinator
             VScrollEnabled = true,
         };
         scroll.AddChild(root);
-        popup.AddChild(scroll);
+        window.Contents.AddChild(scroll);
 
-        var box = BuildPopupBox();
-        popup.Open(box, new Vector2(box.Left, box.Top), new Vector2(box.Left, box.Bottom));
+        ApplyWindowSize(window);
+
+        if (!window.IsOpen)
+            window.OpenCentered();
+        else
+            window.MoveToFront();
     }
 
     public void Close()
     {
-        if (_popup == null || _popup.Disposed)
+        if (_window == null || _window.Disposed)
             return;
 
-        _popup.Close();
+        _window.Close();
     }
 
-    private void EnsurePopup()
+    private void EnsureWindow()
     {
-        if (_popup != null && !_popup.Disposed)
+        if (_window != null && !_window.Disposed)
             return;
 
-        _popup = new Popup
+        _window = new DefaultWindow
         {
-            CloseOnClick = true,
-            CloseOnEscape = true,
             MinSize = new Vector2(_windowMinWidth, _windowMinHeight),
-            HorizontalExpand = false,
-            VerticalExpand = false,
+            SetSize = BuildWindowSize(),
+            Resizable = true,
         };
-
-        _uiManager.ModalRoot.AddChild(_popup);
     }
 
-    private UIBox2 BuildPopupBox()
+    private void ApplyWindowSize(DefaultWindow window)
+    {
+        window.SetSize = BuildWindowSize();
+    }
+
+    private Vector2 BuildWindowSize()
     {
         var screen = _clyde.ScreenSize;
-        var width = MathF.Max(_windowMinWidth, _windowWidth);
-        var height = MathF.Max(_windowMinHeight, _windowHeight);
-        var x = MathF.Max(_windowMargin, screen.X - width - _windowMargin);
-        var y = _windowMargin;
-        return UIBox2.FromDimensions(new Vector2(x, y), new Vector2(width, height));
+        var maxWidth = MathF.Max(_windowMinWidth, screen.X - (_windowMargin * 2f));
+        var maxHeight = MathF.Max(_windowMinHeight, screen.Y - (_windowMargin * 2f));
+        var width = MathF.Min(MathF.Max(_windowWidth, _windowMinWidth), maxWidth);
+        var height = MathF.Min(MathF.Max(_windowHeight, _windowMinHeight), maxHeight);
+        return new Vector2(width, height);
     }
 }

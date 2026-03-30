@@ -54,11 +54,11 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
     private const float TreeZoomMin = 0.65f;
     private const float TreeZoomMax = 1.6f;
     private const float TreeZoomStep = 0.1f;
-    private const float NodeDetailsWindowWidth = 860f;
-    private const float NodeDetailsWindowHeight = 720f;
-    private const float NodeDetailsWindowMinWidth = 700f;
-    private const float NodeDetailsWindowMinHeight = 560f;
-    private const float NodeDetailsWindowMargin = 16f;
+    private const float NodeDetailsWindowWidth = 560f;
+    private const float NodeDetailsWindowHeight = 430f;
+    private const float NodeDetailsWindowMinWidth = 420f;
+    private const float NodeDetailsWindowMinHeight = 300f;
+    private const float NodeDetailsWindowMargin = 24f;
     private const float NodeIconScaleLarge = 2.1f;
     private const float NodeIconScaleSmall = 1.25f;
     private const int NodeIconLargeThreshold = 100;
@@ -93,7 +93,6 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
         _selectionCoordinator = new PersistentCraftNodeSelectionCoordinator(_viewModel);
         _detailsCoordinator = new PersistentCraftNodeDetailsWindowCoordinator(
             _clyde,
-            _uiManager,
             NodeDetailsWindowWidth,
             NodeDetailsWindowHeight,
             NodeDetailsWindowMinWidth,

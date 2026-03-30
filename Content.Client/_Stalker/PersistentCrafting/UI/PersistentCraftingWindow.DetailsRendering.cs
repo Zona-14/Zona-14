@@ -37,10 +37,10 @@ public sealed partial class PersistentCraftingWindow
                 BackgroundColor = PanelBackground,
                 BorderColor = accent.WithAlpha(0.5f),
                 BorderThickness = new Thickness(1),
-                ContentMarginLeftOverride = 18,
-                ContentMarginRightOverride = 18,
-                ContentMarginTopOverride = 18,
-                ContentMarginBottomOverride = 18,
+                ContentMarginLeftOverride = 12,
+                ContentMarginRightOverride = 12,
+                ContentMarginTopOverride = 12,
+                ContentMarginBottomOverride = 12,
             }
         };
 
@@ -55,74 +55,91 @@ public sealed partial class PersistentCraftingWindow
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
             HorizontalExpand = true,
+            VerticalExpand = false,
         };
 
-        var headerLeft = new BoxContainer
-        {
-            Orientation = BoxContainer.LayoutOrientation.Vertical,
-            MinSize = new Vector2(136, 0),
-        };
+        headerRow.AddChild(CreateNodeIcon(node, accent, new Vector2(86, 86)));
+        headerRow.AddChild(new Control { MinSize = new Vector2(10, 1) });
 
-        headerLeft.AddChild(CreateNodeIcon(node, accent, new Vector2(120, 120)));
-        headerLeft.AddChild(new Control { MinSize = new Vector2(1, 8) });
-        headerLeft.AddChild(new Label
-        {
-            Text = Loc.GetString("persistent-craft-node-branch-points", ("points", branchState.AvailablePoints)),
-            FontColorOverride = MutedTextColor,
-            HorizontalAlignment = HAlignment.Center,
-        });
-        headerLeft.AddChild(new Control { MinSize = new Vector2(1, 8) });
-
-        var unlockButton = new Button
-        {
-            Text = GetActionText(unlocked),
-            Disabled = !canUnlock,
-            MinSize = new Vector2(0, 42),
-            HorizontalExpand = true,
-        };
-        unlockButton.OnPressed += _ =>
-        {
-            _detailsDirty = true;
-            _onUnlock?.Invoke(node.ID);
-        };
-        headerLeft.AddChild(unlockButton);
-
-        headerRow.AddChild(headerLeft);
-        headerRow.AddChild(new Control { MinSize = new Vector2(18, 1) });
-
-        var headerText = new BoxContainer
+        var headerRight = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             HorizontalExpand = true,
+            VerticalExpand = false,
         };
 
-        headerText.AddChild(new Label
+        headerRight.AddChild(new Label
         {
             Text = ResolveNodeName(node),
             FontColorOverride = HeaderTextColor,
             ClipText = true,
         });
-        headerText.AddChild(new Control { MinSize = new Vector2(1, 8) });
+        headerRight.AddChild(new Control { MinSize = new Vector2(1, 4) });
 
+        var metaPanel = new PanelContainer
+        {
+            HorizontalExpand = true,
+            VerticalExpand = false,
+            PanelOverride = new StyleBoxFlat
+            {
+                BackgroundColor = CardLockedBackground.WithAlpha(0.9f),
+                BorderColor = accent.WithAlpha(0.35f),
+                BorderThickness = new Thickness(1),
+                ContentMarginLeftOverride = 8,
+                ContentMarginRightOverride = 8,
+                ContentMarginTopOverride = 6,
+                ContentMarginBottomOverride = 6,
+            }
+        };
         var meta = new RichTextLabel
         {
             HorizontalExpand = true,
         };
         meta.SetMarkup(
             $"[color={MutedTextColor.ToHex()}]{Loc.GetString("persistent-craft-selected-branch", ("branch", ResolveBranchTitle(node.Branch)))}\n" +
-            $"{Loc.GetString("persistent-craft-spent-points-label")}: {branchState.SpentPoints}\n" +
-            $"{Loc.GetString("persistent-craft-node-cost", ("cost", node.Cost))} | " +
-            $"{Loc.GetString(GetDetailStatusKey(unlocked, prerequisitesMet, canUnlock))}[/color]");
-        headerText.AddChild(meta);
-        headerRow.AddChild(headerText);
+            $"{Loc.GetString("persistent-craft-node-cost", ("cost", node.Cost))} | {Loc.GetString(GetDetailStatusKey(unlocked, prerequisitesMet, canUnlock))}\n" +
+            $"{Loc.GetString("persistent-craft-spent-points-label")}: {branchState.SpentPoints}[/color]");
+        metaPanel.AddChild(meta);
+        headerRight.AddChild(metaPanel);
+        headerRight.AddChild(new Control { MinSize = new Vector2(1, 6) });
+
+        var actionRow = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+            VerticalExpand = false,
+        };
+        actionRow.AddChild(new Label
+        {
+            Text = Loc.GetString("persistent-craft-node-branch-points", ("points", branchState.AvailablePoints)),
+            FontColorOverride = MutedTextColor,
+            VerticalAlignment = VAlignment.Center,
+        });
+        actionRow.AddChild(new Control { HorizontalExpand = true });
+
+        var unlockButton = new Button
+        {
+            Text = GetActionText(unlocked),
+            Disabled = !canUnlock,
+            MinSize = new Vector2(132, 34),
+            HorizontalExpand = false,
+        };
+        unlockButton.OnPressed += _ =>
+        {
+            _detailsDirty = true;
+            _onUnlock?.Invoke(node.ID);
+        };
+        actionRow.AddChild(unlockButton);
+        headerRight.AddChild(actionRow);
+        headerRow.AddChild(headerRight);
 
         body.AddChild(headerRow);
-        body.AddChild(new Control { MinSize = new Vector2(1, 10) });
+        body.AddChild(new Control { MinSize = new Vector2(1, 8) });
 
         body.AddChild(CreateDetailSection(
             Loc.GetString("persistent-craft-rewards-label"),
             BuildRewardMarkup(node)));
-        body.AddChild(new Control { MinSize = new Vector2(1, 10) });
+        body.AddChild(new Control { MinSize = new Vector2(1, 8) });
         body.AddChild(CreateDetailSection(
             Loc.GetString("persistent-craft-requirements-label"),
             BuildRequirementMarkup(node)));
@@ -147,7 +164,7 @@ public sealed partial class PersistentCraftingWindow
     private Control CreateDetailSection(string title, string contentMarkup)
     {
         var section = new PersistentCraftTextSection();
-        section.SetData(title, contentMarkup, CardBorder, 12);
+        section.SetData(title, contentMarkup, CardBorder, 8);
         return section;
     }
 

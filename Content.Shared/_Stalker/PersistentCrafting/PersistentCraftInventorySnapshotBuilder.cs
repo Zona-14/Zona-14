@@ -132,6 +132,6 @@ public sealed class PersistentCraftInventorySnapshotBuilder
 
     private static void SortStringsOrdinal(string[] values)
     {
-        Array.Sort(values, StringComparer.Ordinal);
+        Array.Sort(values, static (left, right) => string.CompareOrdinal(left, right));
     }
 }
