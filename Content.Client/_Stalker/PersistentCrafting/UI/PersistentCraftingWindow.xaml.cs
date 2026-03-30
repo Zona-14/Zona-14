@@ -16,6 +16,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.IoC;
+using Robust.Shared.Log;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -61,6 +62,7 @@ public sealed partial class PersistentCraftingWindow : DefaultWindow
     private const float NodeIconScaleLarge = 2.1f;
     private const float NodeIconScaleSmall = 1.25f;
     private const int NodeIconLargeThreshold = 100;
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("persistent-craft.ui.skilltree");
 
     private readonly Dictionary<string, BoxContainer> _branchHosts = new();
     private readonly Dictionary<string, PersistentCraftTreeScrollContainer> _branchTreeScrolls = new();

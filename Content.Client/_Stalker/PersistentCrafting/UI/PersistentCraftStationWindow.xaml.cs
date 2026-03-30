@@ -20,6 +20,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.Log;
 using Robust.Shared.Maths;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -48,6 +49,7 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
     private static readonly Color SelectedBorder = PersistentCraftUiTheme.Selection;
     private static readonly Color EnoughColor = PersistentCraftUiTheme.Success;
     private static readonly Color MissingColor = PersistentCraftUiTheme.Danger;
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("persistent-craft.ui.station");
 
     private readonly Dictionary<string, BoxContainer> _branchContainers = new();
     private readonly Dictionary<string, ScrollContainer> _activeListScrollByBranch = new();
@@ -309,8 +311,9 @@ public sealed partial class PersistentCraftStationWindow : DefaultWindow
             texture = spriteSystem.GetPrototypeIcon(displayProto).Default;
             return texture != null;
         }
-        catch
+        catch (Exception ex)
         {
+            Sawmill.Warning($"Failed to resolve recipe texture for recipe '{recipe.ID}' using proto '{displayProto}': {ex}");
             texture = null;
             return false;
         }

@@ -172,6 +172,7 @@ public sealed class PersistentCraftingSystem : EntitySystem
                     Log.Warning($"[PersistentCraft] Recipe '{recipe.ID}' references missing subCategory '{recipe.SubCategory}'.");
                 }
                 else if (!string.IsNullOrWhiteSpace(recipe.Category) &&
+                         !string.IsNullOrWhiteSpace(subCategory.Category) &&
                          !string.Equals(subCategory.Category, recipe.Category, StringComparison.Ordinal))
                 {
                     Log.Warning($"[PersistentCraft] Recipe '{recipe.ID}' uses category '{recipe.Category}' but subCategory '{recipe.SubCategory}' belongs to '{subCategory.Category ?? string.Empty}'.");

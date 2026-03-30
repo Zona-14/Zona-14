@@ -57,8 +57,9 @@ public sealed partial class PersistentCraftingWindow
             texture = spriteSystem.GetPrototypeIcon(displayProto).Default;
             return texture != null;
         }
-        catch
+        catch (Exception ex)
         {
+            Sawmill.Warning($"Failed to resolve node texture for node '{node.ID}' using proto '{displayProto}': {ex}");
             texture = null;
             return false;
         }

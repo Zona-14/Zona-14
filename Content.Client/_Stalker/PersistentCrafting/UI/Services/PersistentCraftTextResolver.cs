@@ -286,12 +286,16 @@ public sealed class PersistentCraftTextResolver
 
     private static string FormatTagIngredientName(string tag)
     {
+        var tagLoc = TryLoc($"persistent-craft-tag-{tag}");
+        if (!string.IsNullOrWhiteSpace(tagLoc))
+            return tagLoc;
+
         if (tag.StartsWith("STArtifactTier", StringComparison.Ordinal) &&
             int.TryParse(tag.Substring("STArtifactTier".Length), out var tier))
         {
-            return $"Артефакт T{tier}";
+            return $"Artifact T{tier}";
         }
 
-        return $"#{tag}";
+        return HumanizeIdentifier(tag);
     }
 }
