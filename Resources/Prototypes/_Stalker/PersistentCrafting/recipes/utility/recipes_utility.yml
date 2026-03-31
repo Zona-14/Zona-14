@@ -15,6 +15,7 @@
   - proto: BoxArtcont
   category: utility
   subCategory: utility-artifact-containers
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeSafeboxT15
   name: persistent-craft-recipe-generic-name
@@ -32,6 +33,7 @@
   - proto: BoxSafebox
   category: utility
   subCategory: utility-cases
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeMedkitCMST15
   name: persistent-craft-recipe-generic-name
@@ -49,6 +51,7 @@
   - proto: MedkitCMSStalker
   category: utility
   subCategory: utility-cases
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeMedkitGrizzlyT3
   name: persistent-craft-recipe-generic-name
@@ -66,6 +69,7 @@
   - proto: MedkitGrizzlyStalker
   category: utility
   subCategory: utility-cases
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeArtifactContainerAdvancedT4
   name: persistent-craft-recipe-generic-name
@@ -85,6 +89,7 @@
   - proto: BoxArtcont1
   category: utility
   subCategory: utility-artifact-containers
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackDuffelT1
   name: persistent-craft-recipe-generic-name
@@ -102,6 +107,7 @@
   - proto: ClothingBackpackDuffelGreenStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackTacticT2
   name: persistent-craft-recipe-generic-name
@@ -119,6 +125,7 @@
   - proto: ClothingBackpackTacticOliveStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackArmyT3
   name: persistent-craft-recipe-generic-name
@@ -136,6 +143,7 @@
   - proto: ClothingBackpackDuffelCommonStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackZaryaT3
   name: persistent-craft-recipe-generic-name
@@ -153,6 +161,7 @@
   - proto: ClothingBackpackStalkerZaryaGreen
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackHikingT3
   name: persistent-craft-recipe-generic-name
@@ -170,6 +179,7 @@
   - proto: ClothingBackpackMercStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackBlueArmyT4
   name: persistent-craft-recipe-generic-name
@@ -189,6 +199,7 @@
   - proto: ClothingBackpackDuffelMilitaryBlue
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackArmyTacticT4
   name: persistent-craft-recipe-generic-name
@@ -208,6 +219,7 @@
   - proto: ClothingBackpackDuffelBlackTacticStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackProT4
   name: persistent-craft-recipe-generic-name
@@ -227,6 +239,7 @@
   - proto: ClothingBackpackDuffelSuperStalkerGray
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBackpackCapaciousT5
   name: persistent-craft-recipe-generic-name
@@ -246,6 +259,7 @@
   - proto: ClothingBackpackDuffelRareStalker
   category: utility
   subCategory: utility-backpacks
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBeltNoviceT1
   name: persistent-craft-recipe-generic-name
@@ -263,6 +277,7 @@
   - proto: ClothingBeltBandolierStalker
   category: utility
   subCategory: utility-belts
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBeltZaryaT2
   name: persistent-craft-recipe-generic-name
@@ -280,6 +295,7 @@
   - proto: ClothingBeltWebbingHolsterStalkerZarya
   category: utility
   subCategory: utility-belts
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBeltPszT2
   name: persistent-craft-recipe-generic-name
@@ -297,6 +313,7 @@
   - proto: ClothingBeltGreenWebbingStalker
   category: utility
   subCategory: utility-belts
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBeltBerillT3
   name: persistent-craft-recipe-generic-name
@@ -314,6 +331,7 @@
   - proto: ClothingBeltWebbingBerill
   category: utility
   subCategory: utility-belts
+
 - type: persistentCraftRecipe
   id: PersistentCraftUtilityRecipeBeltDoubleZaryaT4
   name: persistent-craft-recipe-generic-name

@@ -15,6 +15,7 @@
   - proto: ZoneArtifactDetectorSpruce
   category: artifact-detectors
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT4
   name: persistent-craft-recipe-anomaly-t4-name
@@ -34,6 +35,7 @@
   - proto: ZoneArtifactDetectorBear
   category: artifact-detectors
   subCategory: tier-4
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT4Alt
   name: persistent-craft-recipe-generic-name
@@ -51,6 +53,7 @@
   - proto: Veles
   category: artifact-detectors
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT5
   name: persistent-craft-recipe-anomaly-t5-name
@@ -70,6 +73,7 @@
   - proto: ZoneArtifactDetectorWolfhound
   category: artifact-detectors
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT5Alt
   name: persistent-craft-recipe-generic-name
@@ -89,6 +93,7 @@
   - proto: Svarog
   category: artifact-detectors
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT1Pulse
   name: persistent-craft-recipe-generic-name
@@ -106,6 +111,7 @@
   - proto: ZoneArtifactDetectorPulse
   category: artifact-detectors
   subCategory: tier-1
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT1Hunter
   name: persistent-craft-recipe-generic-name
@@ -123,6 +129,7 @@
   - proto: ZoneArtifactDetectorHunter
   category: artifact-detectors
   subCategory: tier-1
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT1Bush
   name: persistent-craft-recipe-generic-name
@@ -140,6 +147,7 @@
   - proto: ZoneArtifactDetectorBush
   category: artifact-detectors
   subCategory: tier-1
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT2Response
   name: persistent-craft-recipe-generic-name
@@ -157,6 +165,7 @@
   - proto: ZoneArtifactDetectorResponse
   category: artifact-detectors
   subCategory: tier-2
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT3Barracuda
   name: persistent-craft-recipe-generic-name
@@ -174,6 +183,7 @@
   - proto: ZoneArtifactDetectorBarracuda
   category: artifact-detectors
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT4SeaDevil
   name: persistent-craft-recipe-generic-name

@@ -16,6 +16,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe545NCBoxCink
   name: persistent-craft-recipe-generic-name
@@ -34,6 +35,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe545M995BoxCink
   name: persistent-craft-recipe-generic-name
@@ -52,6 +54,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe556SSAAPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -70,6 +73,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe739BPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -88,6 +92,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe751M993BoxCink
   name: persistent-craft-recipe-generic-name
@@ -106,6 +111,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe754BTBoxCink
   name: persistent-craft-recipe-generic-name
@@ -124,6 +130,7 @@
     amount: 4
   category: ammo
   subCategory: tier-5
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe754SNBBoxCink
   name: persistent-craft-recipe-generic-name

@@ -16,6 +16,7 @@
     amount: 6
   category: ammo
   subCategory: tier-1
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe6mmBuckshotBoxCink
   name: persistent-craft-recipe-generic-name
@@ -34,6 +35,7 @@
     amount: 6
   category: ammo
   subCategory: tier-1
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe1255PS12ACink
   name: persistent-craft-recipe-generic-name

@@ -61,12 +61,6 @@
   order: 1
 
 - type: persistentCraftSubCategory
-  id: material-assemble
-  category: anomaly-dust
-  name: Сборка
-  order: 1
-
-- type: persistentCraftSubCategory
   id: material-disassemble
   category: anomaly-dust
   name: Разбор

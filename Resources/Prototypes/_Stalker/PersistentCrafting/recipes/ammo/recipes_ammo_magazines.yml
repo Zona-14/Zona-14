@@ -15,6 +15,7 @@
   - proto: 13x108Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeAS12Mag
   name: persistent-craft-recipe-generic-name
@@ -32,6 +33,7 @@
   - proto: AS12Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase1270Mag
   name: persistent-craft-recipe-generic-name
@@ -49,6 +51,7 @@
   - proto: Base1270Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeDrumAutoAssBig
   name: persistent-craft-recipe-generic-name
@@ -66,6 +69,7 @@
   - proto: DrumAutoAssBig
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeDrumAutoAssSmall
   name: persistent-craft-recipe-generic-name
@@ -83,6 +87,7 @@
   - proto: DrumAutoAssSmall
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeDrumAutoAssVeryBig
   name: persistent-craft-recipe-generic-name
@@ -100,6 +105,7 @@
   - proto: DrumAutoAssVeryBig
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeMagazine10USAS12x70
   name: persistent-craft-recipe-generic-name
@@ -117,6 +123,7 @@
   - proto: Magazine10USAS12x70
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeMagazine20USAS12x70
   name: persistent-craft-recipe-generic-name
@@ -134,6 +141,7 @@
   - proto: Magazine20USAS12x70
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSaiga1270Drum
   name: persistent-craft-recipe-generic-name
@@ -151,6 +159,7 @@
   - proto: Saiga1270Drum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSaiga1270Mag10
   name: persistent-craft-recipe-generic-name
@@ -168,6 +177,7 @@
   - proto: Saiga1270Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe338Mag10
   name: persistent-craft-recipe-generic-name
@@ -185,6 +195,7 @@
   - proto: 338Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSpeedLoaderRemingtonMagnum
   name: persistent-craft-recipe-generic-name
@@ -202,6 +213,7 @@
   - proto: SpeedLoaderRemingtonMagnum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSpeedLoaderRemingtonMagnumAP
   name: persistent-craft-recipe-generic-name
@@ -219,6 +231,7 @@
   - proto: SpeedLoaderRemingtonMagnumAP
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSpeedLoaderRemingtonMagnumEmpty
   name: persistent-craft-recipe-generic-name
@@ -236,6 +249,7 @@
   - proto: SpeedLoaderRemingtonMagnumEmpty
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBasePP2000PearlMag
   name: persistent-craft-recipe-generic-name
@@ -253,6 +267,7 @@
   - proto: BasePP2000PearlMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBasePP2000PearlMag20
   name: persistent-craft-recipe-generic-name
@@ -270,6 +285,7 @@
   - proto: BasePP2000PearlMag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseTommyGunMag
   name: persistent-craft-recipe-generic-name
@@ -287,6 +303,7 @@
   - proto: BaseTommyGunMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSTSpeedLoader45ACP
   name: persistent-craft-recipe-generic-name
@@ -304,6 +321,7 @@
   - proto: STSpeedLoader45ACP
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSTSpeedLoader45ACPEmpty
   name: persistent-craft-recipe-generic-name
@@ -321,6 +339,7 @@
   - proto: STSpeedLoader45ACPEmpty
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeTommyGunBigDrum
   name: persistent-craft-recipe-generic-name
@@ -338,6 +357,7 @@
   - proto: TommyGunBigDrum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeTommyGunDrum
   name: persistent-craft-recipe-generic-name
@@ -355,6 +375,7 @@
   - proto: TommyGunDrum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeTommyGunDrum2
   name: persistent-craft-recipe-generic-name
@@ -372,6 +393,7 @@
   - proto: TommyGunDrum2
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe545Mag20
   name: persistent-craft-recipe-generic-name
@@ -389,6 +411,7 @@
   - proto: 545Mag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe545Mag30
   name: persistent-craft-recipe-generic-name
@@ -406,6 +429,7 @@
   - proto: 545Mag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe545Mag45
   name: persistent-craft-recipe-generic-name
@@ -423,6 +447,7 @@
   - proto: 545Mag45
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe545Mag60
   name: persistent-craft-recipe-generic-name
@@ -440,6 +465,7 @@
   - proto: 545Mag60
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase545Mag10
   name: persistent-craft-recipe-generic-name
@@ -457,6 +483,7 @@
   - proto: Base545Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe556box249
   name: persistent-craft-recipe-generic-name
@@ -474,6 +501,7 @@
   - proto: 556box249
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe556Mag20
   name: persistent-craft-recipe-generic-name
@@ -491,6 +519,7 @@
   - proto: 556Mag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe556Mag30
   name: persistent-craft-recipe-generic-name
@@ -508,6 +537,7 @@
   - proto: 556Mag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe556Mag45
   name: persistent-craft-recipe-generic-name
@@ -525,6 +555,7 @@
   - proto: 556Mag45
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe556Mag60
   name: persistent-craft-recipe-generic-name
@@ -542,6 +573,7 @@
   - proto: 556Mag60
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase556Mag10
   name: persistent-craft-recipe-generic-name
@@ -559,6 +591,7 @@
   - proto: Base556Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBasePPSHMag
   name: persistent-craft-recipe-generic-name
@@ -576,6 +609,7 @@
   - proto: BasePPSHMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipePPSHDrum
   name: persistent-craft-recipe-generic-name
@@ -593,6 +627,7 @@
   - proto: PPSHDrum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeTTMag
   name: persistent-craft-recipe-generic-name
@@ -610,6 +645,7 @@
   - proto: TTMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe739Mag30
   name: persistent-craft-recipe-generic-name
@@ -627,6 +663,7 @@
   - proto: 739Mag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe739Mag45
   name: persistent-craft-recipe-generic-name
@@ -644,6 +681,7 @@
   - proto: 739Mag45
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe739Mag75
   name: persistent-craft-recipe-generic-name
@@ -661,6 +699,7 @@
   - proto: 739Mag75
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase739Mag10
   name: persistent-craft-recipe-generic-name
@@ -678,6 +717,7 @@
   - proto: Base739Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeMagazine762x39RPD
   name: persistent-craft-recipe-generic-name
@@ -695,6 +735,7 @@
   - proto: Magazine762x39RPD
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe751Mag20
   name: persistent-craft-recipe-generic-name
@@ -712,6 +753,7 @@
   - proto: 751Mag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe751Mag30
   name: persistent-craft-recipe-generic-name
@@ -729,6 +771,7 @@
   - proto: 751Mag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase751Mag10
   name: persistent-craft-recipe-generic-name
@@ -746,6 +789,7 @@
   - proto: Base751Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe754Mag10
   name: persistent-craft-recipe-generic-name
@@ -763,6 +807,7 @@
   - proto: 754Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe754Mag20
   name: persistent-craft-recipe-generic-name
@@ -780,6 +825,7 @@
   - proto: 754Mag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase754Mag5
   name: persistent-craft-recipe-generic-name
@@ -797,6 +843,7 @@
   - proto: Base754Mag5
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseAPSMag
   name: persistent-craft-recipe-generic-name
@@ -814,6 +861,7 @@
   - proto: BaseAPSMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBasePMMag
   name: persistent-craft-recipe-generic-name
@@ -831,6 +879,7 @@
   - proto: BasePMMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBizonMag
   name: persistent-craft-recipe-generic-name
@@ -848,6 +897,7 @@
   - proto: BizonMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeVz61Mag
   name: persistent-craft-recipe-generic-name
@@ -865,6 +915,7 @@
   - proto: Vz61Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseGlockMag10
   name: persistent-craft-recipe-generic-name
@@ -882,6 +933,7 @@
   - proto: BaseGlockMag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseGSH-18Mag10
   name: persistent-craft-recipe-generic-name
@@ -899,6 +951,7 @@
   - proto: BaseGSH-18Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseMP5Mag
   name: persistent-craft-recipe-generic-name
@@ -916,6 +969,7 @@
   - proto: BaseMP5Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseOTS126Mag
   name: persistent-craft-recipe-generic-name
@@ -933,6 +987,7 @@
   - proto: BaseOTS126Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBasePP2000Mag
   name: persistent-craft-recipe-generic-name
@@ -950,6 +1005,7 @@
   - proto: BasePP2000Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBaseTEC9Mag
   name: persistent-craft-recipe-generic-name
@@ -967,6 +1023,7 @@
   - proto: BaseTEC9Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBizonMag919
   name: persistent-craft-recipe-generic-name
@@ -984,6 +1041,7 @@
   - proto: BizonMag919
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeGlockMag17
   name: persistent-craft-recipe-generic-name
@@ -1001,6 +1059,7 @@
   - proto: GlockMag17
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeGlockMag24
   name: persistent-craft-recipe-generic-name
@@ -1018,6 +1077,7 @@
   - proto: GlockMag24
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeGlockMag33
   name: persistent-craft-recipe-generic-name
@@ -1035,6 +1095,7 @@
   - proto: GlockMag33
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeGSH-18Mag18
   name: persistent-craft-recipe-generic-name
@@ -1052,6 +1113,7 @@
   - proto: GSH-18Mag18
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeLP08Drum
   name: persistent-craft-recipe-generic-name
@@ -1069,6 +1131,7 @@
   - proto: LP08Drum
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeMP40Mag
   name: persistent-craft-recipe-generic-name
@@ -1086,6 +1149,7 @@
   - proto: MP40Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeMP5Mag50
   name: persistent-craft-recipe-generic-name
@@ -1103,6 +1167,7 @@
   - proto: MP5Mag50
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeP90Mag
   name: persistent-craft-recipe-generic-name
@@ -1120,6 +1185,7 @@
   - proto: P90Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipePP91Mag
   name: persistent-craft-recipe-generic-name
@@ -1137,6 +1203,7 @@
   - proto: PP91Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeVityazMag
   name: persistent-craft-recipe-generic-name
@@ -1154,6 +1221,7 @@
   - proto: VityazMag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSR1Mag
   name: persistent-craft-recipe-generic-name
@@ -1171,6 +1239,7 @@
   - proto: SR1Mag
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSR2MMag20
   name: persistent-craft-recipe-generic-name
@@ -1188,6 +1257,7 @@
   - proto: SR2MMag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSR2MMag30
   name: persistent-craft-recipe-generic-name
@@ -1205,6 +1275,7 @@
   - proto: SR2MMag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe939Mag20
   name: persistent-craft-recipe-generic-name
@@ -1222,6 +1293,7 @@
   - proto: 939Mag20
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe939Mag30
   name: persistent-craft-recipe-generic-name
@@ -1239,6 +1311,7 @@
   - proto: 939Mag30
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe939Mag45
   name: persistent-craft-recipe-generic-name
@@ -1256,6 +1329,7 @@
   - proto: 939Mag45
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase939Mag10
   name: persistent-craft-recipe-generic-name
@@ -1273,6 +1347,7 @@
   - proto: Base939Mag10
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase939MagVSK
   name: persistent-craft-recipe-generic-name
@@ -1290,6 +1365,7 @@
   - proto: Base939MagVSK
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSTFlamethrowerTank
   name: persistent-craft-recipe-generic-name
@@ -1307,6 +1383,7 @@
   - proto: STFlamethrowerTank
   category: ammo
   subCategory: ammo-magazines
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeBase545MagRPK
   name: persistent-craft-recipe-generic-name

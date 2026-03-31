@@ -16,6 +16,7 @@
     amount: 6
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipeShotgunBulletBoxCink
   name: persistent-craft-recipe-generic-name
@@ -34,6 +35,7 @@
     amount: 6
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe545PCBoxCink
   name: persistent-craft-recipe-generic-name
@@ -52,6 +54,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe545HPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -70,6 +73,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe918SP7BoxCink
   name: persistent-craft-recipe-generic-name
@@ -88,6 +92,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe918PBMBoxCink
   name: persistent-craft-recipe-generic-name
@@ -106,6 +111,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe919RIPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -124,6 +130,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe919PBMBoxCink
   name: persistent-craft-recipe-generic-name
@@ -142,6 +149,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe556M855BoxCink
   name: persistent-craft-recipe-generic-name
@@ -160,6 +168,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe556WarmagBoxCink
   name: persistent-craft-recipe-generic-name
@@ -178,6 +187,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe725LRNPCBoxCink
   name: persistent-craft-recipe-generic-name
@@ -196,6 +206,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe725PSTBoxCink
   name: persistent-craft-recipe-generic-name
@@ -214,6 +225,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe739FMJBoxCink
   name: persistent-craft-recipe-generic-name
@@ -232,6 +244,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe739HPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -250,6 +263,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe751M80BoxCink
   name: persistent-craft-recipe-generic-name
@@ -268,6 +282,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe751UNBoxCink
   name: persistent-craft-recipe-generic-name
@@ -286,6 +301,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe45ACPRIPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -304,6 +320,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe45ACPAPBoxCink
   name: persistent-craft-recipe-generic-name
@@ -322,6 +339,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe939SP6BoxCink
   name: persistent-craft-recipe-generic-name
@@ -340,6 +358,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe754FMJBoxCink
   name: persistent-craft-recipe-generic-name
@@ -358,6 +377,7 @@
     amount: 4
   category: ammo
   subCategory: tier-3
+
 - type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe754HPBoxCink
   name: persistent-craft-recipe-generic-name

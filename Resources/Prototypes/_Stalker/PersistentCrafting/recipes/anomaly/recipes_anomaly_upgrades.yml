@@ -15,6 +15,7 @@
   - proto: ZoneArtifactDetectorModifiedHunter
   category: upgrades
   subCategory: tier-2
+
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT2ResponseCvoboda
   name: persistent-craft-recipe-generic-name

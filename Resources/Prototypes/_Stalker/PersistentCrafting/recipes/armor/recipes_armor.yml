@@ -15,6 +15,7 @@
   - proto: STClothingOuterArmorLightPlateVestBaseStalker
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKirasaT2
   name: persistent-craft-recipe-generic-name
@@ -32,6 +33,7 @@
   - proto: STClothingOuterKirasa
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipe6B2T2
   name: persistent-craft-recipe-generic-name
@@ -49,6 +51,7 @@
   - proto: ClothingOuterArmor6B2
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeStep4T3
   name: persistent-craft-recipe-generic-name
@@ -66,6 +69,7 @@
   - proto: STClothingOuterArmorLightPlateVestBaseANAgreen
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKoryndT3
   name: persistent-craft-recipe-generic-name
@@ -83,6 +87,7 @@
   - proto: STClothingOuterKorynd
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSlickT3
   name: persistent-craft-recipe-generic-name
@@ -100,6 +105,7 @@
   - proto: STClothingOuterSlickHaki
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipe6B13T4
   name: persistent-craft-recipe-generic-name
@@ -119,6 +125,7 @@
   - proto: ClothingOuterArmor6B13
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeVaryag4T4
   name: persistent-craft-recipe-generic-name
@@ -138,6 +145,7 @@
   - proto: STClothingOuterArmorIOTVGreen
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeIotvT4
   name: persistent-craft-recipe-generic-name
@@ -157,6 +165,7 @@
   - proto: STClothingOuterIOTV
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeRedutT5
   name: persistent-craft-recipe-generic-name
@@ -176,6 +185,7 @@
   - proto: STClothingOuterHeavyRedut
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeRatnikT5
   name: persistent-craft-recipe-generic-name
@@ -195,6 +205,7 @@
   - proto: STClothingOuterArmorRatnik
   category: armor
   subCategory: armor-body
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeChainJacketT1
   name: persistent-craft-recipe-generic-name
@@ -212,6 +223,7 @@
   - proto: ClothingOuterArmourJacketStalker
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeUpgradeJacketT1
   name: persistent-craft-recipe-generic-name
@@ -229,6 +241,7 @@
   - proto: ClothingOuterJacketStalkerUpgrade
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeAnomalyJacketT1
   name: persistent-craft-recipe-generic-name
@@ -246,6 +259,7 @@
   - proto: ClothingOuterAnomalyStalkerJacket
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeRCBZT2
   name: persistent-craft-recipe-generic-name
@@ -263,6 +277,7 @@
   - proto: STClothingOuterArmorRCBZ
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeUZK5T3
   name: persistent-craft-recipe-generic-name
@@ -280,6 +295,7 @@
   - proto: ClothingOuterArmorUzk5
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipePSZ7T3
   name: persistent-craft-recipe-generic-name
@@ -297,6 +313,7 @@
   - proto: STClothingOuterArmorLightPlateVestBasePSZ7
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeMercSuitT3
   name: persistent-craft-recipe-generic-name
@@ -314,6 +331,7 @@
   - proto: ClothingOuterArmorStalker
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSevaT3
   name: persistent-craft-recipe-generic-name
@@ -331,6 +349,7 @@
   - proto: ClothingOuterArmorSevaStalker
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeHazmatT4
   name: persistent-craft-recipe-generic-name
@@ -350,6 +369,7 @@
   - proto: ClothingOuterArmorHazmatRf
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeBerill5MT4
   name: persistent-craft-recipe-generic-name
@@ -369,6 +389,7 @@
   - proto: STClothingOuterArmorBerill5M
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipePioneerT4
   name: persistent-craft-recipe-generic-name
@@ -388,6 +409,7 @@
   - proto: ClothingOuterArmorStalkerCombat
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeZaryaT2
   name: persistent-craft-recipe-generic-name
@@ -405,6 +427,7 @@
   - proto: ClothingOuterArmorZaryaStalker
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeZarya3T2
   name: persistent-craft-recipe-generic-name
@@ -422,6 +445,7 @@
   - proto: ClothingOuterArmorZaryaStalkerModifedType1
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeZarya7T2
   name: persistent-craft-recipe-generic-name
@@ -439,6 +463,7 @@
   - proto: ClothingOuterArmorZaryaStalkerModifedType2
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeTouristT2
   name: persistent-craft-recipe-generic-name
@@ -456,6 +481,7 @@
   - proto: ClothingOuterArmorZaryaTourist
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKinologT2
   name: persistent-craft-recipe-generic-name
@@ -473,6 +499,7 @@
   - proto: ClothingOuterArmorZaryaHunter
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSparkT2
   name: persistent-craft-recipe-generic-name
@@ -490,6 +517,7 @@
   - proto: ClothingOuterArmorSpark
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeTuzemecT3
   name: persistent-craft-recipe-generic-name
@@ -507,6 +535,7 @@
   - proto: ClothingOuterArmorAborigineStalker
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeEgerT4
   name: persistent-craft-recipe-generic-name
@@ -526,6 +555,7 @@
   - proto: ClothingOuterArmorYeger
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKsn13T4
   name: persistent-craft-recipe-generic-name
@@ -545,6 +575,7 @@
   - proto: STClothingOuterArmorVeryHeavy
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKsn13MT4
   name: persistent-craft-recipe-generic-name
@@ -564,6 +595,7 @@
   - proto: STClothingOuterArmorVeryHeavySci
   category: armor
   subCategory: armor-special-suits
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSh68T1
   name: persistent-craft-recipe-generic-name
@@ -581,6 +613,7 @@
   - proto: ClothingHeadHelmetSH68
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeCyclopT2
   name: persistent-craft-recipe-generic-name
@@ -598,6 +631,7 @@
   - proto: STClothingHeadHelmetMakeshiftTacticalT3
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSphere08T3
   name: persistent-craft-recipe-generic-name
@@ -615,6 +649,7 @@
   - proto: ClothingHeadHelmetBerill5MMilitary
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSphere12T45
   name: persistent-craft-recipe-generic-name
@@ -634,6 +669,7 @@
   - proto: ClothingHeadHelmetBulatMilitary
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSitoT1
   name: persistent-craft-recipe-generic-name
@@ -651,6 +687,7 @@
   - proto: ClothingHeadHelmetLight
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeVostokT2
   name: persistent-craft-recipe-generic-name
@@ -668,6 +705,7 @@
   - proto: ClothingHeadHelmetInfantry
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeVityazT3
   name: persistent-craft-recipe-generic-name
@@ -685,6 +723,7 @@
   - proto: ClothingHeadHelmetVityaz1C
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeZenitT3
   name: persistent-craft-recipe-generic-name
@@ -702,6 +741,7 @@
   - proto: ClothingHeadAssaultHelmet
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipe6B47T4
   name: persistent-craft-recipe-generic-name
@@ -721,6 +761,7 @@
   - proto: ClothingHeadRatnik
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeUlachT4
   name: persistent-craft-recipe-generic-name
@@ -740,6 +781,7 @@
   - proto: ClothingHeadHelmetUlach
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeFastT5
   name: persistent-craft-recipe-generic-name
@@ -759,6 +801,7 @@
   - proto: STClothingHeadHelmetFASTNeutralBlack
   category: armor
   subCategory: armor-helmets
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeDoshdevikT1
   name: persistent-craft-recipe-generic-name
@@ -776,6 +819,7 @@
   - proto: ClothingOuterCoatDoshdevik
   category: armor
   subCategory: armor-cloaks
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeSevaCloakT3
   name: persistent-craft-recipe-generic-name
@@ -793,6 +837,7 @@
   - proto: STClothingCapeArmorChainmailSeva
   category: armor
   subCategory: armor-cloaks
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeLeatherCloakT1
   name: persistent-craft-recipe-generic-name
@@ -810,6 +855,7 @@
   - proto: ClothingOuterCoatStalker
   category: armor
   subCategory: armor-cloaks
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipePoiskCloakT1
   name: persistent-craft-recipe-generic-name
@@ -827,6 +873,7 @@
   - proto: ClothingOuterCoatPoisk
   category: armor
   subCategory: armor-cloaks
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeKevlarCloakT3
   name: persistent-craft-recipe-generic-name
@@ -844,6 +891,7 @@
   - proto: ClothingOuterCoatLoyalist
   category: armor
   subCategory: armor-cloaks
+
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeBolotniyCloakT3
   name: persistent-craft-recipe-generic-name

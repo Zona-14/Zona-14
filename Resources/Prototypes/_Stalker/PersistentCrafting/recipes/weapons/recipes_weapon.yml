@@ -15,6 +15,7 @@
   - proto: STWeaponShotgunTOZ34
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeObrezT1
   name: persistent-craft-recipe-generic-name
@@ -32,6 +33,7 @@
   - proto: STWeaponShotgunSawedOf
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeMP133T2
   name: persistent-craft-recipe-generic-name
@@ -49,6 +51,7 @@
   - proto: STWeaponShotgunMP133
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeMossbergT2
   name: persistent-craft-recipe-generic-name
@@ -66,6 +69,7 @@
   - proto: STWeaponShotgunMossbergM88
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeMP153T3
   name: persistent-craft-recipe-generic-name
@@ -83,6 +87,7 @@
   - proto: STWeaponShotgunMP153
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeBenelliT3
   name: persistent-craft-recipe-generic-name
@@ -100,6 +105,7 @@
   - proto: STWeaponShotgunBenelliM4Super90
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSpas12T3
   name: persistent-craft-recipe-generic-name
@@ -117,6 +123,7 @@
   - proto: STWeaponShotgunSPAS
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeProtectaT4
   name: persistent-craft-recipe-generic-name
@@ -136,6 +143,7 @@
   - proto: STWeaponShotgunProtecta
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSaiga12T45
   name: persistent-craft-recipe-generic-name
@@ -155,6 +163,7 @@
   - proto: STWeaponShotgunSaiga12
   category: weapons
   subCategory: weapon-shotguns
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeAKS74UT1
   name: persistent-craft-recipe-generic-name
@@ -172,6 +181,7 @@
   - proto: STWeaponRifleAKS74U
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeVsvGlukharT2
   name: persistent-craft-recipe-generic-name
@@ -189,6 +199,7 @@
   - proto: STMetroWeaponRifleVSV
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeAKS74T3
   name: persistent-craft-recipe-generic-name
@@ -206,6 +217,7 @@
   - proto: STWeaponRifleAKS74
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeRPK74T3
   name: persistent-craft-recipe-generic-name
@@ -223,6 +235,7 @@
   - proto: STWeaponRifleRPK74
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeA545T4
   name: persistent-craft-recipe-generic-name
@@ -242,6 +255,7 @@
   - proto: STWeaponRifleA545
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeAK74MT45
   name: persistent-craft-recipe-generic-name
@@ -261,6 +275,7 @@
   - proto: STWeaponRifleAK74M
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSaiga762T15
   name: persistent-craft-recipe-generic-name
@@ -278,6 +293,7 @@
   - proto: STWeaponRifleSaiga739
   category: weapons
   subCategory: weapon-sniper-dmr
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSKST2
   name: persistent-craft-recipe-generic-name
@@ -295,6 +311,7 @@
   - proto: STWeaponSniperSKS
   category: weapons
   subCategory: weapon-sniper-dmr
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeAKMCT35
   name: persistent-craft-recipe-generic-name
@@ -312,6 +329,7 @@
   - proto: STWeaponRifleAKMC
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeAK103T45
   name: persistent-craft-recipe-generic-name
@@ -331,6 +349,7 @@
   - proto: STWeaponRifleAK103
   category: weapons
   subCategory: weapon-ar-soviet
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeMosinT2
   name: persistent-craft-recipe-generic-name
@@ -348,6 +367,7 @@
   - proto: STWeaponSniperMosin
   category: weapons
   subCategory: weapon-sniper-dmr
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSVDST45
   name: persistent-craft-recipe-generic-name
@@ -367,6 +387,7 @@
   - proto: STWeaponSniperSVDS
   category: weapons
   subCategory: weapon-sniper-dmr
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeVSST5
   name: persistent-craft-recipe-generic-name
@@ -386,6 +407,7 @@
   - proto: STWeaponSniperVSS
   category: weapons
   subCategory: weapon-sniper-dmr
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeL85T1
   name: persistent-craft-recipe-generic-name
@@ -403,6 +425,7 @@
   - proto: STWeaponRifleL85
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeM16T2
   name: persistent-craft-recipe-generic-name
@@ -420,6 +443,7 @@
   - proto: STWeaponRifleM16
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSig550T3
   name: persistent-craft-recipe-generic-name
@@ -437,6 +461,7 @@
   - proto: STWeaponRifleSIG550
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeM4T3
   name: persistent-craft-recipe-generic-name
@@ -454,6 +479,7 @@
   - proto: STWeaponRifleM4
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeScarLT35
   name: persistent-craft-recipe-generic-name
@@ -471,6 +497,7 @@
   - proto: STWeaponRifleSCARL
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeLr300T4
   name: persistent-craft-recipe-generic-name
@@ -490,6 +517,7 @@
   - proto: STWeaponRifleLR300v1
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeGalilT5
   name: persistent-craft-recipe-generic-name
@@ -509,6 +537,7 @@
   - proto: STWeaponRifleGalil
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeFnFalT2
   name: persistent-craft-recipe-generic-name
@@ -526,6 +555,7 @@
   - proto: STWeaponRifleFAL
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeGalatzT3
   name: persistent-craft-recipe-generic-name
@@ -543,6 +573,7 @@
   - proto: STWeaponRifleGalatz
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeScarHT4
   name: persistent-craft-recipe-generic-name
@@ -562,6 +593,7 @@
   - proto: STWeaponRifleSCARH
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeScarHCqcT45
   name: persistent-craft-recipe-generic-name
@@ -581,6 +613,7 @@
   - proto: STWeaponRifleSCARHShort
   category: weapons
   subCategory: weapon-ar-nato
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeGlockT15
   name: persistent-craft-recipe-generic-name
@@ -598,6 +631,7 @@
   - proto: WeaponPistolStalkerGlock
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeKedrT2
   name: persistent-craft-recipe-generic-name
@@ -615,6 +649,7 @@
   - proto: STWeaponSMGPP91
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeMp5T3
   name: persistent-craft-recipe-generic-name
@@ -632,6 +667,7 @@
   - proto: STWeaponSMGMP5
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeVereskT3
   name: persistent-craft-recipe-generic-name
@@ -649,6 +685,7 @@
   - proto: STWeaponSMGStalkerCP2Veresk
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeVityazT35
   name: persistent-craft-recipe-generic-name
@@ -666,6 +703,7 @@
   - proto: STWeaponSMGPP1901
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeP90T45
   name: persistent-craft-recipe-generic-name
@@ -685,6 +723,7 @@
   - proto: STWeaponSMGFNP90
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeTaurusJudgeT1
   name: persistent-craft-recipe-generic-name
@@ -702,6 +741,7 @@
   - proto: STWeaponRevolverTaurusJudge
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeSW625T25
   name: persistent-craft-recipe-generic-name
@@ -719,6 +759,7 @@
   - proto: STWeaponRevolverSWModel625
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeChiappaT35
   name: persistent-craft-recipe-generic-name
@@ -736,6 +777,7 @@
   - proto: STWeaponRevolverChiappaRhino60DS
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeDanWessonT35
   name: persistent-craft-recipe-generic-name
@@ -753,6 +795,7 @@
   - proto: STWeaponRevolverDanWesson715
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeRsh12T45
   name: persistent-craft-recipe-generic-name
@@ -772,6 +815,7 @@
   - proto: STWeaponRevolverRH12
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeApsT2
   name: persistent-craft-recipe-generic-name
@@ -789,6 +833,7 @@
   - proto: WeaponPistolStalkerAPS
   category: weapons
   subCategory: weapon-pistols-revolvers
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeBizonT2
   name: persistent-craft-recipe-generic-name
@@ -806,6 +851,7 @@
   - proto: STWeaponSMGPP19
   category: weapons
   subCategory: weapon-smg-pdw
+
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeVz61T2
   name: persistent-craft-recipe-generic-name
