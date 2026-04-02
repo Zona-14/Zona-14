@@ -40,6 +40,8 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Damageable
+          damageModifierSet: STProjectDamageModifierSet
 
 - type: startingGear
   id: ProjectPawnGear
@@ -102,6 +104,8 @@
         - type: NpcFactionMember
           factions:
             - Mutated
+        - type: Damageable
+          damageModifierSet: STProjectDamageModifierSet
 
 - type: startingGear
   id: ProjectOrchestratorGear
@@ -123,3 +127,8 @@
     1: StalkerProjectPawn
     2: StalkerProjectOrchestrator
 
+- type: damageModifierSet
+  id: STProjectDamageModifierSet
+  class: 5
+  flatReductions:
+    Psy: 6
