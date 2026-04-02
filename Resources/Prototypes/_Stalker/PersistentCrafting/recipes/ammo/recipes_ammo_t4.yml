@@ -1,8 +1,8 @@
 - type: persistentCraftRecipe
-  id: PersistentCraftAmmo_newrecipeShotgunFlechetteCink
+  id: PersistentCraftAmmo_newrecipe939SP6BoxCink
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
-  displayProto: ShotgunFlechette
+  displayProto: STBox9x39SP6
   branch: Ammo
   tier: 4
   requiredNode: PersistentCraftWeaponAmmoNodeT4
@@ -12,27 +12,8 @@
   - proto: STCraftAnomalyDust
     amount: 20
   results:
-  - proto: ShotgunFlechette
-    amount: 6
-  category: ammo
-  subCategory: tier-4
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmo_newrecipeShotgunDarttBoxCink
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: ShotgunDarttBox
-  branch: Ammo
-  tier: 4
-  requiredNode: PersistentCraftWeaponAmmoNodeT4
-  craftTime: 6
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 20
-  results:
-  - proto: ShotgunDarttBox
-    amount: 6
+  - proto: STBox9x39SP6
+    amount: 4
   category: ammo
   subCategory: tier-4
 
@@ -113,25 +94,6 @@
   subCategory: tier-4
 
 - type: persistentCraftRecipe
-  id: PersistentCraftAmmo_newrecipe939BPBoxCink
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STBox9x39PAB9
-  branch: Ammo
-  tier: 4
-  requiredNode: PersistentCraftWeaponAmmoNodeT4
-  craftTime: 6
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 20
-  results:
-  - proto: STBox9x39PAB9
-    amount: 4
-  category: ammo
-  subCategory: tier-4
-
-- type: persistentCraftRecipe
   id: PersistentCraftAmmo_newrecipe1255BPCink
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
@@ -168,3 +130,5 @@
     amount: 4
   category: ammo
   subCategory: tier-4
+
+

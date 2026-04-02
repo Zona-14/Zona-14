@@ -1,4 +1,4 @@
-- type: persistentCraftRecipe
+﻿- type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeToz34T1
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
@@ -388,25 +388,25 @@
   category: weapons
   subCategory: weapon-sniper-dmr
 
-- type: persistentCraftRecipe
-  id: PersistentCraftWeaponRecipeVSST5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STWeaponSniperVSS
-  branch: Weapon
-  tier: 5
-  requiredNode: PersistentCraftWeaponNodeVSST5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: STWeaponSniperVSS
-  category: weapons
-  subCategory: weapon-sniper-dmr
+# - type: persistentCraftRecipe
+#   id: PersistentCraftWeaponRecipeVSST5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STWeaponSniperVSS
+#   branch: Weapon
+#   tier: 5
+#   requiredNode: PersistentCraftWeaponNodeVSST5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STWeaponSniperVSS
+#   category: weapons
+#   subCategory: weapon-sniper-dmr
 
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeL85T1
@@ -518,25 +518,25 @@
   category: weapons
   subCategory: weapon-ar-nato
 
-- type: persistentCraftRecipe
-  id: PersistentCraftWeaponRecipeGalilT5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STWeaponRifleGalil
-  branch: Weapon
-  tier: 5
-  requiredNode: PersistentCraftWeaponNodeGalilT5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: STWeaponRifleGalil
-  category: weapons
-  subCategory: weapon-ar-nato
+# - type: persistentCraftRecipe
+#   id: PersistentCraftWeaponRecipeGalilT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STWeaponRifleGalil
+#   branch: Weapon
+#   tier: 5
+#   requiredNode: PersistentCraftWeaponNodeGalilT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STWeaponRifleGalil
+#   category: weapons
+#   subCategory: weapon-ar-nato
 
 - type: persistentCraftRecipe
   id: PersistentCraftWeaponRecipeFnFalT2
@@ -869,3 +869,40 @@
   - proto: STWeaponSMGVZ61
   category: weapons
   subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeVeresk921T35
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGStalkerCP2Veresk921
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeVeresk921T35
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGStalkerCP2Veresk921
+  category: weapons
+  subCategory: weapon-smg-pdw
+
+- type: persistentCraftRecipe
+  id: PersistentCraftWeaponRecipeBizon919T3
+  name: persistent-craft-recipe-generic-name
+  description: persistent-craft-recipe-generic-desc
+  displayProto: STWeaponSMGPP19919
+  branch: Weapon
+  tier: 3
+  requiredNode: PersistentCraftWeaponNodeBizon919T3
+  craftTime: 7
+  pointReward: 16
+  ingredients:
+  - proto: STCraftAnomalyDust
+    amount: 32
+  results:
+  - proto: STWeaponSMGPP19919
+  category: weapons
+  subCategory: weapon-smg-pdw
+

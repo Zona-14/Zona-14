@@ -39,6 +39,11 @@
   order: 3
 
 - type: persistentCraftCategory
+  id: materials-tools
+  name: Инструменты
+  order: 4
+
+- type: persistentCraftCategory
   id: upgrades
   name: Улучшения
   order: 4
@@ -64,6 +69,18 @@
   id: material-disassemble
   category: anomaly-dust
   name: Разбор
+  order: 2
+
+- type: persistentCraftSubCategory
+  id: materials-fishing-rods
+  category: materials-tools
+  name: Удочки
+  order: 1
+
+- type: persistentCraftSubCategory
+  id: materials-trash-detectors
+  category: materials-tools
+  name: Металлоискатели
   order: 2
 
 - type: persistentCraftSubCategory

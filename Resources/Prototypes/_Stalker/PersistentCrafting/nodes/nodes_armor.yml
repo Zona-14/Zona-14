@@ -107,29 +107,29 @@
   prerequisites:
   - PersistentCraftArmorNodeVaryag4T4
 
-- type: persistentCraftNode
-  id: PersistentCraftArmorNodeRedutT5
-  name: Редут T5
-  description: persistent-craft-node-sub-recipe-desc
-  branch: Armor
-  cost: 320
-  displayProto: STClothingOuterHeavyRedut
-  treeColumn: 2
-  treeRow: 3
-  prerequisites:
-  - PersistentCraftArmorNode6B13T4
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeRedutT5
+#   name: Редут T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingOuterHeavyRedut
+#   treeColumn: 2
+#   treeRow: 3
+#   prerequisites:
+#   - PersistentCraftArmorNode6B13T4
 
-- type: persistentCraftNode
-  id: PersistentCraftArmorNodeRatnikT5
-  name: Ратник T5
-  description: persistent-craft-node-sub-recipe-desc
-  branch: Armor
-  cost: 320
-  displayProto: STClothingOuterArmorRatnik
-  treeColumn: 1
-  treeRow: 3
-  prerequisites:
-  - PersistentCraftArmorNodeRedutT5
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeRatnikT5
+#   name: Ратник T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingOuterArmorRatnik
+#   treeColumn: 1
+#   treeRow: 3
+#   prerequisites:
+#   - PersistentCraftArmorNodeRedutT5
 
 - type: persistentCraftNode
   id: PersistentCraftArmorNodeChainJacketT1
@@ -497,17 +497,17 @@
   prerequisites:
   - PersistentCraftArmorNode6B47T4
 
-- type: persistentCraftNode
-  id: PersistentCraftArmorNodeFastT5
-  name: FAST T5
-  description: persistent-craft-node-sub-recipe-desc
-  branch: Armor
-  cost: 320
-  displayProto: STClothingHeadHelmetFASTNeutralBlack
-  treeColumn: 2
-  treeRow: 10
-  prerequisites:
-  - PersistentCraftArmorNode6B47T4
+# - type: persistentCraftNode
+#   id: PersistentCraftArmorNodeFastT5
+#   name: FAST T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Armor
+#   cost: 320
+#   displayProto: STClothingHeadHelmetFASTNeutralBlack
+#   treeColumn: 2
+#   treeRow: 10
+#   prerequisites:
+#   - PersistentCraftArmorNode6B47T4
 
 - type: persistentCraftNode
   id: PersistentCraftArmorNodeDoshdevikT1
@@ -576,4 +576,3 @@
   treeRow: 7
   prerequisites:
   - PersistentCraftArmorNodeKevlarCloakT3
-

@@ -1,4 +1,4 @@
-- type: persistentCraftRecipe
+﻿- type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeShitok2T2
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
@@ -166,45 +166,45 @@
   category: armor
   subCategory: armor-body
 
-- type: persistentCraftRecipe
-  id: PersistentCraftArmorRecipeRedutT5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STClothingOuterHeavyRedut
-  branch: Armor
-  tier: 5
-  requiredNode: PersistentCraftArmorNodeRedutT5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: STClothingOuterHeavyRedut
-  category: armor
-  subCategory: armor-body
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeRedutT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingOuterHeavyRedut
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeRedutT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingOuterHeavyRedut
+#   category: armor
+#   subCategory: armor-body
 
-- type: persistentCraftRecipe
-  id: PersistentCraftArmorRecipeRatnikT5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STClothingOuterArmorRatnik
-  branch: Armor
-  tier: 5
-  requiredNode: PersistentCraftArmorNodeRatnikT5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: STClothingOuterArmorRatnik
-  category: armor
-  subCategory: armor-body
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeRatnikT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingOuterArmorRatnik
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeRatnikT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingOuterArmorRatnik
+#   category: armor
+#   subCategory: armor-body
 
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeChainJacketT1
@@ -782,25 +782,25 @@
   category: armor
   subCategory: armor-helmets
 
-- type: persistentCraftRecipe
-  id: PersistentCraftArmorRecipeFastT5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STClothingHeadHelmetFASTNeutralBlack
-  branch: Armor
-  tier: 5
-  requiredNode: PersistentCraftArmorNodeFastT5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: STClothingHeadHelmetFASTNeutralBlack
-  category: armor
-  subCategory: armor-helmets
+# - type: persistentCraftRecipe
+#   id: PersistentCraftArmorRecipeFastT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: STClothingHeadHelmetFASTNeutralBlack
+#   branch: Armor
+#   tier: 5
+#   requiredNode: PersistentCraftArmorNodeFastT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: STClothingHeadHelmetFASTNeutralBlack
+#   category: armor
+#   subCategory: armor-helmets
 
 - type: persistentCraftRecipe
   id: PersistentCraftArmorRecipeDoshdevikT1
@@ -909,3 +909,4 @@
   - proto: ClothingOuterCoatBolotniy
   category: armor
   subCategory: armor-cloaks
+

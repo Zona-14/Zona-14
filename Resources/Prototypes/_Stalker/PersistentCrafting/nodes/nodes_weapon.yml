@@ -246,17 +246,17 @@
   prerequisites:
   - PersistentCraftWeaponNodeMosinT2
 
-- type: persistentCraftNode
-  id: PersistentCraftWeaponNodeVSST5
-  name: VSS T5
-  description: persistent-craft-node-sub-recipe-desc
-  branch: Weapon
-  cost: 320
-  displayProto: STWeaponSniperVSS
-  treeColumn: 4
-  treeRow: 8
-  prerequisites:
-  - PersistentCraftWeaponNodeSVDST45
+# - type: persistentCraftNode
+#   id: PersistentCraftWeaponNodeVSST5
+#   name: VSS T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Weapon
+#   cost: 320
+#   displayProto: STWeaponSniperVSS
+#   treeColumn: 4
+#   treeRow: 8
+#   prerequisites:
+#   - PersistentCraftWeaponNodeSVDST45
 
 - type: persistentCraftNode
   id: PersistentCraftWeaponNodeL85T1
@@ -328,17 +328,17 @@
   prerequisites:
   - PersistentCraftWeaponNodeM4T3
 
-- type: persistentCraftNode
-  id: PersistentCraftWeaponNodeGalilT5
-  name: Galil T5
-  description: persistent-craft-node-sub-recipe-desc
-  branch: Weapon
-  cost: 320
-  displayProto: STWeaponRifleGalil
-  treeColumn: 8
-  treeRow: 4
-  prerequisites:
-  - PersistentCraftWeaponNodeLr300T4
+# - type: persistentCraftNode
+#   id: PersistentCraftWeaponNodeGalilT5
+#   name: Galil T5
+#   description: persistent-craft-node-sub-recipe-desc
+#   branch: Weapon
+#   cost: 320
+#   displayProto: STWeaponRifleGalil
+#   treeColumn: 8
+#   treeRow: 4
+#   prerequisites:
+#   - PersistentCraftWeaponNodeLr300T4
 
 - type: persistentCraftNode
   id: PersistentCraftWeaponNodeFnFalT2
@@ -548,3 +548,26 @@
   prerequisites:
   - PersistentCraftWeaponNodeBizonT2
 
+- type: persistentCraftNode
+  id: PersistentCraftWeaponNodeVeresk921T35
+  name: Veresk 9x21 T3.5
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Weapon
+  cost: 80
+  displayProto: STWeaponSMGStalkerCP2Veresk921
+  treeColumn: 12
+  treeRow: 4
+  prerequisites:
+  - PersistentCraftWeaponNodeVereskT3
+
+- type: persistentCraftNode
+  id: PersistentCraftWeaponNodeBizon919T3
+  name: Bizon 9x19 T3
+  description: persistent-craft-node-sub-recipe-desc
+  branch: Weapon
+  cost: 80
+  displayProto: STWeaponSMGPP19919
+  treeColumn: 2
+  treeRow: 7
+  prerequisites:
+  - PersistentCraftWeaponNodeBizonT2

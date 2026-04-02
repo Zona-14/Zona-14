@@ -53,96 +53,6 @@
   subCategory: ammo-magazines
 
 - type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeDrumAutoAssBig
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: DrumAutoAssBig
-  branch: Ammo
-  tier: 1
-  requiredNode: PersistentCraftWeaponAmmoNodeT1
-  craftTime: 4
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: DrumAutoAssBig
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeDrumAutoAssSmall
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: DrumAutoAssSmall
-  branch: Ammo
-  tier: 1
-  requiredNode: PersistentCraftWeaponAmmoNodeT1
-  craftTime: 4
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: DrumAutoAssSmall
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeDrumAutoAssVeryBig
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: DrumAutoAssVeryBig
-  branch: Ammo
-  tier: 1
-  requiredNode: PersistentCraftWeaponAmmoNodeT1
-  craftTime: 4
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: DrumAutoAssVeryBig
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeMagazine10USAS12x70
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: Magazine10USAS12x70
-  branch: Ammo
-  tier: 1
-  requiredNode: PersistentCraftWeaponAmmoNodeT1
-  craftTime: 4
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: Magazine10USAS12x70
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeMagazine20USAS12x70
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: Magazine20USAS12x70
-  branch: Ammo
-  tier: 1
-  requiredNode: PersistentCraftWeaponAmmoNodeT1
-  craftTime: 4
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: Magazine20USAS12x70
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipeSaiga1270Drum
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
@@ -341,60 +251,6 @@
   subCategory: ammo-magazines
 
 - type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeTommyGunBigDrum
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: TommyGunBigDrum
-  branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: TommyGunBigDrum
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeTommyGunDrum
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: TommyGunDrum
-  branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: TommyGunDrum
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeTommyGunDrum2
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: TommyGunDrum2
-  branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: TommyGunDrum2
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
   id: PersistentCraftAmmoMagazineRecipe545Mag20
   name: persistent-craft-recipe-generic-name
   description: persistent-craft-recipe-generic-desc
@@ -481,24 +337,6 @@
     amount: 3
   results:
   - proto: Base545Mag10
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipe556box249
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: 556box249
-  branch: Ammo
-  tier: 3
-  requiredNode: PersistentCraftWeaponAmmoNodeT3
-  craftTime: 6
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: 556box249
   category: ammo
   subCategory: ammo-magazines
 
@@ -850,9 +688,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: BaseAPSMag
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -868,9 +706,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: BasePMMag
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -922,9 +760,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: BaseGlockMag10
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -940,9 +778,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: BaseGSH-18Mag10
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -994,9 +832,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: BasePP2000Mag
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1048,9 +886,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: GlockMag17
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1066,9 +904,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: GlockMag24
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1084,9 +922,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: GlockMag33
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1102,9 +940,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: GSH-18Mag18
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1210,9 +1048,9 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: VityazMag
   branch: Ammo
-  tier: 2
-  requiredNode: PersistentCraftWeaponAmmoNodeT2
-  craftTime: 5
+  tier: 1
+  requiredNode: PersistentCraftWeaponAmmoNodeT1
+  craftTime: 4
   pointReward: 0
   ingredients:
   - proto: STCraftAnomalyDust
@@ -1363,24 +1201,6 @@
     amount: 3
   results:
   - proto: Base939MagVSK
-  category: ammo
-  subCategory: ammo-magazines
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmoMagazineRecipeSTFlamethrowerTank
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: STFlamethrowerTank
-  branch: Ammo
-  tier: 5
-  requiredNode: PersistentCraftWeaponAmmoNodeT5
-  craftTime: 8
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 3
-  results:
-  - proto: STFlamethrowerTank
   category: ammo
   subCategory: ammo-magazines
 

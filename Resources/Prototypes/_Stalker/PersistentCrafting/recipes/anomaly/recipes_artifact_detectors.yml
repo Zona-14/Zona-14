@@ -1,4 +1,4 @@
-- type: persistentCraftRecipe
+﻿- type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT3
   name: persistent-craft-recipe-anomaly-t3-name
   description: persistent-craft-recipe-anomaly-t3-desc
@@ -54,45 +54,45 @@
   category: artifact-detectors
   subCategory: tier-3
 
-- type: persistentCraftRecipe
-  id: PersistentCraftAnomalyRecipeT5
-  name: persistent-craft-recipe-anomaly-t5-name
-  description: persistent-craft-recipe-anomaly-t5-desc
-  displayProto: ZoneArtifactDetectorWolfhound
-  branch: Anomaly
-  tier: 5
-  requiredNode: PersistentCraftAnomalyNodeWolfhound
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: ZoneArtifactDetectorWolfhound
-  category: artifact-detectors
-  subCategory: tier-5
+# - type: persistentCraftRecipe
+#   id: PersistentCraftAnomalyRecipeT5
+#   name: persistent-craft-recipe-anomaly-t5-name
+#   description: persistent-craft-recipe-anomaly-t5-desc
+#   displayProto: ZoneArtifactDetectorWolfhound
+#   branch: Anomaly
+#   tier: 5
+#   requiredNode: PersistentCraftAnomalyNodeWolfhound
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: ZoneArtifactDetectorWolfhound
+#   category: artifact-detectors
+#   subCategory: tier-5
 
-- type: persistentCraftRecipe
-  id: PersistentCraftAnomalyRecipeT5Alt
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: Svarog
-  branch: Anomaly
-  tier: 5
-  requiredNode: PersistentCraftAnomalyNodeSvarog
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 128
-  - tag: STArtifactTier4
-    amount: 1
-  results:
-  - proto: Svarog
-  category: artifact-detectors
-  subCategory: tier-5
+# - type: persistentCraftRecipe
+#   id: PersistentCraftAnomalyRecipeT5Alt
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: Svarog
+#   branch: Anomaly
+#   tier: 5
+#   requiredNode: PersistentCraftAnomalyNodeSvarog
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 128
+#   - tag: STArtifactTier4
+#     amount: 1
+#   results:
+#   - proto: Svarog
+#   category: artifact-detectors
+#   subCategory: tier-5
 
 - type: persistentCraftRecipe
   id: PersistentCraftAnomalyRecipeT1Pulse
@@ -203,3 +203,4 @@
   - proto: ZoneArtifactDetectorSeaDevil
   category: artifact-detectors
   subCategory: tier-4
+

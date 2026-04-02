@@ -144,23 +144,23 @@
   category: medicine
   subCategory: medicine-medkits
 
-- type: persistentCraftRecipe
-  id: PersistentCraftMedicineRecipeLarMedkitT5
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: MedkitLAR
-  branch: Medicine
-  tier: 5
-  requiredNode: PersistentCraftMedicineNodeLarMedkitT5
-  craftTime: 10
-  pointReward: 64
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 50
-  results:
-  - proto: MedkitLAR
-  category: medicine
-  subCategory: medicine-medkits
+# - type: persistentCraftRecipe
+#   id: PersistentCraftMedicineRecipeLarMedkitT5
+#   name: persistent-craft-recipe-generic-name
+#   description: persistent-craft-recipe-generic-desc
+#   displayProto: MedkitLAR
+#   branch: Medicine
+#   tier: 5
+#   requiredNode: PersistentCraftMedicineNodeLarMedkitT5
+#   craftTime: 10
+#   pointReward: 64
+#   ingredients:
+#   - proto: STCraftAnomalyDust
+#     amount: 50
+#   results:
+#   - proto: MedkitLAR
+#   category: medicine
+#   subCategory: medicine-medkits
 
 - type: persistentCraftRecipe
   id: PersistentCraftMedicineRecipeYodarinT15
@@ -204,13 +204,15 @@
   description: persistent-craft-recipe-generic-desc
   displayProto: STPillboxShiza
   branch: Medicine
-  tier: 5
+  tier: 4
   requiredNode: PersistentCraftMedicineNodeFufloT5
   craftTime: 10
   pointReward: 64
   ingredients:
   - proto: STCraftAnomalyDust
     amount: 30
+  - tag: STArtifactTier4
+    amount: 1
   results:
   - proto: STPillboxShiza
   category: medicine
