@@ -17,6 +17,8 @@
   supervisors: job-project-pawn-supervisor
   canBeAntag: false
   special:
+    - !type:AddImplantSpecial
+      implants: [ STProjectRadioImplant ]
     - !type:AddComponentSpecial
       components:
         - type: Access
@@ -47,7 +49,6 @@
     torso: ClothingTorsoJacketProjectPeshka
     legs: ClothingLegsJeansProjectPeshka
     shoes: ClothingShoesBootsProject
-    ears: ClothingHeadsetProject
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesFingerless
 
@@ -70,6 +71,8 @@
   supervisors: job-project-orchestrator-supervisor
   canBeAntag: false
   special:
+    - !type:AddImplantSpecial
+      implants: [ STProjectRadioImplant ]
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
@@ -108,7 +111,6 @@
     torso: ClothingTorsoJacketProjectLeader
     legs: ClothingLegsJeansProjectLeader
     shoes: ClothingShoesBootsProject
-    ears: ClothingHeadsetProject
     eyes: ClothingEyesHudProject
     gloves: ClothingHandsGlovesFingerless
 - type: stBand

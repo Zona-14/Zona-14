@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STProjectRadioImplant
+  name: radio implant
+  description: Project radio
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Project
+    - Project1
+    - Project2
+    - Project3
+  - type: PersonalDamage
+    damage:
+      types:
+        Psy: -6
+  
+      
+- type: entity
+  id: STProjectRadioImplanter
+  name: STProjectRadioImplanter
+  suffix: Админы
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: STProjectRadioImplant
