@@ -223,7 +223,7 @@
   objectiveType: Hunt
   runtime:
     spawnPointTag: TradeContractHuntBoarLair
-    targetPrototype: STMobMutantBoarLegendary
+    targetPrototype: STMobMutantBoarUncommon
     guardPrototype: STMobMutantBoarUncommon
     guardCount: 2
     proofPrototype: NcTradeContractProofGhoulTrophy
@@ -248,7 +248,7 @@
   objectiveType: Hunt
   runtime:
     spawnPointTag: TradeContractHuntPseudodog
-    targetPrototype: STMobMutantPseudodogLegendary
+    targetPrototype: STMobMutantPseudodogUncommon
     proofPrototype: NcTradeContractProofGhoulTrophy
     givePinpointer: true
     pinpointerPrototype: PinpointerUniversal
