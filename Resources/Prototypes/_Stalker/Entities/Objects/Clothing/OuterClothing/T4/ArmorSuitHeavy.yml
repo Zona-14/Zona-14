@@ -109,3 +109,38 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/begemot_freedom.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/begemot_freedom.rsi
+
+- type: entity
+  parent: STClothingOuterArmorVeryHeavy
+  id: STClothingOuterArmorGonchiy
+  name: Бронекостюм "Гончий"
+  description: Костюм с маскировочными элементами, созданный для быстрого и комфортного передвижения по Зоне, в ущерб защитным показателям.
+  suffix: ST, T4, PvE
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/gonchiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/gonchiy.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHardsuitGonchiy
+    slot: head
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 7
+        Slash: 7
+        Piercing: 3
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.75
+        Radiation: 0.75
+        Caustic: 0.75
+        Shock: 0.95
+        Compression: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
