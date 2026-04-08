@@ -1,5 +1,4 @@
 - type: entity
-  suffix: Stalker, Т3
   parent: BaseMobMutant
   id: MobStalkerRogueBase
   description:
@@ -92,8 +91,8 @@
       fireRate: 6
       useKey: false
       selectedMode: FullAuto
-      minAngle: 30
-      maxAngle: 58
+      minAngle: 15
+      maxAngle: 35
       angleIncrease: 5
       angleDecay: 30
       projectileSpeed: 65
@@ -124,7 +123,7 @@
          variation: 0.125
     - type: NpcFactionMember
       factions:
-      - Hostile
+      - MutatedHunter
 
 - type: damageModifierSet
   id: STRogueT3DamageModifierSet
@@ -146,7 +145,6 @@
     Radiation: 1
 
 - type: entity
-  suffix: Stalker, Т0
   parent: MobStalkerRogueBase
   id: MobStalkerRogueBanditT0
   components:
@@ -165,11 +163,11 @@
     - type: Gun
       fireRate: 6
       useKey: false
-      selectedMode: FullAuto
+      selectedMode: SemiAuto
       minAngle: 1
-      maxAngle: 5
+      maxAngle: 3
       angleIncrease: 1
-      angleDecay: 5
+      angleDecay: 3
       projectileSpeed: 45
       availableModes:
         - SemiAuto
@@ -178,7 +176,7 @@
     
 - type: damageModifierSet
   id: STRogueT0DamageModifierSet
-  class: 3
+  class: 0
   coefficients:
     Blunt: 0.95
     Slash: 0.95
@@ -191,7 +189,6 @@
     Piercing: 1
 
 - type: entity
-  suffix: Stalker, Т3
   parent: MobStalkerRogueBase
   id: MobStalkerRogueFreedom
   components:
@@ -211,8 +208,8 @@
       fireRate: 9
       useKey: false
       selectedMode: FullAuto
-      minAngle: 35
-      maxAngle: 60
+      minAngle: 15
+      maxAngle: 40
       angleIncrease: 1
       angleDecay: 5
       projectileSpeed: 55
@@ -227,7 +224,6 @@
          variation: 0.125
 
 - type: entity
-  suffix: Stalker, Т3
   parent: MobStalkerRogueBase
   id: MobStalkerRogueDolg
   components:
@@ -247,8 +243,8 @@
       fireRate: 6
       useKey: false
       selectedMode: FullAuto
-      minAngle: 30
-      maxAngle: 52
+      minAngle: 9
+      maxAngle: 28
       angleIncrease: 1.65
       angleDecay: 9
       projectileSpeed: 65
@@ -263,7 +259,6 @@
          variation: 0.125
 
 - type: entity
-  suffix: Stalker, Т3
   parent: MobStalkerRogueBase
   id: MobStalkerRogueMerc1
   components:
@@ -283,8 +278,8 @@
       fireRate: 7.5
       useKey: false
       selectedMode: FullAuto
-      minAngle: 15
-      maxAngle: 55
+      minAngle: 3
+      maxAngle: 12
       angleIncrease: 1
       angleDecay: 10
       projectileSpeed: 65
@@ -299,7 +294,6 @@
          variation: 0.125
 
 - type: entity
-  suffix: Stalker, Т3
   parent: MobStalkerRogueMerc1
   id: MobStalkerRogueMerc2
   components:
@@ -310,7 +304,6 @@
           sprite: /Textures/_Stalker/Mobs/Guards/Mercenary/Rogue2.rsi
 
 - type: entity
-  suffix: Stalker, Т3
   parent: MobStalkerRogueBase
   id: MobStalkerRogueVoen
   components:
@@ -330,8 +323,8 @@
       fireRate: 6
       useKey: false
       selectedMode: FullAuto
-      minAngle: 25
-      maxAngle: 60
+      minAngle: 15
+      maxAngle: 35
       angleIncrease: 2
       angleDecay: 9
       projectileSpeed: 60
