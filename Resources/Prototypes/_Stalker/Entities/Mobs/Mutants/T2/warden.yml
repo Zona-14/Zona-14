@@ -71,10 +71,10 @@
       baseWalkSpeed: 2
       baseSprintSpeed: 3.5
     - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/warden.rsi
       layers:
-        - map: "enum.DamageStateVisualLayers.Base"
+        - map: ["enum.DamageStateVisualLayers.Base"]
           state: warden
-          sprite: /Textures/_Stalker/Mobs/Mutants/warden.rsi
     - type: SlowOnDamage
       speedModifierThresholds:
         200: 0.7

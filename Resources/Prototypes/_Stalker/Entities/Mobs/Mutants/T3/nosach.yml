@@ -22,7 +22,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 350
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -51,7 +51,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Dead
+        350: Dead
     - type: MeleeWeapon
       attackRate: 0.7
       angle: 50
@@ -72,14 +72,14 @@
       baseWalkSpeed: 1.4
       baseSprintSpeed: 2.4
     - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Nosach.rsi
       layers:
-        - map: "enum.DamageStateVisualLayers.Base"
+        - map: ["enum.DamageStateVisualLayers.Base"]
           state: nosach
-          sprite: /Textures/_Stalker/Mobs/Mutants/Nosach.rsi
     - type: SlowOnDamage
       speedModifierThresholds:
-        200: 0.7
+        280: 0.7
     - type: StaminaDamageOnHit
-      damage: 25
+      damage: 30
     - type: STWeight
       self: 100

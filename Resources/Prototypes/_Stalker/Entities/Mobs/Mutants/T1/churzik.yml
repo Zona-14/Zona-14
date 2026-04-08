@@ -61,7 +61,7 @@
       sprite: /Textures/_Stalker/Mobs/Mutants/Churzik.rsi
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]
-          state: alive
+          state: churzik
     - type: SlowOnDamage
     - type: StaminaDamageOnHit
       damage: 5
