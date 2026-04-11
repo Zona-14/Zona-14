@@ -10,7 +10,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ZoneAnomalyDetectorAD1
   category: anomaly-detectors
@@ -28,7 +28,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ZoneAnomalyDetectorUpgradeAD1
   category: anomaly-detectors

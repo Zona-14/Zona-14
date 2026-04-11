@@ -226,42 +226,4 @@
   category: ammo
   subCategory: tier-3
 
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmo_newrecipeMagazineBoxRemingtonMagnumCink
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: MagazineBoxRemingtonMagnum
-  branch: Ammo
-  tier: 3
-  requiredNode: PersistentCraftWeaponAmmoNodeT3
-  craftTime: 6
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 6
-  results:
-  - proto: MagazineBoxRemingtonMagnum
-    amount: 4
-  category: ammo
-  subCategory: tier-3
-
-- type: persistentCraftRecipe
-  id: PersistentCraftAmmo_newrecipeMagazineBoxRemingtonMagnumAPCink
-  name: persistent-craft-recipe-generic-name
-  description: persistent-craft-recipe-generic-desc
-  displayProto: MagazineBoxRemingtonMagnumAP
-  branch: Ammo
-  tier: 3
-  requiredNode: PersistentCraftWeaponAmmoNodeT3
-  craftTime: 6
-  pointReward: 0
-  ingredients:
-  - proto: STCraftAnomalyDust
-    amount: 6
-  results:
-  - proto: MagazineBoxRemingtonMagnumAP
-    amount: 4
-  category: ammo
-  subCategory: tier-3
-
 

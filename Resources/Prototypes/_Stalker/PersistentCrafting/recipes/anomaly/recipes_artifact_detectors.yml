@@ -108,7 +108,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ZoneArtifactDetectorPulse
   category: artifact-detectors
@@ -126,7 +126,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ZoneArtifactDetectorHunter
   category: artifact-detectors
@@ -144,7 +144,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ZoneArtifactDetectorBush
   category: artifact-detectors

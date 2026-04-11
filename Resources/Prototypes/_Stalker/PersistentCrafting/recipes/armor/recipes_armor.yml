@@ -198,7 +198,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterArmourJacketStalker
   category: armor
@@ -216,7 +216,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterJacketStalkerUpgrade
   category: armor
@@ -234,7 +234,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterAnomalyStalkerJacket
   category: armor
@@ -470,7 +470,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingHeadHelmetSH68
   category: armor
@@ -506,7 +506,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingHeadHelmetLight
   category: armor
@@ -598,7 +598,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterCoatDoshdevik
   category: armor
@@ -634,7 +634,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterCoatStalker
   category: armor
@@ -652,7 +652,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: ClothingOuterCoatPoisk
   category: armor

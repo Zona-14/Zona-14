@@ -28,7 +28,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STGauze
   category: medicine
@@ -46,7 +46,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STBrutepack
   category: medicine
@@ -64,7 +64,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STOintment
   category: medicine
@@ -172,7 +172,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STPillboxAntirad
   category: medicine

@@ -10,7 +10,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponShotgunTOZ34
   category: weapons
@@ -28,7 +28,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponShotgunSawedOf
   category: weapons
@@ -139,7 +139,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponRifleAKS74U
   category: weapons
@@ -231,7 +231,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponRifleSaiga739
   category: weapons
@@ -305,7 +305,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponRifleL85
   category: weapons
@@ -453,7 +453,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: WeaponPistolStalkerGlock
   category: weapons
@@ -525,7 +525,7 @@
   pointReward: 1
   ingredients:
   - proto: STCraftAnomalyDust
-    amount: 2
+    amount: 1
   results:
   - proto: STWeaponRevolverTaurusJudge
   category: weapons
