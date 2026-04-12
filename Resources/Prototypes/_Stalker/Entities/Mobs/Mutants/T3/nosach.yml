@@ -7,7 +7,7 @@
   components:
     - type: Butcherable
       spawned:
-        - id: STMutantPartLegendaryPseudodogTail
+        - id: MutantPartZombieHand
     - type: Damageable
       damageModifierSet: STMutantT3DamageModifierSet
     - type: DamageStateVisuals

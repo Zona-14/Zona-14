@@ -17,8 +17,8 @@
           15
     - type: Butcherable
       spawned:
-        - id: FoodMeatDog
-          maxAmount: 3
+        - id: MutantPartBlindDogTail
+          maxAmount: 1
           prob: 1
     - type: DamageStateVisuals
       states:

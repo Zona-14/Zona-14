@@ -7,7 +7,7 @@
   components:
     - type: Butcherable
       spawned:
-        - id: STMutantPartLegendaryBlindDogTail
+        - id: MutantPartPseudodogTail
     - type: Damageable
       damageModifierSet: STMutantT1DamageModifierSet
     - type: DamageStateVisuals
