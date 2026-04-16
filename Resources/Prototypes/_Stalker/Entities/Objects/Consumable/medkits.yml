@@ -621,7 +621,7 @@
     size: Tiny
   - type: Storage
     grid:
-    - 1,0,4,1
+    - 0,0,4,1
     quickInsert: true
     areaInsert: true
     areaInsertRadius: 1
