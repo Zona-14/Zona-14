@@ -115,7 +115,7 @@
       ClothingHeadHelmetUlach: 75
       ClothingOuterArmorStalkerCombat: 200
       STClothingOuterArmorVeryHeavy: 350
-      ClothingOuterArmorHazmatRf: 250
+      ClothingOuterArmorHazmatRf: 200
   - name: shop-category-research-equipment
     priority: 7
     items:
@@ -142,7 +142,6 @@
       AntiRadMedipen: 5
       psyblock: 5
       STPillboxShiza: 100
-      ThermoOintment: 4
       OintmentDressing: 2
       MedkitElite: 10
       MedkitLAR: 25

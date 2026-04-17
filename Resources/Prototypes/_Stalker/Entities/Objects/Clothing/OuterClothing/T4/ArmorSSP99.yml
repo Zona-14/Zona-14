@@ -31,7 +31,6 @@
         Radiation: 4
         Shock: 3
         Cold: 2
-        Compression: 2
       coefficients:
         Blunt: 0.9
         Slash: 0.9
@@ -41,7 +40,8 @@
         Shock: 0.70
         Radiation: 0.60
         Compression: 0.60
-        Cold: 0.8
+  - type: GrantsArtifactSlots
+    slots: 4
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
@@ -81,6 +81,8 @@
         Radiation: 0.8
         Caustic: 0.6
         Shock: 0.9
+  - type: GrantsArtifactSlots
+    slots: 4 # Stalker-Changes | Number of artifact slots this armor grants
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/ssp99_helm.rsi
   - type: Clothing
@@ -102,6 +104,8 @@
     armorLevels:
       nonPvPPhysical: 10
       piercing: 10
+  - type: GrantsArtifactSlots
+    slots: 4 # Stalker-Changes | Number of artifact slots this armor grants
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99.rsi
   - type: Clothing
@@ -191,7 +195,6 @@
         Caustic: 4
         Radiation: 4
         Shock: 3
-        Compression: 2
         Cold: 2
         Psy: 3
       coefficients:
@@ -203,6 +206,8 @@
         Shock: 0.7
         Radiation: 0.6
         Compression: 0.6
+  - type: GrantsArtifactSlots
+    slots: 4 # Stalker-Changes | Number of artifact slots this armor grants
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99white.rsi
   - type: Clothing

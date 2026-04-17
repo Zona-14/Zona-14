@@ -1,0 +1,98 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantWarden
+  name: Гончая
+  suffix: ST, T3
+  description: после аварии эти существа стали одним из видов мутировавших собак, которые смогли пережить воздействие радиации и адаптироваться. Более выносливые, стайные и агрессивные, эти существа пытаются загнать свою жертву в ловушку. Когда в глухом лесу сталкеры слышат их вой, можно начать молиться.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartPseudodogTail
+    - type: Damageable
+      damageModifierSet: STMutantT1DamageModifierSet
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: warden
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 220
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/warden/Watchman_howl_1.ogg
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.25
+          density: 800
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Jumpscare
+      chargeDamage:
+        types:
+          Blunt: 20
+          Slash: 20
+      jumpPower: 6
+      jumpDistance: 10
+      updateCooldown: 1
+      #totalSteps: 3 # Stalker-TODO: This field exists in component but is not a datafield!
+      #stepInterval: 0.025 # Stalker-TODO: This field exists in component but is not a datafield!
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        220: Dead
+    - type: MeleeWeapon
+      attackRate: 2
+      angle: 50
+      range: 1.4
+      soundHit:
+        path: /Audio/_Stalker/Mutants/warden/Watchman_attack_1.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 20
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.25
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 6
+      baseSprintSpeed: 8
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/warden.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: warden
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        200: 0.9
+    - type: StaminaDamageOnHit
+      damage: 20
+    - type: STWeight
+      self: 60
+    - type: HTN
+      rootTask:
+        task: STWardenCompound
+      blackboard:
+        VisionRadius: !type:Single
+          25
+        AggroVisionRadius: !type:Single
+          15
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/_Stalker/Mutants/warden/Watchman_start_1.ogg
+        params:
+          volume: 1
+          maxDistance: 20
