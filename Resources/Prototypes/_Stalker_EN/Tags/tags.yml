@@ -59,3 +59,19 @@
 
 - type: Tag
   id: ShellTOZ106  
+
+- type: Tag
+  id: STCookingRecipe
+
+- type: Tag
+  id: STCorn
+
+- type: Tag
+  id: STSugar
+
+- type: Tag
+  id: STYeast
+
+- type: Tag
+  id: STCameraFilm
+

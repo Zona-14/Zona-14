@@ -46,7 +46,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: Craftable
-
+  - type: GrantsArtifactSlots
+    slots: 4 # Stalker-Changes | Number of artifact slots this armor grants
 # stalker
 
 - type: entity
@@ -101,8 +102,6 @@
       - 10,0,10,0
       - 11,2,12,3
 
-# Project
-
 - type: entity
   parent: STClothingOuterArmorBerill5MBase
   id: ClothingOuterArmorBerill5MProject
@@ -114,3 +113,31 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/berill5m_project.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/berill5m_project.rsi
+
+- type: entity
+  parent: STClothingOuterArmorBerill5MBase
+  id: STClothingOuterArmorBerillBereza
+  name: берилл-5Б «Береза»
+  suffix: ST, Кастомка
+  description: Комбинезон «Берилл-5Б», перешитый в камуфляж «Берёза». За счёт доработок владельца лучше подходит для маскировки в заросших и лесных участках Зоны. По состоянию изношен, но уровень защиты не потерял.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/berill5m_bereza.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/berill5m_bereza.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 7
+        Slash: 7
+        Piercing: 6
+        Radiation: 1
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.7
+        Caustic: 0.85
+        Heat: 0.85
+        Compression: 0.85
+        Shock: 0.9
