@@ -17,7 +17,7 @@
     - Hair
     - FacialHair
   - type: IdentityBlocker
-    enabled: false
+    enabled: true # _Zona14: matches post-init state set by FoldableClothing; otherwise UninitializedSaveTest flags a modify-on-spawn diff.
     coverage: MOUTH
   - type: Sprite
     layers:

@@ -12,6 +12,10 @@
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHardsuitSevaHelmBase
     slot: head
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container { }
+      toggleable-clothing: !type:ContainerSlot { }
   - type: Craftable
   - type: STWeight
     self: 10
