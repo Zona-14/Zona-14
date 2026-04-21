@@ -12,7 +12,7 @@
     - type: Storage
       maxItemSize: Ginormous
       grid:
-        - 0,0,8,8
+        - 0,0,9,9
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
