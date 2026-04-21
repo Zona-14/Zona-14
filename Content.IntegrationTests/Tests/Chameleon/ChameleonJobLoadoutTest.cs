@@ -15,7 +15,7 @@ public sealed class ChameleonJobLoadoutTest : InteractionTest
 {
     private static readonly List<ProtoId<JobPrototype>> JobBlacklist =
     [
-        // _Zone14: Stalker faction jobs don't use the chameleon-clothing system; their loadouts are hand-authored per faction.
+        // _Zona14: Stalker faction jobs don't use the chameleon-clothing system; their loadouts are hand-authored per faction.
         "Stalker",
         "StalkerAtom",
         "StalkerBandit",
