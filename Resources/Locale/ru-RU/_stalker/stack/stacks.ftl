@@ -23,6 +23,20 @@ stack-st-gauze-sera =
        *[other] кусков
     } тряпки
 
+stack-st-gauze-barbaris =
+    { $amount ->
+        [1] кусок
+        [few] куска
+       *[other] кусков
+    } барбарисовой ткани
+
+stack-teeth =
+    { $amount ->
+        [1] зуб
+        [few] зуба
+       *[other] зубов
+    }
+
 stack-rouble = рубль
 stack-dollar = доллар
 stack-gold-coins = золотая монета

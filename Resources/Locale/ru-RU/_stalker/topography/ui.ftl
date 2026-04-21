@@ -4,3 +4,4 @@ swamp-button-name = Болото
 kordonnorth-button-name = Север кордона
 added-new-topography-maps = Добавлены новые карты.
 open-topograhpy-map = Развернуть карту
+topography-open-map = Развернуть карту

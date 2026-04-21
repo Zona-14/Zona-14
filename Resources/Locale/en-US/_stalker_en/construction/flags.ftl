@@ -1,0 +1,12 @@
+construction-step-st-foldedflag-band = Folded Bandits flag
+construction-step-st-foldedflag-cs = Folded Clear Sky flag
+construction-step-st-foldedflag-duty = Folded Duty flag
+construction-step-st-foldedflag-freedom = Folded Freedom flag
+construction-step-st-foldedflag-helper = Folded Helper flag
+construction-step-st-foldedflag-merc = Folded Mercenaries flag
+construction-step-st-foldedflag-mili = Folded Military flag
+construction-step-st-foldedflag-mono = Folded Monolith flag
+construction-step-st-foldedflag-rene = Folded Renegades flag
+construction-step-st-ingredient-sugar = Sugar
+construction-step-st-ingredient-corn = Corn
+construction-step-st-ingredient-yeast = Yeast

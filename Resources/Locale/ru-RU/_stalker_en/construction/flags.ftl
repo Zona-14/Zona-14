@@ -1,0 +1,12 @@
+construction-step-st-foldedflag-band = Сложенный флаг Бандитов
+construction-step-st-foldedflag-cs = Сложенный флаг Чистого Неба
+construction-step-st-foldedflag-duty = Сложенный флаг Долга
+construction-step-st-foldedflag-freedom = Сложенный флаг Свободы
+construction-step-st-foldedflag-helper = Сложенный флаг Помощников
+construction-step-st-foldedflag-merc = Сложенный флаг Наёмников
+construction-step-st-foldedflag-mili = Сложенный флаг Военных
+construction-step-st-foldedflag-mono = Сложенный флаг Монолита
+construction-step-st-foldedflag-rene = Сложенный флаг Ренегатов
+construction-step-st-ingredient-sugar = Сахар
+construction-step-st-ingredient-corn = Кукуруза
+construction-step-st-ingredient-yeast = Дрожжи
