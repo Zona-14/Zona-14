@@ -1,31 +1,29 @@
 <!--
-Thanks for contributing to Zona-14. Before you submit, skim CONTRIBUTING.md
-(especially §2 on _Zone14/ and §3 on // Zone14: markers). The checklist below
-is what the CI validator and reviewers look for.
-
-For general discussion, playtests, or uploading large media files, join our
-Discord: https://discord.gg/CFVWFfVpJg
+Thanks for contributing to Zona-14. Before you submit:
+- Skim CONTRIBUTING.md (especially §2 on _Zone14/ and §3 on // Zone14: markers).
+- Follow the SS14 PR guidelines:
+  https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html
+- For general discussion, playtests, or uploading large media files, join the
+  Zona-14 Discord: https://discord.gg/57S48NzbZ9
 -->
 
-## Summary
+## About the PR
+<!-- What does this PR change? -->
 
-<!-- What does this PR change, and why? One or two paragraphs. -->
+## Why / Balance
+<!-- Why are you making this change? Link discussions, issues, or design notes.
+Justifications that only restate *what* the PR does are not enough — explain
+the problem it solves or the effect on gameplay. -->
 
-## Zona-14 convention checklist
-
-- [ ] New files live under a `_Zone14/` folder (or this PR is a pure upstream port/merge — explain below).
-- [ ] New C# namespaces match the `Content.<project>._Zone14.<Feature>.<Sub>` pattern.
-- [ ] Edits to files **outside** `_Zone14/` carry `// Zone14:` (or `# Zone14:`) markers — see `CONTRIBUTING.md` §3.
-- [ ] New or modified sprites / assets have a `meta.json` with populated `license` (SPDX) and `copyright` fields (see `CONTRIBUTING.md` §6); no existing `license` / `copyright` fields were removed.
-- [ ] CI is green (`Zone14 convention check` workflow passes).
+## Technical details
+<!-- High-level summary of the code changes, for reviewers. Makes review faster. -->
 
 ## Media
-
 <!--
 Attach before/after screenshots, GIFs, or short videos of the change in-game.
 Small files (≤10 MB) can be dropped directly into this text area.
 
-For larger videos, upload them to the Zona-14 Discord (https://discord.gg/CFVWFfVpJg)
+For larger videos, upload them to the Zona-14 Discord (https://discord.gg/57S48NzbZ9)
 and paste the message link here.
 
 Tips:
@@ -34,12 +32,43 @@ Tips:
 - For audio changes, a short clip (or an uploaded .ogg link) is fine.
 -->
 
-- [ ] Screenshots / video attached — or mark **N/A** with one line explaining why (e.g., "server-only refactor, no visual change").
-
 ## Upstream source (if this is a port)
-
-<!-- Link to the upstream PR / commit. Omit this section if this is greenfield Zona-14 work. -->
+<!-- Link to the upstream PR / commit. Omit if this is greenfield Zona-14 work. -->
 
 ## Testing
+<!-- How did you verify this works in-game? Servers joined, rounds played,
+edge cases exercised. -->
 
-<!-- How did you verify this works in-game? Servers joined, rounds played, edge cases exercised. -->
+## Requirements
+<!-- Place an X in the brackets (no spaces, like [X]) to confirm each item. -->
+
+- [ ] New files live under a `_Zone14/` folder (or this PR is a pure upstream port/merge — explain in *Upstream source* and tag the PR title `[upstream-port]`).
+- [ ] New C# namespaces match the `Content.<project>._Zone14.<Feature>.<Sub>` pattern.
+- [ ] Edits to files **outside** `_Zone14/` carry `// Zone14:` (or `# Zone14:`) markers — see `CONTRIBUTING.md` §3.
+- [ ] New or modified sprites / assets have a `meta.json` with populated `license` (SPDX) and `copyright` fields (see `CONTRIBUTING.md` §6); no existing `license` / `copyright` fields were removed.
+- [ ] I have read and am following the [SS14 pull-request guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] Media is attached — or marked **N/A** with one line explaining why (e.g., "server-only refactor, no visual change").
+- [ ] CI is green — `Zone14 convention check`, `Build and Test (Debug)`, linters, validators.
+
+## Breaking changes
+<!--
+List any breaking changes and provide migration notes. Breaking changes include:
+- Public API changes (fields, methods, class renames, namespace moves).
+- YAML data-field renames or removals.
+- Prototype ID renames or deletions (even if migrated).
+- Changes to component access restrictions or friend groups.
+
+Omit this section if there are no breaking changes.
+-->
+
+<!-- Changelog — placeholder for a future Zona-14 changelog bot.
+Uncomment the block below to include your change in a future changelog. Not
+enforced yet; the structure matches upstream SS14 so it's easy to wire up
+later.
+
+:cl:
+- add: Added <thing>.
+- remove: Removed <thing>.
+- tweak: Changed <thing>.
+- fix: Fixed <thing>.
+-->

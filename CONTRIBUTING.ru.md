@@ -9,7 +9,9 @@
 - **Спрайты и ассеты**: каждый `meta.json` должен иметь заполненные поля `license` (SPDX-идентификатор; по умолчанию `CC-BY-SA-3.0`) и `copyright`. Нельзя удалять эти поля при правке существующих ассетов.
 - **Апстрим-мёрж из `stalker14-project`**: добавьте `[upstream-port]` в заголовок PR, чтобы пропустить проверку маркеров.
 - **Нестандартная лицензия ассета**: добавьте `[custom-license]` в заголовок PR и обоснуйте в описании.
+- **Стандарты кода**: следуем [соглашениям SS14](https://docs.spacestation14.com/en/general-development/codebase-info.html) — `conventions`, `codebase-organization`, `pull-request-guidelines`, `style-guide`. Единственное исключение — папочная изоляция `_Zone14/` из пункта выше; всё остальное зеркалит апстрим.
 - **Локальная проверка**: `bash Tools/_Zone14/check-conventions.sh origin/master HEAD`.
-- **Discord**: [https://discord.gg/CFVWFfVpJg](https://discord.gg/CFVWFfVpJg) — разработка, плейтесты, загрузка больших видео для PR.
+- **Баг-репорты, обратная связь, предложения**: публичный репозиторий [Zona-14-Feedback](https://github.com/Zona-14/Zona-14-Feedback). Любой может открыть там issue — это каноничный канал для пользовательских репортов. В Discord такие вещи не пишем.
+- **Discord**: [https://discord.gg/57S48NzbZ9](https://discord.gg/57S48NzbZ9) — сообщество, новости, анонсы, плейтесты, загрузка больших видео для PR.
 
 Подробности, примеры, полный список CI-проверок — см. [CONTRIBUTING.md](CONTRIBUTING.md).

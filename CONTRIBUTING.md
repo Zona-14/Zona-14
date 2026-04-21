@@ -163,7 +163,8 @@ The validator fails the PR if a `license` or `copyright` field was present on `b
 
 - **Target branch**: `master`.
 - **PR title**: short imperative, one line. Include `[upstream-port]` for pure merges from `stalker14-project`. Include `[custom-license]` if any asset uses a license outside the allowlist.
-- **PR body**: fill in the `.github/PULL_REQUEST_TEMPLATE.md` checklist. Include media (screenshots / GIFs / video) for anything visible in-game; upload larger videos to the [Zona-14 Discord](https://discord.gg/CFVWFfVpJg) and link them.
+- **PR body**: fill in the `.github/PULL_REQUEST_TEMPLATE.md` sections. Include media (screenshots / GIFs / video) for anything visible in-game; upload larger videos to the [Zona-14 Discord](https://discord.gg/57S48NzbZ9) and link them.
+- **PR behavior** follows the [SS14 pull-request guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html): separate PRs for features / bug fixes / refactors; test your change in-game before opening the PR; don't use the GitHub web editor; don't force-push after a reviewer has left comments.
 
 ## 8. Commit style
 
@@ -171,11 +172,22 @@ The validator fails the PR if a `license` or `copyright` field was present on `b
 - Russian is fine for merges / direct ports from `stalker14-project`.
 - No Conventional-Commits requirement in v1 — write descriptive messages.
 
-## 9. Code style
+## 9. Code style & upstream SS14 standards
 
-- Inherits from `.editorconfig`: 4-space indent, 120-char line limit, trim trailing whitespace, no CRLF.
-- Beyond that, defer to the [upstream SS14 style guide](https://docs.spacestation14.com/en/general-development/codebase-info/style-guide.html).
-- Zona-14 doesn't add new stylistic rules in v1. Propose changes via Discord before adding rules.
+Zona-14 follows the upstream Space Wizards' Den coding standards. Read and apply these as a prerequisite for any PR that touches C# or YAML — most review nits will trace back to one of them:
+
+- [SS14 codebase info](https://docs.spacestation14.com/en/general-development/codebase-info.html) — landing page for the full conventions tree.
+- [SS14 conventions](https://docs.spacestation14.com/en/general-development/codebase-info/conventions.html) — naming, comments, ECS rules (components hold *only* data; systems hold logic; events are struct `[ByRefEvent]`s named `…Event` with `OnXEvent` handlers), XAML/UI, performance, `TimeSpan` / field-deltas, YAML conventions, localization, in-/out-of-simulation split. This is the primary document.
+- [SS14 codebase organization](https://docs.spacestation14.com/en/general-development/codebase-info/codebase-organization.html) — project split (Client / Shared / Server), file layout, prototype organization (`base.yml` + per-type files; no `misc/` folders).
+- [SS14 pull-request guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) — PR hygiene (separate PRs for features / bug fixes / refactors, test in-game, no web edits, don't force-push after reviews). See §7 below for how Zona-14 applies these.
+- [SS14 style guide](https://docs.spacestation14.com/en/general-development/codebase-info/style-guide.html) — C# formatting.
+
+Local rules on top of upstream:
+
+- `.editorconfig` enforces 4-space indent, 120-char line limit, trim trailing whitespace, no CRLF (these match upstream).
+- Zona-14 adds no new stylistic rules of its own in v1. Propose changes via Discord before adding rules.
+
+**One documented exception to upstream.** SS14's `codebase-organization` says "game-code folders live directly under `Content.Client/Shared/Server`." Zona-14 overrides that for **new fork code only** — new Zona-14 code goes under `_Zone14/` per §2 above. Upstream files edited in place still follow upstream layout and carry `// Zone14:` markers per §3.
 
 ## 10. CI checks
 
@@ -198,6 +210,7 @@ Requirements: `git`, `grep`, `awk`, `jq`. Install `jq` with `sudo apt install jq
 
 ## 11. Where to discuss
 
-- **Development discussion, playtests, media uploads for large PR videos, day-to-day coordination**: [Zona-14 Discord](https://discord.gg/CFVWFfVpJg).
-- **Bug reports, tracked work items**: GitHub Issues on this repo.
+- **Bug reports, player feedback, feature requests**: the public [Zona-14-Feedback](https://github.com/Zona-14/Zona-14-Feedback) repo. Anyone can open an issue there — it's the canonical channel for community-facing reports. Please don't file these on Discord.
+- **Community, news, updates, playtests, media uploads for large PR videos**: [Zona-14 Discord](https://discord.gg/57S48NzbZ9).
 - **Code changes**: GitHub Pull Requests on this repo.
+- **Internal dev-tracking issues**: this repo's Issues tab is reserved for maintainer-tracked work items (refactor todos, ported-PR tracking, CI tasks). User-facing reports still belong in Zona-14-Feedback.
