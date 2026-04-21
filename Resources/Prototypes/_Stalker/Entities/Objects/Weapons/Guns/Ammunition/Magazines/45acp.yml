@@ -24,6 +24,7 @@
       containers:
         ballistic-ammo: !type:Container
           ents: []
+        item_slot: !type:ContainerSlot { }
 
 - type: entity
   parent: BaseSTSpeedLoader45ACP
@@ -91,6 +92,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -216,6 +218,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -282,6 +285,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: MagazineVisuals
     magState: mag
     steps: 2

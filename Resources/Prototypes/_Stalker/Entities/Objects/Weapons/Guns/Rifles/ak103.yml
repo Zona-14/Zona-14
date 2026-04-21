@@ -141,7 +141,7 @@
     angleIncrease: 1.4
     angleDecay: 4
     projectileSpeed: 55
-    selectedMode: FullAuto
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
   - type: ItemSlots
@@ -193,7 +193,7 @@
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
     minAngle: 65
     maxAngle: 110
-    selectedMode: FullAuto
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     - FullAuto

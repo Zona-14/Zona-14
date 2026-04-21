@@ -25,6 +25,7 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+        item_slot: !type:ContainerSlot { }
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/13108.rsi

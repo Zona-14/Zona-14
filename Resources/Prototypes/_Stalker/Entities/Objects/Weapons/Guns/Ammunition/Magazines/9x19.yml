@@ -450,6 +450,7 @@
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
+        item_slot: !type:ContainerSlot { }
     - type: Sprite
       scale: 0.8, 0.8
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/gsh-18/10.rsi
@@ -552,6 +553,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vityaz.rsi
@@ -606,6 +608,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/bizon.rsi
@@ -753,6 +756,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
+      item_slot: !type:ContainerSlot { }
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/pp-91.rsi
