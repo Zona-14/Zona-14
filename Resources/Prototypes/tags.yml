@@ -730,6 +730,9 @@
   id: HidesHair # Used by MagicMirrorSystem to prevent haircuts if a tagged entity is worn.
 
 - type: Tag
+  id: HidesNose # _Zona14: helmets that hide the wearer's nose marking (T3/T4 skin variants).
+
+- type: Tag
   id: HighRiskItem # Storage blacklist: ClothingHeadHatDetGadget. Blacklisted on MaterialReclaimerComponent by both entities
                    # Used by EventHorizonSystem to send an admin alert.
 
@@ -852,6 +855,9 @@
   id: LightBulb # Storage whitelist: BoxLightbulb. ConstructionGraph: HelmetJustice
 
 - type: Tag
+  id: LightSource # _Zona14: invisible light emitter entities spawned by RandomSpawner (STDarkLight).
+
+- type: Tag
   id: Lime # CargoBounty: BountyLime
 
 ## M ##
@@ -860,6 +866,9 @@
 
 # Entities tagged with the following are some sort of gun magazine. Guns whitelist their storage using these tags.
 # Tagged entities always have BallisticAmmoProviderComponent.
+
+- type: Tag
+  id: Magazine338 # _Zona14: STMutantParts .338 magazine whitelist
 
 - type: Tag
   id: MagazineCaselessRifle # Unused (Exists on BaseMagazineCaselessRifle)
@@ -895,13 +904,19 @@
   id: MagazinePistolSubMachineGun # WeaponSubMachineGunC20r, WeaponSubMachineGunDrozd, WeaponSubMachineGunAtreides
 
 - type: Tag
+  id: MagazineOTS126 # _Zona14: STWeaponSMGPP2000 variant OTS-126 magazine whitelist
+
+- type: Tag
   id: MagazinePistolSubMachineGunTopMounted # WeaponSubMachineGunWt550
 
 - type: Tag
-  id: MagazinePP2000 # _Zone14: STWeaponSMGPP2000 magazine whitelist
+  id: MagazinePP2000 # _Zona14: STWeaponSMGPP2000 magazine whitelist
 
 - type: Tag
-  id: MagazinePP2000Pearl # _Zone14: Pearl-variant PP2000 magazine whitelist
+  id: MagazinePP2000Pearl # _Zona14: Pearl-variant PP2000 magazine whitelist
+
+- type: Tag
+  id: MagazineRPK # _Zona14: STWeaponRifleRPK74 magazine whitelist
 
 - type: Tag
   id: MagazineRifle # WeaponRifleLecter, WeaponRifleEstoc, WeaponRifleM90GrenadeLauncher
@@ -1228,6 +1243,9 @@
   id: Ruminant # SpecialDigestible: OrganAnimalRuminantStomach
 
 ## S ##
+
+- type: Tag
+  id: STCartridge338 # _Zona14: .338 rifle cartridges (BaseSTCartridge338 variants)
 
 - type: Tag
   id: SaltShaker # Storage whitelist: ClothingBeltChef. ItemMapper: ClothingBeltChef
