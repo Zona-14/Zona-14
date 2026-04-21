@@ -24,7 +24,7 @@
       params:
         volume: 6
       path: /Audio/_Stalker_EN/Effects/fall_impact.ogg
-    fallEmote: Scream
+    fallEmote: STScream
     relocatedLocalPopup: ritual-chasm-relocated-popup
     relocatedStunDuration: 10
     relocatedFlashDuration: 10

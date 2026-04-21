@@ -989,7 +989,7 @@
   - type: TimedDespawn
     lifetime: 2700 # 45 min
   - type: SpawnOnDespawn
-    prototype: STFoodJarEelFermented
+    prototype: STFoodJarWholeEelFermented
 
 - type: entity
   name: ферментированный угорь
@@ -1213,7 +1213,7 @@
   - type: TimedDespawn
     lifetime: 2700 # 45 min
   - type: SpawnOnDespawn
-    prototype: STFoodKvass
+    prototype: STFoodJarKvass
 
 - type: entity
   name: квас
