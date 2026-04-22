@@ -65,8 +65,11 @@ public sealed partial class RDWatcherSystem
         if (entities.Count == 0)
             return watcher;
 
-        comp.Entities = entities;
         comp.GroupId = Comp<RDWatcherTargetComponent>(entities.First()).GroupId;
+
+        foreach (var entity in entities)
+            WatcherAdd(watcher, entity);
+
         DirtyFields(uid, comp, null, nameof(RDWatcherComponent.Entities), nameof(RDWatcherComponent.GroupId));
 
         UpdateWatcherPosition(watcher);
