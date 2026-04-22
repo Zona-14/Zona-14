@@ -254,7 +254,7 @@
       self: 3.6
     - type: Item
       size: Large
-    - type: Explosion
+    - type: Explosive
       explosionType: ZNGrenade
       maxIntensity: 50
       intensitySlope: 4
@@ -296,7 +296,7 @@
       size: Small
       shape:
         - 0,0,2,1
-    - type: Explosion
+    - type: Explosive
       explosionType: ZNGrenade
       maxIntensity: 25
       intensitySlope: 2
