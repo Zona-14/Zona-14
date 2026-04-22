@@ -1,0 +1,10 @@
+- type: explosion
+  id: ZNGrenade
+  damagePerIntensity:
+    types:
+      Piercing: 15
+  tileBreakChance: [0]
+  tileBreakIntensity: [0]
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3

@@ -36,16 +36,16 @@
   suffix: Stalker, Граната
   components:
     - type: Explosive
-      explosionType: Default
-      maxIntensity: 5
+      explosionType: ZNGrenade
+      maxIntensity: 15
       intensitySlope: 2
       totalIntensity: 40 # about a ~4 tile radius
       canCreateVacuum: false
     - type: TriggerOnUse
     - type: TimerTrigger
-    - type: ScatteringGrenade
-      fillPrototype: PelletClusterLethal
-      capacity: 80
+    # - type: ScatteringGrenade
+    #   fillPrototype: PelletClusterLethal
+    #   capacity: 80
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
@@ -86,7 +86,7 @@
   suffix: Stalker, Граната
   components:
     - type: Explosive
-      explosionType: Default
+      explosionType: ZNGrenade
       maxIntensity: 10
       intensitySlope: 3.99
       totalIntensity: 10
@@ -254,7 +254,7 @@
       self: 3.6
     - type: Item
       size: Large
-    - type: Explosive
+    - type: ZNGrenade
       explosionType: Default
       maxIntensity: 50
       intensitySlope: 4
@@ -296,7 +296,7 @@
       size: Small
       shape:
         - 0,0,2,1
-    - type: Explosive
+    - type: ZNGrenade
       explosionType: Default
       maxIntensity: 25
       intensitySlope: 2
