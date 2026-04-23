@@ -109,7 +109,12 @@ The repo has layered licensing. Nothing conflicts — it stacks:
 
 - **Upstream code** (Space Wizards, Corvax) is **MIT**. Preserved verbatim; nobody is relicensing that.
 - **Stalker-team contributions** (the `stalker14-project` authors listed at the top of `LICENSE.TXT`) are marked **All rights reserved**. That clause binds their code wherever it lives; contact the Stalker14 team to reuse it.
-- **Zona-14 team contributions** — everything under `_Zona14/` — is **MIT** © 2024-2026 Zona-14 Team. By opening a PR that adds files under `_Zona14/`, you agree your contribution is licensed under the Zona-14 MIT terms in `LICENSE.TXT`.
+- **Zona-14 team contributions** are licensed **MIT** © 2024-2026 Zona-14 Team. Two channels count as Zona-14 contributions:
+  - Everything inside a `_Zona14/` folder (at any depth).
+  - Individual hunks inside upstream files that you annotate with the `// Zona14:` / `# Zona14:` markers from §3 above.
+
+  By opening a PR that adds code in either channel, you agree your contribution is licensed under the Zona-14 MIT terms in `LICENSE.TXT`.
+- **Per-file license override inside `_Zona14/`.** If a specific file under `_Zona14/` needs a different license (e.g. a port from a fork under CC-BY-SA, or vendored code), put an SPDX header (`// SPDX-License-Identifier: <id>`) or a full license notice at the top of that file. The header wins over the folder rule for that file only. Use this sparingly; flag it in the PR description.
 
 A broader legal review of the Stalker-team "All rights reserved" clause is **pending**. Flag questions to the team; don't try to resolve them in code.
 
