@@ -40,9 +40,26 @@ MIT License
 
 Copyright (c) 2024-2026 Zona-14 Team
 
-The "Zona-14 Contributions" are the software files located in folders named
-"_Zona14" within this repository and any files introduced by the Zona-14 team
-that explicitly carry this copyright notice.
+The "Zona-14 Contributions" are:
+
+  (a) all files located within any folder named "_Zona14" in this
+      repository (at any depth), and
+
+  (b) in files outside a "_Zona14" folder, the specific lines or blocks
+      introduced by the Zona-14 team and annotated with a "Zona14" marker
+      comment as defined in section 3 of CONTRIBUTING.md — for C#:
+      "// Zona14: <reason>", "// Zona14: OLD<NEW", a
+      "// Zona14: <reason>" ... "// End Zona14" block, or a trailing
+      "// Zona14" on an added import; for YAML / Fluent: the same forms
+      with "#" in place of "//".
+
+Per-file override. A file inside a "_Zona14" folder may declare its own
+license by placing, at the top of the file, either an SPDX license
+identifier comment (e.g. "// SPDX-License-Identifier: <id>") or a full
+license notice. In that case the license stated in the file's header
+governs that file, and the Zona-14 MIT terms below do not apply to it.
+The override applies to whole files only; it does not apply to the
+marker-annotated hunks described in clause (b).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of the Zona-14 Contributions, to deal in the Zona-14 Contributions without
