@@ -51,7 +51,7 @@ def main():
 
     max_id = max(map(lambda e: e["id"], entries_list), default=0)
 
-    for partname in os.listdir(args.parts_dir):
+    for partname in sorted(os.listdir(args.parts_dir)):  # Zona14: deterministic ID order across publishes
         if not partname.endswith(".yml"):
             continue
 
