@@ -66,3 +66,10 @@ jobs:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         FORK_ID: ${{ vars.FORK_ID }}
         ROBUST_CDN_URL: ${{ vars.ROBUST_CDN_URL }}
+
+    - name: Post changelog to Discord
+      if: success()
+      run: python Tools/actions_changelogs_since_last_run.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_CHANGELOG_WEBHOOK }}

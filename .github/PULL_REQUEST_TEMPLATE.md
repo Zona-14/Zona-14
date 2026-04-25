@@ -12,7 +12,7 @@ Thanks for contributing to Zona-14. Before you submit:
 
 ## Why / Balance
 <!-- Why are you making this change? Link discussions, issues, or design notes.
-Justifications that only restate *what* the PR does are not enough — explain
+Justifications that only restate *what* the PR does are not enough - explain
 the problem it solves or the effect on gameplay. -->
 
 ## Technical details
@@ -42,13 +42,12 @@ edge cases exercised. -->
 ## Requirements
 <!-- Place an X in the brackets (no spaces, like [X]) to confirm each item. -->
 
-- [ ] New files live under a `_Zona14/` folder (or this PR is a pure upstream port/merge — explain in *Upstream source* and tag the PR title `[upstream-port]`).
+- [ ] New files live under a `_Zona14/` folder (or this PR is a pure upstream port/merge - explain in *Upstream source* and tag the PR title `[upstream-port]`).
 - [ ] New C# namespaces match the `Content.<project>._Zona14.<Feature>.<Sub>` pattern.
-- [ ] Edits to files **outside** `_Zona14/` carry `// Zona14:` (or `# Zona14:`) markers — see `CONTRIBUTING.md` §3.
+- [ ] Edits to files **outside** `_Zona14/` carry `// Zona14:` (or `# Zona14:`) markers - see `CONTRIBUTING.md` §3.
 - [ ] New or modified sprites / assets have a `meta.json` with populated `license` (SPDX) and `copyright` fields (see `CONTRIBUTING.md` §6); no existing `license` / `copyright` fields were removed.
 - [ ] I have read and am following the [SS14 pull-request guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- [ ] Media is attached — or marked **N/A** with one line explaining why (e.g., "server-only refactor, no visual change").
-- [ ] CI is green — `Zona14 convention check`, `Build and Test (Debug)`, linters, validators.
+- [ ] Media is attached - or marked **N/A** with one line explaining why (e.g., "server-only refactor, no visual change").
 
 ## Breaking changes
 <!--
@@ -64,16 +63,16 @@ Omit this section if there are no breaking changes.
 ## Changelog
 
 <!--
-Add a changelog entry for gameplay-visible changes. After the PR is merged, a
-maintainer runs the changelog merger and your entry appears in the in-game
-"Zona 14" tab. Skip this section (delete the :cl: block below) for docs-only,
-CI, or pure-refactor PRs.
+Add a changelog entry for gameplay-visible changes. After the PR is merged the
+changelog bot picks it up automatically and your entry appears in-game on the
+next CDN publish. Skip this section (delete the :cl: block below) for
+docs-only, CI, or pure-refactor PRs.
 
 Default category is Zona 14 (this repo's own tab). Prefix subsequent lines with
 ADMIN:, MAPS:, or RULES: to route those entries to the respective tabs.
 
 Types: add | remove | tweak | fix | bug (alias for fix). Author defaults to
-your GitHub username — override by putting a name after :cl: on the same line.
+your GitHub username - override by putting a name after :cl: on the same line.
 
 Writing tips: complete sentences, start with a capital, end with a period,
 present active voice, no jargon. See
