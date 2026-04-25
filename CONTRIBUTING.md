@@ -57,7 +57,12 @@ public sealed partial class StalkerAnomalyComponent : Component
 
 ## 3. Upstream edits: the `// Zona14:` marker
 
-When you edit a file **outside** a `_Zona14/` folder (an upstream SS14 or stalker14 file), mark every logical change inline. This makes Zona-14 modifications easy to spot during future upstream merges.
+When you edit **or add** a file **outside** a `_Zona14/` folder (i.e. anywhere in the upstream SS14 / stalker14 / `_Stalker` / `_Stalker_EN` trees), mark Zona-14 provenance inline:
+
+- **Edits to existing upstream files** — mark every logical change inline (see forms below).
+- **New files added outside `_Zona14/`** — put a `// Zona14: added in this fork` (or `# Zona14: added in this fork` for YAML / FTL / shell) header on the first line of the file. This applies to `.ftl`, `.yml`, `.cs`, `.toml`, `.sh`, etc. when added under existing upstream trees rather than `_Zona14/`. Prefer placing new fork-only files under `_Zona14/`; only use this marker when extending an upstream tree is genuinely the right home (e.g. filling translation gaps in `Resources/Locale/en-US/_Stalker_EN/`).
+
+Both forms make Zona-14 modifications easy to spot during future upstream merges.
 
 Forms:
 
@@ -199,7 +204,7 @@ Local rules on top of upstream:
 The `Zona14 convention check` workflow runs on every PR. It enforces:
 
 1. **Namespace–folder alignment** — files under `Content.<project>/_Zona14/…` must declare the matching namespace.
-2. **Upstream-edit markers** — files edited outside `_Zona14/` must have `// Zona14` (or `# Zona14`) markers in the added hunks (skipped if the PR is tagged `[upstream-port]`).
+2. **Upstream-edit markers** — files edited outside `_Zona14/` must have `// Zona14` (or `# Zona14`) markers in the added hunks; new files added outside `_Zona14/` must carry a `// Zona14: added in this fork` (or `# Zona14: added in this fork`) header (skipped if the PR is tagged `[upstream-port]`).
 3. **Misfiled namespace** — `.cs` files outside `_Zona14/` may not declare a `_Zona14.*` namespace.
 4. **Greenfield warning** — newly added `.cs` or `.yml` files outside `_Zona14/` produce a warning (non-fatal); reviewers decide.
 5. **Key-file delete guard** — protects `README.md`, `README.ru.md`, `LICENSE.TXT`, `CONTRIBUTING.md`, `.github/PULL_REQUEST_TEMPLATE.md`.
