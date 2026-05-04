@@ -11,7 +11,9 @@ namespace Content.Shared.Localizations
 
         // If you want to change your codebase's language, do it here.
         private const string Culture = "en-US";
-        private const string FallbackCulture = "ru-RU"; // Zona14: fall back to Russian when en-US key is missing
+        // Zona14: extra cultures to load so ru clients still get Russian; no cross-culture fallback,
+        // missing en-US keys render as raw fluent IDs instead of leaking Russian into English UIs.
+        private static readonly string[] AdditionalCultures = { "ru-RU" };
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -27,11 +29,10 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
-            var fallbackCulture = new CultureInfo(FallbackCulture);
 
             _loc.LoadCulture(culture);
-            _loc.LoadCulture(fallbackCulture);
-            _loc.SetFallbackCluture(fallbackCulture);
+            foreach (var name in AdditionalCultures)
+                _loc.LoadCulture(new CultureInfo(name));
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
