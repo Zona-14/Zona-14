@@ -1,6 +1,5 @@
 using Content.Client._Stalker.Discord;
 using Content.Client._Stalker.JoinQueue;
-using Content.Client._Stalker.Private.Scr;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -67,7 +66,6 @@ namespace Content.Client.IoC
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<DiscordAuthManager>(); // Stalker-Changes-Auth
             collection.Register<JoinQueueManager>(); // Stalker-Changes - Corvax Queue Adaptation
-            collection.Register<ScrManager>(); // Stalker-Changes-SCR
             collection.Register<TitleWindowManager>();
             collection.Register<ClientsidePlaytimeTrackingManager>();
         }
