@@ -1,0 +1,8 @@
+author: teecoding
+time: '2026-05-05T12:34:18Z'
+url: https://github.com/Zona-14/Zona-14/pull/8
+changes:
+- type: Tweak
+  message: Hair, facial hair, and eye colors are now restricted to a desaturated Stalker
+    palette.
+category: Main
