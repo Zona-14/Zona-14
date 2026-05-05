@@ -1,0 +1,8 @@
+author: teecoding
+time: '2026-05-05T12:36:23Z'
+url: https://github.com/Zona-14/Zona-14/pull/7
+changes:
+- type: Add
+  message: Added four gun cases (standard, large, military, mercenary) for storing
+    firearms with radiation-resistant lining.
+category: Main
