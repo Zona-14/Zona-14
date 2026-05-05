@@ -1,0 +1,8 @@
+author: teecoding
+time: '2026-05-05T11:03:27Z'
+url: https://github.com/Zona-14/Zona-14/pull/6
+changes:
+- type: Fix
+  message: Cleaned up prototype data so anomalies, mutants, armor and radio actions
+    load with the correct values again.
+category: Main

@@ -24,7 +24,6 @@
   - type: ActivatableUI
     key: enum.STRadioHeadsetUiKey.Key
     singleUser: true
-    closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
       enum.STRadioHeadsetUiKey.Key:

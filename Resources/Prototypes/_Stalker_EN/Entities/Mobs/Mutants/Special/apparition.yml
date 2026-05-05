@@ -37,7 +37,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Bloodstream
-    bloodReagent: Blood
+    bloodReagents:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 1
     bloodMaxVolume: 0
   - type: Fixtures
     fixtures:
@@ -77,8 +80,6 @@
     self: 0
   - type: MeleeWeapon
     attackRate: 1
-    heavyWindupModifier: 1
-    heavyDamageModifier: 1.25
     angle: 30
     range: 0
     animation: WeaponArcClaw

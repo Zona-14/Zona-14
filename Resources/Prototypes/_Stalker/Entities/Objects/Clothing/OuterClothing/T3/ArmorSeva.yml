@@ -545,7 +545,7 @@
     - type: GrantsArtifactSlots
       slots: 4 # Stalker-Changes | Number of artifact slots this armor grants
     - type: ExplosionResistance
-      amageCoefficient: 0.8
+      damageCoefficient: 0.8
     - type: STWeight
       self: 12
     - type: Sprite

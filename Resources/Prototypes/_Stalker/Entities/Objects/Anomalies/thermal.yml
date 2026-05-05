@@ -29,7 +29,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 4
-      chargingDelay: 0
+      chargeTime: 0
     - type: Stealth
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/jarka.rsi
@@ -144,7 +144,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 4000
-      chargingDelay: 0
+      chargeTime: 0
     - type: Stealth
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/jarka.rsi
@@ -215,7 +215,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 4
-      chargingDelay: 0
+      chargeTime: 0
     - type: Stealth
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/steam.rsi
@@ -272,7 +272,7 @@
       detectedLevel: 2
       preparingDelay: 0
       activationDelay: 3
-      chargingDelay: 5
+      chargeTime: 5
     - type: Sprite
       sprite: _Stalker/Objects/Other/Anomalys/sol.rsi
       layers:
@@ -323,7 +323,7 @@
     detectedLevel: 1
     preparingDelay: 0
     activationDelay: 1
-    chargingDelay: 5
+    chargeTime: 5
   - type: PointLight
     radius: 20
     energy: 30
@@ -385,7 +385,7 @@
     detectedLevel: 1
     preparingDelay: 0.5
     activationDelay: 15
-    chargingDelay: 5
+    chargeTime: 5
   - type: PointLight
     radius: 7
     energy: 10
@@ -458,7 +458,7 @@
       detectedLevel: 0
       preparingDelay: 0
       activationDelay: 4
-      chargingDelay: 0
+      chargeTime: 0
     - type: Stealth
     - type: Sprite
       sprite: _Stalker/Objects/Anomalies/jarka.rsi

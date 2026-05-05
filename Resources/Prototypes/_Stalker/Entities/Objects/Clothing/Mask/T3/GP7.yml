@@ -14,10 +14,10 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/gp7.rsi
   - type: Armor
-    flatReductions:
-      Radiation: 1
-      Caustic: 1
     modifiers:
+      flatReductions:
+        Radiation: 1
+        Caustic: 1
       coefficients:
         Radiation: 0.85
         Caustic: 0.8
@@ -46,10 +46,10 @@
   description: Wierd gasmask, made from part of SEVA helmet. Totally makeshift and you can't be sure that it will protect you.
   components:
   - type: Armor
-    flatReductions:
-      Radiation: 1
-      Caustic: 1
     modifiers:
+      flatReductions:
+        Radiation: 1
+        Caustic: 1
       coefficients:
         Radiation: 0.85
         Caustic: 0.8

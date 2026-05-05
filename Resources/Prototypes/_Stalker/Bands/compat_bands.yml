@@ -18,7 +18,7 @@
   factionId: Pilgrims
   maxMembers: 5
   hierarchy:
-    1: StalkerPilgrim
+    1: StalkerPostulant
 
 - type: stBand
   id: STMilitiaBand
@@ -42,7 +42,7 @@
   factionId: Stalker
   maxMembers: 99
   hierarchy:
-    1: StalkerLoner
+    1: StalkerNeutral
 
 - type: stBand
   id: STMilitaryStalkerBand
@@ -50,7 +50,7 @@
   factionId: MilitaryStalker
   maxMembers: 10
   hierarchy:
-    1: StalkerMilitary
+    1: StalkerUN
 
 - type: stBand
   id: STUNBand
@@ -58,4 +58,4 @@
   factionId: MilitaryStalker
   maxMembers: 10
   hierarchy:
-    1: StalkerMilitary
+    1: StalkerUN

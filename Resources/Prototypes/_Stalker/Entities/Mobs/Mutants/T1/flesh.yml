@@ -191,14 +191,14 @@
     - type: BonusMeleeDamage
       heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
+      baseWalkSpeed: 3.4
+      baseSprintSpeed: 4.2
     - type: FootstepModifier
       footstepSoundCollection:
         path: /Audio/_Stalker/Mutants/hoof_hard2.ogg
         params:
           volume: 0
           variation: 0.3
-      baseWalkSpeed: 3.4
-      baseSprintSpeed: 4.2
     - type: HTN
       rootTask:
         task: SimpleRangedHostileCompound

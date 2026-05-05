@@ -563,7 +563,7 @@
   - type: Butcherable
     spawned:
     - id: STFishJellyfishActive
-      Amount: 1
+      amount: 1
   - type: Trash
     time: 1800
 
