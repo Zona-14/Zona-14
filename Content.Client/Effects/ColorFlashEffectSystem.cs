@@ -110,12 +110,11 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 continue;
             }
 
-            if (!TryComp(ent, out ColorFlashEffectComponent? comp))
-            {
-#if DEBUG
-                DebugTools.Assert(!_animation.HasRunningAnimation(ent, AnimationKey));
-#endif
-            }
+            // If the flash animation is already running a client-side predicted hit
+            // already played it. Don't restart — that causes a visible stutter when
+            // the server confirmation arrives after RTT/2.
+            if (_animation.HasRunningAnimation(ent, AnimationKey))
+                continue;
 
             _animation.Stop(ent, AnimationKey);
             var animation = GetDamageAnimation(ent, color, sprite);
@@ -129,7 +128,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
             RaiseLocalEvent(ent, ref targetEv);
             ent = targetEv.Target;
 
-            EnsureComp<ColorFlashEffectComponent>(ent, out comp);
+            EnsureComp<ColorFlashEffectComponent>(ent, out var comp);
             comp.NetSyncEnabled = false;
             comp.Color = sprite.Color;
 

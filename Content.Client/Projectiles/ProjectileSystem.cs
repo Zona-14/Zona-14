@@ -10,6 +10,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _player = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly PredictedProjectileSystem _predicted = default!;
 
     public override void Initialize()
     {
@@ -19,6 +20,11 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnProjectileImpact(ImpactEffectEvent ev)
     {
+        // If PredictedProjectileSystem already spawned a local VFX for this hit,
+        // consume the pending entry and skip the server duplicate to avoid two particles.
+        if (_predicted.ConsumePendingVFX())
+            return;
+
         var coords = GetCoordinates(ev.Coordinates);
 
         if (Deleted(coords.EntityId))

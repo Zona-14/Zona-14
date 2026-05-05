@@ -1,5 +1,7 @@
 using System.Numerics;
 using Content.Server.Cargo.Systems;
+using Content.Server.Movement.Systems;
+using Content.Server.Projectiles.Components;
 using Content.Server.Weapons.Ranged.Components;
 using Content.Shared.Cargo;
 using Content.Shared._DZ.FarGunshot; // Stalker-using
@@ -13,6 +15,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -25,6 +28,7 @@ public sealed partial class GunSystem : SharedGunSystem
 {
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly LagCompensationSystem _lagComp = default!;
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -238,19 +242,93 @@ public sealed partial class GunSystem : SharedGunSystem
         return angles;
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
+    public override void ShootProjectile(EntityUid uid, System.Numerics.Vector2 direction, System.Numerics.Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f)
     {
-        var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
-        var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + component.AngleIncreaseModified.Theta - component.AngleDecayModified.Theta * timeSinceLastFire, component.MinAngleModified.Theta, component.MaxAngleModified.Theta);
-        component.CurrentAngle = new Angle(newTheta);
-        component.LastFire = component.NextFire;
+        if (user != null)
+        {
+            var predicted = EnsureComp<PredictedProjectileServerComponent>(uid);
+            predicted.ClientEnt = user;
 
-        // Convert it so angle can go either side.
-        var random = Random.NextFloat(-0.5f, 0.5f);
-        var spread = component.CurrentAngle.Theta * random;
-        var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
-        DebugTools.Assert(spread <= component.MaxAngleModified.Theta);
-        return angle;
+            // Store fire metadata and run a lag-compensated target search so we can
+            // recover hits that the physics simulation misses due to target movement.
+            if (TryComp<ActorComponent>(user.Value, out var actor))
+            {
+                var xform = Transform(uid);
+                var mapPos = TransformSystem.ToMapCoordinates(xform.Coordinates);
+                var dir = direction.Normalized();
+
+                var fired = EnsureComp<ProjectileFiredComponent>(uid);
+                fired.FiredBy           = actor.PlayerSession;
+                fired.FiredAt           = Timing.CurTime;
+                fired.FiredFromWorldPos = mapPos.Position;
+                fired.FiredDirection    = dir;
+                fired.Speed             = speed;
+
+                if (FindLagCompTarget(actor.PlayerSession, mapPos, dir, user.Value, out var lagTarget, out var lagTargetPos))
+                {
+                    fired.LagCompTarget         = lagTarget;
+                    fired.LagCompTargetWorldPos = lagTargetPos;
+                }
+            }
+        }
+
+        base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
+    }
+
+    /// <summary>
+    /// Iterates entities with <see cref="Content.Server.Movement.Components.LagCompensationComponent"/> and returns the
+    /// closest one that lies within <paramref name="hitRadius"/> of the firing ray at the time the client fired.
+    /// </summary>
+    private bool FindLagCompTarget(
+        ICommonSession session,
+        MapCoordinates fireMapPos,
+        Vector2 direction,
+        EntityUid shooter,
+        out EntityUid target,
+        out Vector2 targetWorldPos)
+    {
+        const float HitRadius = 0.5f;
+        const float MaxRange  = 100f;
+
+        target         = default;
+        targetWorldPos = default;
+
+        var closestDot = float.MaxValue;
+        var found      = false;
+
+        var query = AllEntityQuery<Content.Server.Movement.Components.LagCompensationComponent, TransformComponent>();
+        while (query.MoveNext(out var candidateUid, out _, out var candidateXform))
+        {
+            if (candidateUid == shooter)
+                continue;
+
+            if (candidateXform.MapID != fireMapPos.MapId)
+                continue;
+
+            var (lagCoords, _) = _lagComp.GetCoordinatesAngle(candidateUid, session, candidateXform);
+            if (lagCoords == EntityCoordinates.Invalid)
+                continue;
+
+            var lagWorldPos = TransformSystem.ToMapCoordinates(lagCoords).Position;
+            var toEntity    = lagWorldPos - fireMapPos.Position;
+            var dot         = Vector2.Dot(toEntity, direction);
+
+            if (dot <= 0f || dot > MaxRange)
+                continue;
+
+            var closestPoint = fireMapPos.Position + direction * dot;
+            var perpDist     = (lagWorldPos - closestPoint).Length();
+
+            if (perpDist <= HitRadius && dot < closestDot)
+            {
+                closestDot     = dot;
+                target         = candidateUid;
+                targetWorldPos = lagWorldPos;
+                found          = true;
+            }
+        }
+
+        return found;
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }

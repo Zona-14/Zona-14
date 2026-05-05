@@ -1,6 +1,8 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Destructible;
 using Content.Server.Effects;
+using Content.Server.Movement.Systems;
+using Content.Server.Projectiles.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Armor;
 using Content.Shared.Camera;
@@ -13,6 +15,7 @@ using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Projectiles;
 
@@ -23,14 +26,17 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
+    [Dependency] private readonly LagCompensationSystem _lagComp = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // Stalker-Changes
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Stalker-Changes
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<ProjectileFiredComponent, EntityTerminatingEvent>(OnProjectileTerminating);
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
@@ -72,6 +78,10 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             if (_prototype.TryIndex(damageable.DamageModifierSetId, out var damageModifierSetPrototype))
                 ignoreResitance = component.ProjectileClass >= damageModifierSetPrototype.Class;
         // stalker-changes-end
+
+        // Mark as physics-handled so the lag-comp despawn fallback skips this bullet.
+        if (TryComp<ProjectileFiredComponent>(uid, out var firedComp))
+            firedComp.PhysicsHitOccurred = true;
 
         var target = args.OtherEntity;
         // it's here so this check is only done once before possible hit
@@ -162,5 +172,43 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         {
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
         }
+    }
+
+    /// <summary>
+    /// Lag-compensation fallback: when a bullet despawns (timed out) without a physics hit,
+    /// but the lag-comp search found a target in the firing line, apply damage to that target.
+    /// This recovers hits the physics simulation missed because the target moved.
+    /// </summary>
+    private void OnProjectileTerminating(Entity<ProjectileFiredComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var comp = ent.Comp;
+
+        if (comp.PhysicsHitOccurred)
+            return;
+
+        if (comp.LagCompTarget is not { } lagTarget || Deleted(lagTarget))
+            return;
+
+        // Check the bullet travelled far enough to have reached the lag-comp target.
+        var elapsed       = (_timing.CurTime - comp.FiredAt).TotalSeconds;
+        var travelledDist = (float)(elapsed * comp.Speed);
+        var targetDist    = (comp.LagCompTargetWorldPos - comp.FiredFromWorldPos).Length();
+
+        if (travelledDist < targetDist - 0.5f)
+            return;
+
+        if (!TryComp<ProjectileComponent>(ent, out var proj) || proj.ProjectileSpent)
+            return;
+
+        if (!TryComp<DamageableComponent>(lagTarget, out var damageable))
+            return;
+
+        var damage = proj.Damage * _damageableSystem.UniversalProjectileDamageModifier;
+        _damageableSystem.TryChangeDamage((lagTarget, damageable), damage, true, origin: proj.Shooter);
+
+        _adminLogger.Add(LogType.BulletHit,
+            LogImpact.Medium,
+            $"Lag-comp projectile {ToPrettyString(ent.Owner):projectile} shot by {ToPrettyString(proj.Shooter):user} " +
+            $"recovered hit on {ToPrettyString(lagTarget):target}");
     }
 }
