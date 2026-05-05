@@ -1,0 +1,7 @@
+author: teecoding
+time: '2026-05-05T19:09:47Z'
+url: https://github.com/Zona-14/Zona-14/pull/10
+changes:
+- type: Add
+  message: Muzzle smoke and a new muzzle flash sprite when firing guns.
+category: Main
