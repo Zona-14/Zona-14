@@ -73,3 +73,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_CHANGELOG_WEBHOOK }}
+
+    - name: Move changelog-last-published tag
+      if: success()
+      run: |
+        set -euo pipefail
+        git fetch origin master
+        git tag -f changelog-last-published origin/master
+        git push -f origin refs/tags/changelog-last-published

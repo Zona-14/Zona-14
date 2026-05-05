@@ -2,13 +2,15 @@
 
 """
 Sends updates to a Discord webhook for new changelog entries since the last
-GitHub Actions publish run.
+successful publish.
 
 Iterates over the four Zona-14 category YAMLs (Zona 14, Admin, Maps, Rules) and
 groups the new entries under category headers in a single Discord message.
 
-Automatically figures out the last successful run and the file contents at that
-SHA via the GitHub API.
+Baseline is the commit pointed to by the `changelog-last-published` tag, which
+the publish workflow force-updates after a successful Discord post. This
+captures the rolled-up state at end-of-run, unlike a workflow run's head_commit
+(which is the trigger SHA, before the in-run rollup commit).
 """
 
 import itertools
@@ -22,6 +24,7 @@ import time
 
 DEBUG = False
 GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
+BASELINE_TAG = "changelog-last-published"
 
 # https://discord.com/developers/docs/resources/webhook
 DISCORD_SPLIT_LIMIT = 2000
@@ -46,12 +49,15 @@ def main():
         return
 
     session = _build_session()
-    last_sha = _resolve_last_publish_sha(session)
-    if last_sha is None:
-        print("No prior successful publish run found — skipping discord send (first publish).")
-        return
-
     github_repository = os.environ["GITHUB_REPOSITORY"]
+    last_sha = _resolve_baseline_sha(session, github_repository)
+    if last_sha is None:
+        print(
+            f"No `{BASELINE_TAG}` tag found — skipping discord send (first publish)."
+        )
+        return
+    print(f"Baseline `{BASELINE_TAG}` -> {last_sha}")
+
     all_lines: list[str] = []
 
     for label, path in CHANGELOG_FILES:
@@ -85,14 +91,23 @@ def _build_session() -> requests.Session:
     return session
 
 
-def _resolve_last_publish_sha(session: requests.Session) -> str | None:
-    github_repository = os.environ["GITHUB_REPOSITORY"]
-    github_run = os.environ["GITHUB_RUN_ID"]
-    most_recent = get_most_recent_workflow(session, github_repository, github_run)
-    if most_recent is None:
+def _resolve_baseline_sha(session: requests.Session, repo: str) -> str | None:
+    """Return the commit SHA that `BASELINE_TAG` points to, or None if absent."""
+    resp = session.get(
+        f"{GITHUB_API_URL}/repos/{repo}/git/ref/tags/{BASELINE_TAG}"
+    )
+    if resp.status_code == 404:
         return None
-    sha = most_recent.get("head_commit", {}).get("id")
-    print(f"Last successful publish job was {most_recent['id']}: {sha}")
+    resp.raise_for_status()
+    obj = resp.json().get("object", {})
+    sha = obj.get("sha")
+    if obj.get("type") == "tag" and sha:
+        # Annotated tag; dereference to the commit it points at.
+        tag_resp = session.get(
+            f"{GITHUB_API_URL}/repos/{repo}/git/tags/{sha}"
+        )
+        tag_resp.raise_for_status()
+        sha = tag_resp.json().get("object", {}).get("sha")
     return sha
 
 
@@ -118,37 +133,6 @@ def _load_remote_yaml(
         return {"Entries": []}
     resp.raise_for_status()
     return yaml.safe_load(resp.text) or {"Entries": []}
-
-
-def get_most_recent_workflow(
-    sess: requests.Session, github_repository: str, github_run: str
-) -> Any:
-    workflow_run = get_current_run(sess, github_repository, github_run)
-    past_runs = get_past_runs(sess, workflow_run)
-    for run in past_runs["workflow_runs"]:
-        # First past successful run that isn't our current run.
-        if run["id"] == workflow_run["id"]:
-            continue
-        return run
-    return None
-
-
-def get_current_run(
-    sess: requests.Session, github_repository: str, github_run: str
-) -> Any:
-    resp = sess.get(
-        f"{GITHUB_API_URL}/repos/{github_repository}/actions/runs/{github_run}"
-    )
-    resp.raise_for_status()
-    return resp.json()
-
-
-def get_past_runs(sess: requests.Session, current_run: Any) -> Any:
-    """Get all successful workflow runs before our current one."""
-    params = {"status": "success", "created": f"<={current_run['created_at']}"}
-    resp = sess.get(f"{current_run['workflow_url']}/runs", params=params)
-    resp.raise_for_status()
-    return resp.json()
 
 
 def diff_changelog(
