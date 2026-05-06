@@ -16,15 +16,15 @@ namespace Content.Client._Stalker.Bands;
 public sealed class BandsSystem : SharedBandsSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!; //stalker-en-change
-    [Dependency] private readonly TransformSystem _transform = default!; //stalker-en-change
-    [Dependency] private readonly IGameTiming _timing = default!; //stalker-en-change
+    [Dependency] private readonly IPlayerManager _playerManager = default!; //Zona-14
+    [Dependency] private readonly TransformSystem _transform = default!; //Zona-14
+    [Dependency] private readonly IGameTiming _timing = default!; //Zona-14
 
-    private const float MaxDistanceForBandPatch = 5f; //stalker-en-change
-    private const float RecognitionDelay = 2f; //stalker-en-change
-    private const float KnownDuration = 30f; //stalker-en-change
+    private const float MaxDistanceForBandPatch = 5f; //Zona-14
+    private const float RecognitionDelay = 2f; //Zona-14
+    private const float KnownDuration = 30f; //Zona-14
 
-    private readonly Dictionary<EntityUid, RecognitionData> _recognitionData = new(); //stalker-en-change
+    private readonly Dictionary<EntityUid, RecognitionData> _recognitionData = new(); //Zona-14
 
     public override void Initialize()
     {
@@ -33,7 +33,7 @@ public sealed class BandsSystem : SharedBandsSystem
         SubscribeLocalEvent<BandsComponent, GetStatusIconsEvent>(OnGetStatusIcon);
     }
 
-    //stalker-en-change-start
+    //Zona-14-start
     /// <summary>
     /// Updates recognition state for all tracked entities.
     /// Handles the transition between Unknown -> Recognizing (2s) -> Known (30s) -> Expired -> Recognizing.
@@ -138,7 +138,7 @@ public sealed class BandsSystem : SharedBandsSystem
             _recognitionData.Remove(uid);
         }
     }
-    //stalker-en-change-end
+    //Zona-14-end
 
     /// <summary>
     /// Determines which band patch icon to display based on distance and recognition state.
@@ -148,7 +148,7 @@ public sealed class BandsSystem : SharedBandsSystem
         if (EntityManager.TryGetComponent<ESViewconeOccludableComponent>(uid, out var occ) && occ.IsHidden)
             return;
 
-        //stalker-en-change-start
+        //Zona-14-start
         var player = _playerManager.LocalSession?.AttachedEntity;
         if (player == null)
         {
@@ -193,7 +193,7 @@ public sealed class BandsSystem : SharedBandsSystem
                 _ => "nodata"
             };
         }
-        //stalker-en-change-end
+        //Zona-14-end
 
         if (!_proto.HasIndex<JobIconPrototype>(iconId))
         {
@@ -204,7 +204,7 @@ public sealed class BandsSystem : SharedBandsSystem
         args.StatusIcons.Add(_proto.Index<JobIconPrototype>(iconId));
     }
 
-    //stalker-en-change-start
+    //Zona-14-start
     /// <summary>
     /// Stores recognition timing data for a single entity.
     /// </summary>
@@ -225,5 +225,5 @@ public sealed class BandsSystem : SharedBandsSystem
         Known,
         Expired
     }
-    //stalker-en-change-end
+    //Zona-14-end
 }
