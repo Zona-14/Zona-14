@@ -3,6 +3,11 @@ using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared._ES.Viewcone;
+using Robust.Client.Player;
+using Robust.Shared.Map;
+using Robust.Shared.Physics;
+using Robust.Client.GameObjects;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Stalker.Bands;
 /// <summary>
@@ -11,6 +16,16 @@ namespace Content.Client._Stalker.Bands;
 public sealed class BandsSystem : SharedBandsSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!; //stalker-en-change
+    [Dependency] private readonly TransformSystem _transform = default!; //stalker-en-change
+    [Dependency] private readonly IGameTiming _timing = default!; //stalker-en-change
+
+    private const float MaxDistanceForBandPatch = 5f; //stalker-en-change
+    private const float RecognitionDelay = 2f; //stalker-en-change
+    private const float KnownDuration = 30f; //stalker-en-change
+
+    private readonly Dictionary<EntityUid, RecognitionData> _recognitionData = new(); //stalker-en-change
+
     public override void Initialize()
     {
         base.Initialize();
@@ -18,10 +33,197 @@ public sealed class BandsSystem : SharedBandsSystem
         SubscribeLocalEvent<BandsComponent, GetStatusIconsEvent>(OnGetStatusIcon);
     }
 
+    //stalker-en-change-start
+    /// <summary>
+    /// Updates recognition state for all tracked entities.
+    /// Handles the transition between Unknown -> Recognizing (2s) -> Known (30s) -> Expired -> Recognizing.
+    /// Once in Known state, the patch remains visible indefinitely while in range (>5 tiles).
+    /// Only when out of range does the 30-second timer start counting down.
+    /// </summary>
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var player = _playerManager.LocalSession?.AttachedEntity;
+        if (player == null)
+            return;
+
+        var playerPos = _transform.GetWorldPosition(player.Value);
+        var currentTime = _timing.RealTime;
+
+        var toRemove = new List<EntityUid>();
+
+        foreach (var (uid, data) in _recognitionData)
+        {
+            if (!EntityManager.EntityExists(uid))
+            {
+                toRemove.Add(uid);
+                continue;
+            }
+
+            var entityPos = _transform.GetWorldPosition(uid);
+            var distance = (playerPos - entityPos).Length();
+
+            if (distance > MaxDistanceForBandPatch)
+            {
+                // Out of range
+                switch (data.State)
+                {
+                    case RecognitionState.Unknown:
+                        // Stay unknown
+                        break;
+
+                    case RecognitionState.Recognizing:
+                        // Reset to unknown
+                        data.State = RecognitionState.Unknown;
+                        data.RecognitionStartTime = null;
+                        break;
+
+                    case RecognitionState.Known:
+                        // Start countdown if not already started
+                        if (!data.RecognizedTime.HasValue)
+                        {
+                            data.RecognizedTime = currentTime;
+                        }
+                        else if ((currentTime - data.RecognizedTime.Value).TotalSeconds >= KnownDuration)
+                        {
+                            // Timer expired
+                            data.State = RecognitionState.Expired;
+                            data.RecognizedTime = null;
+                        }
+                        break;
+
+                    case RecognitionState.Expired:
+                        // Stay expired
+                        break;
+                }
+            }
+            else
+            {
+                // In range
+                switch (data.State)
+                {
+                    case RecognitionState.Unknown:
+                        // Start recognition
+                        data.State = RecognitionState.Recognizing;
+                        data.RecognitionStartTime = currentTime;
+                        break;
+
+                    case RecognitionState.Recognizing:
+                        // Check if recognition delay passed
+                        if (data.RecognitionStartTime.HasValue &&
+                            (currentTime - data.RecognitionStartTime.Value).TotalSeconds >= RecognitionDelay)
+                        {
+                            data.State = RecognitionState.Known;
+                            data.RecognizedTime = null; // No timer while in range
+                        }
+                        break;
+
+                    case RecognitionState.Known:
+                        // Keep known, reset timer to stay visible
+                        data.RecognizedTime = null;
+                        break;
+
+                    case RecognitionState.Expired:
+                        // Start recognition again
+                        data.State = RecognitionState.Recognizing;
+                        data.RecognitionStartTime = currentTime;
+                        break;
+                }
+            }
+        }
+
+        foreach (var uid in toRemove)
+        {
+            _recognitionData.Remove(uid);
+        }
+    }
+    //stalker-en-change-end
+
+    /// <summary>
+    /// Determines which band patch icon to display based on distance and recognition state.
+    /// </summary>
     private void OnGetStatusIcon(EntityUid uid, BandsComponent component, ref GetStatusIconsEvent args)
     {
         if (EntityManager.TryGetComponent<ESViewconeOccludableComponent>(uid, out var occ) && occ.IsHidden)
             return;
-        args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
+
+        //stalker-en-change-start
+        var player = _playerManager.LocalSession?.AttachedEntity;
+        if (player == null)
+        {
+            args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
+            return;
+        }
+
+        // Always show own patch immediately
+        if (uid == player.Value)
+        {
+            args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
+            return;
+        }
+
+        var playerPos = _transform.GetWorldPosition(player.Value);
+        var entityPos = _transform.GetWorldPosition(uid);
+        var distance = (playerPos - entityPos).Length();
+
+        // Get or create recognition data
+        if (!_recognitionData.TryGetValue(uid, out var data))
+        {
+            data = new RecognitionData();
+            _recognitionData[uid] = data;
+        }
+
+        string iconId;
+
+        if (distance > MaxDistanceForBandPatch)
+        {
+            // Out of range - show patch only if in Known state
+            iconId = data.State == RecognitionState.Known ? component.BandStatusIcon : "nodata";
+        }
+        else
+        {
+            // In range
+            iconId = data.State switch
+            {
+                RecognitionState.Unknown => "nodata",
+                RecognitionState.Recognizing => "nodata",
+                RecognitionState.Known => component.BandStatusIcon,
+                RecognitionState.Expired => "nodata",
+                _ => "nodata"
+            };
+        }
+        //stalker-en-change-end
+
+        if (!_proto.HasIndex<JobIconPrototype>(iconId))
+        {
+            args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
+            return;
+        }
+
+        args.StatusIcons.Add(_proto.Index<JobIconPrototype>(iconId));
     }
+
+    //stalker-en-change-start
+    /// <summary>
+    /// Stores recognition timing data for a single entity.
+    /// </summary>
+    private class RecognitionData
+    {
+        public RecognitionState State = RecognitionState.Unknown;
+        public TimeSpan? RecognitionStartTime;
+        public TimeSpan? RecognizedTime;
+    }
+
+    /// <summary>
+    /// Represents the current recognition state of a band patch.
+    /// </summary>
+    private enum RecognitionState : byte
+    {
+        Unknown,
+        Recognizing,
+        Known,
+        Expired
+    }
+    //stalker-en-change-end
 }
