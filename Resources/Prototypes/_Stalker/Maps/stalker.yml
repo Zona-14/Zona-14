@@ -8,7 +8,7 @@
       stationProto: StandardStalkerStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Кордон"
+          mapNameTemplate: "the Zone" #Zona14 changes
         - type: StationJobs
           # Zona14: roster curated to 18 selectable jobs across 5 faction groups
           # (Stalkers / Criminals / Stalker Clans / Science / Border Guards).

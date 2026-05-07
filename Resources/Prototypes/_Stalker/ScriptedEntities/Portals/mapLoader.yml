@@ -1,16 +1,13 @@
 - type: mapLoader
   id: StalkerBaseMaps
   mapPaths:
-    KordonUnerground: /Maps/_ST/World/KordonPodzemV78.yml
-    Svalka: /Maps/_ST/World/SvalkaV173.yml
-    SvalkaUnderground: /Maps/_ST/World/SvalkaPodzemkaV63.yml
-    Agroprom: /Maps/_ST/World/AgropromV109.yml
-    PodzemkaLoschina: /Maps/_ST/World/PodzemkaLohinaV15.yml
+    BarUnderground: /Maps/_ST/World/UndegroundWildsBar100radsV38.yml
     MilitaryBase: /Maps/_ST/World/MBaseV15.yml
-    TemnajLohina: /Maps/_ST/World/TemnajLohinaV99.yml
-    Bolota: /Maps/_ST/World/BolotaV83.yml
-    TemnajDolina: /Maps/_ST/World/TemnajDolinaGEN2V80.yml
-    Bar: /Maps/_ST/World/RostokAndWildsV85.yml
-    RedForest: /Maps/_ST/World/RedForestV92.yml
-    Limansk: /Maps/_ST/World/limanskV155.yml
-    BarUnderground: /Maps/_ST/World/UndegroundWildsBar100radsV40.yml
+    Darkscape: /Maps/_ST/World/TemnajLohinaV99.yml
+    Swamps: /Maps/_ST/World/BolotaV83.yml
+    Garbage: /Maps/_ST/World/SvalkaV173.yml
+    #Agroprom: /Maps/_ST/World/AgropromV109.yml #Zona14 Disabled for now
+    #DarkValley: /Maps/_ST/World/TemnajDolinaGEN2V80.yml #Zona14 Disabled for now
+    #Rostok: /Maps/_ST/World/RostokAndWildsV85.yml #Zona14 Disabled for now
+    #RedForest: /Maps/_ST/World/RedForestV92.yml #Zona14 Disabled for now
+    #Limansk: /Maps/_ST/World/limanskV155.yml #Zona14 Disabled for now
