@@ -7,9 +7,6 @@ namespace Content.Shared._Zona14.CCVar;
 [CVarDefs]
 public static class Zona14CVars
 {
-    public static readonly CVarDef<bool> GunPrediction =
-        CVarDef.Create("zona14.gun_prediction", true, CVar.SERVER | CVar.REPLICATED);
-
     public static readonly CVarDef<bool> GunPredictionPreventCollision =
         CVarDef.Create("zona14.gun_prediction_prevent_collision", false, CVar.SERVER | CVar.REPLICATED);
 

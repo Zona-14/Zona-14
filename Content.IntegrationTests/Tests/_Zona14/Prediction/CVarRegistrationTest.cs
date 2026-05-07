@@ -8,17 +8,6 @@ namespace Content.IntegrationTests.Tests._Zona14.Prediction;
 public sealed class CVarRegistrationTest
 {
     [Test]
-    public async Task GunPredictionCVarRegistered()
-    {
-        await using var pair = await PoolManager.GetServerClient();
-        var cfg = pair.Server.ResolveDependency<IConfigurationManager>();
-        Assert.That(cfg.IsCVarRegistered(Zona14CVars.GunPrediction.Name), Is.True);
-        Assert.That(cfg.GetCVar(Zona14CVars.GunPrediction), Is.True);
-
-        await pair.CleanReturnAsync();
-    }
-
-    [Test]
     public async Task LagCompensationMillisecondsCVarRegistered()
     {
         await using var pair = await PoolManager.GetServerClient();

@@ -111,9 +111,6 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
 
     private void OnServerProjectileStartup(Entity<PredictedProjectileServerComponent> ent, ref ComponentStartup args)
     {
-        if (!GunPrediction)
-            return;
-
         if (ent.Comp.ClientEnt != _player.LocalEntity)
             return;
 
