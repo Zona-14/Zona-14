@@ -216,7 +216,7 @@ namespace Content.Shared.ActionBlocker
             }
 
             var ev = new AttackAttemptEvent(uid, target, weapon, disarm);
-            RaiseLocalEvent(uid, ev, true); // stalker-changes
+            RaiseLocalEvent(uid, ev); // Zona14: broadcast removed; SniperZoneCheckComponent on uid catches
 
             if (ev.Cancelled)
                 return false;

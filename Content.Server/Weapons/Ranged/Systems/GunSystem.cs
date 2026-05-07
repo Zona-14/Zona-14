@@ -1,8 +1,11 @@
 using System.Numerics;
 using Content.Server.Cargo.Systems;
+using Content.Server.Movement.Components; // Zona14: lag-comp lookup
+using Content.Server._Zona14.Movement; // Zona14
 using Content.Server.Weapons.Ranged.Components;
 using Content.Shared.Cargo;
 using Content.Shared._DZ.FarGunshot; // Stalker-using
+using Content.Shared._Zona14.Weapons.Ranged.Prediction; // Zona14
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Projectiles;
@@ -25,6 +28,7 @@ public sealed partial class GunSystem : SharedGunSystem
 {
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly RMCLagCompensationSystem _rmcLagCompensation = default!; // Zona14
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -50,10 +54,37 @@ public sealed partial class GunSystem : SharedGunSystem
         args.Price += price * component.UnspawnedCount;
     }
 
-    public override void Shoot(EntityUid gunUid, GunComponent gun, List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
+    // Zona14: prediction-aware Shoot — returns spawned projectiles, tags predicted twins.
+    public override List<EntityUid>? Shoot(EntityUid gunUid, GunComponent gun,
+        List<(EntityUid? Entity, IShootable Shootable)> ammo,
+        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates,
+        out bool userImpulse, EntityUid? user = null, bool throwItems = false,
+        List<int>? predictedProjectiles = null, ICommonSession? userSession = null)
     {
         userImpulse = true;
+        var spawned = new List<EntityUid>();
+
+        // Zona14: tag each projectile with predicted-twin metadata when prediction is on.
+        void MarkPredicted(EntityUid projectile, int index)
+        {
+            if (predictedProjectiles == null || userSession == null)
+                return;
+
+            if (index < 0 || index >= predictedProjectiles.Count)
+                return;
+
+            var predicted = predictedProjectiles[index];
+
+            var comp = new PredictedProjectileServerComponent
+            {
+                Shooter = userSession,
+                ClientId = predicted,
+                ClientEnt = user,
+            };
+            AddComp(projectile, comp, true);
+            Dirty(projectile, comp);
+        }
+        // End Zona14
 
         if (user != null)
         {
@@ -62,7 +93,7 @@ public sealed partial class GunSystem : SharedGunSystem
             if (selfEvent.Cancelled)
             {
                 userImpulse = false;
-                return;
+                return null; // Zona14
             }
         }
 
@@ -104,6 +135,8 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         var uid = Spawn(cartridge.Prototype, fromEnt);
                         CreateAndFireProjectiles(uid, cartridge);
+                        spawned.Add(uid); // Zona14
+                        MarkPredicted(uid, spawned.Count - 1); // Zona14
 
                         // stalker-changes-start
                         var farSoundEvent = new FargunshotEvent(gunUid.Id);
@@ -138,16 +171,36 @@ public sealed partial class GunSystem : SharedGunSystem
                     if (ent == null)
                         break;
                     CreateAndFireProjectiles(ent.Value, newAmmo);
+                    spawned.Add(ent.Value); // Zona14
+                    MarkPredicted(ent.Value, spawned.Count - 1); // Zona14
 
                     break;
                 case HitscanAmmoComponent:
                     if (ent == null)
                         break;
 
+                    // Zona14: rewind target to firer's perceived tick. If target has a LagCompensationComponent
+                    //         and we have a shooter session, recompute the trace direction toward where the
+                    //         target was at the firer's last-real-tick. The raycast still resolves against
+                    //         current physics — the rewind only re-aims the ray, so partial-rewind cases
+                    //         (target near rewound position) still benefit from the args.Target filter match.
+                    var hitscanDirection = mapDirection;
+                    if (gun.Target is { } laggedTargetEnt && HasComp<LagCompensationComponent>(laggedTargetEnt))
+                    {
+                        var laggedCoords = _rmcLagCompensation.GetCoordinates(laggedTargetEnt, userSession);
+                        if (laggedCoords.IsValid(EntityManager))
+                        {
+                            var laggedMap = TransformSystem.ToMapCoordinates(laggedCoords);
+                            if (laggedMap.MapId == fromMap.MapId)
+                                hitscanDirection = laggedMap.Position - fromMap.Position;
+                        }
+                    }
+                    // End Zona14
+
                     var hitscanEv = new HitscanTraceEvent
                     {
                         FromCoordinates = fromCoordinates,
-                        ShotDirection = mapDirection.Normalized(),
+                        ShotDirection = hitscanDirection.Normalized(), // Zona14: was mapDirection.Normalized()
                         Gun = gunUid,
                         Shooter = user,
                         Target = gun.Target,
@@ -168,6 +221,8 @@ public sealed partial class GunSystem : SharedGunSystem
             FiredProjectiles = shotProjectiles,
             Angle = mapAngle, // stalker-en
         });
+
+        return spawned; // Zona14
 
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
         {
@@ -257,12 +312,16 @@ public sealed partial class GunSystem : SharedGunSystem
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
 
-    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
+    // Zona14: also remove `player`'s session so relayed/mounted firers don't get a duplicate flash.
+    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null, EntityUid? player = null)
     {
         var filter = Filter.Pvs(gunUid, entityManager: EntityManager);
 
         if (TryComp<ActorComponent>(user, out var actor))
             filter.RemovePlayer(actor.PlayerSession);
+
+        if (TryComp(player, out actor)) // Zona14
+            filter.RemovePlayer(actor.PlayerSession); // Zona14
 
         RaiseNetworkEvent(message, filter);
     }

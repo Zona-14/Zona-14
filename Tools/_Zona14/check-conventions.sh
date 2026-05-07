@@ -214,6 +214,25 @@ check_meta_json_license() {
 }
 
 # ============================================================
+# Check 7: No global subscribers to action-attempt events outside Content.Shared/
+# ============================================================
+# Component-targeted subscribers (SubscribeLocalEvent<MyComponent, EventX>) are fine;
+# only global no-component subscribers break prediction symmetry — they cancel on
+# one side without the matching cancel on the other, producing mispredict snap-backs.
+check_no_global_attempt_subscribers() {
+    local offenders
+    offenders=$(grep -rEn \
+        'SubscribeLocalEvent<[[:space:]]*(ShotAttemptedEvent|AttackAttemptEvent|BeforeThrowEvent)[[:space:]]*>' \
+        Content.Server Content.Client 2>/dev/null || true)
+
+    if [[ -n "$offenders" ]]; then
+        while IFS= read -r line; do
+            fail "$line: global subscriber to an action-attempt event in Content.Server/ or Content.Client/ breaks prediction symmetry — move to Content.Shared/, or use SubscribeLocalEvent<TComp, TEvent>"
+        done <<<"$offenders"
+    fi
+}
+
+# ============================================================
 # Run
 # ============================================================
 
@@ -228,6 +247,7 @@ check_misfiled_namespace
 check_greenfield
 check_key_file_delete
 check_meta_json_license
+check_no_global_attempt_subscribers
 
 echo
 if [[ $FAIL -eq 0 ]]; then

@@ -181,7 +181,7 @@ namespace Content.Server.Hands.Systems
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.
             var ev = new BeforeThrowEvent(throwEnt.Value, direction, throwSpeed, player);
-            RaiseLocalEvent(player, ref ev, true); // stalker-changes
+            RaiseLocalEvent(player, ref ev); // Zona14: broadcast removed; SniperZoneCheckComponent on player catches
 
             if (ev.Cancelled)
                 return true;

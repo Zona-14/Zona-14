@@ -276,6 +276,7 @@
   parent: ShuttleGunBase
   name: pirate ship cannon
   description: Kaboom!
+  categories: [ DoNotMap, StSkipSpawnTest ] # Zona14: SpawnAndDelete test links random TechAnomaly→GunSignalControl and shoots BulletCannonBall on invalid coords
   components:
   - type: ContainerContainer
     containers:

@@ -209,6 +209,7 @@ The `Zona14 convention check` workflow runs on every PR. It enforces:
 4. **Greenfield warning** — newly added `.cs` or `.yml` files outside `_Zona14/` produce a warning (non-fatal); reviewers decide.
 5. **Key-file delete guard** — protects `README.md`, `README.ru.md`, `LICENSE.TXT`, `CONTRIBUTING.md`, `.github/PULL_REQUEST_TEMPLATE.md`.
 6. **Asset `meta.json` license/copyright** — every `meta.json` under `Resources/` (added or modified) must have populated `license` (SPDX identifier on the allowlist) and `copyright` fields; license removals on edits also fail.
+7. **No global action-attempt subscribers in server/client** — `SubscribeLocalEvent<ShotAttemptedEvent>`, `SubscribeLocalEvent<AttackAttemptEvent>`, or `SubscribeLocalEvent<BeforeThrowEvent>` (without a component constraint) anywhere under `Content.Server/` or `Content.Client/` will fail. These cancel the action on one side only, producing prediction snap-backs ("ghost shots"). Move the subscriber to `Content.Shared/`, or constrain it to a component (`SubscribeLocalEvent<TComp, TEvent>`).
 
 ### Running the check locally
 

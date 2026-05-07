@@ -15,6 +15,7 @@
   components:
   - type: RDDeathScreen # stalker-changes
   - type: RDWatcherTarget # stalker-changes
+  - type: SniperZoneCheck # Zona14: prediction-symmetric sniper-zone cancel
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]

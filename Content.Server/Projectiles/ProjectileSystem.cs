@@ -10,6 +10,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -40,6 +41,20 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             || component.ProjectileSpent || component is { Weapon: null, OnlyCollideWhenShot: true })
             return;
 
+        // Zona14: collision body extracted to public ProjectileCollide so the prediction
+        //         system can apply server-validated hits without re-implementing damage logic.
+        ProjectileCollide((uid, component, args.OurBody), args.OtherEntity, predicted: false);
+    }
+
+    // Zona14: extracted from OnStartCollide for prediction validation. Preserves the
+    //         stalker-fork armor / ignoreResistors / penetration logic byte-for-byte.
+    //         When `predicted` is true, the firer's client has already drawn the hit
+    //         effect / shake / impact broadcast, so we skip those to avoid double-rendering.
+    public void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile,
+        EntityUid target, bool predicted = false)
+    {
+        var (uid, component, ourBody) = projectile;
+
         // stalker-changes-start
         var ignoreResitance = false;
         List<EntityUid> ignore = new();
@@ -63,17 +78,16 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         foreach (var slot in slots)
         {
-            if (_inventory.TryGetSlotEntity(args.OtherEntity, slot, out var entity) && TryComp<ArmorComponent>(entity, out var armorComp) && armorComp.ArmorClass.HasValue)
+            if (_inventory.TryGetSlotEntity(target, slot, out var entity) && TryComp<ArmorComponent>(entity, out var armorComp) && armorComp.ArmorClass.HasValue)
                 if (component.ProjectileClass >= armorComp.ArmorClass.Value)
                     ignore.Add(entity.Value);
         }
 
-        if (TryComp<DamageableComponent>(args.OtherEntity, out var damageable) && damageable.DamageModifierSetId != null)
+        if (TryComp<DamageableComponent>(target, out var damageable) && damageable.DamageModifierSetId != null)
             if (_prototype.TryIndex(damageable.DamageModifierSetId, out var damageModifierSetPrototype))
                 ignoreResitance = component.ProjectileClass >= damageModifierSetPrototype.Class;
         // stalker-changes-end
 
-        var target = args.OtherEntity;
         // it's here so this check is only done once before possible hit
         var attemptEv = new ProjectileReflectAttemptEvent(uid, component, false);
         RaiseLocalEvent(target, ref attemptEv);
@@ -97,7 +111,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances || ignoreResitance, origin: component.Shooter, ignoreResistors: ignore) && Exists(component.Shooter)) // Stalker-Changes-IgnoreResistors
         {
-            if (!deleted)
+            if (!deleted && !predicted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
             }
@@ -151,14 +165,14 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         {
             _guns.PlayImpactSound(target, damage, component.SoundHit, component.ForceSound);
 
-            if (!args.OurBody.LinearVelocity.IsLengthZero())
-                _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
+            if (!predicted && !ourBody.LinearVelocity.IsLengthZero())
+                _sharedCameraRecoil.KickCamera(target, ourBody.LinearVelocity.Normalized());
         }
 
         if (component.DeleteOnCollide && component.ProjectileSpent)
             QueueDel(uid);
 
-        if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
+        if (!predicted && component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
         {
             RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
         }

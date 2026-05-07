@@ -1,3 +1,4 @@
+using System.Linq; // Zona14
 using System.Numerics;
 using Content.Client.Animations;
 using Content.Client.Gameplay;
@@ -6,6 +7,7 @@ using Content.Client.Weapons.Ranged.Components;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
+using Content.Shared._Zona14.Weapons.Ranged.Prediction; // Zona14
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
@@ -22,6 +24,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player; // Zona14
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using SharedGunSystem = Content.Shared.Weapons.Ranged.Systems.SharedGunSystem;
@@ -42,6 +45,8 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly Content.Client._Zona14.Weapons.Ranged.Prediction.GunPredictionSystem _gunPrediction = default!; // Zona14
+    [Dependency] private readonly Content.Client._Zona14.Movement.RMCLagCompensationSystem _rmcLagCompensation = default!; // Zona14
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
 
@@ -201,18 +206,34 @@ public sealed partial class GunSystem : SharedGunSystem
         if (_state.CurrentState is GameplayStateBase screen)
             target = GetNetEntity(screen.GetClickedEntity(mousePos));
 
+        // Zona14: spawn predicted projectiles client-side, then send their IDs to the server.
+        if (_player.LocalSession is not { } session)
+            return;
+
         Log.Debug($"Sending shoot request tick {Timing.CurTick} / {Timing.CurTime}");
+
+        var projectiles = _gunPrediction.ShootRequested(GetNetEntity(gunUid),
+            GetNetCoordinates(coordinates), target, null, session);
 
         RaisePredictiveEvent(new RequestShootEvent
         {
             Target = target,
             Coordinates = GetNetCoordinates(coordinates),
             Gun = GetNetEntity(gunUid),
+            Shot = projectiles?.Select(e => e.Id).ToList(), // Zona14
+            LastRealTick = _rmcLagCompensation.GetLastRealTick(null), // Zona14
         });
+        // End Zona14
     }
 
-    public override void Shoot(EntityUid gunUid, GunComponent gun, List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, out bool userImpulse, EntityUid? user = null, bool throwItems = false)
+    // Zona14: prediction-aware Shoot — client doesn't track its own list at this layer;
+    //         predicted-projectile IDs come from ShootProjectile via the ShootRequested
+    //         path (see SharedGunPredictionSystem.ShootRequested + Update wiring).
+    public override List<EntityUid>? Shoot(EntityUid gunUid, GunComponent gun,
+        List<(EntityUid? Entity, IShootable Shootable)> ammo,
+        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates,
+        out bool userImpulse, EntityUid? user = null, bool throwItems = false,
+        List<int>? predictedProjectiles = null, ICommonSession? userSession = null)
     {
         userImpulse = true;
 
@@ -273,7 +294,24 @@ public sealed partial class GunSystem : SharedGunSystem
                     break;
             }
         }
+
+        return null; // Zona14: client-side projectile IDs are produced via ShootProjectile, see ShootRequested wiring.
     }
+
+    // Zona14: mark every client-spawned projectile with the prediction marker so the
+    //         shared prediction system can recognise it on collision.
+    public override void ShootProjectile(EntityUid uid,
+        Vector2 direction,
+        Vector2 gunVelocity,
+        EntityUid? gunUid,
+        EntityUid? user = null,
+        float speed = 20f)
+    {
+        EnsureComp<PredictedProjectileClientComponent>(uid);
+        Physics.UpdateIsPredicted(uid);
+        base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
+    }
+    // End Zona14
 
     private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar)
     {
@@ -291,7 +329,8 @@ public sealed partial class GunSystem : SharedGunSystem
         PopupSystem.PopupEntity(message, uid.Value, user.Value);
     }
 
-    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? tracked = null)
+    // Zona14: extra `player` param matches abstract sig; client doesn't broadcast so it's unused.
+    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? tracked = null, EntityUid? player = null)
     {
         if (!Timing.IsFirstTimePredicted)
             return;

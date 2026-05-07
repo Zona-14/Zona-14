@@ -23,6 +23,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
+using Content.Shared._Zona14.Weapons.Ranged.Prediction; // Zona14
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -30,6 +31,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player; // Zona14
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -78,7 +80,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeAllEvent<RequestShootEvent>(OnShootRequest);
+        // Zona14: RequestShootEvent now owned by _Zona14.GunPredictionSystem (server + client).
         SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
         SubscribeLocalEvent<GunComponent, MeleeHitEvent>(OnGunMelee);
 
@@ -126,24 +128,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
     }
 
-    private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
-    {
-        var user = args.SenderSession.AttachedEntity;
-
-        if (user == null ||
-            !_combatMode.IsInCombatMode(user) ||
-            !TryGetGun(user.Value, out var ent, out var gun))
-        {
-            return;
-        }
-
-        if (ent != GetEntity(msg.Gun))
-            return;
-
-        gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        gun.Target = GetEntity(msg.Target);
-        AttemptShoot(user.Value, ent, gun);
-    }
+    // Zona14: OnShootRequest deleted — _Zona14.SharedGunPredictionSystem.ShootRequested
+    //         dispatches into AttemptShoot, owning the single-source-of-truth subscription.
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
@@ -212,7 +198,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         gun.ShootCoordinates = toCoordinates;
         gun.Target = target;
-        var result = AttemptShoot(user, gunUid, gun);
+        var result = AttemptShoot(user, gunUid, gun) != null; // Zona14: list null = no shot
         gun.ShotCounter = 0;
         DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
         return result;
@@ -225,23 +211,26 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         var coordinates = new EntityCoordinates(gunUid, gun.DefaultDirection);
         gun.ShootCoordinates = coordinates;
-        var result = AttemptShoot(gunUid, gunUid, gun);
+        var result = AttemptShoot(gunUid, gunUid, gun) != null; // Zona14
         gun.ShotCounter = 0;
         return result;
     }
 
-    private bool AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun)
+    // Zona14: prediction-aware overload. Returns the projectiles spawned this call so the
+    //         client (when it called this predictively) can pair them with server twins.
+    public List<EntityUid>? AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun,
+        List<int>? predictedProjectiles = null, ICommonSession? userSession = null)
     {
         if (gun.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
         {
-            return false;
+            return null;
         }
 
         var toCoordinates = gun.ShootCoordinates;
 
         if (toCoordinates == null)
-            return false;
+            return null;
 
         var curTime = Timing.CurTime;
 
@@ -251,18 +240,18 @@ public abstract partial class SharedGunSystem : EntitySystem
             User = user,
             Used = (gunUid, gun)
         };
-        RaiseLocalEvent(gunUid, ref prevention, true); // stalker-changes
+        RaiseLocalEvent(gunUid, ref prevention); // Zona14: broadcast removed; SharedSniperZoneSystem catches the user-targeted raise on line 258 via SniperZoneCheckComponent
         if (prevention.Cancelled)
-            return false;
+            return null; // Zona14
 
         RaiseLocalEvent(user, ref prevention);
         if (prevention.Cancelled)
-            return false;
+            return null; // Zona14
 
         // Need to do this to play the clicking sound for empty automatic weapons
         // but not play anything for burst fire.
         if (gun.NextFire > curTime)
-            return false;
+            return null; // Zona14
 
         var fireRate = TimeSpan.FromSeconds(1f / gun.FireRateModified);
 
@@ -321,7 +310,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             gun.BurstActivated = false;
             gun.BurstShotsCount = 0;
             gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
-            return false;
+            return null; // Zona14
         }
 
         var fromCoordinates = Transform(user).Coordinates;
@@ -361,10 +350,10 @@ public abstract partial class SharedGunSystem : EntitySystem
                 // May cause prediction issues? Needs more tweaking
                 gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
                 Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                return false;
+                return null; // Zona14
             }
 
-            return false;
+            return null; // Zona14
         }
 
         // Handle burstfire
@@ -384,22 +373,48 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         // Shoot confirmed - sounds also played here in case it's invalid (e.g. cartridge already spent).
-        Shoot(gunUid, gun, ev.Ammo, fromCoordinates, toCoordinates.Value, out var userImpulse, user, throwItems: attemptEv.ThrowItems);
+        // Zona14: gate the actual spawn on IsFirstTimePredicted so each tick of repeated
+        //         prediction doesn't multi-spawn projectiles.
+        List<EntityUid>? projectiles = null;
+        var userImpulse = false;
+        if (Timing.IsFirstTimePredicted)
+        {
+            projectiles = Shoot(gunUid, gun, ev.Ammo, fromCoordinates, toCoordinates.Value,
+                out userImpulse, user, throwItems: attemptEv.ThrowItems,
+                predictedProjectiles: predictedProjectiles, userSession: userSession);
+        }
+        // End Zona14
         var shotEv = new GunShotEvent(user, ev.Ammo);
         RaiseLocalEvent(gunUid, ref shotEv);
 
-        if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
-            return true;
+        if (userImpulse && TryComp<PhysicsComponent>(user, out var userPhysics))
+        {
+            var shooterEv = new ShooterImpulseEvent();
+            RaiseLocalEvent(user, ref shooterEv);
 
-        var shooterEv = new ShooterImpulseEvent();
-        RaiseLocalEvent(user, ref shooterEv);
+            if (shooterEv.Push)
+                CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
+        }
 
-        if (shooterEv.Push)
-            CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
-        return true;
+        // Zona14: clean up client-side dummy ammo entities that didn't become predicted projectiles.
+        foreach (var (ent, _) in ev.Ammo)
+        {
+            if (ent == null) continue;
+            if (IsClientSide(ent.Value) &&
+                (HasComp<GunIgnorePredictionComponent>(gunUid)
+                 || projectiles == null
+                 || !projectiles.Contains(ent.Value)))
+            {
+                Del(ent.Value);
+            }
+        }
+        // End Zona14
+
+        return projectiles; // Zona14
     }
 
-    public void Shoot(
+    // Zona14: convenience overload — single-ammo wrapper, forwards prediction params.
+    public List<EntityUid>? Shoot(
         EntityUid gunUid,
         GunComponent gun,
         EntityUid ammo,
@@ -407,13 +422,18 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityCoordinates toCoordinates,
         out bool userImpulse,
         EntityUid? user = null,
-        bool throwItems = false)
+        bool throwItems = false,
+        List<int>? predictedProjectiles = null,
+        ICommonSession? userSession = null)
     {
         var shootable = EnsureShootable(ammo);
-        Shoot(gunUid, gun, new List<(EntityUid? Entity, IShootable Shootable)>(1) { (ammo, shootable) }, fromCoordinates, toCoordinates, out userImpulse, user, throwItems);
+        return Shoot(gunUid, gun, new List<(EntityUid? Entity, IShootable Shootable)>(1) { (ammo, shootable) },
+            fromCoordinates, toCoordinates, out userImpulse, user, throwItems, predictedProjectiles, userSession);
     }
+    // End Zona14
 
-    public abstract void Shoot(
+    // Zona14: returns the spawned projectiles so callers can pair predicted with server twins.
+    public abstract List<EntityUid>? Shoot(
         EntityUid gunUid,
         GunComponent gun,
         List<(EntityUid? Entity, IShootable Shootable)> ammo,
@@ -421,9 +441,12 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityCoordinates toCoordinates,
         out bool userImpulse,
         EntityUid? user = null,
-        bool throwItems = false);
+        bool throwItems = false,
+        List<int>? predictedProjectiles = null,
+        ICommonSession? userSession = null);
+    // End Zona14
 
-    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f)
+    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f) // Zona14: virtual for prediction
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
@@ -527,7 +550,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         var ev = new MuzzleFlashEvent(GetNetEntity(gun), sprite, worldAngle);
-        CreateEffect(gun, ev, user);
+        CreateEffect(gun, ev, user, user); // Zona14: also pass user as `player` for filter exclusion
     }
 
     public void CauseImpulse(EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, EntityUid user, PhysicsComponent userPhysics)
@@ -617,7 +640,10 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
     }
 
-    protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null);
+    // Zona14: pass `player` separately so the server filter can also remove the actor's session
+    //         from the broadcast — relayed/mounted firers (where firer entity ≠ session) won't
+    //         get a duplicate flash on top of their predicted one.
+    protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null, EntityUid? player = null);
 
     public abstract void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound);
 
