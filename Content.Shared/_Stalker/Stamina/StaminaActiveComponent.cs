@@ -1,7 +1,8 @@
 ﻿using Robust.Shared.GameStates;
 
 namespace Content.Shared._Stalker.Stamina;
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true)] // Zona14: FieldDeltas enabled
 public sealed partial class StaminaActiveComponent : Component
 {
 
@@ -30,11 +31,13 @@ public sealed partial class StaminaActiveComponent : Component
     /// </summary>
     public float SprintModifier = 0.5f;
 
+    [AutoNetworkedField] // Zona14: Networked
     public bool Change;
 
     /// <summary>
     /// If our entity is slowed already.
     /// Nothing will happen if you'll set it manually.
     /// </summary>
+    [AutoNetworkedField] // Zona14: Networked
     public bool Slowed = false;
 }
