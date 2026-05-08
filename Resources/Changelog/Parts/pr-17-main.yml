@@ -1,0 +1,11 @@
+author: LaCumbiaDelCoronavirus
+time: '2026-05-08T12:50:24Z'
+url: https://github.com/Zona-14/Zona-14/pull/17
+changes:
+- type: Fix
+  message: Fixed some mispredicts involving slowdown from stamina. Notably, you should
+    no longer stutter when entering/exiting water.
+- type: Fix
+  message: Potentially fixed stuttering when interacting with your inventory, such
+    as by picking-up/dropping items and putting-on/taking-off clothing.
+category: Main
