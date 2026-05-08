@@ -13,7 +13,6 @@ public sealed class StaminaActiveSystem : EntitySystem
 {
     [Dependency] private readonly SharedStaminaSystem _stamina = default!; // Zona14: Shared version
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
-    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
