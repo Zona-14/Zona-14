@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Ported from RMC-14 Content.Shared/_RMC14/Weapons/Ranged/Prediction/SharedGunPredictionSystem.cs@2f5dc02e44.
+// Zona14 deviation: RMC's master `rmc.gun_prediction` CVar was dropped — prediction is always on.
 using Content.Shared.CombatMode;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;

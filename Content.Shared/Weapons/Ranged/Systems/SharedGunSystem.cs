@@ -23,7 +23,10 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
+using Content.Shared._DZ.FarGunshot; // Zona14
 using Content.Shared._Zona14.Weapons.Ranged.Prediction; // Zona14
+using Content.Shared.Camera; // Zona14
+using Content.Shared.Weapons.Hitscan.Events; // Zona14
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -68,6 +71,8 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly ThrowingSystem ThrowingSystem = default!;
     [Dependency] private   readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private   readonly SharedCameraRecoilSystem _recoil = default!; // Zona14
+    [Dependency] private   readonly SharedMapSystem _mapSystem = default!; // Zona14
 
     private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
 
@@ -432,8 +437,11 @@ public abstract partial class SharedGunSystem : EntitySystem
     }
     // End Zona14
 
-    // Zona14: returns the spawned projectiles so callers can pair predicted with server twins.
-    public abstract List<EntityUid>? Shoot(
+    // Zona14: concrete shared implementation — runs on both client (predicted) and server.
+    //         Mirrors RMC-14's SharedGunSystem.Shoot. The firer's client predicts the projectile
+    //         entity at its predicted position; the server-spawned twin is then hidden via
+    //         PredictedProjectileServerComponent + ClientEnt match.
+    public List<EntityUid>? Shoot(
         EntityUid gunUid,
         GunComponent gun,
         List<(EntityUid? Entity, IShootable Shootable)> ammo,
@@ -443,7 +451,252 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityUid? user = null,
         bool throwItems = false,
         List<int>? predictedProjectiles = null,
-        ICommonSession? userSession = null);
+        ICommonSession? userSession = null)
+    {
+        userImpulse = true;
+        var spawned = new List<EntityUid>();
+
+        if (user != null)
+        {
+            var selfEvent = new SelfBeforeGunShotEvent(user.Value, (gunUid, gun), ammo);
+            RaiseLocalEvent(user.Value, selfEvent);
+            if (selfEvent.Cancelled)
+            {
+                userImpulse = false;
+                return null;
+            }
+        }
+
+        var fromMap = TransformSystem.ToMapCoordinates(fromCoordinates);
+        var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
+        var mapDirection = toMap - fromMap.Position;
+        var mapAngle = mapDirection.ToAngle();
+        var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
+
+        // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
+        var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out _)
+            ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
+            : new EntityCoordinates(_mapSystem.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
+
+        // Update shot based on the recoil
+        toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
+        mapDirection = toMap - fromMap.Position;
+        var gunVelocity = Physics.GetMapLinearVelocity(fromEnt);
+
+        var shotProjectiles = new List<EntityUid>(ammo.Count);
+
+        // Tag a server-spawned projectile so its client twin (matched by ClientEnt) is hidden.
+        // No-op on the client side — predictedProjectiles is null when the client calls this.
+        void MarkPredicted(EntityUid projectile, int index)
+        {
+            if (predictedProjectiles == null || userSession == null)
+                return;
+            if (index < 0 || index >= predictedProjectiles.Count)
+                return;
+
+            var predicted = predictedProjectiles[index];
+            var comp = new PredictedProjectileServerComponent
+            {
+                Shooter = userSession,
+                ClientId = predicted,
+                ClientEnt = user,
+            };
+            AddComp(projectile, comp, true);
+            Dirty(projectile, comp);
+        }
+
+        foreach (var (ent, shootable) in ammo)
+        {
+            // pneumatic cannon doesn't shoot bullets it just throws them, ignore ammo handling
+            if (throwItems && ent != null)
+            {
+                Recoil(user, mapDirection, gun.CameraRecoilScalarModified);
+                ShootOrThrow(ent.Value, mapDirection, gunVelocity, gun, gunUid, user);
+                continue;
+            }
+
+            switch (shootable)
+            {
+                // Cartridge shoots something else
+                case CartridgeAmmoComponent cartridge:
+                    if (!cartridge.Spent)
+                    {
+                        var uid = Spawn(cartridge.Prototype, fromEnt);
+                        CreateAndFireProjectiles(uid, cartridge);
+                        spawned.Add(uid);
+                        MarkPredicted(uid, spawned.Count - 1);
+
+                        // stalker-changes-start
+                        var farSoundEvent = new FargunshotEvent(gunUid.Id);
+                        RaiseLocalEvent(gunUid, farSoundEvent);
+                        // stalker-changes-end
+
+                        RaiseLocalEvent(ent!.Value, new AmmoShotEvent()
+                        {
+                            FiredProjectiles = shotProjectiles,
+                            Angle = mapAngle, // stalker-en
+                        });
+
+                        SetCartridgeSpent(ent.Value, cartridge, true);
+
+                        if (cartridge.DeleteOnSpawn && (_netManager.IsServer || IsClientSide(ent.Value)))
+                            Del(ent.Value);
+                    }
+                    else
+                    {
+                        userImpulse = false;
+                        Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
+                    }
+
+                    // Something like ballistic might want to leave it in the container still
+                    if (!cartridge.DeleteOnSpawn && ent != null && !Containers.IsEntityInContainer(ent.Value))
+                        EjectCartridge(ent.Value, angle);
+
+                    if (ent != null)
+                    {
+                        if (IsClientSide(ent.Value))
+                            Del(ent.Value);
+                        else
+                            Dirty(ent.Value, cartridge);
+                    }
+                    break;
+
+                // Ammo shoots itself
+                case AmmoComponent newAmmo:
+                    if (ent == null)
+                        break;
+
+                    CreateAndFireProjectiles(ent.Value, newAmmo);
+                    spawned.Add(ent.Value);
+                    MarkPredicted(ent.Value, spawned.Count - 1);
+                    break;
+
+                case HitscanAmmoComponent:
+                    if (ent == null)
+                        break;
+
+                    // Server overrides AdjustHitscanDirection to apply lag-comp on the firer's perceived tick.
+                    // Client uses the passthrough default (current target coords).
+                    var hitscanDirection = AdjustHitscanDirection(gun.Target, fromMap, mapDirection, userSession);
+
+                    var hitscanEv = new HitscanTraceEvent
+                    {
+                        FromCoordinates = fromCoordinates,
+                        ShotDirection = hitscanDirection.Normalized(),
+                        Gun = gunUid,
+                        Shooter = user,
+                        Target = gun.Target,
+                    };
+                    RaiseLocalEvent(ent.Value, ref hitscanEv);
+
+                    Del(ent.Value);
+                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    Recoil(user, mapDirection, gun.CameraRecoilScalarModified);
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        RaiseLocalEvent(gunUid, new AmmoShotEvent()
+        {
+            FiredProjectiles = shotProjectiles,
+            Angle = mapAngle, // stalker-en
+        });
+
+        return spawned;
+
+        void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
+        {
+            if (TryComp<ProjectileSpreadComponent>(ammoEnt, out var ammoSpreadComp))
+            {
+                var spreadEvent = new GunGetAmmoSpreadEvent(ammoSpreadComp.Spread);
+                RaiseLocalEvent(gunUid, ref spreadEvent);
+
+                var angles = LinearSpread(mapAngle - spreadEvent.Spread / 2,
+                    mapAngle + spreadEvent.Spread / 2, ammoSpreadComp.Count);
+
+                ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
+                shotProjectiles.Add(ammoEnt);
+
+                for (var i = 1; i < ammoSpreadComp.Count; i++)
+                {
+                    var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
+                    ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                    shotProjectiles.Add(newuid);
+                }
+            }
+            else
+            {
+                ShootOrThrow(ammoEnt, mapDirection, gunVelocity, gun, gunUid, user);
+                shotProjectiles.Add(ammoEnt);
+            }
+
+            MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
+            Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+            Recoil(user, mapDirection, gun.CameraRecoilScalarModified);
+        }
+    }
+
+    private void ShootOrThrow(EntityUid uid, Vector2 mapDirection, Vector2 gunVelocity, GunComponent gun, EntityUid gunUid, EntityUid? user)
+    {
+        if (gun.Target is { } target && !TerminatingOrDeleted(target))
+        {
+            var targeted = EnsureComp<TargetedProjectileComponent>(uid);
+            targeted.Target = target;
+            Dirty(uid, targeted);
+        }
+
+        // Do a throw
+        if (!HasComp<ProjectileComponent>(uid))
+        {
+            RemoveShootable(uid);
+            ThrowingSystem.TryThrow(uid, mapDirection, gun.ProjectileSpeedModified, user);
+            return;
+        }
+
+        ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
+    }
+
+    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
+    {
+        var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
+        var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + component.AngleIncreaseModified.Theta - component.AngleDecayModified.Theta * timeSinceLastFire, component.MinAngleModified.Theta, component.MaxAngleModified.Theta);
+        component.CurrentAngle = new Angle(newTheta);
+        component.LastFire = component.NextFire;
+
+        var random = Random.NextFloat(-0.5f, 0.5f);
+        var spread = component.CurrentAngle.Theta * random;
+        var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
+        DebugTools.Assert(spread <= component.MaxAngleModified.Theta);
+        return angle;
+    }
+
+    private static Angle[] LinearSpread(Angle start, Angle end, int intervals)
+    {
+        var angles = new Angle[intervals];
+        DebugTools.Assert(intervals > 1);
+        for (var i = 0; i <= intervals - 1; i++)
+            angles[i] = new Angle(start + (end - start) * i / (intervals - 1));
+        return angles;
+    }
+
+    private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar)
+    {
+        if (_netManager.IsServer)
+            return;
+        if (!Timing.IsFirstTimePredicted || user == null || recoil == Vector2.Zero || recoilScalar == 0)
+            return;
+
+        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.5f * recoilScalar);
+    }
+
+    /// <summary>
+    /// Lets the server rewind the hitscan target to the firer's perceived tick (lag comp).
+    /// Client uses the passthrough; raycast still resolves against current physics.
+    /// </summary>
+    protected virtual Vector2 AdjustHitscanDirection(EntityUid? target, MapCoordinates fromMap, Vector2 mapDirection, ICommonSession? userSession) => mapDirection;
     // End Zona14
 
     public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f) // Zona14: virtual for prediction

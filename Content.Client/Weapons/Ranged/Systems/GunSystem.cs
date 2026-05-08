@@ -41,7 +41,6 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly IStateManager _state = default!;
     [Dependency] private readonly AnimationPlayerSystem _animPlayer = default!;
     [Dependency] private readonly InputSystem _inputSystem = default!;
-    [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
@@ -226,80 +225,9 @@ public sealed partial class GunSystem : SharedGunSystem
         // End Zona14
     }
 
-    // Zona14: prediction-aware Shoot — client doesn't track its own list at this layer;
-    //         predicted-projectile IDs come from ShootProjectile via the ShootRequested
-    //         path (see SharedGunPredictionSystem.ShootRequested + Update wiring).
-    public override List<EntityUid>? Shoot(EntityUid gunUid, GunComponent gun,
-        List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates,
-        out bool userImpulse, EntityUid? user = null, bool throwItems = false,
-        List<int>? predictedProjectiles = null, ICommonSession? userSession = null)
-    {
-        userImpulse = true;
-
-        // Rather than splitting client / server for every ammo provider it's easier
-        // to just delete the spawned entities. This is for programmer sanity despite the wasted perf.
-        // This also means any ammo specific stuff can be grabbed as necessary.
-        var direction = TransformSystem.ToMapCoordinates(fromCoordinates).Position - TransformSystem.ToMapCoordinates(toCoordinates).Position;
-        var worldAngle = direction.ToAngle().Opposite();
-
-        foreach (var (ent, shootable) in ammo)
-        {
-            if (throwItems)
-            {
-                Recoil(user, direction, gun.CameraRecoilScalarModified);
-                if (IsClientSide(ent!.Value))
-                    Del(ent.Value);
-                else
-                    RemoveShootable(ent.Value);
-                continue;
-            }
-
-            // TODO: Clean this up in a gun refactor at some point - too much copy pasting
-            switch (shootable)
-            {
-                case CartridgeAmmoComponent cartridge:
-                    if (!cartridge.Spent)
-                    {
-                        SetCartridgeSpent(ent!.Value, cartridge, true);
-                        MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
-                        Recoil(user, direction, gun.CameraRecoilScalarModified);
-                        // TODO: Can't predict entity deletions.
-                        //if (cartridge.DeleteOnSpawn)
-                        //    Del(cartridge.Owner);
-                    }
-                    else
-                    {
-                        userImpulse = false;
-                        Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                    }
-
-                    if (IsClientSide(ent!.Value))
-                        Del(ent.Value);
-
-                    break;
-                case AmmoComponent newAmmo:
-                    MuzzleFlash(gunUid, newAmmo, worldAngle, user);
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
-                    Recoil(user, direction, gun.CameraRecoilScalarModified);
-                    if (IsClientSide(ent!.Value))
-                        Del(ent.Value);
-                    else
-                        RemoveShootable(ent.Value);
-                    break;
-                case HitscanAmmoComponent:
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
-                    Recoil(user, direction, gun.CameraRecoilScalarModified);
-                    break;
-            }
-        }
-
-        return null; // Zona14: client-side projectile IDs are produced via ShootProjectile, see ShootRequested wiring.
-    }
-
-    // Zona14: mark every client-spawned projectile with the prediction marker so the
-    //         shared prediction system can recognise it on collision.
+    // Zona14: tag every client-spawned projectile with PredictedProjectileClientComponent
+    //         so the shared prediction system recognises it on collision and so its physics
+    //         is treated as predicted. Called from SharedGunSystem.Shoot → ShootOrThrow.
     public override void ShootProjectile(EntityUid uid,
         Vector2 direction,
         Vector2 gunVelocity,
@@ -310,15 +238,6 @@ public sealed partial class GunSystem : SharedGunSystem
         EnsureComp<PredictedProjectileClientComponent>(uid);
         Physics.UpdateIsPredicted(uid);
         base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
-    }
-    // End Zona14
-
-    private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar)
-    {
-        if (!Timing.IsFirstTimePredicted || user == null || recoil == Vector2.Zero || recoilScalar == 0)
-            return;
-
-        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.5f * recoilScalar);
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user)
