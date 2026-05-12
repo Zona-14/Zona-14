@@ -15,8 +15,8 @@
       effects:
       - !type:MovementSpeedModifier
         conditions:
-        walkSpeedModifier: 1.04
-        sprintSpeedModifier: 1.04
+        walkSpeedModifier: 1.05 #Zona14 change
+        sprintSpeedModifier: 1.05 #Zona14 change
       - !type:ModifyStatusEffect
         effectProto: StatusEffectStunned
         time: 3

@@ -55,7 +55,6 @@
         whitelist:
           tags:
           - Knife
-          - Sidearm
 
 - type: entity
   abstract: true

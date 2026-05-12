@@ -16983,7 +16983,6 @@ entities:
         moles:
           Oxygen: 21.82478
           Nitrogen: 82.10312
-    - type: NoPausing
     - type: RadiationGridResistance
 - proto: AlwaysPoweredWallLight
   entities:

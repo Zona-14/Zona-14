@@ -7,8 +7,6 @@
   components:
   - type: STWeight
     self: 0.5
-  - type: PullDoAfter
-    pullTime: 0.5
   - type: Trash
     time: 300
   - type: Sprite
@@ -82,10 +80,6 @@
   components:
     - type: STWeight
       self: 0.5
-    - type: PullDoAfter
-      pullTime: 0.5
-    - type: Item
-      size: Normal
     - type: Gun
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/pm-shoot.ogg

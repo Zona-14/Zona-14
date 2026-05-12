@@ -59,7 +59,6 @@ entities:
       value: UndergroundWildsBar
     - type: STMapDefaultZone
       zone: Green
-    - type: NoPausing
     - type: MapGrid
       chunks:
         -1,1:
@@ -922,13 +921,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: Bar-BarStalkerUncollide
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
-      pos: 22.5,14.5
-      parent: 1
 - proto: Barrel1
   entities:
   - uid: 3
@@ -1183,20 +1175,6 @@ entities:
     - type: Transform
       pos: 15.5,90.5
       parent: 1
-- proto: BookStalkerEN
-  entities:
-  - uid: 449
-    components:
-    - type: Transform
-      pos: 17.5,81.5
-      parent: 1
-    - type: MovedByPressure
-      enabled: False
-    - type: Godmode
-      wasMovedByPressure: True
-    missingComponents:
-    - Item
-    - Pullable
 - proto: BoozeDispenser
   entities:
   - uid: 997
@@ -1931,41 +1909,6 @@ entities:
     - type: Transform
       pos: 26.5,17.5
       parent: 1
-- proto: Cordon-Basement1
-  entities:
-  - uid: 4
-    components:
-    - type: Transform
-      pos: 11.5,77.5
-      parent: 1
-- proto: Cordon-Basement2
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      pos: 17.5,77.5
-      parent: 1
-- proto: Cordon-BasementSidor
-  entities:
-  - uid: 60
-    components:
-    - type: Transform
-      pos: -29.5,86.5
-      parent: 1
-- proto: Cordon-DerebasStalkerUncollide
-  entities:
-  - uid: 62
-    components:
-    - type: Transform
-      pos: 25.5,76.5
-      parent: 1
-- proto: Cordon-NeutralUncollide
-  entities:
-  - uid: 73
-    components:
-    - type: Transform
-      pos: -7.5,112.5
-      parent: 1
 - proto: Crack1Stalker
   entities:
   - uid: 254
@@ -2116,13 +2059,6 @@ entities:
     missingComponents:
     - Item
     - Pullable
-- proto: FoldedFlagHelper
-  entities:
-  - uid: 426
-    components:
-    - type: Transform
-      pos: -3.4631355,90.83385
-      parent: 1
 - proto: FoodMeatChickenFried
   entities:
   - uid: 197
@@ -2276,23 +2212,6 @@ entities:
     missingComponents:
     - Item
     - Pullable
-- proto: LocaleTeleportUsage
-  entities:
-  - uid: 78
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -7.5,95.5
-      parent: 1
-  - uid: 1444
-    components:
-    - type: Transform
-      pos: -7.5,116.5
-      parent: 1
-    - type: LinkByString
-      linkString: NeutralB1
-    - type: LinkedEntity
-      linkedEntities: []
 - proto: LockerBig
   entities:
   - uid: 368
@@ -2481,35 +2400,6 @@ entities:
     - type: Transform
       pos: 8.5,78.5
       parent: 1
-- proto: MetalBarDoorFalloutDolgClosedEN
-  entities:
-  - uid: 2569
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,27.5
-      parent: 1
-  - uid: 2793
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,24.5
-      parent: 1
-    - type: Door
-      secondsUntilStateChange: -36502.695
-      state: Denying
-    - type: Physics
-      canCollide: False
-    - type: Airtight
-      airBlocked: False
-  - uid: 6048
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,20.5
-      parent: 1
-    missingComponents:
-    - Door
 - proto: MetalDoorFallout
   entities:
   - uid: 410
@@ -3789,13 +3679,6 @@ entities:
     - type: Transform
       pos: -8.5,107.5
       parent: 1
-- proto: PodvalBar-Bar
-  entities:
-  - uid: 77
-    components:
-    - type: Transform
-      pos: 23.5,-12.5
-      parent: 1
 - proto: PokerCardBin
   entities:
   - uid: 610
@@ -3807,13 +3690,6 @@ entities:
     missingComponents:
     - Item
     - Pullable
-- proto: PortalBandNeutralsRepository
-  entities:
-  - uid: 1489
-    components:
-    - type: Transform
-      pos: -17.5,109.5
-      parent: 1
 - proto: PosterContrabandDanger
   entities:
   - uid: 611
@@ -5176,218 +5052,6 @@ entities:
     - type: Transform
       pos: 5.5,8.5
       parent: 1
-- proto: SpawnerZoneAnomalyBarabashkaChance100
-  entities:
-  - uid: 398
-    components:
-    - type: Transform
-      pos: 2.5,8.5
-      parent: 1
-  - uid: 491
-    components:
-    - type: Transform
-      pos: 18.5,89.5
-      parent: 1
-  - uid: 492
-    components:
-    - type: Transform
-      pos: 18.5,88.5
-      parent: 1
-  - uid: 493
-    components:
-    - type: Transform
-      pos: 19.5,89.5
-      parent: 1
-  - uid: 494
-    components:
-    - type: Transform
-      pos: 19.5,88.5
-      parent: 1
-  - uid: 495
-    components:
-    - type: Transform
-      pos: 18.5,89.5
-      parent: 1
-  - uid: 528
-    components:
-    - type: Transform
-      pos: 18.5,88.5
-      parent: 1
-  - uid: 529
-    components:
-    - type: Transform
-      pos: 19.5,89.5
-      parent: 1
-  - uid: 531
-    components:
-    - type: Transform
-      pos: 19.5,88.5
-      parent: 1
-  - uid: 1160
-    components:
-    - type: Transform
-      pos: -18.5,81.5
-      parent: 1
-  - uid: 1161
-    components:
-    - type: Transform
-      pos: -18.5,81.5
-      parent: 1
-  - uid: 1162
-    components:
-    - type: Transform
-      pos: -18.5,81.5
-      parent: 1
-  - uid: 1163
-    components:
-    - type: Transform
-      pos: -18.5,79.5
-      parent: 1
-  - uid: 1164
-    components:
-    - type: Transform
-      pos: -17.5,79.5
-      parent: 1
-  - uid: 1165
-    components:
-    - type: Transform
-      pos: -16.5,79.5
-      parent: 1
-  - uid: 1166
-    components:
-    - type: Transform
-      pos: -16.5,80.5
-      parent: 1
-  - uid: 1167
-    components:
-    - type: Transform
-      pos: -18.5,78.5
-      parent: 1
-  - uid: 1168
-    components:
-    - type: Transform
-      pos: -17.5,78.5
-      parent: 1
-  - uid: 1169
-    components:
-    - type: Transform
-      pos: -16.5,78.5
-      parent: 1
-  - uid: 1170
-    components:
-    - type: Transform
-      pos: -18.5,79.5
-      parent: 1
-  - uid: 1171
-    components:
-    - type: Transform
-      pos: -17.5,79.5
-      parent: 1
-  - uid: 1172
-    components:
-    - type: Transform
-      pos: -16.5,79.5
-      parent: 1
-  - uid: 1173
-    components:
-    - type: Transform
-      pos: -16.5,80.5
-      parent: 1
-  - uid: 7771
-    components:
-    - type: Transform
-      pos: 2.5,7.5
-      parent: 1
-  - uid: 7772
-    components:
-    - type: Transform
-      pos: 2.5,6.5
-      parent: 1
-  - uid: 7773
-    components:
-    - type: Transform
-      pos: 2.5,6.5
-      parent: 1
-  - uid: 7774
-    components:
-    - type: Transform
-      pos: 3.5,6.5
-      parent: 1
-  - uid: 7775
-    components:
-    - type: Transform
-      pos: 4.5,6.5
-      parent: 1
-  - uid: 7776
-    components:
-    - type: Transform
-      pos: 5.5,6.5
-      parent: 1
-  - uid: 7777
-    components:
-    - type: Transform
-      pos: 3.5,7.5
-      parent: 1
-  - uid: 7778
-    components:
-    - type: Transform
-      pos: 4.5,7.5
-      parent: 1
-  - uid: 7779
-    components:
-    - type: Transform
-      pos: 5.5,7.5
-      parent: 1
-  - uid: 7780
-    components:
-    - type: Transform
-      pos: 3.5,8.5
-      parent: 1
-  - uid: 7781
-    components:
-    - type: Transform
-      pos: 2.5,8.5
-      parent: 1
-  - uid: 7782
-    components:
-    - type: Transform
-      pos: 2.5,7.5
-      parent: 1
-  - uid: 7783
-    components:
-    - type: Transform
-      pos: 2.5,6.5
-      parent: 1
-  - uid: 7784
-    components:
-    - type: Transform
-      pos: 3.5,6.5
-      parent: 1
-  - uid: 7785
-    components:
-    - type: Transform
-      pos: 4.5,6.5
-      parent: 1
-  - uid: 7786
-    components:
-    - type: Transform
-      pos: 5.5,6.5
-      parent: 1
-  - uid: 7787
-    components:
-    - type: Transform
-      pos: 3.5,7.5
-      parent: 1
-  - uid: 7788
-    components:
-    - type: Transform
-      pos: 4.5,7.5
-      parent: 1
-  - uid: 7789
-    components:
-    - type: Transform
-      pos: 5.5,7.5
-      parent: 1
 - proto: StackBooks
   entities:
   - uid: 210
@@ -5468,13 +5132,6 @@ entities:
     components:
     - type: Transform
       pos: 11.5,86.5
-      parent: 1
-- proto: StalkerDublicateNeutral
-  entities:
-  - uid: 1468
-    components:
-    - type: Transform
-      pos: -13.5,109.5
       parent: 1
 - proto: StalkerExplSafezoneTriggerIn
   entities:
@@ -7060,18 +6717,6 @@ entities:
     components:
     - type: Transform
       pos: 7.5,9.5
-      parent: 1
-- proto: STFarkleDiceTable
-  entities:
-  - uid: 435
-    components:
-    - type: Transform
-      pos: 1.5,85.5
-      parent: 1
-  - uid: 455
-    components:
-    - type: Transform
-      pos: -1.5,4.5
       parent: 1
 - proto: STGrille
   entities:

@@ -8,7 +8,7 @@
   - type: STWeight
     self: 1
   - type: STWeightInsideReduction
-    reductionFraction: 0.20
+    reductionFraction: 0.50
   - type: Storage
     maxItemSize: Normal
     quickInsert: true
@@ -64,7 +64,7 @@
     - type: STWeight
       self: 0.5
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Clothing
@@ -88,7 +88,7 @@
   description: Позволяет удобно хранить и быстро доставать ножи
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 0.5
     - type: Sprite
@@ -123,7 +123,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -147,7 +147,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -173,7 +173,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -196,7 +196,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 5
     - type: Storage
@@ -218,7 +218,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 4
     - type: Storage
@@ -244,7 +244,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -267,7 +267,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -290,7 +290,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -313,7 +313,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -336,7 +336,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -359,7 +359,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage
@@ -382,7 +382,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 5
     - type: Storage
@@ -404,7 +404,7 @@
   suffix: ST
   components:
     - type: STWeightInsideReduction
-      reductionFraction: 0.20
+      reductionFraction: 0.50
     - type: STWeight
       self: 3
     - type: Storage

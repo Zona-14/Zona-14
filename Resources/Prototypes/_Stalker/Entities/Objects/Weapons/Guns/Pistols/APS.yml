@@ -7,8 +7,6 @@
   components:
     - type: STWeight
       self: 0.5
-    - type: PullDoAfter
-      pullTime: 0.5
     - type: Sprite
       scale: 0.6, 0.6
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/aps.rsi

@@ -73,9 +73,6 @@
     # Thermal
     - protoId: ZoneAnomalySteam
       weight: 2
-    # Psy
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
 
 # Агропром
 - type: stAnomalyGenerationOptions
@@ -110,8 +107,6 @@
     - protoId: ZoneAnomalyWitchesCircle
       weight: 1.5
     # Psy
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
     - protoId: ZoneAnomalyRift
       weight: 0.1
 
@@ -155,8 +150,6 @@
     # Thermal
     - protoId: ZoneAnomalyJarkaStrong
     - protoId: ZoneAnomalyJarka
-    # Psy
-    - protoId: ZoneAnomalyBarabashka
 
 # Топи
 - type: stAnomalyGenerationOptions
@@ -190,9 +183,6 @@
     - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
-    # Psy
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
 
 # Рыжий лес XXX
 - type: stAnomalyGenerationOptions
@@ -209,7 +199,6 @@
     - protoId: ZoneAnomalyLamp
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalyGazirovka
-    - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalySmoke
     - protoId: ZoneAnomalySource
       weight: 0.5
@@ -228,6 +217,7 @@
     - protoId: STAnomalyBubbleLimaExit
     - protoId: ZoneAnomalyGlassShards
       weight: 0.8
+
 - type: stAnomalyGenerationOptions
   id: STRostokAndWildsGenerationOptions
   options:
@@ -259,9 +249,6 @@
     - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
-    # Psy
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
 
 # Лима
 - type: stAnomalyGenerationOptions
@@ -280,7 +267,6 @@
     - protoId: ZoneAnomalyLamp
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalyGazirovka
-    - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalySmoke
     - protoId: ZoneAnomalySource
     - protoId: ZoneAnomalyGrabber

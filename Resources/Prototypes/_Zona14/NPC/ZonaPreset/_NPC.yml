@@ -1,0 +1,218 @@
+- type: entity
+  parent: NPCDoll
+  id: NPCRadioPlayerZONA
+  name: Radio Amateur [→   ←]
+  description: He is engaged in the design, construction, modification and use of radio engineering and electronic devices. He loves everything related to the Soviet Union. He tries to be secretive.
+  suffix: ST, Music, ZONA-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/RadioPlayer.rsi
+    state: radioplayer
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcRadioPlayerZONA
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCVadikNarikZONA
+  name: Vadik Goy [→ ? ←]
+  description: An ordinary drug addict who both sells and buys everything related to cannabis.
+  suffix: ST, WEED, ZONA-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/VadikNarik.rsi
+    state: vadiknarik
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: NPCStalkerAlkashAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcVadikNarikZONA
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCBotanikMaksZONA
+  name: Max [→   ←]
+  description: Max is a skilled botanist with a green thumb and a passion for plants. He has a deep knowledge of plants and the ability to grow them in any conditions.
+  suffix: ST, Cooking, ZONA-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/BotanikMaks.rsi
+    state: maks
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: STFoodBotanicPresetZONA
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCPetrAlkash
+  id: NPCNikitaAlkashZONA
+  name: Nikitich [→   ←]
+  description: Petrukha's twin brother, but without his entrepreneurial streak. Vice-President of B.O.M.J., which was founded by his brother.
+  suffix: ST, ZONA-TRADER
+  components:
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcNikitaAlkashZONA
+
+- type: entity
+  parent: NPCDoll
+  id: NPCKeshaZONA
+  name: Kesha [→ ? ←]
+  description: A shady fellow who's set up his business in Garbage. It's better to avoid getting on his bad side.
+  suffix: ST, ZONA-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Buyer.rsi
+    state: buyer
+  - type: Physics
+    bodyType: Static
+  # FIXME: Advertise component was replaced with DatasetVocalizer in upstream
+  - type: Vocalizer
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: KeshaShopPresetZONA
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Pawn Shops
+
+- type: entity
+  parent: NPCDoll
+  id: NPCErjanAlimovZONA
+  name: Yerzhan Alimov [→   ←]
+  suffix: ST, Buying the worst price, ZONA-TRADER
+  description: We buy jewelry at good prices!
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/erjan_alimov.rsi
+    state: base
+  - type: Physics
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcErjanAlimovZONA
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+
+- type: entity
+  parent: NPCDoll
+  id: NPCJuryIzvorotinZONA
+  name: Yuri Izvorotin [→   ←]
+  description: We buy jewelry. Slippery typical. Someone else would not have survived with such a business.
+  suffix: ST, Buying average prices, ZONA-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/jury_izvorotin.rsi
+    state: base
+  - type: Physics
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcJuryIzvorotinZONA
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface

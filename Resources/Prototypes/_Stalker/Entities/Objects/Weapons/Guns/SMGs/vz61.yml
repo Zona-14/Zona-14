@@ -14,7 +14,7 @@
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/vz61.rsi
-    size: Small
+    size: Normal
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/vz61.rsi
   - type: Gun

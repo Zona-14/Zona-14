@@ -9,7 +9,7 @@
     sprite: _Stalker_EN/Objects/Weapons/Guns/Shotguns/SawnOff_TOZ_34.rsi
   - type: Item
     sprite: _Stalker_EN/Objects/Weapons/Guns/Shotguns/SawnOff_TOZ_34.rsi
-    size: Small
+    size: Normal
     heldPrefix: sawn
   - type: STWeight
     self: 2

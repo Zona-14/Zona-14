@@ -1,0 +1,424 @@
+- type: shopPreset
+  id: OKSOPShopPresetZONA # OKSOP REWORK IN-PROGRESS, SELL PRICES ARE SAME AS SIDOROVICH
+  minSellPrice: 5
+  itemsForSale:
+    FoodTinMRETrash: 0
+    FoodTinPeachesTrash: 0
+    FoodTinBeansTrash: 0
+    # Thermal group - 1
+    ZoneArtifactFireball: 405
+    ZoneArtifactEye: 610
+    ZoneArtifactFlame: 1215
+    ZoneArtifactBunch: 1420
+    ZoneArtifactRock: 1215
+    ZoneArtifactSun: 2210
+    ZoneArtifactRoot: 2430
+    ZoneArtifactConflagration: 610
+    # Thermal group - 2
+    ZoneArtifactCristall: 2430
+    ZoneArtifactLithosphere: 4860
+    # Electrical group - 1
+    ZoneArtifactSparkler: 405
+    ZoneArtifactBattery: 475
+    ZoneArtifactFlash: 1215
+    ZoneArtifactAccumulator: 1215
+    ZoneArtifactDiamond: 2210
+    ZoneArtifactCharger: 475
+    ArtMoon: 2430
+    ZoneArtifactTesla: 3645
+    ZoneArtifactIce: 4860
+    # Gravity group - 1
+    ArtMedusa: 405
+    ZoneArtifactFlower: 610
+    ZoneArtifactNightStar: 2430
+    ZoneArtifactWhirlwind: 550
+    ZoneArtifactPebble: 405
+    ZoneArtifactRosin: 610
+    ZoneArtifactStoneCube: 850
+    ZoneArtifactDarkCube: 3645
+    # Gravity group - 2
+    ZoneArtifactVyvert: 405
+    ZoneArtifactAmoeba: 610
+    ZoneArtifactFloodlight: 610
+    ZoneArtifactGravi: 1215
+    ZoneArtifactGoldfish: 4860
+    ZoneArtifactSpring: 2700
+    ZoneArtifactFocus: 3645
+    ZoneArtifactStuntman: 4860
+    ZoneArtifactDistorter: 4860
+    ZoneArtifactSoul: 3645
+    ZoneArtifactCompass: 2700
+    ZoneArtifactCrucifix: 3190
+    ZoneArtifactThorn: 1910
+    ZoneArtifactArf: 1910
+
+    # Acidic group - 1
+    ZoneArtifactToxic: 490
+    ZoneArtifactCytoplasm: 1215
+    ZoneArtifactBlood: 1215
+    ZoneArtifactMeat: 2430
+    ZoneArtifactKolobok: 3645
+    ZoneArtifactBeer: 450
+    # Acidic group - 2
+    ZoneArtifactPellicle: 405
+    ZoneArtifactBaloon: 3645
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 130 # T1
+    MutantPartSeasonedBoarHoof: 255 # T2
+    MutantPartOldBoarHoof: 385 # T3
+
+    #Bears ---------
+    MutantPartBearClaw: 245
+    MutantPartBearPaw: 390
+    MutantPartBearEye: 590
+    ClothingHeadBear: 700
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 90
+    MutantPartFleshEye: 190
+    FoodMeatSpiderLeg: 30
+    MutantPartCatGland: 290
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 515
+    MutantPartPseudodogTail: 285
+    MutantPartSnorkFoot: 475
+    MutantPartPsiDogTail: 400
+    MutantPartFrogLeg: 200
+
+    #T3 -------- Health * 3 Modified by Oracle
+    MutantPartBloodsuckerTentacles: 1375
+    MutantPartOraculeEye: 1050
+    MutantPartZombieHand: 570
+    MutantPartPseudogiantHeart: 6800
+    ClothingMaskChimera: 1
+    MutantPartChimeraTooth: 1
+    MutantPartIzlomArm: 815
+    MutantPartBurerBrain: 1500
+    MutantPartControllerBrain: 2625
+
+    # Meat
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
+    FoodMeatSTBearCooked: 200
+    FoodMeatSTFishFilletCooked: 25
+    FoodMeatSTFishSteakCooked: 75
+    FoodMeatSTEelCooked: 150
+    STFoodMeatCvarci: 5 # 15 profit per salo baby!
+    FoodMeatSTRatCooked: 5 # whatever
+    FoodMeatSTRatJerked: 10
+    FoodMeatSTDogJerkedSingle: 75
+    FoodMeatSTBoarJerkedSingle: 125
+    FoodMeatSTBearJerkedSingle: 245
+    FoodMeatSTSuckerJerkedSingle: 600
+
+# Cooking
+    FoodSTFreshCheese: 100
+    FoodSTRiceCooked: 250
+    FoodSTPancakes: 250
+    FoodSTOnionRings: 150
+    FoodSTFriedEggs: 300
+    FoodSTBorscht: 600
+    FoodSTCabbageSoup: 550
+    FoodSTMeatStew: 850
+    FoodSTFriedFish: 450 # this one might need adjusting
+    FoodSTCakePlain: 475
+    FoodSTHrechanyky: 525
+    FoodSTSyrnyky: 900
+    FoodSTDeruny: 575
+    FoodSTKebabMeat: 400
+    FoodSTKebabVeggie: 275
+    FoodSTCakeBerry: 750 # might need adjusting
+    FoodSTSnorkSoup: 0 # he dont want it
+    FoodSTIceCream: 300
+    FoodSTBraid: 0
+    FoodSTAmbrosia: 0
+    FoodSTFrogLegs: 775
+    FoodSTOracleGumbo: 0
+    STFoodJarCherriesPickled: 1350
+    STFoodJarJamBerry: 1350
+    STFoodJarKvass: 2300
+    STFoodJarSalo: 350
+    STFoodJarEggs: 375
+    STFoodJarMeatSausage: 775
+    STFoodJarMeatFishFillet: 300
+    STFoodJarMeatFishSteak: 850
+    STFoodJarMeatEel: 1250
+    STFoodJarWholeEelFermented: 2100
+
+  categories:
+  - name: shop-category-weapons
+    priority: 1
+    items:
+      #Pistols
+      WeaponPistolStalkerPM: 150
+      WeaponPistolStalkerAPS: 250
+      WeaponPistolGSH18: 300
+      # Shotguns
+      STWeaponShotgunMP153: 650
+      STWeaponShotgunMossbergM88: 500
+      #STWeaponShotgunSaiga12: 6500
+      # SMGs
+      STWeaponSMGPP19: 1000
+      STWeaponSMGPP1901: 1200
+      # Rifles
+      # 5.45
+      STWeaponRifleAKS74U: 600
+      STWeaponRifleAKS74UBlack: 600
+      STWeaponRifleAKS74: 900
+      STWeaponRifleAKS74Green: 900
+      # STWeaponRifleStalkerAbakan: 2500
+      # 7.62
+      STWeaponSniperSKS: 800
+      STWeaponRifleAKMC: 600
+      STWeaponRifleAKM: 1200
+      # Snipers
+      STWeaponSniperMosin: 850
+
+  - name: shop-category-magazines
+    priority: 2
+    items:
+      # Pistols
+      BasePMMag: 25
+      BaseGSH-18Mag10: 50
+      BaseAPSMag: 75
+      # Shotguns
+      Base1270Mag: 50
+      Saiga1270Mag10: 150
+      #Saiga1270Drum: 450
+      # SMGs
+      VityazMag: 150
+      BizonMag: 150
+      # Rifles
+      545Mag30: 150
+      739Mag30: 150
+
+  - name: shop-category-ammunition # 35% Reduction
+    priority: 3
+    items:
+      # 7mm
+      7mmBuckshotBox: 40 # T0
+      6mmBuckshotBox: 245 # T1
+      8mmBuckshotBox: 535 # T2
+      #ShotgunFlechette: 50 # T3
+      # 9x18
+      918PGJBox: 50  # T1
+      918PSTBox: 365 # T2
+      918PBMBox: 925 # T3
+      918SP7Box: 405 # Mutant
+      # 9x19
+      919PSOGJBox: 55 # T1
+      919PSTBox: 365 # T2
+      919PBMBox: 945 # T3
+      919RIPBox: 405 # Mutant
+      # 5.45
+      545FMJBox: 425 # T2
+      545HPBox: 470 # Mutant
+      545PCBox: 1070 # T3
+      # 7.25
+      725PSTBox: 940 # T3
+      725LRNPCBox: 405 # Mutant
+      # 7.62
+      739FMJBox: 1270 # T3
+      739HPBox: 550 # Mutant
+      # 7.54
+      754FMJBox: 1090 # T3
+      754HPBox: 660 # Mutant
+
+  - name: shop-category-medicine
+    priority: 4
+    items:
+      # Cheap
+      PillDexalin: 10
+      PillDexalinPlusStalker: 25
+      STOintment: 10
+      STGauze: 15
+      STBrutepack: 10
+      # Expensive
+      radioprotectpill: 20
+      Bloodpack: 20
+      psyblock: 75
+      Defibrillator: 200
+
+  - name: shop-category-provisions
+    priority: 5
+    items:
+      STEnergyDrink: 150
+      STEnergyDrinkMonster: 150
+      STEnergyDrinkRevo: 200
+      STDrinkBeerCanBaltic: 90
+      DrinkVodkaBottleFull: 55
+      DrinkCossackVodkaBottleFull: 100
+      STFoodBreadPlain: 35
+      DrinkFlaskOld: 30
+      DrinkWaterBottleFull: 45
+      FoodTinMRE: 120
+      DrinkLemonadehBottleFull: 50
+      STFoodMeatSalami: 350
+      MilitaryPSZInventoryRestock: 2000
+      CigPackBlack: 20
+      CigCartonBlack: 125
+      CigPackMarlboro: 25 # Morale Booster
+
+  - name: shop-category-armor # 35% Reduction
+    priority: 6
+    items:
+      # Helmets #
+      ClothingHeadHelmetSH68: 200 # T1 - PVP
+      ClothingHeadHelmetInfantry: 325 # T2 - PVP
+      ClothingHeadHelmetBerill5MMilitary: 2000 # T3 - PVE
+      ClothingHeadHelmetVityaz1C: 2275 # T3 - PVP
+      ClothingHeadAssaultHelmetMilitary: 2275 # T3 - PVP
+
+      # OuterClothing #
+      STClothingOuterArmorLightPlateVestBaseMilitary: 750 # T2 - PvP Adjusted
+      ClothingOuterArmor6B2: 1200 # T2 - PvP Adjusted
+      ClothingOuterArmorZaryaMilitary: 1460 # T2 - Universal
+      ClothingOuterArmorSevaMilitary: 4550 # T2 - ENV
+      #ClothingOuterArmorMilitarySpark: 4725 # T2 - ENV
+      STClothingOuterArmorLightPlateVestBasePSZ7v3: 7800 # T3 - PVP
+      STClothingOuterArmorLightPlateVestBasePSZ7v1: 7800 # T3 - PVP
+      STClothingOuterArmorLightPlateVestBaseANAgray: 7800 # T3 - PvP
+      STClothingOuterArmorLightPlateVestBaseANAgreen: 7800 # T3 - PVP
+
+  - name: shop-category-storage-and-containers
+    priority: 7
+    items:
+      # BackPacks
+      ClothingBackpackDuffelBlackStalker: 30 # T1
+      ClothingBackpackTacticBlackRadStalker: 450 # T2
+      ClothingBackpackMercStalker: 650 # T3
+      ClothingBackpackDuffelBlackMilitaryTacticStalker: 1000 # T4
+      ClothingBackpackDuffelBlackTacticStalker: 1000 # T4
+      # Belts
+      ClothingBeltGreenWebbingStalker: 250
+      ClothingBeltWebbingOfficerStalker: 400
+      ClothingBeltBandolierStalker: 20 # T1 - PVE
+      ClothingBeltTarzanBlack: 200 # T1 - PVP
+      ClothingBeltTarzanGreen: 200 # T1 - PVP
+      # Containers
+      MedkitCMSStalker: 450 # T1
+      MedkitGrizzlyStalker: 850 # T2
+
+  - name: shop-category-raincoats-and-gasmasks
+    priority: 8
+    items:
+      # Gasmasks
+      ClothingMaskGasM40Military: 700 #T2
+      ClothingMaskGasXM40: 2200 # T3
+      # Raincoats
+      #ClothingOuterCoatLoyalist: 2500
+
+  - name: shop-category-research-equipment
+    priority: 9
+    items:
+      # Detectors
+      STBoltBagFilled: 50
+      ZoneAnomalyDetectorAD1: 450 # T1
+      ZoneAnomalyDetectorAD2: 1000 # T2
+      #STLeadPlate: 200 # PvE Anti-Rad if abused raise price
+
+  - name: shop-category-utilities
+    priority: 10
+    items:
+      PremiumSupplyTalons: 2000
+      STCombatKnife: 25
+      BoxZiptie: 50
+      BoxSafebox: 300
+      CheapLighter: 5
+      Lighter: 30
+      GeigerCounter: 50
+      BaseRadio: 50
+      STRadioHeadset: 150
+      STFlashlightSeclite: 50
+      PowerCellHyper: 50
+      HandheldGPSBasic: 50
+      Paper: 2
+      Pen: 5
+      BoxFolderClipboardEmpty: 20 # Clipboard
+      Binocularus1: 1000
+      BoxFlare: 60
+      ClothingBackpackDuffelGreenStalkerHydroponic: 500
+      Beaker: 40
+      Syringe: 20
+      ClothingGoPro: 250
+      ExtendedEmergencyOxygenTankFilledStalker: 50
+      TrashDetectorTier1: 200
+      Matchbox: 10
+      HatchetStalker: 150
+      STSkinsKitMilitary: 500
+      AccordionInstrument: 500
+      FoldedFlagMili: 250
+      STElasticRubberRed: 50
+      STElasticRubberGreen: 50
+      STElasticRubberBlue: 50
+      # Cameras
+      STCamera: 750
+      STCameraVintage: 1200
+      STCameraDamaged: 400
+      STCameraFilm: 150
+
+  - name: shop-category-modules
+    priority: 11
+    items:
+      STModuleScopeRiflesT1Ru: 600
+      STModuleScopeRiflesT1Nato: 600
+      STModuleSilencerRiflesT1Ru: 400
+      STModuleSilencerPistolT1: 400
+      STModuleSilencerRiflesT1Nato: 400
+      STModuleShotgunChokeT1: 200
+      STModuleSMGGripT1: 600
+      STModuleSilencerSMGT1: 600
+      STModuleSniperSightT1: 600
+      STModuleSilencerSniperT1: 600
+      STModuleAutoSear: 600
+
+  - name: shop-category-grenades
+    priority: 12
+    items:
+      RGD5Grenade: 50
+      TearGasGrenadeStalker: 35
+      DG05SmokeGrenade: 25
+
+  - name: "Morale Boosters"
+    priority: 13
+    items:
+      CasseteOneRadio: 500
+      CasseteArmy2: 500
+      CasseteArmy3: 500
+      CasseteArmy4: 500
+      CasseteThirtyEightDonateRadio: 500 # Vova Vist
+      CasseteEighteenDonateRadio: 500
+      CassetePrussiaGloryContributorRadio: 500
+      CasseteEightRadio: 500
+      CasseteUSSRContributorRadio: 500
+      CasseteElevenRadio: 500
+      CasseteGimnUSSRContributorRadio: 500
+
+- type: shopPreset
+  id: OKSOPOfficerShopPresetZONA #Officer vendor
+  minSellPrice: 5
+  itemsForSale:
+    FoodTinMRETrash: 0
+    FoodTinPeachesTrash: 0
+    FoodTinBeansTrash: 0
+  categories:
+  - name: shop-category-paperwork
+    priority: 1
+    items:
+      militaryLicense: 5
+      Fishinglicense: 5
+      hunterLicense: 5
+      Paper: 5
+      Pen: 5
+      LuxuryPen: 15
+      BoxFolderClipboardEmpty: 20 # Clipboard
+
+  - name: "Morale Boosters"
+    priority: 2
+    items:
+      CasseteArstotzka1984: 500

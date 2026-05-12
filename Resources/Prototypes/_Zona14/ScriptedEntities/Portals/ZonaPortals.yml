@@ -1,0 +1,72 @@
+#Put Zona14 portals here
+#For one-way portals, the format is portal, then another portal with uncollide, portal name must be the same, and the access check is on the entrance
+#For regular portals, the portal only has to be declared here once, and then the same portal is put on both ends
+
+#Lobby Portals -> Dytiatky (tutorial zone), Rookie Village, Bar, Factions, etc.
+
+- type: entity
+  parent: MapTeleportBase
+  id: Zona-Lobby-Dytiatky
+  name: Zona-Lobby-Dytiatky
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Zona-Lobby-Dytiatky
+    - type: AccessReader
+      access: [["Rookie"]]
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Zona-Lobby-Dytiatky-Exit
+  name: Zona-Lobby-Dytiatky-Exit
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Zona-Lobby-Dytiatky
+
+#End of lobby portals
+
+
+
+#Local Teleports (RV->Sidorovich bunker)
+
+- type: entity
+  parent: LocalTeleportBase
+  id: Zona-RV-Sidorovich1
+  suffix: Zona14, LocalTeleport
+  name: Zona-RV-Sidorovich1
+  components:
+    - type: LocalTeleport
+      portalName: Zona-RV-Sidorovich1
+
+- type: entity
+  parent: LocalTeleportBase
+  id: Zona-RV-Sidorovich2
+  suffix: Zona14, LocalTeleport
+  name: Zona-RV-Sidorovich2
+  components:
+    - type: LocalTeleport
+      portalName: Zona-RV-Sidorovich2
+
+- type: entity
+  parent: LocalTeleportBase
+  id: Zona-RV-Sidorovich3
+  suffix: Zona14, LocalTeleport
+  name: Zona-RV-Sidorovich3
+  components:
+    - type: LocalTeleport
+      portalName: Zona-RV-Sidorovich3
+
+#End of local teleports
+
+
+#Cross-map Teleports (teleports that can be used to travel between maps, but are not in the lobby, such as Cordon-Garbage)
+
+- type: entity
+  parent: MapTeleportBase
+  id: Zona-Cordon-Garbage
+  name: Zona-Cordon-Garbage
+  components:
+  - type: NewMapTeleport
+    portalName: Zona-Cordon-Garbage
+
+#End of cross-map teleports

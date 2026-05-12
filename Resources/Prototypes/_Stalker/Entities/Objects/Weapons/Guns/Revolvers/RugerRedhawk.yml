@@ -40,8 +40,6 @@
         path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
     - type: STWeight
       self: 1.58
-    - type: PullDoAfter
-      pullTime: 1.5
     - type: StaticPrice
       price: 30
     - type: UseDelay

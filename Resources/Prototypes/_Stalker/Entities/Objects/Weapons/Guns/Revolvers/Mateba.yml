@@ -28,8 +28,6 @@
     proto: CartridgeRemingtonMagnum
   - type: STWeight
     self: 1.57
-  - type: PullDoAfter
-    pullTime: 1.5
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy

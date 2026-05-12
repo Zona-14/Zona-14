@@ -18,7 +18,7 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Item
-    size: Small
+    size: Normal
     shape:
     - 0,0,1,0
     - 0,1,0,1
@@ -71,6 +71,8 @@
   - type: STWeaponAccuracy
     accuracyMultiplierUnwielded: 1.5
     modifiedAccuracyMultiplier: 1.5
+  - type: PullDoAfter
+    pullTime: 1.5
   - type: ParticleOnGunShot # stalker-en-start
     effect: MuzzleSmoke
     inheritAngle: true # stalker-en-end

@@ -31,5 +31,3 @@
     # Psy
     - protoId: ZoneAnomalyLamp
       weight: 0.5
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5

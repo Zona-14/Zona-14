@@ -20,14 +20,14 @@
         types:
           Compression: 0.5
     - type: ZoneAnomalyEffectGravityWell
-      distance: 1.5
+      distance: 0.5
       period: 0.005
       radial: 40
       tangential: 0.1
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -0.3
+      idle: 0.4
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 1
@@ -52,6 +52,19 @@
       range: 3
       sound:
         path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 50
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+            - LowImpassable
     - type: ZoneArtifactSpawner
       artifacts:
       - id: null
@@ -75,14 +88,14 @@
         types:
           Compression: 2
     - type: ZoneAnomalyEffectGravityWell
-      distance: 1.5
+      distance: 1.0
       period: 0.005
       radial: 10
       tangential: 0.1
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -0.3
+      idle: 0.4
       activated: 1.0
     - type: ZoneAnomaly
       detectedLevel: 2
@@ -112,7 +125,7 @@
         fix1:
           shape:
             !type:PhysShapeCircle
-            radius: 1.5
+            radius: 1.0
           density: 50
           hard: false
           mask:
@@ -130,7 +143,7 @@
       - id: ZoneArtifactGoldfish
         tier: 5
         ratio: 5
-      - id: ZoneArtifactSpring 
+      - id: ZoneArtifactSpring
         tier: 5
         ratio: 5
       - id: ZoneArtifactCompass
@@ -161,8 +174,8 @@
           amount: 3
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -0.3
-      activated: -0.3
+      idle: 0.4
+      activated: 1
     - type: ZoneAnomaly
       detectedLevel: 0
       activationDelay: 0
@@ -194,7 +207,7 @@
         - id: ZoneArtifactThorn
           tier: 3
           ratio: 8
-        - id: ZoneArtifactNightStar 
+        - id: ZoneArtifactNightStar
           tier: 4
           ratio: 5
         - id: ZoneArtifactDarkCube
@@ -218,7 +231,7 @@
       sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: -1
+      idle: 0.4
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 5
@@ -312,7 +325,7 @@
         fix1:
           shape:
             !type:PhysShapeCircle
-            radius: 7.5
+            radius: 3.5
           hard: false
           mask:
             - MobMask
