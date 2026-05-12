@@ -79,7 +79,7 @@
   components:
   - type: DuplicateTeleport
     prefix: PB
-    maxWeight: 1000 #Zona 14 changes
+    maxWeight: 1000 # Zona 14 change
 
 - type: entity
   parent: StalkerDuplicateTeleportBase
@@ -90,7 +90,7 @@
   components:
   - type: DuplicateTeleport
     prefix: RedForest
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     denyTags:
       - Military
@@ -110,7 +110,7 @@
   - type: DuplicateTeleport
     prefix: Military
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["MilitaryBarraks"]]
 
@@ -124,7 +124,7 @@
   - type: DuplicateTeleport
     prefix: Sci
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["SciBase"]]
 
@@ -138,7 +138,7 @@
   - type: DuplicateTeleport
     prefix: Bandit
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Bandit"]]
 
@@ -152,7 +152,7 @@
   - type: DuplicateTeleport
     prefix: Seraphims
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Seraphims"]]
 
@@ -166,7 +166,7 @@
   - type: DuplicateTeleport
     prefix: Dolg
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Dolg"] , ["DolgNovice"]]
 
@@ -180,7 +180,7 @@
   - type: DuplicateTeleport
     prefix: Freedom
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Freedom"] , ["FreedomNovice"]]
 
@@ -194,7 +194,7 @@
   - type: DuplicateTeleport
     prefix: Renegat
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Renegat"]]
 
@@ -208,7 +208,7 @@
   - type: DuplicateTeleport
     prefix: Covenant
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Covenant"]]
 
@@ -222,7 +222,7 @@
   - type: DuplicateTeleport
     prefix: Anomalist
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Anomalist"]]
 
@@ -236,7 +236,7 @@
   - type: DuplicateTeleport
     prefix: Kordon
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Merc"]]
 
@@ -250,7 +250,7 @@
   - type: DuplicateTeleport
     prefix: Greh
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Greh"]]
 
@@ -264,7 +264,7 @@
   - type: DuplicateTeleport
     prefix: CN
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["CN"]]
 
@@ -278,7 +278,7 @@
   - type: DuplicateTeleport
     prefix: Poisk
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Poisk"]]
 
@@ -292,7 +292,7 @@
   - type: DuplicateTeleport
     prefix: Neutral
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Neutral"]]
 
@@ -306,7 +306,7 @@
   - type: DuplicateTeleport
     prefix: Deserter
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
 
 - type: entity
   id: StalkerDublicateJaba
@@ -318,7 +318,7 @@
   - type: DuplicateTeleport
     prefix: Jaba
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Jaba"]]
 
@@ -332,7 +332,7 @@
   - type: DuplicateTeleport
     prefix: Mechanic
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
 
 - type: entity
   id: StalkerDublicateProject
@@ -344,7 +344,7 @@
   - type: DuplicateTeleport
     prefix: Project
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
 
 - type: entity
   id: StalkerDublicateBar
@@ -355,7 +355,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Bar
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: NoobDenyer # stalker-changes
 
 - type: entity
@@ -367,7 +367,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Boloto
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
 
 - type: entity
   id: StalkerDublicateAtom
@@ -378,7 +378,7 @@
   components:
   - type: DuplicateTeleport
     prefix: Atom
-    maxWeight: 1000 #Zona14 changes
+    maxWeight: 1000 # Zona14 change
   - type: AccessReader
     access: [["Atom"]]
 

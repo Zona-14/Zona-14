@@ -62,8 +62,8 @@
     entry:
       - id: EffectEmpPulse
   - type: ZoneAnomalyEffectStealth
-    idle: 0.3
-    activated: 0.5
+    idle: 0.3 # Zona14 change
+    activated: 0.5 # Zona14 change
   - type: ZoneAnomalyEffectRandomTeleport
   - type: ZoneAnomaly
     detectedLevel: 4

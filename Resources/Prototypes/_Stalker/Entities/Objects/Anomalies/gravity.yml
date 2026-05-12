@@ -20,14 +20,14 @@
         types:
           Compression: 0.5
     - type: ZoneAnomalyEffectGravityWell
-      distance: 0.5
+      distance: 0.5 # Zona14 change
       period: 0.005
       radial: 40
       tangential: 0.1
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: 0.4
+      idle: 0.4 # Zona14 change
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 1
@@ -52,6 +52,7 @@
       range: 3
       sound:
         path: /Audio/_Stalker/Effects/anomaly_gravy_idle.ogg
+# Zona14 change
     - type: Fixtures
       fixtures:
         fix1:
@@ -65,6 +66,7 @@
           layer:
             - MobLayer
             - LowImpassable
+# End Zona14
     - type: ZoneArtifactSpawner
       artifacts:
       - id: null
@@ -88,14 +90,14 @@
         types:
           Compression: 2
     - type: ZoneAnomalyEffectGravityWell
-      distance: 1.0
+      distance: 1.0 # Zona14 change
       period: 0.005
       radial: 10
       tangential: 0.1
       gradient: Linear
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: 0.4
+      idle: 0.4 # Zona14 change
       activated: 1.0
     - type: ZoneAnomaly
       detectedLevel: 2
@@ -125,7 +127,7 @@
         fix1:
           shape:
             !type:PhysShapeCircle
-            radius: 1.0
+            radius: 1.0 # Zona14 change
           density: 50
           hard: false
           mask:
@@ -174,8 +176,8 @@
           amount: 3
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: 0.4
-      activated: 1
+      idle: 0.4 # Zona14 change
+      activated: 1 # Zona14 change
     - type: ZoneAnomaly
       detectedLevel: 0
       activationDelay: 0
@@ -231,7 +233,7 @@
       sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
     - type: Stealth
     - type: ZoneAnomalyEffectStealth
-      idle: 0.4
+      idle: 0.4 # Zona14 change
       activated: 1
     - type: ZoneAnomaly
       detectedLevel: 5
@@ -325,7 +327,7 @@
         fix1:
           shape:
             !type:PhysShapeCircle
-            radius: 3.5
+            radius: 3.5 # Zona14 change
           hard: false
           mask:
             - MobMask

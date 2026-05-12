@@ -2,7 +2,7 @@
   id: StalkerBaseMaps
   mapPaths:
     BarUnderground: /Maps/_ST/World/UndegroundWildsBar100radsV38.yml
-    Dytiatky: /Maps/_Zona14/World/Dytiatky.yml #Zona14 change
+    Dytiatky: /Maps/_Zona14/World/Dytiatky.yml # Zona14 change
     MilitaryBase: /Maps/_ST/World/MBaseV15.yml
     Darkscape: /Maps/_ST/World/TemnajLohinaV99.yml
     Swamps: /Maps/_ST/World/BolotaV83.yml

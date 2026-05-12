@@ -143,7 +143,7 @@
     - type: ZoneAnomaly
       detectedLevel: 0
       preparingDelay: 0
-      activationDelay: 60
+      activationDelay: 60 # Zona14 change
       chargeTime: 0
     - type: Stealth
     - type: Sprite

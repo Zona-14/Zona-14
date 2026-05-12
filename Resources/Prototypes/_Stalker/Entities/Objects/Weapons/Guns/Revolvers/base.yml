@@ -55,8 +55,8 @@
   - type: STWeaponAccuracy
     accuracyMultiplierUnwielded: 1.5
     modifiedAccuracyMultiplier: 1.5
-  - type: PullDoAfter
-    pullTime: 1.5
+  - type: PullDoAfter # Zona14 change
+    pullTime: 1.5 # Zona14 change
   - type: ParticleOnGunShot # stalker-en-start
     effect: MuzzleSmoke
     inheritAngle: true # stalker-en-end
