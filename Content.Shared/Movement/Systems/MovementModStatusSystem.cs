@@ -170,6 +170,7 @@ public sealed class MovementModStatusSystem : EntitySystem
 
         status.Comp.SprintSpeedModifier = sprintSpeedModifier;
         status.Comp.WalkSpeedModifier = walkSpeedModifier;
+        Dirty(status); // Zona14: network the update
 
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
@@ -232,7 +233,7 @@ public sealed class MovementModStatusSystem : EntitySystem
         float friction
     )
     {
-        return TryUpdateFrictionModDuration(uid,duration, friction, friction);
+        return TryUpdateFrictionModDuration(uid, duration, friction, friction);
     }
 
     /// <summary>
