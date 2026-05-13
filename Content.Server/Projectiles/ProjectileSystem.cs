@@ -28,29 +28,15 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly InventorySystem _inventory = default!; // Stalker-Changes
     [Dependency] private readonly IPrototypeManager _prototype = default!; // Stalker-Changes
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
-    }
+    // Zona14: OnStartCollide subscription and the OnStartCollide guards now live in
+    //         SharedProjectileSystem so the client-side predicted twin routes through the same
+    //         entry point. ProjectileCollide is an override of the shared method.
 
-    private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
-    {
-        // This is so entities that shouldn't get a collision are ignored.
-        if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
-            || component.ProjectileSpent || component is { Weapon: null, OnlyCollideWhenShot: true })
-            return;
-
-        // Zona14: collision body extracted to public ProjectileCollide so the prediction
-        //         system can apply server-validated hits without re-implementing damage logic.
-        ProjectileCollide((uid, component, args.OurBody), args.OtherEntity, predicted: false);
-    }
-
-    // Zona14: extracted from OnStartCollide for prediction validation. Preserves the
-    //         stalker-fork armor / ignoreResistors / penetration logic byte-for-byte.
-    //         When `predicted` is true, the firer's client has already drawn the hit
-    //         effect / shake / impact broadcast, so we skip those to avoid double-rendering.
-    public void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile,
+    // Zona14: server override of SharedProjectileSystem.ProjectileCollide. Preserves the
+    //         stalker-fork armor / ignoreResistors / penetration logic byte-for-byte. When
+    //         `predicted` is true, the firer's client has already drawn the hit effect / shake
+    //         / impact broadcast, so we skip those to avoid double-rendering.
+    public override void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile,
         EntityUid target, bool predicted = false)
     {
         var (uid, component, ourBody) = projectile;

@@ -1,14 +1,12 @@
 // SPDX-License-Identifier: MIT
 // Ported from RMC-14 Content.Client/_RMC14/Weapons/Ranged/Prediction/GunPredictionSystem.cs@2f5dc02e44.
 //
-// Zona14 deviation: RMC's client GunPredictionSystem calls _projectile.ProjectileCollide(...)
-// (a method on RMC's SharedProjectileSystem). Zona-14 instead extracts ProjectileCollide on
-// the server-only ProjectileSystem — lifting it to shared would require porting RMC's filter
-// manipulation that depends on RMC-only types. On the client we replicate only the visual-
-// cleanup half of RMC's shared method here: attach PredictedProjectileHitComponent so the
-// projectile despawns at the hit location. The server's GunPredictionSystem.ProcessPredictedHit
-// applies the actual damage (with stalker-fork armor logic) when it receives the network event.
-using System.Linq;
+// Zona14: matches RMC's structure — on a predicted-twin StartCollideEvent, raise the predicted-hit
+// network event and call SharedProjectileSystem.ProjectileCollide, which runs the same reflect/hit
+// event flow as the server and deletes the client-side twin (IsClientSide branch). The collision
+// guards (fixture, hardness, spent, OnlyCollideWhenShot) live in SharedProjectileSystem.OnStartCollide
+// so server and client share a single entry point.
+using Content.Client.Projectiles;
 using Content.Shared._Zona14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -25,8 +23,8 @@ namespace Content.Client._Zona14.Weapons.Ranged.Prediction;
 
 public sealed class GunPredictionSystem : SharedGunPredictionSystem
 {
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly ProjectileSystem _projectile = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -90,23 +88,36 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
 
     private void OnClientProjectileStartCollide(Entity<PredictedProjectileClientComponent> ent, ref StartCollideEvent args)
     {
-        if (ent.Comp.Hit)
-            return;
-
-        if (!HasComp<ProjectileComponent>(ent) ||
-            !HasComp<PhysicsComponent>(ent) ||
+        if (!TryComp(ent, out ProjectileComponent? projectile) ||
+            !TryComp(ent, out PhysicsComponent? physics) ||
             _ignorePredictionHitQuery.HasComp(args.OtherEntity))
         {
             return;
         }
 
+        // Mirror SharedProjectileSystem.OnStartCollide's guards. RMC's client GunPredictionSystem
+        // omits these because RMC subscribes a single shared OnStartCollide that runs first; we
+        // can't rely on ordering across two independent subscriptions, and any soft-fixture or
+        // wrong-fixture StartCollideEvent that bypasses the shared guards would otherwise reach
+        // ProjectileCollide → QueueDel and the shooter never sees their own bullet.
+        if (args.OurFixtureId != SharedProjectileSystem.ProjectileFixture
+            || !args.OtherFixture.Hard
+            || projectile.ProjectileSpent
+            || projectile is { Weapon: null, OnlyCollideWhenShot: true })
+        {
+            return;
+        }
+
+        // Notify the server so it can apply server-validated damage (stalker armor / penetration),
+        // then run the same ProjectileCollide cleanup as the shared OnStartCollide. The ProjectileSpent
+        // early-return inside ProjectileCollide makes the duplicate call a no-op.
         var netEnt = GetNetEntity(args.OtherEntity);
         var pos = _transform.GetMapCoordinates(args.OtherEntity);
         var hit = new HashSet<(NetEntity, MapCoordinates)> { (netEnt, pos) };
         var ev = new PredictedProjectileHitEvent(ent.Owner.Id, hit);
         RaiseNetworkEvent(ev);
 
-        AttachPredictedHit(ent, args.OtherEntity);
+        _projectile.ProjectileCollide((ent, projectile, physics), args.OtherEntity);
     }
 
     private void OnServerProjectileStartup(Entity<PredictedProjectileServerComponent> ent, ref ComponentStartup args)
@@ -121,19 +132,6 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             _sprite.SetVisible((ent, sprite), false);
     }
 
-    // Stands in for the shared _projectile.ProjectileCollide(...) call in RMC's port —
-    // attaches PredictedProjectileHitComponent that drives the visual sprite-fade in Update.
-    private void AttachPredictedHit(EntityUid projectile, EntityUid target)
-    {
-        var origin = _transform.GetMoverCoordinates(projectile);
-        var targetCoords = _transform.GetMoverCoordinates(target);
-        var predictedComp = EnsureComp<PredictedProjectileHitComponent>(projectile);
-        predictedComp.Origin = origin;
-        if (origin.TryDistance(EntityManager, _transform, targetCoords, out var distance))
-            predictedComp.Distance = distance;
-        Dirty(projectile, predictedComp);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -141,36 +139,12 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        // TODO gun prediction remove this once the client reliably detects collisions
-        var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
-        while (projectiles.MoveNext(out var uid, out var predicted, out _, out var physics))
-        {
-            if (predicted.Hit)
-                continue;
-
-            var contacts = _physics.GetContactingEntities(uid, physics, true);
-            if (contacts.Count == 0)
-                continue;
-
-            var hit = new HashSet<(NetEntity, MapCoordinates)>();
-            foreach (var contact in contacts)
-            {
-                if (_ignorePredictionHitQuery.HasComp(contact))
-                    continue;
-
-                var netEnt = GetNetEntity(contact);
-                var pos = _transform.GetMapCoordinates(contact);
-                hit.Add((netEnt, pos));
-            }
-
-            if (hit.Count == 0)
-                continue;
-
-            var ev = new PredictedProjectileHitEvent(uid.Id, hit);
-            RaiseNetworkEvent(ev);
-
-            AttachPredictedHit(uid, contacts.First());
-        }
+        // Zona14: RMC's TODO-fallback contact-poll using GetContactingEntities(approximate: true)
+        // is dropped. `approximate: true` returns AABB-overlap-only contacts (see
+        // RobustToolbox/Robust.Shared/Physics/Systems/SharedPhysicsSystem.Queries.cs:220), so the
+        // poll fires false positives for entities the bullet is merely *near*, deleting the twin
+        // a tile or two into its flight. The shared SharedProjectileSystem.OnStartCollide handler
+        // is the single authoritative entry point for predicted hits.
 
         var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
         while (predictedQuery.MoveNext(out var hit, out var sprite, out var xform))

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -22,8 +23,10 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     public const string ProjectileFixture = "projectile";
 
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
@@ -31,6 +34,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide); // Zona14: lifted from server-only ProjectileSystem
         SubscribeLocalEvent<ProjectileComponent, PreventCollideEvent>(PreventCollision);
         SubscribeLocalEvent<EmbeddableProjectileComponent, ProjectileHitEvent>(OnEmbedProjectileHit);
         SubscribeLocalEvent<EmbeddableProjectileComponent, ThrowDoHitEvent>(OnEmbedThrowDoHit);
@@ -39,6 +43,64 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         SubscribeLocalEvent<EmbeddableProjectileComponent, ComponentShutdown>(OnEmbeddableCompShutdown);
 
         SubscribeLocalEvent<EmbeddedContainerComponent, EntityTerminatingEvent>(OnEmbeddableTermination);
+    }
+
+    // Zona14: lifted from Content.Server/Projectiles/ProjectileSystem.OnStartCollide. Shared so the
+    // client-side predicted twin runs the same guards and routes through the same ProjectileCollide
+    // entry point as the server projectile — matches RMC's architecture and removes the need for
+    // the client-side ad-hoc cleanup that was missing the deletion half.
+    private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
+    {
+        if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
+            || component.ProjectileSpent || component is { Weapon: null, OnlyCollideWhenShot: true })
+            return;
+
+        ProjectileCollide((uid, component, args.OurBody), args.OtherEntity, predicted: false);
+    }
+
+    // Zona14: shared structure of the projectile-hit lifecycle. Server overrides this with stalker
+    // armor + ignoreResistors + penetration + impact-sound broadcast. Client uses this default impl
+    // for the predicted twin: raise reflect/hit events, raise local impact effect, mark spent,
+    // QueueDel if client-side. The `predicted` flag is true when the server runs this in response
+    // to a client-reported predicted hit (skips network broadcasts that the original collision
+    // already emitted).
+    public virtual void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile, EntityUid target, bool predicted = false)
+    {
+        var (uid, component, _) = projectile;
+
+        // Already processed — make sure the client-side twin still gets cleaned up if a stray
+        // contact reaches us after the first hit set ProjectileSpent.
+        if (component.ProjectileSpent)
+        {
+            if (component.DeleteOnCollide && IsClientSide(uid))
+                QueueDel(uid);
+            return;
+        }
+
+        var attemptEv = new ProjectileReflectAttemptEvent(uid, component, false);
+        RaiseLocalEvent(target, ref attemptEv);
+        if (attemptEv.Cancelled)
+        {
+            SetShooter(uid, component, target);
+            return;
+        }
+
+        var ev = new ProjectileHitEvent(component.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
+        RaiseLocalEvent(uid, ref ev);
+
+        component.ProjectileSpent = true;
+        Dirty(uid, component);
+
+        // Visual impact: client-side twin raises locally (only the shooter sees its own twin,
+        // and the server broadcasts the networked event to non-shooters separately).
+        if (IsClientSide(uid) && component.ImpactEffect != null)
+        {
+            var coords = Transform(uid).Coordinates;
+            RaiseLocalEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(coords)));
+        }
+
+        if (component.DeleteOnCollide && IsClientSide(uid))
+            QueueDel(uid);
     }
 
     private void OnEmbedActivate(Entity<EmbeddableProjectileComponent> embeddable, ref ActivateInWorldEvent args)
