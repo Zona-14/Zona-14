@@ -95,7 +95,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         }
         var deleted = Deleted(target);
 
-        if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances || ignoreResitance, origin: component.Shooter, ignoreResistors: ignore) && Exists(component.Shooter)) // Stalker-Changes-IgnoreResistors
+        var damageApplied = _damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances || ignoreResitance, origin: component.Shooter, ignoreResistors: ignore); // Stalker-Changes-IgnoreResistors
+        if (damageApplied && Exists(component.Shooter))
         {
             if (!deleted && !predicted)
             {
@@ -145,6 +146,15 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             {
                 component.ProjectileSpent = true;
             }
+        }
+        else
+        {
+            // Zona14: damage didn't apply (no DamageableComponent on target, damage spec rejected,
+            // or shooter de-spawned mid-flight). The bullet still physically struck a hard fixture
+            // — without this, ProjectileSpent stays false and the DeleteOnCollide check below
+            // never QueueDels the projectile, so it sits stuck against the target. Penetration
+            // tracking depends on `damage` info we don't have in this branch, so just mark spent.
+            component.ProjectileSpent = true;
         }
 
         if (!deleted)
