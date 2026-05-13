@@ -170,7 +170,14 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         if (!predicted && component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
         {
-            RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
+            var filter = Filter.Pvs(xform.Coordinates, entityMan: EntityManager);
+            // Zona14: exclude the shooter — their client twin already raised a local
+            // ImpactEffectEvent via SharedProjectileSystem.ProjectileCollide's IsClientSide
+            // branch. Without this, the shooter sees two impact effects: one immediate from
+            // the predicted twin, one a frame or two later from the server broadcast.
+            if (component.Shooter is { } shooter && TryComp(shooter, out ActorComponent? actor))
+                filter = filter.RemovePlayer(actor.PlayerSession);
+            RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), filter);
         }
     }
 }
