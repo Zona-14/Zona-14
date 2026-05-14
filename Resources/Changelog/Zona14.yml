@@ -119,4 +119,22 @@
   id: 13
   time: '2026-05-12T14:57:24Z'
   url: https://github.com/Zona-14/Zona-14/pull/20
+- author: teecoding
+  changes:
+  - message: Fixed a client crash when transferring mismatched-caliber ammo between
+      ballistic magazines.
+    type: Fix
+  id: 14
+  time: '2026-05-12T21:55:14Z'
+  url: https://github.com/Zona-14/Zona-14/pull/21
+- author: teecoding
+  changes:
+  - message: Predicted bullets now disappear at the point of impact for the shooter.
+    type: Fix
+  - message: Bullets striking hard objects no longer get stuck against non-damageable
+      targets.
+    type: Fix
+  id: 15
+  time: '2026-05-14T12:22:35Z'
+  url: https://github.com/Zona-14/Zona-14/pull/22
 Order: 0
