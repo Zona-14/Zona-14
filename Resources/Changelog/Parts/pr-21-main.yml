@@ -1,0 +1,8 @@
+author: teecoding
+time: '2026-05-12T21:55:14Z'
+url: https://github.com/Zona-14/Zona-14/pull/21
+changes:
+- type: Fix
+  message: Fixed a client crash when transferring mismatched-caliber ammo between
+    ballistic magazines.
+category: Main

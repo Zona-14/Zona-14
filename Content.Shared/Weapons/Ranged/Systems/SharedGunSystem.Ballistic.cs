@@ -256,6 +256,20 @@ public abstract partial class SharedGunSystem
             {
                 entity = component.Entities[^1];
 
+                // Zona14: drop stale UIDs left in Entities when client-side rejected ammo gets Del'd in OnBallisticAmmoFillDoAfter
+                if (!Exists(entity))
+                {
+                    component.Entities.RemoveAt(component.Entities.Count - 1);
+                    DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
+                    if (component.EntProtos.Count > 0)
+                    {
+                        component.EntProtos.RemoveAt(component.EntProtos.Count - 1);
+                        DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.EntProtos));
+                    }
+                    continue;
+                }
+                // End Zona14
+
                 args.Ammo.Add((entity, EnsureShootable(entity)));
                 component.Entities.RemoveAt(component.Entities.Count - 1);
                 DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
