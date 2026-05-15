@@ -44,7 +44,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Подземка Диких территорий и завода Росток
+      name: Rostok Bar and RV Underground
     - type: Transform
     - type: Map
       mapPaused: True
