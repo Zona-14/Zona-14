@@ -12529,30 +12529,6 @@ entities:
     - type: Transform
       pos: -0.5,-11.5
       parent: 1
-- proto: WarpPoint
-  entities:
-  - uid: 242
-    components:
-    - type: MetaData
-      name: Sidorovich
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 17.5,85.5
-      parent: 1
-  - uid: 1736
-    components:
-    - type: MetaData
-      name: Neutral Base
-    - type: Transform
-      pos: -7.5,92.5
-      parent: 1
-  - uid: 7759
-    components:
-    - type: MetaData
-      name: Barman
-    - type: Transform
-      pos: 3.5,2.5
-      parent: 1
 - proto: WindowDiagonal
   entities:
   - uid: 7254
