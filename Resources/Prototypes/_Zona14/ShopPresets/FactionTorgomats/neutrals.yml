@@ -112,7 +112,6 @@
     priority: 1
     items:
       # Pistols
-      STWeaponPistolM1911: 1200
       WeaponPistolStalkerTT: 50 # T1
       WeaponPistolStalkerPM: 50 # T1
       STWeaponRevolverSWModel325: 500
@@ -142,7 +141,6 @@
       Base545Mag10: 80 #T1
       545Mag20: 250 #T2
       # Other
-      M1911Mag7: 150
       BasePMMag: 12
       BasePPSHMag: 300
       TTMag: 15
@@ -218,7 +216,6 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
-      HerculesBottleFull: 200
 
   - name: shop-category-armor
     priority: 6
@@ -227,7 +224,6 @@
       ClothingHeadHelmetLight: 300 # T1 - uni
       STClothingHeadHelmetFASTNeutral: 800 # T2 - uni
       ClothingHeadHelmetSH68: 250 # T1 - PVP:
-      ClothingHeadHelmetVityazNeutral: 3000 # T3 PVP
       # OuterClothing #
       ClothingOuterJacketNeytral: 100 # T1 - uni
       STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
@@ -301,7 +297,6 @@
     priority: 10
     items:
       STCombatKnife: 25
-      STKarambit: 100
       BoxZiptie: 50
       BoxSafebox: 300
       CheapLighter: 5
@@ -324,18 +319,15 @@
       STElasticRubberRed: 50
       STElasticRubberGreen: 50
       STElasticRubberBlue: 50
-      FoldedFlagHelper: 250
       # Cameras
       STCamera: 750
       STCameraVintage: 1200
       STCameraDamaged: 400
       STCameraFilm: 150
-      STLoggingChainsaw: 1000
 
   - name: shop-category-paperwork
     priority: 11
     items:
-      BookStalkerEN: 1
       BookHydroStalker: 25
       BookCookingStalkerGuide: 25
       Paper: 2
@@ -352,7 +344,6 @@
       ClothingHeadHatGreysoft: 10
       ClothingHeadHatSovietUshankaStalker: 40
       # faction
-      ClothingHeadBeretNeutral: 50
       ClothingHeadBandSkull: 30
       # EYES
       ClothingEyesGlasses: 50
@@ -366,7 +357,6 @@
       ClothingNeckScarfGray: 100
       ClothingBandageStalkerUk: 10
       ClothingBandageStalkerRus: 10
-      ClothingBandageStalkerArgentina: 10
       # faction
       ClothingBandageStalkerWhite: 10
       ClothingNeckScarfNeutral: 100
@@ -435,20 +425,3 @@
       AcousticGuitarInstrument: 500
       AccordionInstrument: 500
       HarmonicaInstrument: 500
-
-  - name: shop-category-blueprints
-    priority: 14
-    items:
-      STCookingBerryJam: 2000
-
-  - name: Smokables #explained using D&D lifestyle expenses
-    priority: 15
-    items:
-      CigPackBub: 250 #comfortable
-      CigPackGreen: 150 #poor
-      CigPackRed: 200 #modest
-      CigPackBlue: 150 #poor
-      CigPackBlack: 200 #modest
-      CigPackMixed: 250 #comfortable
-      CigPackMarlboro: 200 #modest
-      CigPackKosmos: 100 #squalid

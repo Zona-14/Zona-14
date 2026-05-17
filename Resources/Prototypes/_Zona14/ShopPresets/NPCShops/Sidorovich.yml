@@ -274,7 +274,6 @@
         FoodSTRice: 210
         FoodBowlBig: 300
         Spoon: 50
-        HerculesBottleFull: 250
 
     - name: shop-category-armor
       priority: 6
@@ -316,10 +315,6 @@
         MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2
         STClothingBeltThrowingKnifes: 350
-        ClothingBeltPocketPouch: 500
-        ClothingBeltHerbalistPouch: 500
-          # Other
-        ClothingBackpackForestryRig: 500
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
@@ -490,41 +485,3 @@
         DetectorVelesBlueprint: 12000
         STClothingOuterJacketStalkerUpgradeBlueprint: 2000
         ClothingOuterAnomalyStalkerJacketBlueprint: 2000
-        STCookingRice: 2000
-        STCookingDeruny: 2000
-        STCookingHrechanyky: 2000
-        STCookingKebabMeat: 2000
-        STCookingPickledSausage: 2000
-
-    - name: Smokables #explained using D&D lifestyle expenses
-      priority: 14
-      items:
-        CigPackBub: 250 #comfortable
-        CigPackGreen: 150 #poor
-        CigPackRed: 200 #modest
-        CigPackBlue: 150 #poor
-        CigPackBlack: 200 #modest
-        CigPackMixed: 250 #comfortable
-        CigPackMarlboro: 200 #modest
-        CigPackKosmos: 100 #squalid
-
-  sponsorCategories:
-    SponsorBread:
-      - name: sponsor
-        items:
-          STWeaponRifleAKMC: 4300
-          STWeaponRifleAKS74UWhite: 1350
-          STHatchetSponsor: 150
-          STSpanishKnife: 100
-    SponsorOMind:
-      - name: О-сознание
-        items:
-          STWeaponRifleSVDSWood: 800
-          Base754Mag5: 400
-  contributorCategories:
-    - name: contributor
-      items:
-        STWeaponShotgunMP153Raven: 550
-        WeaponPistolStalkerAPSHugo: 450
-
-

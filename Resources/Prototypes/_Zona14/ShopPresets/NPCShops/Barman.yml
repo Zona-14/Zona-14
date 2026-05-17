@@ -163,9 +163,6 @@
         # Melee
         STThrowingknifeYellow: 500
         # Pistols
-        STWeaponPistolHiPower: 600
-        STWeaponPistolM1911: 1500
-        STWeaponPistolP99: 700
         WeaponPistolStalkerAPS: 800
         WeaponPistolGSH18: 500
         WeaponPistolStalkerTT: 125
@@ -177,7 +174,6 @@
         STWeaponShotgunMossbergM88: 600
         STWeaponShotgunSPAS: 2100
         # SMGs
-        STWeaponSMGPPS43: 1750
         STWeaponSMGMP5: 2600
         STWeaponSMGPP19: 3300
         STWeaponSMGPP1901: 2000
@@ -191,15 +187,11 @@
     - name: shop-category-magazines
       priority: 2
       items:
-        HiPowerMag13: 140
-        M1911Mag7: 140
-        P99Mag15: 150
         TTMag: 120
         BaseGlockMag10: 135
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
-        STSpeedLoader357MagnumEmpty: 160
         545Mag20: 250
         545Mag30: 500
         556Mag20: 250
@@ -209,7 +201,6 @@
         739Mag30: 350
         Base739Mag10: 200
         VityazMag: 240
-        BasePPSMag: 300
         751Mag20: 650
 
     - name: shop-category-ammunition
@@ -251,10 +242,6 @@
         739FMJBox: 1950 # T3
         739HPBox: 850 # Mutant
         751UNBox: 850 # Mutant
-        # .357
-        MagazineBox357Magnum: 600 # T2
-        MagazineBox357MagnumAP: 1500 # T3
-        MagazineBox357MagnumHP: 800 # Mutant
 
     - name: shop-category-medicine
       priority: 4
@@ -302,7 +289,6 @@
         FoodSTOil: 100
         FoodBowlBig: 200
         Spoon: 75
-        HerculesBottleFull: 200
 
     - name: shop-category-drinks
       priority: 6
@@ -359,8 +345,6 @@
         ClothingBackpackTownBlackStalker: 185
         ClothingBackpackTownWhiteStalker: 190
         STClothingBeltThrowingKnifes: 200
-        ClothingBeltPocketPouch: 450
-        ClothingBeltHerbalistPouch: 450
         ClothingBeltWebbingHolsterStalkerZarya: 1000
         ClothingBeltWebbingDoubleStalkerZaryaSmall: 1500
         ClothingBeltCrafterStalker: 3000
@@ -457,7 +441,6 @@
         STModuleScopeRiflesT1Ru: 600
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Ru: 400
-        STModuleSilencerPistolT1: 400
         STModuleSilencerRiflesT1Nato: 400
         STModuleShotgunChokeT1: 200
         STModuleSMGGripT1: 600
@@ -553,48 +536,11 @@
         CardBin: 100
         PokerCardBin: 150
 
-    - name: shop-category-blueprints
-      priority: 15
-      items:
-        STCookingFreshCheese: 2000
-        STCookingOnionRings: 2000
-        STCookingFriedEggs: 2000
-        STCookingCakePlain: 3500
-        STCookingFrogLegs: 2000
-        STCookingPickledCherries: 2000
-
     - name: shop-category-tools
-      priority: 16
+      priority: 15
       items:
         CraftLeatherbox: 5000
         ToolkitTearOne: 5000
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
         CraftGunpowderBank: 100
-
-    - name: Smokables #explained using D&D lifestyle expenses
-      priority: 16
-      items:
-        CigPackBub: 250 #comfortable
-        CigPackGreen: 150 #poor
-        CigPackRed: 200 #modest
-        CigPackBlue: 150 #poor
-        CigPackBlack: 200 #modest
-        CigPackMixed: 250 #comfortable
-        CigPackMarlboro: 200 #modest
-        CigPackKosmos: 100 #squalid
-  sponsorCategories:
-    SponsorBacker:
-    - name: sponsor
-      items:
-        STWeaponRifleAKS74UWhite: 650
-        STWeaponRifleAKMC: 5000
-    SponsorOMind:
-    - name: О-сознание
-      items:
-        STWeaponRifleSVDSWood: 800
-  contributorCategories:
-  - name: contributor
-    items:
-      STWeaponShotgunMP153Raven: 550
-      WeaponPistolStalkerAPSHugo: 250

@@ -130,7 +130,6 @@
         # Rifles
         STWeaponRifleAKS74U: 2050
         STWeaponRifleM16: 3200
-        STWeaponRifleM16M203: 4000 # T2
         STWeaponRifleAKS74: 3800
 
     - name: shop-category-magazines
@@ -175,15 +174,12 @@
       items:
         # Cheap
         PillDexalin: 10
-        PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
         # Expensive
         antiradpill: 50
-        radioprotectpill: 70
         Bloodpack: 90
-        psyblock: 200
         MedkitAI2: 20
         MedkitScience: 175
         MedkitMilitary: 100
@@ -192,11 +188,6 @@
         MedkitLAR: 650
         # Crates
         SaviorCrate: 2250
-        BulkArmyMedCrate: 2500
-        #ArmySciCrate: 4500
-        BulkScienceCrate: 4375
-        BulkEliteCrate: 6000
-        BulkLARCrate: 7800
 
     - name: shop-category-provisions
       priority: 5
@@ -212,7 +203,6 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-        HerculesBottleFull: 200
 
     - name: shop-category-armor
       priority: 6
@@ -260,7 +250,6 @@
         ClothingOuterCoatStalker: 1000
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
-        ClothingOuterCoatEmergencyResourcePouch: 3500
           # Gasmasks
         ClothingMaskXoma: 300 # T1
         STClothingMaskGasPPM88: 1000 # T2
@@ -286,7 +275,6 @@
         ZoneArtifactDetectorSpruce: 2200 # T2
         ZoneArtifactDetectorBarracuda: 3500 # T3
         Veles: 4500 # T3
-        # ZoneArtifactDetectorBear: 8000 #T4 Disabled for now
 
         # RP Items / Anomaly Destructors
         BaseMachineAnomalyDestructorFolded: 450
@@ -313,7 +301,6 @@
         Paper: 2
         Pen: 5
         BoxFolderClipboardEmpty: 20 # Clipboard
-        STEcoClipboard: 20 # Cool Clipboard
         Binocularus1: 750
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
@@ -333,13 +320,11 @@
         STElasticRubberRed: 50
         STElasticRubberGreen: 50
         STElasticRubberBlue: 50
-        FoldedFlagMili: 250
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
         STCameraDamaged: 400
         STCameraFilm: 150
-        STLoggingChainsaw: 1000
 
     - name: shop-category-customization
       priority: 11
@@ -460,34 +445,3 @@
         # Instruments
         CardBin: 100
         PokerCardBin: 150
-
-
-    - name: Smokables #explained using D&D lifestyle expenses
-      priority: 14
-      items:
-        CigPackBub: 250 #comfortable
-        CigPackGreen: 150 #poor
-        CigPackRed: 200 #modest
-        CigPackBlue: 150 #poor
-        CigPackBlack: 200 #modest
-        CigPackMixed: 250 #comfortable
-        CigPackMarlboro: 200 #modest
-        CigPackKosmos: 100 #squalid
-
-    - name: Gardening
-      priority: 15
-      items:
-        HydroponicsToolScythe: 200
-        HydroponicsToolMiniHoe: 70
-        Bucket: 60
-        StalkerGrinder: 150
-        RobustHarvestChemistryBottleStalker: 50
-        E-Z-NutrientChemistryBottleStalker: 50
-        CannabisSeedsStalker: 70
-        STCarrotSeeds: 70
-        STTomatoSeeds: 70
-        STPotatoSeeds: 70
-        STCabbageSeeds: 70
-        STOnionSeeds: 70
-        STRiceSeeds: 70
-        STCornSeeds: 70

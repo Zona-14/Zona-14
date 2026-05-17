@@ -105,9 +105,6 @@
         STWeaponShotgunBenelliM4Super90: 1200 # T3
         STWeaponShotgunSPAS: 2200 # T3
         # Pistols
-        STWeaponPistolP99: 400
-        STWeaponPistolUSP: 1500
-        STWeaponPistolM1911: 800
         WeaponPistolStalkerGlock: 200
         STWeaponRevolverSWPC325TR: 350
         STWeaponRevolverRugerRedhawk: 650
@@ -129,7 +126,6 @@
         556Mag45: 400
         556Mag30: 330
         # 9.19
-        P99Mag15: 120
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
@@ -140,10 +136,7 @@
         751Mag20: 400
         751Mag30: 500
         # .45
-        USPMag12: 170
-        M1911Mag7: 100
         STSpeedLoader45ACPEmpty: 90
-        STSpeedLoader357MagnumEmpty: 120
 
     - name: shop-category-ammunition
       priority: 3
@@ -167,25 +160,18 @@
         # 7.51
         751M80Box: 1950 # T3
         751UNBox: 850 # Mutant
-        # .357
-        MagazineBox357Magnum: 300 # T2
-        MagazineBox357MagnumAP: 1400 # T3
-        MagazineBox357MagnumHP: 600 # Mutant
 
     - name: shop-category-medicine
       priority: 4
       items:
         # Cheap
         PillDexalin: 20
-        PillDexalinPlusStalker: 45
         STOintment: 20
         STGauze: 25
         STBrutepack: 20
         # Expensive
         antiradpill: 100
-        radioprotectpill: 150
         Bloodpack: 250
-        psyblock: 350
         MedkitAI2: 200
         MedkitMilitary: 400
         Defibrillator: 1000
@@ -204,7 +190,6 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-        HerculesBottleFull: 200
 
     - name: shop-category-armor
       priority: 6
@@ -218,7 +203,6 @@
         ClothingHeadMercLight: 300
         ClothingHeadAssaultHelmetMerc: 3500 # T3 - PvP
         ClothingHeadHelmetInfantryMerc: 600
-        ClothingHeadHelmetVityaz1Merc: 3000 # T3 - PvP
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -254,7 +238,6 @@
         ClothingOuterCoatStalker: 1000
         ClothingOuterCoatLoyalistLight: 2500
         ClothingOuterCoatLoyalist: 3000
-        ClothingOuterCoatKevlarMercenaries: 2750
         # Gas Masks
         ClothingMaskGasZarya: 500 # T1
         ClothingMaskGasMercStalker: 500 # T1
@@ -296,7 +279,7 @@
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         ExtendedEmergencyOxygenTankFilledStalker: 50
-        FoldedFlagMerc: 250
+        STFoldedFlagMerc: 250
         # Cameras
         STCamera: 750
         STCameraVintage: 1200
@@ -308,7 +291,6 @@
       items:
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Nato: 400
-        STModuleSilencerPistolT1: 400
         STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
@@ -319,7 +301,6 @@
       items:
         Paper: 2
         Pen: 5
-        MercBusinessCard: 10
         BoxFolderClipboardEmpty: 50 # Clipboard
 
     - name: shop-category-grenades
@@ -352,7 +333,6 @@
         ClothingNeckScarfGray: 100
         # faction
         ClothingBandageStalkerMerc: 10
-        ClothingNeckMantleMerc: 100
         ClothingNeckScarfMerc: 100
         # TORSO
         ClothingTorsoTShirtPivozavr: 30
@@ -402,15 +382,3 @@
         ClothingShoesBootsMerc: 30
         ClothingShoesSwat: 35
         ClothingShoesBootsCombat: 30
-
-    - name: Smokables #explained using D&D lifestyle expenses
-      priority: 15
-      items:
-        CigPackBub: 250 #comfortable
-        CigPackGreen: 150 #poor
-        CigPackRed: 200 #modest
-        CigPackBlue: 150 #poor
-        CigPackBlack: 200 #modest
-        CigPackMixed: 250 #comfortable
-        CigPackMarlboro: 200 #modest
-        CigPackKosmos: 100 #squalid

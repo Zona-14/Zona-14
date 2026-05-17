@@ -136,10 +136,6 @@
       StalkerBallBat: 50
       STThrowingknifeYellow: 300
       # Pistols
-      STWeaponPistolHiPower: 400
-      STWeaponPistolP99: 500
-      STWeaponPistolM1911Chrome: 1000
-      STWeaponPistolUSP: 1700
       WeaponPistolStalkerTT: 300
       WeaponPistolStalkerGlock: 250
       WeaponPistolStalkerAPS: 800
@@ -154,7 +150,6 @@
       STWeaponSMGPP19: 2000
       STWeaponSMGMP5: 2000
       # Rifles
-      STWeaponRifleL85Forecaster: 2100
       STWeaponRifleFAL: 1500
       STWeaponRifleM4: 3000
       STWeaponRifleM14: 3750
@@ -190,16 +185,11 @@
       BizonMag: 750
       BizonMag919: 800
       # Other
-      HiPowerMag13: 120
-      P99Mag15: 140
-      M1911Mag7: 120
-      USPMag12: 200
       BaseGlockMag10: 100
       GlockMag17: 200
       TTMag: 75
       BaseAPSMag: 100
       STSpeedLoader45ACPEmpty: 120
-      STSpeedLoader357MagnumEmpty: 180
 
   - name: shop-category-ammunition
     priority: 3
@@ -244,10 +234,6 @@
       # 7.54
       754HPBox: 850 # Mutant
       754FMJBox: 2500 # T3
-      # .357
-      MagazineBox357Magnum: 600 # T2
-      MagazineBox357MagnumAP: 1500 # T3
-      MagazineBox357MagnumHP: 800 # Mutant
 
   - name: shop-category-medicine
     priority: 4
@@ -282,16 +268,12 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
-      HerculesBottleFull: 200
 
   - name: shop-category-armor
     priority: 6
     items:
       # Helmets #
-      ClothingHeadHelmetSH68ClearSky: 300 # T1 - PVP
       ClothingHeadHelmetInfantry: 875 # T2 - PVP
-      ClothingHeadHelmetSphereClearSky: 3250 # T3 - PVP
-      ClothingHeadHelmetVityazClearSky: 3000 # T3 - PVE
 
       # OuterClothing #
       ClothingOuterJacketCN: 60 # T1 - PVE
@@ -304,7 +286,6 @@
       ClothingOuterArmorSevaCN: 3600 # T3 - ENVl
       STClothingOuterArmorCN-4a: 3600 # Illusion of choice
       STClothingOuterArmorCN-4aResearcher: 4000 # Slightly better SEVA
-      ClothingOuterArmorSevaClearSky: 15000 # T3 - ENV/PVP
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -330,7 +311,6 @@
       # Cloaks
       ClothingOuterCoatDoshdevik: 60 # T1
       ClothingOuterCoatStalker: 350 # T2
-      ClothingOuterCoatKevlarClearSky: 2750 # T2
       ClothingCloakStalker: 30
       ClothingCloakBeige: 1000
       ClothingCloakBlack: 1000
@@ -366,8 +346,6 @@
       ZoneArtifactDetectorResponse: 600 # T2
       ZoneArtifactDetectorSpruce: 2000 # T2
       ZoneArtifactDetectorBarracuda: 2750 # T3
-      ElectronicDetectorT1: 1000 # EN
-      ElectronicDetectorT2: 8000 # EN
 
   - name: shop-category-utilities
     priority: 10
@@ -402,20 +380,18 @@
       STElasticRubberRed: 50
       STElasticRubberGreen: 50
       STElasticRubberBlue: 50
-      FoldedFlagCS: 250
+      STFoldedFlagCS: 250
       # Cameras
       STCamera: 750
       STCameraVintage: 1200
       STCameraDamaged: 400
       STCameraFilm: 150
-      STLoggingChainsaw: 1000
 
   - name: shop-category-modules
     priority: 11
     items:
       STModuleScopeRiflesT1Ru: 600
       STModuleScopeRiflesT1Nato: 600
-      STModuleSilencerPistolT1: 400
       STModuleSilencerRiflesT1Ru: 400
       STModuleSilencerRiflesT1Nato: 400
       STModuleShotgunChokeT1: 200
@@ -424,7 +400,6 @@
       STModuleSniperSightT1: 600
       STModuleSilencerSniperT1: 600
       STModuleSilencerRiflesT2Ru: 2800
-      STModuleSilencerPistolT2: 2800
       STModuleSilencerRiflesT2Nato: 2800
       STModuleSilencerSniperT2: 2800
       STModuleSilencerSMGT2: 2800
@@ -516,15 +491,3 @@
     items:
       DetectorVelesBlueprint: 6500
       DetectorSvarogBlueprint: 20000
-
-  - name: Smokables #explained using D&D lifestyle expenses
-    priority: 14
-    items:
-      CigPackBub: 250 #comfortable
-      CigPackGreen: 150 #poor
-      CigPackRed: 200 #modest
-      CigPackBlue: 150 #poor
-      CigPackBlack: 200 #modest
-      CigPackMixed: 250 #comfortable
-      CigPackMarlboro: 200 #modest
-      CigPackKosmos: 100 #squalid
