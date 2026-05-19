@@ -18,7 +18,7 @@ contraband_examine = false
 
 [server]
 default_guide = "STNewPlayer"
-rules_file = "STRuleset"
+rules_file = "Zona14Ruleset" # Zona14: STRuleset<Zona14Ruleset
 
 [rules]
 time = 10.0
@@ -47,7 +47,7 @@ flavor_text = true
 punctuation = false
 
 [infolinks]
-discord = "https://discord.gg/BuvKkKhrjn"
+discord = "https://discord.gg/57S48NzbZ9"
 patreon = "https://boosty.to/stalkerss14"
 
 [hub]
