@@ -16,7 +16,7 @@ maxcharacterslots = 1
 
 [server]
 default_guide = "STNewPlayer"
-rules_file = "STRuleset"
+rules_file = "Zona14Ruleset" # Zona14: STRuleset<Zona14Ruleset
 
 [rules]
 time = 10.0

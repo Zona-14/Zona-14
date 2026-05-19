@@ -1,0 +1,162 @@
+- type: guideEntry
+  id: Zona14Ruleset
+  name: guide-entry-rules
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules.xml"
+  children:
+  - RuleC1Zona14
+  - RuleC2Zona14
+  - RuleC3Zona14
+  - RuleC4Zona14
+  - RuleC5Zona14
+  - RuleC6Zona14
+  - RuleC7Zona14
+  - RuleC8Zona14
+  - RuleC9Zona14
+  - RuleC10Zona14
+  - RuleC11Zona14
+
+- type: guideEntry
+  id: RuleC1Zona14
+  name: guide-entry-rules-c1
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC1.xml"
+
+- type: guideEntry
+  id: RuleC2Zona14
+  name: guide-entry-rules-c2
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC2.xml"
+
+- type: guideEntry
+  id: RuleC3Zona14
+  name: guide-entry-rules-c3
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC3.xml"
+
+- type: guideEntry
+  id: RuleC4Zona14
+  name: guide-entry-rules-c4
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC4.xml"
+
+- type: guideEntry
+  id: RuleC5Zona14
+  name: guide-entry-rules-c5
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC5.xml"
+
+- type: guideEntry
+  id: RuleC6Zona14
+  name: guide-entry-rules-c6
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC6.xml"
+
+- type: guideEntry
+  id: RuleC7Zona14
+  name: guide-entry-rules-c7
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC7.xml"
+
+- type: guideEntry
+  id: RuleC8Zona14
+  name: guide-entry-rules-c8
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC8.xml"
+
+- type: guideEntry
+  id: RuleC9Zona14
+  name: guide-entry-rules-c9
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC9.xml"
+
+- type: guideEntry
+  id: RuleC10Zona14
+  name: guide-entry-rules-c10
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC10.xml"
+  children:
+  - RuleF1Zona14
+  - RuleF2Zona14
+  - RuleF3Zona14
+  - RuleF4Zona14
+  - RuleF5Zona14
+  - RuleF6Zona14
+  - RuleF7Zona14
+  - RuleF8Zona14
+  - RuleF9Zona14
+  - RuleF10Zona14
+  - RuleF11Zona14
+
+- type: guideEntry
+  id: RuleC11Zona14
+  name: guide-entry-rules-c11
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/RuleC11.xml"
+
+- type: guideEntry
+  id: RuleF1Zona14
+  name: Bandits
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF1.xml"
+
+- type: guideEntry
+  id: RuleF2Zona14
+  name: Renegades
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF2.xml"
+
+- type: guideEntry
+  id: RuleF3Zona14
+  name: Military
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF3.xml"
+
+- type: guideEntry
+  id: RuleF4Zona14
+  name: Monolith
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF4.xml"
+
+- type: guideEntry
+  id: RuleF5Zona14
+  name: Neutrals
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF5.xml"
+
+- type: guideEntry
+  id: RuleF6Zona14
+  name: Ecologists
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF6.xml"
+
+- type: guideEntry
+  id: RuleF7Zona14
+  name: Mercenaries
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF7.xml"
+
+- type: guideEntry
+  id: RuleF8Zona14
+  name: Duty
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF8.xml"
+
+- type: guideEntry
+  id: RuleF9Zona14
+  name: Freedom
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF9.xml"
+
+- type: guideEntry
+  id: RuleF10Zona14
+  name: Clear Sky
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF10.xml"
+
+- type: guideEntry
+  id: RuleF11Zona14
+  name: Misc
+  ruleEntry: true
+  text: "/ServerInfo/_Zona14/Guidebook/ServerRules/Zona14Rules/FactionRules/RuleF11.xml"
